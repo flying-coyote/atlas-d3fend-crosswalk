@@ -1,0 +1,25 @@
+{
+ "atlas_integrated_before": 2,
+ "atlas_integrated_after": 137,
+ "atlas_included": 173,
+ "atlas_coverage_percent_after": 79.2,
+ "atlas_relationship_count_after": 235,
+ "expected": 137,
+ "atlas_matches_expected": true,
+ "other_frameworks_unchanged": true,
+ "totals_before": {
+  "included_count": 9022,
+  "integrated_count": 997,
+  "relationship_count": 1580
+ },
+ "totals_after": {
+  "included_count": 9022,
+  "integrated_count": 1132,
+  "relationship_count": 1810
+ },
+ "ontology": {
+  "release_date": "2026-08-31T00:12:00+00:00",
+  "triple_count": 49005,
+  "version": "1.6.0"
+ }
+}

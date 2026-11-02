@@ -17,13 +17,14 @@ This repository maps ATLAS techniques to **existing** D3FEND artifacts. Each map
 **Measured coverage.**
 
 - **July, D3FEND 1.4.0, via MITRE's own `dashboard_report.py`:** appending the core restrictions moved ATLAS from 0 to **117 of 140** integrated (83.6%), with every other framework's counts unchanged (`data/acceptance-result.json`).
-- **2026-11, develop `a24ebcc`, via an rdflib count of ATLAS classes with at least one artifact restriction (a proxy, not the dashboard):** develop alone has 2 of 173. Develop plus `snippets/aml-rebaseline-2026-11.ttl` has **137 of 173**.
+- **2026-11, develop `a24ebcc`, via MITRE's own `make dashboard`:** develop alone has 2 of 173 ATLAS techniques integrated. Develop plus `snippets/aml-rebaseline-2026-11.ttl` and the open PRs (fork branch [`atlas-full-preview`](https://github.com/flying-coyote/d3fend-ontology/tree/atlas-full-preview) @ `433c32d`) has **137 of 173** (79.2%), with every other framework's included, integrated and relationship counts unchanged (`data/acceptance-result-2026-11.json`, written by `scripts/85_compare_reports.py`). An rdflib count of ATLAS classes with a direct artifact restriction gives the same 137, and so does an independent recount.
 - **Pending ATLAS ingest:** a further 45 of the 56 techniques ATLAS added in v2026.07–v2026.10 have verified mappings. D3FEND develop still ingests ATLAS v2026.06, so they have no IRIs yet.
 
 ## Files
 
 | Path | What it is |
 |---|---|
+| `data/acceptance-result*.json` | MITRE dashboard before/after: July on 1.4.0, 2026-11 on develop |
 | `crosswalk.csv` | core rows (ATLAS 5.1.1 IDs, the original 140), July 2026, updated with upstream rulings |
 | `crosswalk-annex-v2026.06.csv` | the 33 techniques added by ATLAS v2026.06, verified July 2026 |
 | `crosswalk-rebaseline-2026-11.csv` | **current queue**: every unmerged row re-adjudicated against develop `a24ebcc`, with old vs new mapping, verdict, reason and who decided |
