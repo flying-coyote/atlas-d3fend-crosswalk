@@ -1,0 +1,293 @@
+{
+ "batch_id": "batch-B3",
+ "annex": "v2026.10",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0118",
+   "label": "Autonomous AI Agent Communication",
+   "definition": "Autonomous AI agents may exchange operational information with other AI agents, sub-agents, or independent agent runs. Exchanged information may include discoveries, objectives, tasking, capabilities, credentials, constraints, operating rules, task state, targeting information, instructions, or results. Communication enables autonomous AI agents to coordinate activities, share discoveries, delegate work, request assistance, validate results, or revise future actions without requiring a human operator to direct each interaction. \n\nAutonomous AI agents may independently determine when communication is operationally beneficial, what information to exchange, and how to best utilize exchanged information to accomplish their task. The receiving AI agent may interpret the shared information and use it to continue prior activity, investigate a lead, perform a task, reuse a capability, validate a result, or revise subsequent attack activity.\n\nCommunication may occur directly through an agent interface (See [Direct Agent Communication](/techniques/AML.T0118.001)) or indirectly via writeable shared resources (See [Communication via Shared Artifacts](/techniques/AML.T0118.000)).",
+   "tactics": [
+    "AI Attack Adaptation"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0118.000",
+   "label": "Communication via Shared Artifacts",
+   "definition": "Autonomous AI agents may communicate by creating or modifying artifacts in a shared resource that persists outside their individual execution contexts. Shared artifacts may convey discoveries, objectives, tasking, credentials, capabilities, operating rules, progress, scripts, targeting information, instructions, or results.\n\nShared artifacts allow communication to occur asynchronously and across independent runs. An agent may publish information for later retrieval, adopt information left by another agent, or update the shared state with new findings, progress, or results. Participating agents do not need to share a model, orchestrator, context window, or overlapping execution period.\n\nThe shared resource may be established for the operation or may be an existing repository, file store, message board, database, object store, queue, or similar service repurposed by the agents.",
+   "tactics": [
+    "AI Attack Adaptation"
+   ],
+   "parent_technique": "AML.T0118",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0118.001",
+   "label": "Direct Agent Communication",
+   "definition": "Autonomous AI agents may communicate directly through agent-to-agent, sub-agent, or orchestrator interfaces. An agent may provide another agent with operational context, discoveries, objectives, tasking, capabilities, credentials, or constraints, and may receive status, findings, or completed work in response.\n\nDirect communication may include delegation when the sending agent formulates or selects an objective or subtask and the recipient retains meaningful discretion over how to perform it. Direct exchanges may also report discoveries, request independent validation, synchronize activity, transfer capabilities, or return findings without delegating a new task.",
+   "tactics": [
+    "AI Attack Adaptation"
+   ],
+   "parent_technique": "AML.T0118",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0119",
+   "label": "Exploit Automated Artifact Processing Pipeline",
+   "definition": "Adversaries may submit, publish, or modify an artifact in a way that triggers an automated processing pipeline. As the pipeline handles the artifact, adversary-controlled content or configuration may exploit a weakness in the processing logic, causing the processor to act outside its intended behavior using the permissions and access of a processing worker.\n\nExploitation may cause the worker to access local or internal resources and expose information through normal processing output or evaluate adversary-controlled content and execute code. The attack is triggered by automated backend processing and does not require a victim to open, load, or approve the artifact.",
+   "tactics": [
+    "Initial Access"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0120",
+   "label": "AI Artifact Repository",
+   "definition": "Adversaries may repurpose AI artifact repositories as asynchronous command-and-control channels. Commands, payloads, or tasking may be placed in repository objects for a compromised system to retrieve or poll. The compromised system may then write execution results, status, or collected information back to the repository for retrieval by the adversary.\n\nThis communication can use ordinary artifact and repository operations, such as reading or updating artifact content, metadata, or revisions through an API or version-control interface. The repository acts as a message queue or dead drop, allowing the parties to exchange information without a continuous direct connection and potentially blending the activity with legitimate artifact traffic.",
+   "tactics": [
+    "Command and Control"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0121",
+   "label": "AI Agent Environment Reconstruction",
+   "definition": "An autonomous AI agent may reconstruct the environment needed to continue an existing operation after its execution environment is lost, reset, replaced, denied, or made unusable. The agent may recover or recreate tools, dependencies, configuration, credentials or access paths, communication or coordination resources, working artifacts, and externally stored operational state in order to resume the same objective.",
+   "tactics": [
+    "Persistence"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0122",
+   "label": "Exploitation of Remote Services",
+   "definition": "Adversaries may exploit a software or design weakness in a service reachable from their current environment to gain unauthorized access to another system, component, network, or trust boundary. Exploitation may allow the adversary to execute code, access protected resources, invoke unauthorized operations, obtain the service's privileges, or cause the service to make network requests or perform actions on the adversary's behalf.\n\nIn AI environments, remote services may include package caches, artifact and model registries, dataset services, evaluation infrastructure, inference gateways, experiment trackers, vector databases, notebooks, training pipelines, orchestration services, and cloud or cluster control-plane interfaces. These services may be reachable from otherwise isolated training, evaluation, or agent workloads and can provide transitive access to internal infrastructure or external networks.\n\nExploitation does not require compromise of the remote service's underlying host. For example, an adversary may exploit a server-side request vulnerability in a shared service to cross a network-containment boundary while leaving the service host itself uncompromised. Exploitation that produces host access, privilege escalation, credential disclosure, command execution, or another effect should be mapped separately to the applicable technique.",
+   "tactics": [
+    "Lateral Movement"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1210",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0122",
+    "attack_id": "T1210",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "seeded",
+    "artifacts": [
+     {
+      "iri": "d3f:IntranetNetworkTraffic",
+      "verbs": [
+       "d3f:produces"
+      ]
+     },
+     {
+      "iri": "d3f:ProcessCodeSegment",
+      "verbs": [
+       "d3f:may-modify"
+      ]
+     },
+     {
+      "iri": "d3f:ProcessSegment",
+      "verbs": [
+       "d3f:may-modify"
+      ]
+     },
+     {
+      "iri": "d3f:StackFrame",
+      "verbs": [
+       "d3f:may-modify"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "atlas_id": "AML.T0123",
+   "label": "Obfuscated Files or Information",
+   "definition": "Adversaries may attempt to make an executable or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its contents on the system or in transit. This is common behavior that can be used across different platforms and the network to evade defenses.\n\nObfuscation may target AI-enabled defensive systems, including malware classifiers, content filters, secret scanners, and automated review systems. Content that appears benign or incomplete to a person or detector may be decoded, assembled, or interpreted by a downstream application, tool, or compromised system.",
+   "tactics": [
+    "Defense Evasion"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1027",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0123",
+    "attack_id": "T1027",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "seeded",
+    "artifacts": [
+     {
+      "iri": "d3f:DigitalArtifact",
+      "verbs": [
+       "d3f:hides"
+      ]
+     },
+     {
+      "iri": "d3f:ExecutableBinary",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:ExecutableFile",
+      "verbs": [
+       "d3f:creates",
+       "d3f:obfuscates"
+      ]
+     },
+     {
+      "iri": "d3f:JavaScriptBlob",
+      "verbs": [
+       "d3f:creates"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "atlas_id": "AML.T0124",
+   "label": "Autonomous Attack Orchestration",
+   "definition": "Adversaries may use autonomous AI systems as an operational control layer to manage multiple distinct autonomous agents or sub-agents toward a common adversary-defined objective. The orchestrating system may create assignments, select executors, allocate tools or resources, establish dependencies, schedule or synchronize activities, and track progress without a human directing each assignment.\n\nThe autonomous system exhibits centralized control over distributed execution including which agent performs which work, when it performs it, and how its output affects other assigned work. The system may aggregate findings and status from participating agents, request independent validation, reconcile conflicting results, prevent or resolve duplicated effort, and determine when an output satisfies a prerequisite for another activity. It may reassign stalled work, increase or reduce resources allocated to a branch, terminate low-value work, or initiate additional research or testing.\n\nOrchestration may use direct agent interfaces (See [Autonomous AI Agent Communication: Direct Agent Communication](/techniques/AML.T0118.001)) to transmit assignments, status, and results.\n\nHuman involvement does not preclude autonomous attack orchestration. A human operator may define campaign objectives, select targets, provide infrastructure, establish constraints, or retain approval over consequential transitions.\n\n[Autonomous Attack-Path Adaptation](/techniques/AML.T0117) and [Autonomous Attack Orchestration](/techniques/AML.T0124) may occur together but describe different control functions. Attack-path adaptation captures how evidence changes the selected path. Attack orchestration captures how work is allocated, coordinated, validated, and redirected across agents.",
+   "tactics": [
+    "AI Attack Adaptation"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0125",
+   "label": "Create Account",
+   "definition": "Adversaries may create an account to maintain access to an AI system or its supporting infrastructure. With a sufficient level of access, creating such accounts may be used to establish secondary credentialed access that do not require persistent remote access tools to be deployed on the system.\n\nAccounts may be created on local systems, in enterprise domains, cloud tenants, identity providers, or individual services. In AI environments, adversaries may create user, service, workload, or automation accounts in AI platforms, model or dataset repositories, development environments, experiment trackers, orchestration services, data stores, and other AI operations infrastructure.",
+   "tactics": [
+    "Persistence"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1136",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0125",
+    "attack_id": "T1136",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "seeded",
+    "artifacts": [
+     {
+      "iri": "d3f:CloudUserAccount",
+      "verbs": [
+       "d3f:creates"
+      ]
+     },
+     {
+      "iri": "d3f:DomainUserAccount",
+      "verbs": [
+       "d3f:creates"
+      ]
+     },
+     {
+      "iri": "d3f:LocalUserAccount",
+      "verbs": [
+       "d3f:creates"
+      ]
+     },
+     {
+      "iri": "d3f:UserAccount",
+      "verbs": [
+       "d3f:creates"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "atlas_id": "AML.T0126",
+   "label": "Automated Collection",
+   "definition": "Adversaries may use automated techniques to collect data from AI systems and supporting enterprise environments. Automation may use scripts, command interpreters, command-line tools, or AI agent tools to identify, retrieve, copy, or aggregate data without a human selecting each individual item.\n\nCollection criteria may be fixed, such as file name, type, location, owner, date. Automation may also collect repeatedly, monitor for new material, traverse related resources, or combine data from local systems, cloud services, repositories, databases, object stores, and application APIs.\n\nIn AI environments, targeted material may include models, datasets, configurations, conversation histories, retrieval databases, deployment information, logs, and other operational data.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1119",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0126",
+    "attack_id": "T1119",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "seeded",
+    "artifacts": [
+     {
+      "iri": "d3f:File",
+      "verbs": [
+       "d3f:accesses"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "atlas_id": "AML.T0127",
+   "label": "Data Staged",
+   "definition": "Adversaries may stage collected data in a central location before exfiltration. Staging consolidates, organizes, or prepares information obtained from one or more sources so it can be reviewed, processed, transferred, or retrieved more efficiently.\n\nData may be staged on a compromised local system, another system in the victim environment, a cloud instance, shared storage, an application repository, or other remote infrastructure. It may remain in separate files or be combined into archives, databases, structured documents, manifests, or other collections. Adversaries may compress, encrypt, encode, split, rename, or otherwise transform staged data.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1074",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0127",
+    "attack_id": "T1074",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "seeded",
+    "artifacts": [
+     {
+      "iri": "d3f:CreateFile",
+      "verbs": [
+       "d3f:may-invoke"
+      ]
+     },
+     {
+      "iri": "d3f:File",
+      "verbs": [
+       "d3f:may-create"
+      ]
+     },
+     {
+      "iri": "d3f:NetworkResource",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:Resource",
+      "verbs": [
+       "d3f:reads"
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}

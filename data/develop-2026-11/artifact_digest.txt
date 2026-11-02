@@ -1,0 +1,922 @@
+d3f:Artifact | Artifact | Artifact
+d3f:DigitalArtifact | Digital Artifact | Artifact > DigitalArtifact
+d3f:DigitalInformation | Digital Information | Artifact > DigitalArtifact > DigitalInformation
+d3f:Command | Command | Artifact > DigitalArtifact > DigitalInformation > Command
+d3f:DatabaseQuery | Database Query | Artifact > DigitalArtifact > DigitalInformation > Command > DatabaseQuery
+d3f:RemoteDatabaseQuery | Remote Database Query | Artifact > DigitalArtifact > DigitalInformation > Command > DatabaseQuery > RemoteDatabaseQuery
+d3f:RemoteCommand | Remote Command | Artifact > DigitalArtifact > DigitalInformation > Command > RemoteCommand
+d3f:RemoteProcedureCall | Remote Procedure Call | Artifact > DigitalArtifact > DigitalInformation > Command > RemoteCommand > RemoteProcedureCall
+d3f:RemoteShellCommand | Remote Shell Command | Artifact > DigitalArtifact > DigitalInformation > Command > RemoteCommand > RemoteShellCommand
+d3f:WirelessCommand | Wireless Command | Artifact > DigitalArtifact > DigitalInformation > Command > RemoteCommand > WirelessCommand
+d3f:ShellCommand | Shell Command | Artifact > DigitalArtifact > DigitalInformation > Command > ShellCommand
+d3f:ControlFlowGraph | Control Flow Graph | Artifact > DigitalArtifact > DigitalInformation > ControlFlowGraph
+d3f:ControlFlowPolicy | Control Flow Policy | Artifact > DigitalArtifact > DigitalInformation > ControlFlowGraph > ControlFlowPolicy
+d3f:CryptographicKey | Cryptographic Key | Artifact > DigitalArtifact > DigitalInformation > CryptographicKey
+d3f:AsymmetricKey | Asymmetric Key | Artifact > DigitalArtifact > DigitalInformation > CryptographicKey > AsymmetricKey
+d3f:PrivateKey | Private Key | Artifact > DigitalArtifact > DigitalInformation > CryptographicKey > AsymmetricKey > PrivateKey
+d3f:PublicKey | Public Key | Artifact > DigitalArtifact > DigitalInformation > CryptographicKey > AsymmetricKey > PublicKey
+d3f:SymmetricKey | Symmetric Key | Artifact > DigitalArtifact > DigitalInformation > CryptographicKey > SymmetricKey
+d3f:DigitalIdentity | Digital Identity | Artifact > DigitalArtifact > DigitalInformation > DigitalIdentity
+d3f:DigitalMedia | Digital Media | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia
+d3f:DigitalAudio | Digital Audio | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalAudio
+d3f:DigitalDocument | Digital Document | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalDocument
+d3f:DigitalImage | Digital Image | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalImage
+d3f:BitmapImage | Bitmap Image | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalImage > BitmapImage
+d3f:VectorImage | Vector Image | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalImage > VectorImage
+d3f:DigitalMultimedia | Digital Multimedia | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalMultimedia
+d3f:DigitalAudioVisualMedia | Digital Audio Visual Media | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalMultimedia > DigitalAudioVisualMedia
+d3f:DigitalText | Digital Text | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalText
+d3f:DigitalVideo | Digital Video | Artifact > DigitalArtifact > DigitalInformation > DigitalMedia > DigitalVideo
+d3f:DomainRegistration | Domain Registration | Artifact > DigitalArtifact > DigitalInformation > DomainRegistration
+d3f:FileContentBlockData | File Content Block Data | Artifact > DigitalArtifact > DigitalInformation > FileContentBlockData
+d3f:Identifier | Identifier | Artifact > DigitalArtifact > DigitalInformation > Identifier
+d3f:DigitalFingerprint | Digital Fingerprint | Artifact > DigitalArtifact > DigitalInformation > Identifier > DigitalFingerprint
+d3f:FileHash | File Hash | Artifact > DigitalArtifact > DigitalInformation > Identifier > DigitalFingerprint > FileHash
+d3f:DomainName | Domain Name | Artifact > DigitalArtifact > DigitalInformation > Identifier > DomainName
+d3f:Hostname | Hostname | Artifact > DigitalArtifact > DigitalInformation > Identifier > Hostname
+d3f:IPAddress | IP Address | Artifact > DigitalArtifact > DigitalInformation > Identifier > IPAddress
+d3f:MACAddress | MAC Address | Artifact > DigitalArtifact > DigitalInformation > Identifier > MACAddress
+d3f:URL | URL | Artifact > DigitalArtifact > DigitalInformation > Identifier > URL
+d3f:PackageURL | Package URL | Artifact > DigitalArtifact > DigitalInformation > Identifier > URL > PackageURL
+d3f:JobSchedule | Job Schedule | Artifact > DigitalArtifact > DigitalInformation > JobSchedule
+d3f:MemoryAddress | Memory Address | Artifact > DigitalArtifact > DigitalInformation > MemoryAddress
+d3f:PhysicalAddress | Physical Address | Artifact > DigitalArtifact > DigitalInformation > MemoryAddress > PhysicalAddress
+d3f:VirtualAddress | Virtual Address | Artifact > DigitalArtifact > DigitalInformation > MemoryAddress > VirtualAddress
+d3f:MemoryExtent | Memory Extent | Artifact > DigitalArtifact > DigitalInformation > MemoryExtent
+d3f:MemoryBlock | Memory Block | Artifact > DigitalArtifact > DigitalInformation > MemoryExtent > MemoryBlock
+d3f:Page | Page | Artifact > DigitalArtifact > DigitalInformation > MemoryExtent > MemoryBlock > Page
+d3f:PageFrame | Page Frame | Artifact > DigitalArtifact > DigitalInformation > MemoryExtent > MemoryBlock > PageFrame
+d3f:MemoryPool | Memory Pool | Artifact > DigitalArtifact > DigitalInformation > MemoryExtent > MemoryPool
+d3f:MemoryWord | Memory Word | Artifact > DigitalArtifact > DigitalInformation > MemoryExtent > MemoryWord
+d3f:Metadata | Metadata | Artifact > DigitalArtifact > DigitalInformation > Metadata
+d3f:FileMetadata | File Metadata | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileMetadata
+d3f:FileContentBlockMetadata | File Content Block Metadata | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileMetadata > FileContentBlockMetadata
+d3f:FileFooterBlockContent | File Footer Block Content | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileMetadata > FileFooterBlockContent
+d3f:FileFooterBlockSignature | File Footer Block Signature | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileMetadata > FileFooterBlockSignature
+d3f:FileHeaderBlockContent | File Header Block Content | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileMetadata > FileHeaderBlockContent
+d3f:FileHeaderBlockSignature | File Header Block Signature | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileMetadata > FileHeaderBlockSignature
+d3f:FileMagicBytes | File Magic Bytes | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileMetadata > FileHeaderBlockSignature > FileMagicBytes
+d3f:FileSystemMetadata | File System Metadata | Artifact > DigitalArtifact > DigitalInformation > Metadata > FileSystemMetadata
+d3f:NetworkFlow | Network Flow | Artifact > DigitalArtifact > DigitalInformation > NetworkFlow
+d3f:Pointer | Pointer | Artifact > DigitalArtifact > DigitalInformation > Pointer
+d3f:SavedInstructionPointer | Saved Instruction Pointer | Artifact > DigitalArtifact > DigitalInformation > Pointer > SavedInstructionPointer
+d3f:Software | Software | Artifact > DigitalArtifact > DigitalInformation > Software
+d3f:Application | Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application
+d3f:ClientApplication | Client Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ClientApplication
+d3f:DataAcquisitionAgent | Data Acquisition Agent | Artifact > DigitalArtifact > DigitalInformation > Software > Application > DataAcquisitionAgent
+d3f:DatabaseApplication | Database Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > DatabaseApplication
+d3f:DatabaseServiceApplication | Database Service Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > DatabaseApplication > DatabaseServiceApplication
+d3f:Cloud-basedDatabaseApplication | Cloud-based Database Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > DatabaseApplication > DatabaseServiceApplication > Cloud-basedDatabaseApplication
+d3f:EmbeddedDatabaseApplication | Embedded Database Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > DatabaseApplication > EmbeddedDatabaseApplication
+d3f:DigitalSignalProcessingApplication | Digital Signal Processing Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > DigitalSignalProcessingApplication
+d3f:Software-definedRadioWaveformApplication | Software-defined Radio Waveform Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > DigitalSignalProcessingApplication > Software-definedRadioWaveformApplication
+d3f:OTProcessDataHistorian | OT Process Data Historian | Artifact > DigitalArtifact > DigitalInformation > Software > Application > OTProcessDataHistorian
+d3f:PasswordManager | Password Manager | Artifact > DigitalArtifact > DigitalInformation > Software > Application > PasswordManager
+d3f:ServiceApplication | Service Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication
+d3f:AuthenticationServiceApplication | Authentication Service Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > AuthenticationServiceApplication
+d3f:ContainerOrchestrationSoftware | Container Orchestration Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > ContainerOrchestrationSoftware
+d3f:ContainerRuntime | Container Runtime | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > ContainerRuntime
+d3f:CredentialManagementSystem | Credential Management System | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > CredentialManagementSystem
+d3f:DHCPServiceApplication | DHCP Service Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > DHCPServiceApplication
+d3f:HMIApplication | HMI Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > HMIApplication
+d3f:OTControlProgram | OT Control Program | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > OTControlProgram
+d3f:VehicleControlSoftware | Vehicle Control Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > OTControlProgram > VehicleControlSoftware
+d3f:FlightSoftware | Flight Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > OTControlProgram > VehicleControlSoftware > FlightSoftware
+d3f:SoftwareDeploymentTool | Software Deployment Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > SoftwareDeploymentTool
+d3f:VirtualizationSoftware | Virtualization Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > VirtualizationSoftware
+d3f:WebApplication | Web Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > WebApplication
+d3f:WebServerApplication | Web Server Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > ServiceApplication > WebServerApplication
+d3f:UserApplication | User Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication
+d3f:ApplicationInstaller | Application Installer | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > ApplicationInstaller
+d3f:Browser | Browser | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > Browser
+d3f:BrowserExtension | Browser Extension | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > BrowserExtension
+d3f:CodecApplication | Codec Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > CodecApplication
+d3f:DecoderApplication | Decoder Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > CodecApplication > DecoderApplication
+d3f:EncoderApplication | Encoder Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > CodecApplication > EncoderApplication
+d3f:CollaborativeSoftware | Collaborative Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > CollaborativeSoftware
+d3f:BusinessCommunicationPlatformClient | Business Communication Platform Client | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > CollaborativeSoftware > BusinessCommunicationPlatformClient
+d3f:ChatroomClient | Chatroom Client | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > CollaborativeSoftware > ChatroomClient
+d3f:InstantMessagingClient | Instant Messaging Client | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > CollaborativeSoftware > InstantMessagingClient
+d3f:DeveloperApplication | Developer Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication
+d3f:BuildTool | Build Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > BuildTool
+d3f:Compiler | Compiler | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > BuildTool > Compiler
+d3f:SoftwarePackagingTool | Software Packaging Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > BuildTool > SoftwarePackagingTool
+d3f:ContainerBuildTool | Container Build Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > BuildTool > SoftwarePackagingTool > ContainerBuildTool
+d3f:OperatingSystemPackagingTool | Operating System Packaging Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > BuildTool > SoftwarePackagingTool > OperatingSystemPackagingTool
+d3f:CodeAnalyzer | Code Analyzer | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > CodeAnalyzer
+d3f:DynamicAnalysisTool | Dynamic Analysis Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > CodeAnalyzer > DynamicAnalysisTool
+d3f:StaticAnalysisTool | Static Analysis Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > CodeAnalyzer > StaticAnalysisTool
+d3f:SourceCodeAnalyzerTool | Source Code Analyzer Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > CodeAnalyzer > StaticAnalysisTool > SourceCodeAnalyzerTool
+d3f:NetworkTrafficAnalysisSoftware | Network Traffic Analysis Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > NetworkTrafficAnalysisSoftware
+d3f:OTEngineeringSoftware | OT Engineering Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > OTEngineeringSoftware
+d3f:TestExecutionTool | Test Execution Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > TestExecutionTool
+d3f:IntegrationTestExecutionTool | Integration Test Execution Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > TestExecutionTool > IntegrationTestExecutionTool
+d3f:UnitTestExecutionTool | Unit Test Execution Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > TestExecutionTool > UnitTestExecutionTool
+d3f:VersionControlTool | Version Control Tool | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > DeveloperApplication > VersionControlTool
+d3f:OfficeApplication | Office Application | Artifact > DigitalArtifact > DigitalInformation > Software > Application > UserApplication > OfficeApplication
+d3f:VehicleSoftware | Vehicle Software | Artifact > DigitalArtifact > DigitalInformation > Software > Application > VehicleSoftware
+d3f:BootLoader | Boot Loader | Artifact > DigitalArtifact > DigitalInformation > Software > BootLoader
+d3f:First-stageBootLoader | First-stage Boot Loader | Artifact > DigitalArtifact > DigitalInformation > Software > BootLoader > First-stageBootLoader
+d3f:Second-stageBootLoader | Second-stage Boot Loader | Artifact > DigitalArtifact > DigitalInformation > Software > BootLoader > Second-stageBootLoader
+d3f:Firmware | Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware
+d3f:Microcode | Microcode | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > Microcode
+d3f:PeripheralFirmware | Peripheral Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > PeripheralFirmware
+d3f:GraphicsCardFirmware | Graphics Card Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > PeripheralFirmware > GraphicsCardFirmware
+d3f:HardDiskFirmware | Hard Disk Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > PeripheralFirmware > HardDiskFirmware
+d3f:HumanInputDeviceFirmware | Human Input Device Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > PeripheralFirmware > HumanInputDeviceFirmware
+d3f:NetworkCardFirmware | Network Card Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > PeripheralFirmware > NetworkCardFirmware
+d3f:PeripheralHubFirmware | Peripheral Hub Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > PeripheralFirmware > PeripheralHubFirmware
+d3f:SystemFirmware | System Firmware | Artifact > DigitalArtifact > DigitalInformation > Software > Firmware > SystemFirmware
+d3f:NetworkAgent | Network Agent | Artifact > DigitalArtifact > DigitalInformation > Software > NetworkAgent
+d3f:AssetInventoryAgent | Asset Inventory Agent | Artifact > DigitalArtifact > DigitalInformation > Software > NetworkAgent > AssetInventoryAgent
+d3f:OSAPIFunction | OS API Function | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction
+d3f:OSAPISystemFunction | OS API System Function | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction
+d3f:OSAPIAccessProcess | OS API Access Process | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAccessProcess
+d3f:LinuxPtraceArgumentPTRACEATTACH | Linux Ptrace Argument PTRACE_ATTACH | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAccessProcess > LinuxPtraceArgumentPTRACEATTACH
+d3f:OSAPIAllocateMemory | OS API Allocate Memory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory
+d3f:LinuxMmap | Linux Mmap | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory > LinuxMmap
+d3f:LinuxMmap2 | Linux Mmap2 | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory > LinuxMmap2
+d3f:WindowsNtAllocateVirtualMemory | Windows NtAllocateVirtualMemory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory > WindowsNtAllocateVirtualMemory
+d3f:WindowsNtAllocateVirtualMemoryEx | Windows NtAllocateVirtualMemoryEx | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory > WindowsNtAllocateVirtualMemoryEx
+d3f:WindowsNtProtectVirtualMemory | Windows NtProtectVirtualMemory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory > WindowsNtProtectVirtualMemory
+d3f:WindowsVirtualAllocEx | Windows VirtualAllocEx | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory > WindowsVirtualAllocEx
+d3f:WindowsVirtualProtectEx | Windows VirtualProtectEx | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIAllocateMemory > WindowsVirtualProtectEx
+d3f:OSAPIConnectSocket | OS API Connect Socket | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIConnectSocket
+d3f:LinuxConnect | Linux Connect | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIConnectSocket > LinuxConnect
+d3f:LinuxSocketcallArgumentSYS_CONNECT | Linux Socketcall Argument SYS_CONNECT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIConnectSocket > LinuxSocketcallArgumentSYS_CONNECT
+d3f:OSAPICopyToken | OS API Copy Token | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICopyToken
+d3f:WindowsDuplicateToken | Windows DuplicateToken | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICopyToken > WindowsDuplicateToken
+d3f:WindowsNtDuplicateToken | Windows NtDuplicateToken | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICopyToken > WindowsNtDuplicateToken
+d3f:OSAPICreateFile | OS API Create File | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile
+d3f:LinuxCreat | Linux Creat | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > LinuxCreat
+d3f:LinuxOpenArgumentO_CREAT | Linux Open Argument O_CREAT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > LinuxOpenArgumentO_CREAT
+d3f:LinuxOpenAt2ArgumentO_CREAT | Linux OpenAt2 Argument O_CREAT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > LinuxOpenAt2ArgumentO_CREAT
+d3f:LinuxOpenAtArgumentO_CREAT | Linux OpenAt Argument O_CREAT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > LinuxOpenAtArgumentO_CREAT
+d3f:WindowOpenFile | Windows OpenFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > WindowOpenFile
+d3f:WindowsCreateFileA | Windows CreateFileA | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > WindowsCreateFileA
+d3f:WindowsNtCreateFile | Windows NtCreateFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > WindowsNtCreateFile
+d3f:WindowsNtCreateMailslotFile | Windows NtCreateMailslotFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > WindowsNtCreateMailslotFile
+d3f:WindowsNtCreateNamedPipeFile | Windows NtCreateNamedPipeFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > WindowsNtCreateNamedPipeFile
+d3f:WindowsNtCreatePagingFile | Windows NtCreatePagingFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateFile > WindowsNtCreatePagingFile
+d3f:OSAPICreateProcess | OS API Create Process | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess
+d3f:LinuxClone | Linux Clone | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess > LinuxClone
+d3f:LinuxClone3 | Linux Clone3 | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess > LinuxClone3
+d3f:LinuxFork | Linux Fork | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess > LinuxFork
+d3f:LinuxVfork | Linux Vfork | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess > LinuxVfork
+d3f:WindowsCreateProcessA | Windows CreateProcessA | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess > WindowsCreateProcessA
+d3f:WindowsNtCreateProcess | Windows NtCreateProcess | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess > WindowsNtCreateProcess
+d3f:WindowsNtCreateProcessEx | Windows NtCreateProcessEx | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateProcess > WindowsNtCreateProcessEx
+d3f:OSAPICreateSocket | OS API Create Socket | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateSocket
+d3f:LinuxSocket | Linux Socket | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateSocket > LinuxSocket
+d3f:LinuxSocketcallArgumentSYS_SOCKET | Linux Socketcall Argument SYS_SOCKET | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateSocket > LinuxSocketcallArgumentSYS_SOCKET
+d3f:OSAPICreateThread | OS API Create Thread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateThread
+d3f:LinuxClone3ArgumentCLONE_THREAD | Linux Clone3 Argument CLONE_THREAD | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateThread > LinuxClone3ArgumentCLONE_THREAD
+d3f:LinuxCloneArgumentCLONE_THREAD | Linux Clone Argument CLONE_THREAD | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateThread > LinuxCloneArgumentCLONE_THREAD
+d3f:WindowsCreateRemoteThread | Windows CreateRemoteThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateThread > WindowsCreateRemoteThread
+d3f:WindowsCreateThread | Windows CreateThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateThread > WindowsCreateThread
+d3f:WindowsNtCreateThread | Windows NtCreateThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateThread > WindowsNtCreateThread
+d3f:WindowsNtCreateThreadEx | Windows NtCreateThreadEx | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPICreateThread > WindowsNtCreateThreadEx
+d3f:OSAPIDeleteFile | OS API Delete File | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIDeleteFile
+d3f:LinuxUnlink | Linux Unlink | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIDeleteFile > LinuxUnlink
+d3f:LinuxUnlinkat | Linux Unlinkat | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIDeleteFile > LinuxUnlinkat
+d3f:WindowsDeleteFile | Windows DeleteFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIDeleteFile > WindowsDeleteFile
+d3f:WindowsNtDeleteFile | Windows NtDeleteFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIDeleteFile > WindowsNtDeleteFile
+d3f:WindowsNtSetInformationFileArgumentFileDispositionInformation | Windows NtSetInformationFile Argument FileDispositionInformation | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIDeleteFile > WindowsNtSetInformationFileArgumentFileDispositionInformation
+d3f:OSAPIExec | OS API Exec | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIExec
+d3f:LinuxExecve | Linux Execve | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIExec > LinuxExecve
+d3f:LinuxExecveat | Linux Execveat | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIExec > LinuxExecveat
+d3f:OSAPIFreeMemory | OS API Free Memory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIFreeMemory
+d3f:LinuxMunmap | Linux Munmap | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIFreeMemory > LinuxMunmap
+d3f:WindowsNtFreeVirtualMemory | Windows NtFreeVirtualMemory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIFreeMemory > WindowsNtFreeVirtualMemory
+d3f:WindowsVirtualFree | Windows VirtualFree | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIFreeMemory > WindowsVirtualFree
+d3f:OSAPIGetSystemTime | OS API Get System Time | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIGetSystemTime
+d3f:LinuxTime | Linux Time | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIGetSystemTime > LinuxTime
+d3f:WindowsNtQuerySystemTime | Windows NtQuerySystemTime | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIGetSystemTime > WindowsNtQuerySystemTime
+d3f:WindowsQueryPerformanceCounter | Windows QueryPerformanceCounter | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIGetSystemTime > WindowsQueryPerformanceCounter
+d3f:OSAPIGetThreadContext | OS API Get Thread Context | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIGetThreadContext
+d3f:WindowsGetThreadContext | Windows GetThreadContext | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIGetThreadContext > WindowsGetThreadContext
+d3f:WindowsNTGetThreadContext | Windows NtGetThreadContext | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIGetThreadContext > WindowsNTGetThreadContext
+d3f:OSAPILoadModule | OS API Load Module | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPILoadModule
+d3f:LinuxInitModule | Linux Init_Module | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPILoadModule > LinuxInitModule
+d3f:OSAPIMoveFile | OS API Move File | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIMoveFile
+d3f:LinuxRename | Linux Rename | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIMoveFile > LinuxRename
+d3f:LinuxRenameat | Linux Renameat | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIMoveFile > LinuxRenameat
+d3f:LinuxRenameat2 | Linux Renameat2 | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIMoveFile > LinuxRenameat2
+d3f:OSAPIOpenFile | OS API Open File | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIOpenFile
+d3f:LinuxOpenArgumentO_RDONLY-O_WRONLY-O_RDWR | Linux Open Argument O_RDONLY, O_WRONLY, O_RDWR | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIOpenFile > LinuxOpenArgumentO_RDONLY-O_WRONLY-O_RDWR
+d3f:LinuxOpenAt2ArgumentO_RDONLY-O_WRONLY-O_RDWR | Linux OpenAt2 Argument O_RDONLY, O_WRONLY, O_RDWR | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIOpenFile > LinuxOpenAt2ArgumentO_RDONLY-O_WRONLY-O_RDWR
+d3f:LinuxOpenAtArgumentO_RDONLY-O_WRONLY-O_RDWR | Linux OpenAt Argument O_RDONLY, O_WRONLY, O_RDWR | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIOpenFile > LinuxOpenAtArgumentO_RDONLY-O_WRONLY-O_RDWR
+d3f:WindowsNtOpenFile | Windows NtOpenFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIOpenFile > WindowsNtOpenFile
+d3f:OSAPIReadFile | OS API Read File | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadFile
+d3f:LinuxRead | Linux Read | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadFile > LinuxRead
+d3f:LinuxReadv | Linux Readv | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadFile > LinuxReadv
+d3f:WindowsNtReadFile | Windows NtReadFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadFile > WindowsNtReadFile
+d3f:WindowsNtReadFileScatter | Windows NtReadFileScatter | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadFile > WindowsNtReadFileScatter
+d3f:WindowsReadFile | Windows ReadFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadFile > WindowsReadFile
+d3f:OSAPIReadMemory | OS API Read Memory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadMemory
+d3f:LinuxPtraceArgumentPTRACEPEEKTEXT | Linux Ptrace Argument PTRACE_PEEKTEXT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIReadMemory > LinuxPtraceArgumentPTRACEPEEKTEXT
+d3f:OSAPIResumeProcess | OS API Resume Process | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIResumeProcess
+d3f:LinuxPtraceArgumentPTRACECONT | Linux Ptrace Argument PTRACE_CONT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIResumeProcess > LinuxPtraceArgumentPTRACECONT
+d3f:LinuxPtraceArgumentPTRACE_DETACH | Linux Ptrace Argument PTRACE_DETACH | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIResumeProcess > LinuxPtraceArgumentPTRACE_DETACH
+d3f:OSAPIResumeThread | OS API Resume Thread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIResumeThread
+d3f:WindowsNtResumeThread | Windows NtResumeThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIResumeThread > WindowsNtResumeThread
+d3f:WindowsResumeThread | Windows ResumeThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIResumeThread > WindowsResumeThread
+d3f:OSAPISaveRegisters | OS API Save Registers | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISaveRegisters
+d3f:LinuxPtraceArgumentPTRACEGETREGS | Linux Ptrace Argument PTRACE_GETREGS | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISaveRegisters > LinuxPtraceArgumentPTRACEGETREGS
+d3f:OSAPISetRegisters | OS API Set Registers | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISetRegisters
+d3f:LinuxPtraceArgumentPTRACESETREGS | Linux Ptrace Argument PTRACE_SETREGS | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISetRegisters > LinuxPtraceArgumentPTRACESETREGS
+d3f:OSAPISetThreadContext | OS API Set Thread Context | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISetThreadContext
+d3f:WindowsNtSetThreadContext | Windows NtSetThreadContext | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISetThreadContext > WindowsNtSetThreadContext
+d3f:WindowsSetThreadContext | Windows SetThreadContext | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISetThreadContext > WindowsSetThreadContext
+d3f:OSAPISuspendProcess | OS API Suspend Process | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendProcess
+d3f:LinuxPauseProcess | Linux Pause Process | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendProcess > LinuxPauseProcess
+d3f:LinuxPtraceArgumentPTRACEINTERRUPT | Linux Ptrace Argument PTRACE_INTERRUPT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendProcess > LinuxPtraceArgumentPTRACEINTERRUPT
+d3f:WindowsNtSuspendProcess | Windows NtSuspendProcess | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendProcess > WindowsNtSuspendProcess
+d3f:OSAPISuspendThread | OS API Suspend Thread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendThread
+d3f:LinuxPauseThread | Linux Pause Thread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendThread > LinuxPauseThread
+d3f:WindowsNtSuspendThread | Windows NtSuspendThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendThread > WindowsNtSuspendThread
+d3f:WindowsSuspendThread | Windows SuspendThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPISuspendThread > WindowsSuspendThread
+d3f:OSAPITerminateProcess | OS API Terminate Process | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITerminateProcess
+d3f:LinuxKillArgumentSIGKILL | Linux Kill Argument SIGKILL | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITerminateProcess > LinuxKillArgumentSIGKILL
+d3f:Linux_Exit | Linux _Exit | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITerminateProcess > Linux_Exit
+d3f:WindowsNtTerminateProcess | Windows NtTerminateProcess | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITerminateProcess > WindowsNtTerminateProcess
+d3f:WindowsTerminateProcess | Windows TerminateProcess | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITerminateProcess > WindowsTerminateProcess
+d3f:OSAPITraceProcess | OS API Trace Process | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITraceProcess
+d3f:LinuxPtraceArgumentPTRACE_TRACEME | Linux Ptrace Argument PTRACE_TRACEME | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITraceProcess > LinuxPtraceArgumentPTRACE_TRACEME
+d3f:WindowsNtOpenProcess | Windows NtOpenProcess | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITraceProcess > WindowsNtOpenProcess
+d3f:WindowsOpenProcess | Windows OpenProcess | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITraceProcess > WindowsOpenProcess
+d3f:OSAPITraceThread | OS API Trace Thread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITraceThread
+d3f:WindowsNtOpenThread | Windows NtOpenThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITraceThread > WindowsNtOpenThread
+d3f:WindowsOpenThread | Windows OpenThread | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPITraceThread > WindowsOpenThread
+d3f:OSAPIUnloadModule | OS API Unload Module | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIUnloadModule
+d3f:LinuxDeleteModule | Linux Delete Module | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIUnloadModule > LinuxDeleteModule
+d3f:OSAPIWriteFile | OS API Write File | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteFile
+d3f:LinuxWrite | Linux Write | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteFile > LinuxWrite
+d3f:LinuxWritev | Linux Writev | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteFile > LinuxWritev
+d3f:WindowsNtWriteFile | Windows NtWriteFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteFile > WindowsNtWriteFile
+d3f:WindowsNtWriteFileGather | Windows NtWriteFileGather | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteFile > WindowsNtWriteFileGather
+d3f:WindowsWriteFile | Windows WriteFile | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteFile > WindowsWriteFile
+d3f:OSAPIWriteMemory | OS API Write Memory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteMemory
+d3f:LinuxPtraceArgumentPTRACEPOKETEXT | Linux Ptrace Argument PTRACE_POKETEXT | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteMemory > LinuxPtraceArgumentPTRACEPOKETEXT
+d3f:WindowsNtFlushInstructionCache | Windows NtFlushInstructionCache | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteMemory > WindowsNtFlushInstructionCache
+d3f:WindowsNtWriteVirtualMemory | Windows NtWriteVirtualMemory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteMemory > WindowsNtWriteVirtualMemory
+d3f:WindowsWriteProcessMemory | Windows WriteProcessMemory | Artifact > DigitalArtifact > DigitalInformation > Software > OSAPIFunction > OSAPISystemFunction > OSAPIWriteMemory > WindowsWriteProcessMemory
+d3f:Shim | Shim | Artifact > DigitalArtifact > DigitalInformation > Software > Shim
+d3f:ApplicationShim | Application Shim | Artifact > DigitalArtifact > DigitalInformation > Software > Shim > ApplicationShim
+d3f:SoftwareLibrary | Software Library | Artifact > DigitalArtifact > DigitalInformation > Software > SoftwareLibrary
+d3f:CodecLibrary | Codec Library | Artifact > DigitalArtifact > DigitalInformation > Software > SoftwareLibrary > CodecLibrary
+d3f:SoftwarePatch | Software Patch | Artifact > DigitalArtifact > DigitalInformation > Software > SoftwarePatch
+d3f:Subroutine | Subroutine | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine
+d3f:AuthenticationFunction | Authentication Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > AuthenticationFunction
+d3f:ConsoleOutputFunction | Console Output Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > ConsoleOutputFunction
+d3f:CopyMemoryFunction | Copy Memory Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > CopyMemoryFunction
+d3f:DeserializationFunction | Deserialization Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > DeserializationFunction
+d3f:EvalFunction | Eval Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > EvalFunction
+d3f:ExceptionHandler | Exception Handler | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > ExceptionHandler
+d3f:ExternalContentInclusionFunction | External Content Inclusion Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > ExternalContentInclusionFunction
+d3f:FilePathOpenFunction | File Path Open Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > FilePathOpenFunction
+d3f:ImportLibraryFunction | Import Library Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > ImportLibraryFunction
+d3f:InputFunction | Input Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > InputFunction
+d3f:UserInputFunction | User Input Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > InputFunction > UserInputFunction
+d3f:LogMessageFunction | Log Message Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > LogMessageFunction
+d3f:MathematicalFunction | Mathematical Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > MathematicalFunction
+d3f:MemoryAllocationFunction | Memory Allocation Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > MemoryAllocationFunction
+d3f:MemoryFreeFunction | Memory Free Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > MemoryFreeFunction
+d3f:OTControlFunction | OT Control Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > OTControlFunction
+d3f:PointerDereferencingFunction | Pointer Dereferencing Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > PointerDereferencingFunction
+d3f:ProcessStartFunction | Process Start Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > ProcessStartFunction
+d3f:RawMemoryAccessFunction | Raw Memory Access Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > RawMemoryAccessFunction
+d3f:SerializationFunction | Serialization Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > SerializationFunction
+d3f:SharedResourceAccessFunction | Shared Resource Access Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > SharedResourceAccessFunction
+d3f:StoredProcedure | Stored Procedure | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > StoredProcedure
+d3f:StringFormatFunction | String Format Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > StringFormatFunction
+d3f:ThreadStartFunction | Thread Start Function | Artifact > DigitalArtifact > DigitalInformation > Software > Subroutine > ThreadStartFunction
+d3f:SystemServiceSoftware | System Service Software | Artifact > DigitalArtifact > DigitalInformation > Software > SystemServiceSoftware
+d3f:JobSchedulerSoftware | Job Scheduler Software | Artifact > DigitalArtifact > DigitalInformation > Software > SystemServiceSoftware > JobSchedulerSoftware
+d3f:SystemSoftware | System Software | Artifact > DigitalArtifact > DigitalInformation > Software > SystemSoftware
+d3f:Host-basedFirewall | Host-based Firewall | Artifact > DigitalArtifact > DigitalInformation > Software > SystemSoftware > Host-basedFirewall
+d3f:Kernel | Kernel | Artifact > DigitalArtifact > DigitalInformation > Software > SystemSoftware > Kernel
+d3f:UtilitySoftware | Utility Software | Artifact > DigitalArtifact > DigitalInformation > Software > UtilitySoftware
+d3f:SystemTimeApplication | System Time Application | Artifact > DigitalArtifact > DigitalInformation > Software > UtilitySoftware > SystemTimeApplication
+d3f:DigitalInformationBearer | Digital Information Bearer | Artifact > DigitalArtifact > DigitalInformationBearer
+d3f:AccessMediator | Access Mediator | Artifact > DigitalArtifact > DigitalInformationBearer > AccessMediator
+d3f:AddressSpace | Address Space | Artifact > DigitalArtifact > DigitalInformationBearer > AddressSpace
+d3f:MemoryAddressSpace | Memory Address Space | Artifact > DigitalArtifact > DigitalInformationBearer > AddressSpace > MemoryAddressSpace
+d3f:VirtualMemorySpace | Virtual Memory Space | Artifact > DigitalArtifact > DigitalInformationBearer > AddressSpace > MemoryAddressSpace > VirtualMemorySpace
+d3f:BinaryLargeObject | Binary Large Object | Artifact > DigitalArtifact > DigitalInformationBearer > BinaryLargeObject
+d3f:JavaScriptBlob | JavaScript Blob | Artifact > DigitalArtifact > DigitalInformationBearer > BinaryLargeObject > JavaScriptBlob
+d3f:BinarySegment | Binary Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment
+d3f:ImageSegment | Image Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ImageSegment
+d3f:ImageCodeSegment | Image Code Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ImageSegment > ImageCodeSegment
+d3f:ImageDataSegment | Image Data Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ImageSegment > ImageDataSegment
+d3f:ProcessSegment | Process Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ProcessSegment
+d3f:HeapSegment | Heap Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ProcessSegment > HeapSegment
+d3f:ProcessCodeSegment | Process Code Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ProcessSegment > ProcessCodeSegment
+d3f:ProcessDataSegment | Process Data Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ProcessSegment > ProcessDataSegment
+d3f:StackSegment | Stack Segment | Artifact > DigitalArtifact > DigitalInformationBearer > BinarySegment > ProcessSegment > StackSegment
+d3f:BlockDevice | Block Device | Artifact > DigitalArtifact > DigitalInformationBearer > BlockDevice
+d3f:BusNetworkTraffic | Bus Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > BusNetworkTraffic
+d3f:CallStack | Call Stack | Artifact > DigitalArtifact > DigitalInformationBearer > CallStack
+d3f:Certificate | Certificate | Artifact > DigitalArtifact > DigitalInformationBearer > Certificate
+d3f:Clipboard | Clipboard | Artifact > DigitalArtifact > DigitalInformationBearer > Clipboard
+d3f:Clock | Clock | Artifact > DigitalArtifact > DigitalInformationBearer > Clock
+d3f:HardwareClock | Hardware Clock | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > HardwareClock
+d3f:AtomicClock | Atomic Clock | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > HardwareClock > AtomicClock
+d3f:Real-timeClock | Real-time Clock | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > HardwareClock > Real-timeClock
+d3f:SoftwareClock | Software Clock | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > SoftwareClock
+d3f:OperatingSystemClock | Operating System Clock | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > SoftwareClock > OperatingSystemClock
+d3f:Timer | Timer | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > Timer
+d3f:SoftwareTimer | Software Timer | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > Timer > SoftwareTimer
+d3f:WatchdogTimer | Watchdog Timer | Artifact > DigitalArtifact > DigitalInformationBearer > Clock > Timer > WatchdogTimer
+d3f:ComputerPlatform | Computer Platform | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform
+d3f:ComputerNetworkNode | Computer Network Node | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode
+d3f:Firewall | Firewall | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Firewall
+d3f:ApplicationLayerFirewall | Application Layer Firewall | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Firewall > ApplicationLayerFirewall
+d3f:WebApplicationFirewall | Web Application Firewall | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Firewall > ApplicationLayerFirewall > WebApplicationFirewall
+d3f:Host | Host | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host
+d3f:BusNetworkNode | Bus Network Node | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > BusNetworkNode
+d3f:ClientComputer | Client Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer
+d3f:EmbeddedComputer | Embedded Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer
+d3f:OTEmbeddedComputer | OT Embedded Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer
+d3f:OTController | OT Controller | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > OTController
+d3f:ControlServer | Control Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > OTController > ControlServer
+d3f:OTHumanMachineInterface | OT Human Machine Interface | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > OTHumanMachineInterface
+d3f:Software-definedRadioComputer | Software-defined Radio Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > Software-definedRadioComputer
+d3f:VehicleComputer | Vehicle Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > VehicleComputer
+d3f:AircraftComputer | Aircraft Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > VehicleComputer > AircraftComputer
+d3f:AutomotiveElectronicControlUnit | Automotive Electronic Control Unit | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > VehicleComputer > AutomotiveElectronicControlUnit
+d3f:SpacecraftComputer | Spacecraft Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > EmbeddedComputer > OTEmbeddedComputer > VehicleComputer > SpacecraftComputer
+d3f:OTEngineeringWorkstation | OT Engineering Workstation | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > OTEngineeringWorkstation
+d3f:PersonalComputer | Personal Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > PersonalComputer
+d3f:DesktopComputer | Desktop Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > PersonalComputer > DesktopComputer
+d3f:IPPhone | IP Phone | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > PersonalComputer > IPPhone
+d3f:LaptopComputer | Laptop Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > PersonalComputer > LaptopComputer
+d3f:MobilePhone | Mobile Phone | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > PersonalComputer > MobilePhone
+d3f:TabletComputer | Tablet Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > PersonalComputer > TabletComputer
+d3f:SharedComputer | Shared Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > SharedComputer
+d3f:KioskComputer | Kiosk Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > SharedComputer > KioskComputer
+d3f:NetworkPrinter | Network Printer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > SharedComputer > NetworkPrinter
+d3f:OperationsCenterComputer | Operations Center Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > SharedComputer > OperationsCenterComputer
+d3f:ThinClientComputer | Thin Client Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > SharedComputer > ThinClientComputer
+d3f:ZeroClientComputer | Zero Client Computer | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > ClientComputer > SharedComputer > ThinClientComputer > ZeroClientComputer
+d3f:Server | Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server
+d3f:AuthenticationServer | Authentication Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > AuthenticationServer
+d3f:ComputingServer | Computing Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > ComputingServer
+d3f:DHCPServer | DHCP Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > DHCPServer
+d3f:DNSServer | DNS Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > DNSServer
+d3f:DatabaseServer | Database Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > DatabaseServer
+d3f:FileServer | File Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > FileServer
+d3f:MailServer | Mail Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > MailServer
+d3f:MediaServer | Media Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > MediaServer
+d3f:NetworkTimeServer | Network Time Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > NetworkTimeServer
+d3f:OrchestrationServer | Orchestration Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > OrchestrationServer
+d3f:OrchestrationController | Orchestration Controller | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > OrchestrationServer > OrchestrationController
+d3f:OrchestrationWorker | Orchestration Worker | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > OrchestrationServer > OrchestrationWorker
+d3f:PrintServer | Print Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > PrintServer
+d3f:TFTPServer | TFTP Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > TFTPServer
+d3f:VPNServer | VPN Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > VPNServer
+d3f:WebServer | Web Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > WebServer
+d3f:ArtifactServer | Artifact Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > WebServer > ArtifactServer
+d3f:DataArtifactServer | Data Artifact Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > WebServer > ArtifactServer > DataArtifactServer
+d3f:SoftwareArtifactServer | Software Artifact Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > WebServer > ArtifactServer > SoftwareArtifactServer
+d3f:WebApplicationServer | Web Application Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Host > Server > WebServer > WebApplicationServer
+d3f:Modem | Modem | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Modem
+d3f:DialUpModem | Dial Up Modem | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Modem > DialUpModem
+d3f:OpticalModem | Optical Modem | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Modem > OpticalModem
+d3f:RadioModem | Radio Modem | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Modem > RadioModem
+d3f:ProxyServer | Proxy Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > ProxyServer
+d3f:ForwardProxyServer | Forward Proxy Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > ProxyServer > ForwardProxyServer
+d3f:ReverseProxyServer | Reverse Proxy Server | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > ProxyServer > ReverseProxyServer
+d3f:Router | Router | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Router
+d3f:WirelessRouter | Wireless Router | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Router > WirelessRouter
+d3f:Switch | Switch | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > Switch
+d3f:WirelessAccessPoint | Wireless Access Point | Artifact > DigitalArtifact > DigitalInformationBearer > ComputerPlatform > ComputerNetworkNode > WirelessAccessPoint
+d3f:ComputingImage | Computing Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage
+d3f:ContainerImage | Container Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage > ContainerImage
+d3f:ProcessImage | Process Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage > ProcessImage
+d3f:StorageImage | Storage Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage > StorageImage
+d3f:DiskImage | Disk Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage > StorageImage > DiskImage
+d3f:OpticalDiscImage | Optical Disc Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage > StorageImage > DiskImage > OpticalDiscImage
+d3f:SystemStateImage | System State Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage > StorageImage > SystemStateImage
+d3f:VMImage | Virtual Machine Image | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingImage > StorageImage > VMImage
+d3f:ComputingSnapshot | Computing Snapshot | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingSnapshot
+d3f:StorageSnapshot | Storage Snapshot | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingSnapshot > StorageSnapshot
+d3f:VolumeSnapshot | Volume Snapshot | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingSnapshot > StorageSnapshot > VolumeSnapshot
+d3f:DifferentialVolumeSnapshot | Differential Volume Snapshot | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingSnapshot > StorageSnapshot > VolumeSnapshot > DifferentialVolumeSnapshot
+d3f:FullVolumeSnapshot | Full Volume Snapshot | Artifact > DigitalArtifact > DigitalInformationBearer > ComputingSnapshot > StorageSnapshot > VolumeSnapshot > FullVolumeSnapshot
+d3f:ContentPolicy | Content Policy | Artifact > DigitalArtifact > DigitalInformationBearer > ContentPolicy
+d3f:Credential | Credential | Artifact > DigitalArtifact > DigitalInformationBearer > Credential
+d3f:AccessToken | Access Token | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > AccessToken
+d3f:KerberosTicket | Kerberos Ticket | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > AccessToken > KerberosTicket
+d3f:KerberosTicketGrantingServiceTicket | Kerberos Ticket Granting Service Ticket | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > AccessToken > KerberosTicket > KerberosTicketGrantingServiceTicket
+d3f:KerberosTicketGrantingTicket | Kerberos Ticket Granting Ticket | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > AccessToken > KerberosTicket > KerberosTicketGrantingTicket
+d3f:SessionToken | Session Token | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > AccessToken > SessionToken
+d3f:WebAccessToken | Web Access Token | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > AccessToken > SessionToken > WebAccessToken
+d3f:TicketGrantingTicket | Ticket Granting Ticket | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > AccessToken > TicketGrantingTicket
+d3f:DigitalAccessBadge | Digital Access Badge | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > DigitalAccessBadge
+d3f:EncryptedCredential | Encrypted Credential | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > EncryptedCredential
+d3f:EncryptedPassword | Encrypted Password | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > EncryptedCredential > EncryptedPassword
+d3f:Password | Password | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > Password
+d3f:SessionCookie | Session Cookie | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > SessionCookie
+d3f:WebIdentityToken | Web Identity Token | Artifact > DigitalArtifact > DigitalInformationBearer > Credential > WebIdentityToken
+d3f:DNSLookup | DNS Lookup | Artifact > DigitalArtifact > DigitalInformationBearer > DNSLookup
+d3f:InternetDNSLookup | Internet DNS Lookup | Artifact > DigitalArtifact > DigitalInformationBearer > DNSLookup > InternetDNSLookup
+d3f:IntranetDNSLookup | Intranet DNS Lookup | Artifact > DigitalArtifact > DigitalInformationBearer > DNSLookup > IntranetDNSLookup
+d3f:Database | Database | Artifact > DigitalArtifact > DigitalInformationBearer > Database
+d3f:CodeRepository | Code Repository | Artifact > DigitalArtifact > DigitalInformationBearer > Database > CodeRepository
+d3f:PasswordDatabase | Password Database | Artifact > DigitalArtifact > DigitalInformationBearer > Database > PasswordDatabase
+d3f:PasswordStore | Password Store | Artifact > DigitalArtifact > DigitalInformationBearer > Database > PasswordDatabase > PasswordStore
+d3f:In-memoryPasswordStore | In-memory Password Store | Artifact > DigitalArtifact > DigitalInformationBearer > Database > PasswordDatabase > PasswordStore > In-memoryPasswordStore
+d3f:MacOSKeychain | MacOS Keychain | Artifact > DigitalArtifact > DigitalInformationBearer > Database > PasswordDatabase > PasswordStore > MacOSKeychain
+d3f:SystemPasswordDatabase | System Password Database | Artifact > DigitalArtifact > DigitalInformationBearer > Database > PasswordDatabase > SystemPasswordDatabase
+d3f:SystemConfigurationDatabase | System Configuration Database | Artifact > DigitalArtifact > DigitalInformationBearer > Database > SystemConfigurationDatabase
+d3f:WindowsRegistry | Windows Registry | Artifact > DigitalArtifact > DigitalInformationBearer > Database > SystemConfigurationDatabase > WindowsRegistry
+d3f:TimeSeriesDatabase | Time Series Database | Artifact > DigitalArtifact > DigitalInformationBearer > Database > TimeSeriesDatabase
+d3f:DecoyArtifact | Decoy Artifact | Artifact > DigitalArtifact > DigitalInformationBearer > DecoyArtifact
+d3f:Dependency | Dependency | Artifact > DigitalArtifact > DigitalInformationBearer > Dependency
+d3f:ActivityDependency | Activity Dependency | Artifact > DigitalArtifact > DigitalInformationBearer > Dependency > ActivityDependency
+d3f:DataDependency | Data Dependency | Artifact > DigitalArtifact > DigitalInformationBearer > Dependency > DataDependency
+d3f:ServiceDependency | Service Dependency | Artifact > DigitalArtifact > DigitalInformationBearer > Dependency > ServiceDependency
+d3f:SystemDependency | System Dependency | Artifact > DigitalArtifact > DigitalInformationBearer > Dependency > SystemDependency
+d3f:DigitalMessage | Digital Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage
+d3f:BusMessage | Bus Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > BusMessage
+d3f:OTProtocolMessage | OT Protocol Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage
+d3f:OTDeviceManagementMessage | OT Device Management Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage
+d3f:OTDeviceConfigurationCommand | OT Device Configuration Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand
+d3f:OTModifyDeviceConfigurationCommand | OT Modify Device Configuration Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand
+d3f:OTModifyControlProgramCommand | OT Modify Control Program Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyControlProgramCommand
+d3f:OTChangeControlProgramCommand | OT Change Control Program Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyControlProgramCommand > OTChangeControlProgramCommand
+d3f:OTCreateNewControlProgramCommand | OT Create New Control Program Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyControlProgramCommand > OTCreateNewControlProgramCommand
+d3f:OTDeleteControlProgramCommand | OT Delete Control Program Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyControlProgramCommand > OTDeleteControlProgramCommand
+d3f:OTDownloadControlProgramCommand | OT Download Control Program Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyControlProgramCommand > OTDownloadControlProgramCommand
+d3f:OTModifyDeviceOperatingModeCommand | OT Modify Device Operating Mode Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand
+d3f:OTAbortCommand | OT Abort Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand > OTAbortCommand
+d3f:OTPauseCommand | OT Pause Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand > OTPauseCommand
+d3f:OTProgramModeCommand | OT Program Mode Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand > OTProgramModeCommand
+d3f:OTRemoteModeCommand | OT Remote Mode Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand > OTRemoteModeCommand
+d3f:OTRunCommand | OT Run Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand > OTRunCommand
+d3f:OTStopCommand | OT Stop Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand > OTStopCommand
+d3f:OTTestCommand | OT Test Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTModifyDeviceConfigurationCommand > OTModifyDeviceOperatingModeCommand > OTTestCommand
+d3f:OTReadDeviceConfigurationCommand | OT Read Device Configuration Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceConfigurationCommand > OTReadDeviceConfigurationCommand
+d3f:OTDeviceDescriptionMessage | OT Device Description Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceDescriptionMessage
+d3f:OTDeviceFirmwareCommand | OT Device Firmware Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceFirmwareCommand
+d3f:OTDeviceIdentificationMessage | OT Device Identification Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTDeviceIdentificationMessage
+d3f:OTTimeCommand | OT Time Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTTimeCommand
+d3f:OTReadTimeCommand | OT Read Time Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTTimeCommand > OTReadTimeCommand
+d3f:OTSetTimeCommand | OT Set Time Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTTimeCommand > OTSetTimeCommand
+d3f:OTSynchronizeTimeCommand | OT Synchronize Time Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDeviceManagementMessage > OTTimeCommand > OTSynchronizeTimeCommand
+d3f:OTDiagnosticsMessage | OT Diagnostics Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDiagnosticsMessage
+d3f:OTAlarmMessage | OT Alarm Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDiagnosticsMessage > OTAlarmMessage
+d3f:OTDebugCommand | OT Debug Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDiagnosticsMessage > OTDebugCommand
+d3f:OTErrorMessage | OT Error Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDiagnosticsMessage > OTErrorMessage
+d3f:OTExceptionMessage | OT Exception Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTDiagnosticsMessage > OTExceptionMessage
+d3f:OTNetworkManagementCommand | OT Network Management Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTNetworkManagementCommand
+d3f:OTConnectionCommand | OT Connection Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTNetworkManagementCommand > OTConnectionCommand
+d3f:OTDisconnectRemoteConnectionCommand | OT Disconnect Remote Connection Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTNetworkManagementCommand > OTConnectionCommand > OTDisconnectRemoteConnectionCommand
+d3f:OTEstablishRemoteConnectionCommand | OT Establish Remote Connection Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTNetworkManagementCommand > OTConnectionCommand > OTEstablishRemoteConnectionCommand
+d3f:OTSecurityCommand | OT Security Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTNetworkManagementCommand > OTSecurityCommand
+d3f:OTTransportConfigurationCommand | OT Transport Configuration Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTNetworkManagementCommand > OTTransportConfigurationCommand
+d3f:OTProcessDataCommand | OT Process Data Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand
+d3f:OTControlCommand | OT Control Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTControlCommand
+d3f:OTReadCommand | OT Read Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTReadCommand
+d3f:OTReadFileCommand | OT Read File Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTReadCommand > OTReadFileCommand
+d3f:OTReadValueCommand | OT Read Value Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTReadCommand > OTReadValueCommand
+d3f:OTWriteCommand | OT Write Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTWriteCommand
+d3f:OTChangeDataCommand | OT Change Data Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTWriteCommand > OTChangeDataCommand
+d3f:OTCreateDataCommand | OT Create Data Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTWriteCommand > OTCreateDataCommand
+d3f:OTDeleteDataCommand | OT Delete Data Command | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProcessDataCommand > OTWriteCommand > OTDeleteDataCommand
+d3f:OTProprietaryMessage | OT Proprietary Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > OTProtocolMessage > OTProprietaryMessage
+d3f:UserToUserMessage | User to User Message | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalMessage > UserToUserMessage
+d3f:DigitalSystem | Digital System | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalSystem
+d3f:LegacySystem | Legacy System | Artifact > DigitalArtifact > DigitalInformationBearer > DigitalSystem > LegacySystem
+d3f:Directory | Directory | Artifact > DigitalArtifact > DigitalInformationBearer > Directory
+d3f:StartupDirectory | Startup Directory | Artifact > DigitalArtifact > DigitalInformationBearer > Directory > StartupDirectory
+d3f:SystemStartupDirectory | System Startup Directory | Artifact > DigitalArtifact > DigitalInformationBearer > Directory > SystemStartupDirectory
+d3f:DisplayServer | Display Server | Artifact > DigitalArtifact > DigitalInformationBearer > DisplayServer
+d3f:Enclave | Enclave | Artifact > DigitalArtifact > DigitalInformationBearer > Enclave
+d3f:FileSection | File Section | Artifact > DigitalArtifact > DigitalInformationBearer > FileSection
+d3f:FileContentBlock | File Content Block | Artifact > DigitalArtifact > DigitalInformationBearer > FileSection > FileContentBlock
+d3f:FileFooterBlock | File Footer Block | Artifact > DigitalArtifact > DigitalInformationBearer > FileSection > FileFooterBlock
+d3f:FileHeaderBlock | File Header Block | Artifact > DigitalArtifact > DigitalInformationBearer > FileSection > FileHeaderBlock
+d3f:ResourceFork | Resource Fork | Artifact > DigitalArtifact > DigitalInformationBearer > FileSection > ResourceFork
+d3f:FileSystem | File System | Artifact > DigitalArtifact > DigitalInformationBearer > FileSystem
+d3f:FileSystemLink | File System Link | Artifact > DigitalArtifact > DigitalInformationBearer > FileSystemLink
+d3f:HardLink | Hard Link | Artifact > DigitalArtifact > DigitalInformationBearer > FileSystemLink > HardLink
+d3f:NTFSHardLink | NTFS Hard Link | Artifact > DigitalArtifact > DigitalInformationBearer > FileSystemLink > HardLink > NTFSHardLink
+d3f:UnixHardLink | Unix Hard Link | Artifact > DigitalArtifact > DigitalInformationBearer > FileSystemLink > HardLink > UnixHardLink
+d3f:UnixLink | Unix Link | Artifact > DigitalArtifact > DigitalInformationBearer > FileSystemLink > UnixLink
+d3f:HardwareDevice | Hardware Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice
+d3f:DataAcquisitionUnit | Data Acquisition Unit | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > DataAcquisitionUnit
+d3f:DigitalCamera | Digital Camera | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > DigitalCamera
+d3f:HardwareTimer | Hardware Timer | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > HardwareTimer
+d3f:HardwareWatchdogTimer | Hardware Watchdog Timer | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > HardwareTimer > HardwareWatchdogTimer
+d3f:IOModule | I/O Module | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > IOModule
+d3f:OTIOModule | OT I/O Module | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > IOModule > OTIOModule
+d3f:InputDevice | Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice
+d3f:AudioInputDevice | Audio Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice > AudioInputDevice
+d3f:KeyboardInputDevice | Keyboard Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice > KeyboardInputDevice
+d3f:MouseInputDevice | Mouse Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice > MouseInputDevice
+d3f:VideoInputDevice | Video Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice > VideoInputDevice
+d3f:ImageScannerInputDevice | Image Scanner Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice > VideoInputDevice > ImageScannerInputDevice
+d3f:BarcodeScannerInputDevice | Barcode Scanner Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice > VideoInputDevice > ImageScannerInputDevice > BarcodeScannerInputDevice
+d3f:FingerPrintScannerInputDevice | Finger Print Scanner Input Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > InputDevice > VideoInputDevice > ImageScannerInputDevice > FingerPrintScannerInputDevice
+d3f:MemoryManagementUnitComponent | Memory Management Unit Component | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > MemoryManagementUnitComponent
+d3f:TranslationLookasideBuffer | Translation Lookaside Buffer | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > MemoryManagementUnitComponent > TranslationLookasideBuffer
+d3f:MotionDetector | Motion Detector | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > MotionDetector
+d3f:NetworkInterfaceCard | Network Interface Card | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > NetworkInterfaceCard
+d3f:OTSensor | OT Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > OTSensor
+d3f:OutputDevice | Output Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > OutputDevice
+d3f:Actuator | Actuator | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > OutputDevice > Actuator
+d3f:OTActuator | OT Actuator | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > OutputDevice > Actuator > OTActuator
+d3f:DisplayAdapter | Display Adapter | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > OutputDevice > DisplayAdapter
+d3f:PhysicalDataDiode | Physical Data Diode | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PhysicalDataDiode
+d3f:PowerSupply | Power Supply | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PowerSupply
+d3f:OTPowerSupply | OT Power Supply | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PowerSupply > OTPowerSupply
+d3f:PrimaryStorage | Primary Storage | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PrimaryStorage
+d3f:CacheMemory | Processor Cache Memory | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PrimaryStorage > CacheMemory
+d3f:ProcessorRegister | Processor Register | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PrimaryStorage > ProcessorRegister
+d3f:RAM | RAM | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PrimaryStorage > RAM
+d3f:ROM | ROM | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PrimaryStorage > ROM
+d3f:BootROM | Boot ROM | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > PrimaryStorage > ROM > BootROM
+d3f:Processor | Processor | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Processor
+d3f:CentralProcessingUnit | Central Processing Unit | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Processor > CentralProcessingUnit
+d3f:GraphicsProcessingUnit | Graphics Processing Unit | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Processor > GraphicsProcessingUnit
+d3f:ProcessorComponent | Processor Component | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > ProcessorComponent
+d3f:MemoryManagementUnit | Memory Management Unit | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > ProcessorComponent > MemoryManagementUnit
+d3f:MemoryProtectionUnit | Memory Protection Unit | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > ProcessorComponent > MemoryProtectionUnit
+d3f:ProximitySensor | Proximity Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > ProximitySensor
+d3f:Receiver | Receiver | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Receiver
+d3f:GNSSReceiver | GNSS Receiver | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Receiver > GNSSReceiver
+d3f:RemovableMediaDevice | Removable Media Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > RemovableMediaDevice
+d3f:SecondaryStorage | Secondary Storage | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > SecondaryStorage
+d3f:CloudStorage | Cloud Storage | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > SecondaryStorage > CloudStorage
+d3f:FlashMemory | Flash Memory | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > SecondaryStorage > FlashMemory
+d3f:SecurityToken | Security Token | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > SecurityToken
+d3f:Software-definedRadio | Software-defined Radio | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Software-definedRadio
+d3f:Software-definedRadioDevice | Software-defined Radio Device | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Software-definedRadio > Software-definedRadioDevice
+d3f:TertiaryStorage | Tertiary Storage | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > TertiaryStorage
+d3f:Transceiver | Transceiver | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Transceiver
+d3f:Transmitter | Transmitter | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Transmitter
+d3f:Transponder | Transponder | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Transponder
+d3f:SatelliteTransponder | Satellite Transponder | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > Transponder > SatelliteTransponder
+d3f:WriteProtectSwitch | Write Protect Switch | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDevice > WriteProtectSwitch
+d3f:HardwareDriver | Hardware Driver | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDriver
+d3f:DisplayDeviceDriver | Display Device Driver | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDriver > DisplayDeviceDriver
+d3f:HardwareClockDeviceDriver | Hardware Clock Device Driver | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDriver > HardwareClockDeviceDriver
+d3f:HardwareTimerDeviceDriver | Hardware Timer Device Driver | Artifact > DigitalArtifact > DigitalInformationBearer > HardwareDriver > HardwareTimerDeviceDriver
+d3f:InternetPersona | Internet Persona | Artifact > DigitalArtifact > DigitalInformationBearer > InternetPersona
+d3f:InterprocessCommunication | Interprocess Communication | Artifact > DigitalArtifact > DigitalInformationBearer > InterprocessCommunication
+d3f:IntrusionDetectionSystem | Intrusion Detection System | Artifact > DigitalArtifact > DigitalInformationBearer > IntrusionDetectionSystem
+d3f:IntrusionPreventionSystem | Intrusion Prevention System | Artifact > DigitalArtifact > DigitalInformationBearer > IntrusionDetectionSystem > IntrusionPreventionSystem
+d3f:KernelProcessTable | Kernel Process Table | Artifact > DigitalArtifact > DigitalInformationBearer > KernelProcessTable
+d3f:Link | Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link
+d3f:LogicalLink | Logical Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > LogicalLink
+d3f:ApplicationLayerLink | Application Layer Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > LogicalLink > ApplicationLayerLink
+d3f:DataLinkLink | Data Link Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > LogicalLink > DataLinkLink
+d3f:NetworkLink | Network Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > LogicalLink > NetworkLink
+d3f:TransportLink | Transport Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > LogicalLink > TransportLink
+d3f:PhysicalLink | Physical Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > PhysicalLink
+d3f:WiredLink | Wired Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > PhysicalLink > WiredLink
+d3f:WirelessLink | Wireless Link | Artifact > DigitalArtifact > DigitalInformationBearer > Link > PhysicalLink > WirelessLink
+d3f:Log | Log | Artifact > DigitalArtifact > DigitalInformationBearer > Log
+d3f:EventLog | Event Log | Artifact > DigitalArtifact > DigitalInformationBearer > Log > EventLog
+d3f:AuthenticationLog | Authentication Log | Artifact > DigitalArtifact > DigitalInformationBearer > Log > EventLog > AuthenticationLog
+d3f:AuthorizationLog | Authorization Log | Artifact > DigitalArtifact > DigitalInformationBearer > Log > EventLog > AuthorizationLog
+d3f:CommandHistoryLog | Command History Log | Artifact > DigitalArtifact > DigitalInformationBearer > Log > EventLog > CommandHistoryLog
+d3f:PacketLog | Packet Log | Artifact > DigitalArtifact > DigitalInformationBearer > Log > PacketLog
+d3f:Network | Network | Artifact > DigitalArtifact > DigitalInformationBearer > Network
+d3f:BusNetwork | Bus Network | Artifact > DigitalArtifact > DigitalInformationBearer > Network > BusNetwork
+d3f:InternetNetwork | Internet Network | Artifact > DigitalArtifact > DigitalInformationBearer > Network > InternetNetwork
+d3f:IntranetNetwork | Intranet Network | Artifact > DigitalArtifact > DigitalInformationBearer > Network > IntranetNetwork
+d3f:OTNetwork | OT Network | Artifact > DigitalArtifact > DigitalInformationBearer > Network > IntranetNetwork > OTNetwork
+d3f:LocalAreaNetwork | Local Area Network | Artifact > DigitalArtifact > DigitalInformationBearer > Network > LocalAreaNetwork
+d3f:WideAreaNetwork | Wide Area Network | Artifact > DigitalArtifact > DigitalInformationBearer > Network > WideAreaNetwork
+d3f:NetworkFrame | Network Frame | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkFrame
+d3f:BusNetworkFrame | Bus Network Frame | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkFrame > BusNetworkFrame
+d3f:NetworkNode | Network Node | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkNode
+d3f:NetworkPacket | Network Packet | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkPacket
+d3f:NetworkTraffic | Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic
+d3f:AdministrativeNetworkTraffic | Administrative Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > AdministrativeNetworkTraffic
+d3f:IntranetAdministrativeNetworkTraffic | Intranet Administrative Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > AdministrativeNetworkTraffic > IntranetAdministrativeNetworkTraffic
+d3f:DHCPNetworkTraffic | DHCP Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > DHCPNetworkTraffic
+d3f:DNSNetworkTraffic | DNS Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > DNSNetworkTraffic
+d3f:OutboundInternetDNSLookupTraffic | Outbound Internet DNS Lookup Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > DNSNetworkTraffic > OutboundInternetDNSLookupTraffic
+d3f:FileTransferNetworkTraffic | File Transfer Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > FileTransferNetworkTraffic
+d3f:InternetFileTransferTraffic | Internet File Transfer Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > FileTransferNetworkTraffic > InternetFileTransferTraffic
+d3f:IntranetFileTransferTraffic | Intranet File Transfer Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > FileTransferNetworkTraffic > IntranetFileTransferTraffic
+d3f:OutboundInternetFileTransferTraffic | Outbound Internet File Transfer Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > FileTransferNetworkTraffic > OutboundInternetFileTransferTraffic
+d3f:IPCNetworkTraffic | IPC Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > IPCNetworkTraffic
+d3f:IntranetIPCNetworkTraffic | Intranet IPC Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > IPCNetworkTraffic > IntranetIPCNetworkTraffic
+d3f:InboundNetworkTraffic | Inbound Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InboundNetworkTraffic
+d3f:InboundInternetNetworkTraffic | Inbound Internet Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InboundNetworkTraffic > InboundInternetNetworkTraffic
+d3f:InboundInternetDNSResponseTraffic | Inbound Internet DNS Response Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InboundNetworkTraffic > InboundInternetNetworkTraffic > InboundInternetDNSResponseTraffic
+d3f:InboundInternetEncryptedTraffic | Inbound Internet Encrypted Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InboundNetworkTraffic > InboundInternetNetworkTraffic > InboundInternetEncryptedTraffic
+d3f:InboundInternetEncryptedWebTraffic | Inbound Internet Encrypted Web Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InboundNetworkTraffic > InboundInternetNetworkTraffic > InboundInternetEncryptedTraffic > InboundInternetEncryptedWebTraffic
+d3f:InboundInternetMailTraffic | Inbound Internet Mail Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InboundNetworkTraffic > InboundInternetNetworkTraffic > InboundInternetMailTraffic
+d3f:InboundInternetWebTraffic | Inbound Internet Web Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InboundNetworkTraffic > InboundInternetNetworkTraffic > InboundInternetWebTraffic
+d3f:InternetNetworkTraffic | Internet Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic
+d3f:OutboundInternetNetworkTraffic | Outbound Internet Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic > OutboundInternetNetworkTraffic
+d3f:OutboundInternetEncryptedTraffic | Outbound Internet Encrypted Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic > OutboundInternetNetworkTraffic > OutboundInternetEncryptedTraffic
+d3f:OutboundInternetEncryptedRemoteTerminalTraffic | Outbound Internet Encrypted Remote Terminal Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic > OutboundInternetNetworkTraffic > OutboundInternetEncryptedTraffic > OutboundInternetEncryptedRemoteTerminalTraffic
+d3f:OutboundInternetEncryptedWebTraffic | Outbound Internet Encrypted Web Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic > OutboundInternetNetworkTraffic > OutboundInternetEncryptedTraffic > OutboundInternetEncryptedWebTraffic
+d3f:OutboundInternetMailTraffic | Outbound Internet Mail Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic > OutboundInternetNetworkTraffic > OutboundInternetMailTraffic
+d3f:OutboundInternetRPCTraffic | Outbound Internet RPC Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic > OutboundInternetNetworkTraffic > OutboundInternetRPCTraffic
+d3f:OutboundInternetWebTraffic | Outbound Internet Web Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > InternetNetworkTraffic > OutboundInternetNetworkTraffic > OutboundInternetWebTraffic
+d3f:IntranetNetworkTraffic | Intranet Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > IntranetNetworkTraffic
+d3f:IntranetMulticastNetworkTraffic | Intranet Multicast Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > IntranetNetworkTraffic > IntranetMulticastNetworkTraffic
+d3f:IntranetRPCNetworkTraffic | Intranet RPC Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > IntranetNetworkTraffic > IntranetRPCNetworkTraffic
+d3f:IntranetWebNetworkTraffic | Intranet Web Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > IntranetNetworkTraffic > IntranetWebNetworkTraffic
+d3f:LocalAreaNetworkTraffic | Local Area Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > IntranetNetworkTraffic > LocalAreaNetworkTraffic
+d3f:MailNetworkTraffic | Mail Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > MailNetworkTraffic
+d3f:OTNetworkTraffic | OT Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > OTNetworkTraffic
+d3f:OutboundNetworkTraffic | Outbound Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > OutboundNetworkTraffic
+d3f:RPCNetworkTraffic | RPC Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > RPCNetworkTraffic
+d3f:TFTPNetworkTraffic | TFTP Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > TFTPNetworkTraffic
+d3f:WebNetworkTraffic | Web Network Traffic | Artifact > DigitalArtifact > DigitalInformationBearer > NetworkTraffic > WebNetworkTraffic
+d3f:OperatingSystem | Operating System | Artifact > DigitalArtifact > DigitalInformationBearer > OperatingSystem
+d3f:Real-timeOperatingSystem | Real-time Operating System | Artifact > DigitalArtifact > DigitalInformationBearer > OperatingSystem > Real-timeOperatingSystem
+d3f:PageTable | Page Table | Artifact > DigitalArtifact > DigitalInformationBearer > PageTable
+d3f:Partition | Partition | Artifact > DigitalArtifact > DigitalInformationBearer > Partition
+d3f:PartitionTable | Partition Table | Artifact > DigitalArtifact > DigitalInformationBearer > PartitionTable
+d3f:Pipe | Pipe | Artifact > DigitalArtifact > DigitalInformationBearer > Pipe
+d3f:AnonymousPipe | Anonymous Pipe | Artifact > DigitalArtifact > DigitalInformationBearer > Pipe > AnonymousPipe
+d3f:NamedPipe | Named Pipe | Artifact > DigitalArtifact > DigitalInformationBearer > Pipe > NamedPipe
+d3f:Process | Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process
+d3f:ChildProcess | Child Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > ChildProcess
+d3f:HMIApplicationProcess | HMI Application Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > HMIApplicationProcess
+d3f:OperatingSystemProcess | Operating System Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > OperatingSystemProcess
+d3f:ScheduledJob | Scheduled Job | Artifact > DigitalArtifact > DigitalInformationBearer > Process > OperatingSystemProcess > ScheduledJob
+d3f:SystemInitProcess | System Init Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > OperatingSystemProcess > SystemInitProcess
+d3f:ParentProcess | Parent Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > ParentProcess
+d3f:UserProcess | User Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess
+d3f:ApplicationProcess | Application Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess
+d3f:ContainerProcess | Container Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ContainerProcess
+d3f:ScriptApplicationProcess | Script Application Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ScriptApplicationProcess
+d3f:ServiceApplicationProcess | Service Application Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess
+d3f:AuthenticationService | Authentication Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > AuthenticationService
+d3f:LocalAuthenticationService | Local Authentication Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > AuthenticationService > LocalAuthenticationService
+d3f:RemoteAuthenticationService | Remote Authentication Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > AuthenticationService > RemoteAuthenticationService
+d3f:DatabaseService | Database Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > DatabaseService
+d3f:NetworkServiceApplicationProcess | Network Service Application Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess
+d3f:AuthorizationService | Authorization Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > AuthorizationService
+d3f:LocalAuthorizationService | Local Authorization Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > AuthorizationService > LocalAuthorizationService
+d3f:RemoteAuthorizationService | Remote Authorization Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > AuthorizationService > RemoteAuthorizationService
+d3f:DHCPService | DHCP Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > DHCPService
+d3f:DirectoryService | Directory Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > DirectoryService
+d3f:FileShareService | File Share Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > FileShareService
+d3f:MailService | Mail Service | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > MailService
+d3f:MessageTransferAgent | Message Transfer Agent | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > NetworkServiceApplicationProcess > MailService > MessageTransferAgent
+d3f:OTControlLogicProcess | OT Control Logic Process | Artifact > DigitalArtifact > DigitalInformationBearer > Process > UserProcess > ApplicationProcess > ServiceApplicationProcess > OTControlLogicProcess
+d3f:ProcessTree | Process Tree | Artifact > DigitalArtifact > DigitalInformationBearer > ProcessTree
+d3f:Record | Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record
+d3f:BootRecord | Boot Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > BootRecord
+d3f:BootSector | Boot Sector | Artifact > DigitalArtifact > DigitalInformationBearer > Record > BootRecord > BootSector
+d3f:VolumeBootRecord | Volume Boot Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > BootRecord > VolumeBootRecord
+d3f:DNSRecord | DNS Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > DNSRecord
+d3f:DatabaseRecord | Database Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > DatabaseRecord
+d3f:DigitalEventRecord | Digital Event Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > DigitalEventRecord
+d3f:SystemUtilizationRecord | System Utilization Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > SystemUtilizationRecord
+d3f:TimeRecord | Time Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > TimeRecord
+d3f:GNSSTimeRecord | GNSS Time Record | Artifact > DigitalArtifact > DigitalInformationBearer > Record > TimeRecord > GNSSTimeRecord
+d3f:Repository | Repository | Artifact > DigitalArtifact > DigitalInformationBearer > Repository
+d3f:SoftwareRepository | Software Repository | Artifact > DigitalArtifact > DigitalInformationBearer > Repository > SoftwareRepository
+d3f:Resource | Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource
+d3f:ConfigurationResource | Configuration Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource
+d3f:AccessControlConfiguration | Access Control Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > AccessControlConfiguration
+d3f:AccessControlGroup | Access Control Group | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > AccessControlConfiguration > AccessControlGroup
+d3f:HostGroup | Host Group | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > AccessControlConfiguration > AccessControlGroup > HostGroup
+d3f:UserGroup | User Group | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > AccessControlConfiguration > AccessControlGroup > UserGroup
+d3f:AccessControlList | Access Control List | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > AccessControlConfiguration > AccessControlList
+d3f:GroupPolicy | Group Policy | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > AccessControlConfiguration > GroupPolicy
+d3f:ApplicationConfiguration | Application Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ApplicationConfiguration
+d3f:ApplicationConfigurationDatabaseRecord | Application Configuration Database Record | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ApplicationConfiguration > ApplicationConfigurationDatabaseRecord
+d3f:ApplicationProcessConfiguration | Application Process Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ApplicationConfiguration > ApplicationProcessConfiguration
+d3f:ApplicationRule | Application Rule | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ApplicationConfiguration > ApplicationRule
+d3f:EmailRule | Email Rule | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ApplicationConfiguration > ApplicationRule > EmailRule
+d3f:OTModeSwitch | OT Mode Switch | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ApplicationConfiguration > OTModeSwitch
+d3f:ProcessEnvironmentVariable | Process Environment Variable | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ApplicationConfiguration > ProcessEnvironmentVariable
+d3f:CloudConfiguration | Cloud Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > CloudConfiguration
+d3f:CloudInstanceMetadata | Cloud Instance Metadata | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > CloudConfiguration > CloudInstanceMetadata
+d3f:ConfigurationDatabase | Configuration Database | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabase
+d3f:ApplicationConfigurationDatabase | Application Configuration Database | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabase > ApplicationConfigurationDatabase
+d3f:ShimDatabase | Shim Database | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabase > ApplicationConfigurationDatabase > ShimDatabase
+d3f:ConfigurationManagementDatabase | Configuration Management Database | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabase > ConfigurationManagementDatabase
+d3f:ConfigurationDatabaseRecord | Configuration Database Record | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabaseRecord
+d3f:SystemConfigurationDatabaseRecord | System Configuration Database Record | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabaseRecord > SystemConfigurationDatabaseRecord
+d3f:SystemConfigurationInitDatabaseRecord | System Configuration Init Database Record | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabaseRecord > SystemConfigurationDatabaseRecord > SystemConfigurationInitDatabaseRecord
+d3f:WindowsRegistryKey | Windows Registry Key | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabaseRecord > SystemConfigurationDatabaseRecord > WindowsRegistryKey
+d3f:WindowsRegistryValue | Windows Registry Value | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > ConfigurationDatabaseRecord > SystemConfigurationDatabaseRecord > WindowsRegistryValue
+d3f:HardwareDeviceConfiguration | Hardware Device Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > HardwareDeviceConfiguration
+d3f:Software-definedRadioConfiguration | Software-defined Radio Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > HardwareDeviceConfiguration > Software-definedRadioConfiguration
+d3f:OperatingSystemConfiguration | Operating System Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > OperatingSystemConfiguration
+d3f:OperatingSystemConfigurationComponent | Operating System Configuration Component | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > OperatingSystemConfiguration > OperatingSystemConfigurationComponent
+d3f:SystemFirewallConfiguration | System Firewall Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > OperatingSystemConfiguration > OperatingSystemConfigurationComponent > SystemFirewallConfiguration
+d3f:SystemInitConfiguration | System Init Configuration | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > ConfigurationResource > OperatingSystemConfiguration > OperatingSystemConfigurationComponent > SystemInitConfiguration
+d3f:File | File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File
+d3f:ArchiveFile | Archive File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ArchiveFile
+d3f:CustomArchiveFile | Custom Archive File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ArchiveFile > CustomArchiveFile
+d3f:JavaArchive | Java Archive | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ArchiveFile > JavaArchive
+d3f:CertificateFile | Certificate File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > CertificateFile
+d3f:CACertificateFile | CA Certificate File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > CertificateFile > CACertificateFile
+d3f:ConfigurationFile | Configuration File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ConfigurationFile
+d3f:ApplicationConfigurationFile | Application Configuration File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ConfigurationFile > ApplicationConfigurationFile
+d3f:CompilerConfigurationFile | Compiler Configuration File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ConfigurationFile > ApplicationConfigurationFile > CompilerConfigurationFile
+d3f:FPGABitstream | FPGA Bitstream | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ConfigurationFile > ApplicationConfigurationFile > FPGABitstream
+d3f:OperatingSystemConfigurationFile | Operating System Configuration File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ConfigurationFile > OperatingSystemConfigurationFile
+d3f:PropertyListFile | Property List File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ConfigurationFile > PropertyListFile
+d3f:UserInitConfigurationFile | User Init Configuration File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ConfigurationFile > UserInitConfigurationFile
+d3f:DatabaseFile | Database File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DatabaseFile
+d3f:DocumentFile | Document File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DocumentFile
+d3f:Email | Email | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DocumentFile > Email
+d3f:EmailAttachment | Email Attachment | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DocumentFile > EmailAttachment
+d3f:HTMLFile | HTML File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DocumentFile > HTMLFile
+d3f:MicrosoftHTMLApplication | Microsoft HTML Application | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DocumentFile > HTMLFile > MicrosoftHTMLApplication
+d3f:MultimediaDocumentFile | Multimedia Document File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DocumentFile > MultimediaDocumentFile
+d3f:OfficeApplicationFile | Office Application File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > DocumentFile > OfficeApplicationFile
+d3f:ExecutableFile | Executable File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile
+d3f:ExecutableBinary | Executable Binary | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableBinary
+d3f:ExecutableScript | Executable Script | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript
+d3f:InitScript | Init Script | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > InitScript
+d3f:NetworkInitScriptFileResource | Network Init Script File Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > InitScript > NetworkInitScriptFileResource
+d3f:PythonScriptFile | Python Script File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > PythonScriptFile
+d3f:SystemInitScript | System Init Script | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > SystemInitScript
+d3f:UserInitScript | User Init Script | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > UserInitScript
+d3f:PowerShellProfileScript | PowerShell Profile Script | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > UserInitScript > PowerShellProfileScript
+d3f:UserStartupScriptFile | User Startup Script File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > UserStartupScriptFile
+d3f:WebScriptFile | Web Script File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ExecutableFile > ExecutableScript > WebScriptFile
+d3f:ImageFile | Image File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ImageFile
+d3f:BitmapImageFile | Bitmap Image File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ImageFile > BitmapImageFile
+d3f:VectorImageFile | Vector Image File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ImageFile > VectorImageFile
+d3f:LogFile | Log File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > LogFile
+d3f:CommandHistoryLogFile | Command History Log File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > LogFile > CommandHistoryLogFile
+d3f:OperatingSystemLogFile | Operating System Log File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > LogFile > OperatingSystemLogFile
+d3f:MultimediaFile | Multimedia File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > MultimediaFile
+d3f:NTFSLink | NTFS Link | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > NTFSLink
+d3f:NTFSJunctionPoint | NTFS Junction Point | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > NTFSLink > NTFSJunctionPoint
+d3f:NTFSSymbolicLink | NTFS Symbolic Link | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > NTFSLink > NTFSSymbolicLink
+d3f:ObjectFile | Object File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ObjectFile
+d3f:KernelModule | Kernel Module | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ObjectFile > KernelModule
+d3f:SharedLibraryFile | Shared Library File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ObjectFile > SharedLibraryFile
+d3f:OperatingSystemFile | Operating System File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > OperatingSystemFile
+d3f:OperatingSystemExecutableFile | Operating System Executable File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > OperatingSystemFile > OperatingSystemExecutableFile
+d3f:OperatingSystemSharedLibraryFile | Operating System Shared Library File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > OperatingSystemFile > OperatingSystemSharedLibraryFile
+d3f:PacketCaptureFile | Packet Capture File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > PacketCaptureFile
+d3f:PasswordFile | Password File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > PasswordFile
+d3f:ShortcutFile | Shortcut File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ShortcutFile
+d3f:WindowsShortcutFile | Windows Shortcut File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > ShortcutFile > WindowsShortcutFile
+d3f:SoftwareLibraryFile | Software Library File | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > SoftwareLibraryFile
+d3f:SymbolicLink | Symbolic Link | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > SymbolicLink
+d3f:FastSymbolicLink | Fast Symbolic Link | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > SymbolicLink > FastSymbolicLink
+d3f:POSIXSymbolicLink | POSIX Symbolic Link | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > SymbolicLink > POSIXSymbolicLink
+d3f:SlowSymbolicLink | Slow Symbolic Link | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > SymbolicLink > SlowSymbolicLink
+d3f:Alias | Alias | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > File > SymbolicLink > SlowSymbolicLink > Alias
+d3f:LocalResource | Local Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > LocalResource
+d3f:SystemConfigurationInitResource | System Configuration Init Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > LocalResource > SystemConfigurationInitResource
+d3f:UserLogonInitResource | User Logon Init Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > LocalResource > UserLogonInitResource
+d3f:UserStartupDirectory | User Startup Directory | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > LocalResource > UserLogonInitResource > UserStartupDirectory
+d3f:RemoteResource | Remote Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource
+d3f:NetworkResource | Network Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource
+d3f:NetworkFileShareResource | Network File Share Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkFileShareResource
+d3f:NetworkDirectoryResource | Network Directory Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkFileShareResource > NetworkDirectoryResource
+d3f:NetworkFileResource | Network File Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkFileShareResource > NetworkFileResource
+d3f:WebFileResource | Web File Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkFileShareResource > NetworkFileResource > WebFileResource
+d3f:NetworkMediaStreamingResource | Network Media Streaming Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkMediaStreamingResource
+d3f:NetworkAudioStreamingResource | Network Audio Streaming Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkMediaStreamingResource > NetworkAudioStreamingResource
+d3f:NetworkMultimediaStreamingResource | Network Multimedia Streaming Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkMediaStreamingResource > NetworkMultimediaStreamingResource
+d3f:NetworkAudioVisualStreamingResource | Network Audio Visual Streaming Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkMediaStreamingResource > NetworkMultimediaStreamingResource > NetworkAudioVisualStreamingResource
+d3f:RTSPServer | RTSP Server | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkMediaStreamingResource > NetworkMultimediaStreamingResource > NetworkAudioVisualStreamingResource > RTSPServer
+d3f:NetworkVideoStreamingResource | Network Video Streaming Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > NetworkMediaStreamingResource > NetworkVideoStreamingResource
+d3f:WebResource | Web Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > WebResource
+d3f:WebAPIResource | Web API Resource | Artifact > DigitalArtifact > DigitalInformationBearer > Resource > RemoteResource > NetworkResource > WebResource > WebAPIResource
+d3f:RuntimeVariable | Runtime Variable | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable
+d3f:ApplicationFailureCountVariable | Application Failure Count Variable | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > ApplicationFailureCountVariable
+d3f:ApplicationRuntimeVariable | Application Runtime Variable | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > ApplicationRuntimeVariable
+d3f:ApplicationScanTime | Application Scan Time | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > ApplicationRuntimeVariable > ApplicationScanTime
+d3f:OTScanTime | OT Scan Time | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > ApplicationRuntimeVariable > ApplicationScanTime > OTScanTime
+d3f:OTLogicVariable | OT Logic Variable | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > OTLogicVariable
+d3f:OTControlVariable | OT Control Variable | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > OTLogicVariable > OTControlVariable
+d3f:OTProcessVariable | OT Process Variable | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > OTLogicVariable > OTProcessVariable
+d3f:OTWatchdogTimer | OT Watchdog Timer | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > OTLogicVariable > OTProcessVariable > OTWatchdogTimer
+d3f:SoftwareWatchdogTimer | Software Watchdog Timer | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SoftwareWatchdogTimer
+d3f:SystemPlatformVariable | System Platform Variable | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable
+d3f:OperatingMode | Operating Mode | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > OperatingMode
+d3f:OTControllerOperatingMode | OT Controller Operating Mode | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > OperatingMode > OTControllerOperatingMode
+d3f:SafeMode | Safe Mode | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > OperatingMode > SafeMode
+d3f:SpacecraftSafeMode | Spacecraft Safe Mode | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > OperatingMode > SafeMode > SpacecraftSafeMode
+d3f:VehicleOperatingMode | Vehicle Operating Mode | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > OperatingMode > VehicleOperatingMode
+d3f:PlatformUptime | Platform Uptime | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > PlatformUptime
+d3f:SystemApplicationCycleCount | System Application Cycle Count | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > SystemApplicationCycleCount
+d3f:SystemTime | System Time | Artifact > DigitalArtifact > DigitalInformationBearer > RuntimeVariable > SystemPlatformVariable > SystemTime
+d3f:Sensor | Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor
+d3f:CyberSensor | Cyber Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor
+d3f:CloudServiceSensor | Cloud Service Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > CloudServiceSensor
+d3f:EndpointSensor | Endpoint Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > EndpointSensor
+d3f:ApplicationInventorySensor | Application Inventory Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > EndpointSensor > ApplicationInventorySensor
+d3f:FileSystemSensor | File System Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > EndpointSensor > FileSystemSensor
+d3f:FirmwareSensor | Firmware Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > EndpointSensor > FirmwareSensor
+d3f:HostConfigurationSensor | Host Configuration Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > EndpointSensor > HostConfigurationSensor
+d3f:KernelAPISensor | Kernel API Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > EndpointSensor > KernelAPISensor
+d3f:NetworkScanner | Network Scanner | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > NetworkScanner
+d3f:NetworkSensor | Network Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > NetworkSensor
+d3f:NetworkFlowSensor | Network Flow Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > NetworkSensor > NetworkFlowSensor
+d3f:NetworkProtocolAnalyzer | Network Protocol Analyzer | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > CyberSensor > NetworkSensor > NetworkProtocolAnalyzer
+d3f:TransducerSensor | Transducer Sensor | Artifact > DigitalArtifact > DigitalInformationBearer > Sensor > TransducerSensor
+d3f:Session | Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session
+d3f:LoginSession | Login Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session > LoginSession
+d3f:NetworkSession | Network Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session > NetworkSession
+d3f:RemoteLoginSession | Remote Login Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session > NetworkSession > RemoteLoginSession
+d3f:RemoteSession | Remote Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session > NetworkSession > RemoteSession
+d3f:RDPSession | RDP Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session > NetworkSession > RemoteSession > RDPSession
+d3f:SSHSession | SSH Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session > NetworkSession > RemoteSession > SSHSession
+d3f:RemoteTerminalSession | Remote Terminal Session | Artifact > DigitalArtifact > DigitalInformationBearer > Session > NetworkSession > RemoteTerminalSession
+d3f:ShadowStack | Shadow Stack | Artifact > DigitalArtifact > DigitalInformationBearer > ShadowStack
+d3f:SoftwarePackage | Software Package | Artifact > DigitalArtifact > DigitalInformationBearer > SoftwarePackage
+d3f:PythonPackage | Python Package | Artifact > DigitalArtifact > DigitalInformationBearer > SoftwarePackage > PythonPackage
+d3f:StackComponent | Stack Component | Artifact > DigitalArtifact > DigitalInformationBearer > StackComponent
+d3f:StackFrame | Stack Frame | Artifact > DigitalArtifact > DigitalInformationBearer > StackComponent > StackFrame
+d3f:StackFrameCanary | Stack Frame Canary | Artifact > DigitalArtifact > DigitalInformationBearer > StackComponent > StackFrameCanary
+d3f:Storage | Storage | Artifact > DigitalArtifact > DigitalInformationBearer > Storage
+d3f:SystemCall | System Call | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall
+d3f:AccessProcess | Access Process | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > AccessProcess
+d3f:AllocateMemory | Allocate Memory | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > AllocateMemory
+d3f:AuthenticateUser | Authenticate User | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > AuthenticateUser
+d3f:ConnectSocket | Connect Socket | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > ConnectSocket
+d3f:CopyToken | Copy Token | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > CopyToken
+d3f:CreateFile | Create File | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > CreateFile
+d3f:CreateProcess | Create Process | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > CreateProcess
+d3f:CreateSocket | Create Socket | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > CreateSocket
+d3f:CreateThread | Create Thread | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > CreateThread
+d3f:DeleteFile | Delete File | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > DeleteFile
+d3f:Exec | Exec | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > Exec
+d3f:FreeMemory | Free Memory | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > FreeMemory
+d3f:GetOpenSockets | Get Open Sockets | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > GetOpenSockets
+d3f:GetOpenWindows | Get Open Windows | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > GetOpenWindows
+d3f:GetRunningProcesses | Get Running Processes | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > GetRunningProcesses
+d3f:GetScreenCapture | Get Screen Capture | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > GetScreenCapture
+d3f:GetSystemTime | Get System Time | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > GetSystemTime
+d3f:GetThreadContext | Get Thread Context | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > GetThreadContext
+d3f:ImpersonateUser | Impersonate User | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > ImpersonateUser
+d3f:LoadModule | Load Module | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > LoadModule
+d3f:LogonUser | Logon User | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > LogonUser
+d3f:MoveFile | Move File | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > MoveFile
+d3f:OpenFile | Open File | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > OpenFile
+d3f:ReadFile | Read File | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > ReadFile
+d3f:ReadMemory | Read Memory | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > ReadMemory
+d3f:ResumeProcess | Resume Process | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > ResumeProcess
+d3f:ResumeThread | Resume Thread | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > ResumeThread
+d3f:SaveRegister | Save Registers | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SaveRegister
+d3f:SetRegisters | Set Registers | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SetRegisters
+d3f:SetThreadContext | Set Thread Context | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SetThreadContext
+d3f:SuspendProcess | Suspend Process | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SuspendProcess
+d3f:SuspendThread | Suspend Thread | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SuspendThread
+d3f:SystemConfigSystemCall | System Config System Call | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SystemConfigSystemCall
+d3f:GetSystemConfigValue | Get System Config Value | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SystemConfigSystemCall > GetSystemConfigValue
+d3f:GetSystemNetworkConfigValue | Get System Network Config Value | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SystemConfigSystemCall > GetSystemConfigValue > GetSystemNetworkConfigValue
+d3f:SetSystemConfigValue | Set System Config Value | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > SystemConfigSystemCall > SetSystemConfigValue
+d3f:TerminateProcess | Terminate Process | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > TerminateProcess
+d3f:TraceProcess | Trace Process | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > TraceProcess
+d3f:TraceThread | Trace Thread | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > TraceThread
+d3f:UnloadModule | Unload Module | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > UnloadModule
+d3f:WriteFile | Write File | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > WriteFile
+d3f:WriteMemory | Write Memory | Artifact > DigitalArtifact > DigitalInformationBearer > SystemCall > WriteMemory
+d3f:Thread | Thread | Artifact > DigitalArtifact > DigitalInformationBearer > Thread
+d3f:TrustStore | Trust Store | Artifact > DigitalArtifact > DigitalInformationBearer > TrustStore
+d3f:CertificateTrustStore | Certificate Trust Store | Artifact > DigitalArtifact > DigitalInformationBearer > TrustStore > CertificateTrustStore
+d3f:UserAccount | User Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount
+d3f:CloudUserAccount | Cloud User Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > CloudUserAccount
+d3f:DefaultUserAccount | Default User Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > DefaultUserAccount
+d3f:DomainUserAccount | Domain User Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > DomainUserAccount
+d3f:GlobalUserAccount | Global User Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > DomainUserAccount > GlobalUserAccount
+d3f:LocalUserAccount | Local User Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > LocalUserAccount
+d3f:PrivilegedUserAccount | Privileged User Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > PrivilegedUserAccount
+d3f:ServiceAccount | Service Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > ServiceAccount
+d3f:KerberosTicketGrantingTicketAccount | Kerberos Ticket Granting Ticket Account | Artifact > DigitalArtifact > DigitalInformationBearer > UserAccount > ServiceAccount > KerberosTicketGrantingTicketAccount
+d3f:UserAction | User Action | Artifact > DigitalArtifact > DigitalInformationBearer > UserAction
+d3f:ResourceAccess | Resource Access | Artifact > DigitalArtifact > DigitalInformationBearer > UserAction > ResourceAccess
+d3f:LocalResourceAccess | Local Resource Access | Artifact > DigitalArtifact > DigitalInformationBearer > UserAction > ResourceAccess > LocalResourceAccess
+d3f:NetworkResourceAccess | Network Resource Access | Artifact > DigitalArtifact > DigitalInformationBearer > UserAction > ResourceAccess > NetworkResourceAccess
+d3f:WebResourceAccess | Web Resource Access | Artifact > DigitalArtifact > DigitalInformationBearer > UserAction > ResourceAccess > NetworkResourceAccess > WebResourceAccess
+d3f:UserBehavior | User Behavior | Artifact > DigitalArtifact > DigitalInformationBearer > UserBehavior
+d3f:UserInterface | User Interface | Artifact > DigitalArtifact > DigitalInformationBearer > UserInterface
+d3f:CommandLineInterface | Command Line Interface | Artifact > DigitalArtifact > DigitalInformationBearer > UserInterface > CommandLineInterface
+d3f:GraphicalUserInterface | Graphical User Interface | Artifact > DigitalArtifact > DigitalInformationBearer > UserInterface > GraphicalUserInterface
+d3f:UserProfile | User Profile | Artifact > DigitalArtifact > DigitalInformationBearer > UserProfile
+d3f:Volume | Volume | Artifact > DigitalArtifact > DigitalInformationBearer > Volume
+d3f:PhysicalArtifact | Physical Artifact | Artifact > PhysicalArtifact
+d3f:ComputerEnclosure | Computer Enclosure | Artifact > PhysicalArtifact > ComputerEnclosure
+d3f:ComputerCabinet | Computer Cabinet | Artifact > PhysicalArtifact > ComputerEnclosure > ComputerCabinet
+d3f:ComputerCase | Computer Case | Artifact > PhysicalArtifact > ComputerEnclosure > ComputerCase
+d3f:PhysicalKey | Physical Key | Artifact > PhysicalArtifact > PhysicalKey
+d3f:PhysicalLock | Physical Lock | Artifact > PhysicalArtifact > PhysicalLock
+d3f:CombinationLock | Combination Lock | Artifact > PhysicalArtifact > PhysicalLock > CombinationLock
+d3f:ElectronicCombinationLock | Electronic Combination Lock | Artifact > PhysicalArtifact > PhysicalLock > CombinationLock > ElectronicCombinationLock
+d3f:PhysicalKeyLock | Physical Key Lock | Artifact > PhysicalArtifact > PhysicalLock > PhysicalKeyLock
+d3f:Signal | Signal | Artifact > PhysicalArtifact > Signal
+d3f:ElectricalSignal | Electrical Signal | Artifact > PhysicalArtifact > Signal > ElectricalSignal
+d3f:ElectromagneticSignal | Electromagnetic Signal | Artifact > PhysicalArtifact > Signal > ElectromagneticSignal
+d3f:GNSSSignal | GNSS Signal | Artifact > PhysicalArtifact > Signal > ElectromagneticSignal > GNSSSignal
+d3f:Vehicle | Vehicle | Artifact > PhysicalArtifact > Vehicle
+d3f:Spacecraft | Spacecraft | Artifact > PhysicalArtifact > Vehicle > Spacecraft
+d3f:Satellite | Satellite | Artifact > PhysicalArtifact > Vehicle > Spacecraft > Satellite
+d3f:GNSSSatellite | GNSS Satellite | Artifact > PhysicalArtifact > Vehicle > Spacecraft > Satellite > GNSSSatellite
+d3f:System | System | Artifact > System

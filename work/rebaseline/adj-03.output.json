@@ -1,0 +1,1081 @@
+{
+ "unit": "ADJ-03",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0055",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R102",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CloudInstanceMetadata",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R103",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CommandHistoryLogFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R104",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R105",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R106",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:GroupPolicy",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R107",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:PrivateKey",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R108",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ProcessEnvironmentVariable",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R109",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:SystemConfigurationDatabase",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0056",
+   "latest_drift_note": "Renamed/merged into AML.T0085.003: now collection of non-public AI instructions, no config-file route.",
+   "rows": [
+    {
+     "row_id": "R110",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic: prompt text is content, ApplicationConfiguration is carrier-level paraphrase",
+     "calibration_hit": "none",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:ConfigurationFile",
+     "new_evidence_quote": "may be extracted from a configuration file",
+     "quote_survives_latest": false,
+     "reason": "Quote names a prompt, not a config; the config-file route is the one that maps to a read of a file (matches T0069 R123)"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0057",
+   "latest_drift_note": "Now AML.T0085.002: collection from interactions and memory, not prompt crafting.",
+   "rows": [
+    {
+     "row_id": "R111",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0058",
+   "latest_drift_note": "Now AML.T0115.001: adds weights/configs/serialized code as components; still publishing a poisoned model.",
+   "rows": [
+    {
+     "row_id": "R112",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: model is not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "AI model weights are not Software (Kirillov, issue #606); the published model is a file"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0059",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R113",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0060",
+   "latest_drift_note": "Successor id AML.T0060; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R114",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R115",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:WebResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0061",
+   "latest_drift_note": "Reframed: prompt replicated into messages, documents, files and artifacts.",
+   "rows": [
+    {
+     "row_id": "R116",
+     "verb": "d3f:copies",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0063",
+   "latest_drift_note": "Successor id AML.T0063; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R117",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:Log",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R118",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "API response is content; WebAPIResource is endpoint-level but acceptable"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0065",
+   "latest_drift_note": "Successor id AML.T0065; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R119",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0066",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R120",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:Database",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "carrier named where content is crafted; kept, consistent with T0071 R127"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0067.000",
+   "latest_drift_note": "Successor id AML.T0067.000; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R121",
+     "verb": "d3f:forges",
+     "artifact_iri": "d3f:Metadata",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "citation as metadata is loose but true"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0068",
+   "latest_drift_note": "Successor id AML.T0068; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R122",
+     "verb": "d3f:obfuscates",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": "obfuscate prompt injections or retrieval content",
+     "quote_survives_latest": true,
+     "reason": "Verb/target fine but quote has non-verbatim tail \"from the user\"; trim to exact develop text"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0069",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R123",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:ConfigurationFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0069.001",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R124",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:Identifier",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "keywords/function names are names; Identifier is generic but true"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0069.002",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R125",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0070",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R126",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DocumentFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0071",
+   "latest_drift_note": "Successor id AML.T0071; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R127",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:Database",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0072",
+   "latest_drift_note": "Generalized to C2 channels over any protocol; reverse-shell specifics gone.",
+   "rows": [
+    {
+     "row_id": "R128",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:RemoteTerminalSession",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R129",
+     "verb": "d3f:invokes",
+     "artifact_iri": "d3f:RemoteShellCommand",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R130",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetNetworkTraffic",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0073",
+   "latest_drift_note": "Successor id AML.T0073; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R131",
+     "verb": "d3f:forges",
+     "artifact_iri": "d3f:Email",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0074",
+   "latest_drift_note": "Successor id AML.T0074; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R132",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ExecutableBinary",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R133",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R134",
+     "verb": "d3f:invokes",
+     "artifact_iri": "d3f:MoveFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R135",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ExecutableFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R136",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:OperatingSystemExecutableFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R137",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:FileSystemMetadata",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    },
+    {
+     "row_id": "R138",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:JobSchedule",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0075",
+   "latest_drift_note": "Generalized to resource discovery across all asset types; cloud-service focus and Graph API gone.",
+   "rows": [
+    {
+     "row_id": "R139",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R140",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:CloudConfiguration",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ATT&CK-inherited, no contradiction with rulings"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0076",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R141",
+     "verb": "d3f:corrupts",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0077",
+   "latest_drift_note": "Successor id AML.T0077; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R142",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0078",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R143",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalText",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0079",
+   "latest_drift_note": "Successor id AML.T0079; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R144",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0080.000",
+   "latest_drift_note": "Successor id AML.T0080.000; text reframed/generalized.",
+   "rows": [
+    {
+     "row_id": "R145",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Database",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0080.001",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R146",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0081",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R147",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R148",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ApplicationConfigurationFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0082",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R149",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0083",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R150",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ApplicationConfigurationFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    },
+    {
+     "row_id": "R151",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0084",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R152",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0084.000",
+   "latest_drift_note": "Unchanged in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R153",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes: continuant, right verb, true target"
+    }
+   ]
+  }
+ ]
+}

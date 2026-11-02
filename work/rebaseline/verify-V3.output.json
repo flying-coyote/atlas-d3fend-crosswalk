@@ -1,0 +1,652 @@
+{
+ "unit": "V3",
+ "rows": [
+  {
+   "row_id": "R002",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:DocumentFile",
+   "final_evidence_quote": "publications accepted at premier artificial intelligence conferences and journals",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R005",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:WebResource",
+   "final_evidence_quote": "blogs that highlight their use of artificial intelligence",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R006",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:DocumentFile",
+   "final_evidence_quote": "reading academic papers that may identify the particulars of a successful attack",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R010",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "common model storage file formats such as ONNX (.onnx), HDF5 (.h5), Pickle (.pkl), PyTorch (.pth), or TensorFlow (.pb, .tflite)",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R011",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:WebResource",
+   "final_evidence_quote": "websites owned by the victim",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R013",
+   "final_verdict": "keep",
+   "final_verb": "d3f:enumerates",
+   "final_artifact_iri": "d3f:Application",
+   "final_evidence_quote": "applications that contain AI-enabled components",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R016",
+   "final_verdict": "revise",
+   "final_verb": "d3f:enumerates",
+   "final_artifact_iri": "d3f:ServiceApplicationProcess",
+   "final_evidence_quote": "scan for open ports on a potential victim's network, which can indicate specific services or tools the victim is utilizing",
+   "agree_with_adjudicator": false,
+   "reason": "Original IRI d3f:NetworkService is absent from develop (renamed in #543), so keep is wrong; maintainers' own Sept T1046 mapping used ServiceApplicationProcess after the rename existed, and it also covers the AI chat-agent and inbox-agent services named."
+  },
+  {
+   "row_id": "R018",
+   "final_verdict": "keep",
+   "final_verb": "d3f:enumerates",
+   "final_artifact_iri": "d3f:Repository",
+   "final_evidence_quote": "container registries",
+   "agree_with_adjudicator": false,
+   "reason": "#618 accepts a parent beside its child, and container registries are a distinct referent from R019's software repositories; Repository is general-but-true, so redundancy alone is not grounds to retire."
+  },
+  {
+   "row_id": "R020",
+   "final_verdict": "revise",
+   "final_verb": "d3f:creates",
+   "final_artifact_iri": "d3f:DomainRegistration",
+   "final_evidence_quote": "Infrastructure solutions include physical or cloud servers, domains, mobile devices, and third-party web services.",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: acquiring domains is a registration act; assert the record, not the identifier"
+  },
+  {
+   "row_id": "R024",
+   "final_verdict": "keep",
+   "final_verb": "d3f:uses",
+   "final_artifact_iri": "d3f:PersonalComputer",
+   "final_evidence_quote": "Adversaries may acquire consumer hardware to conduct their attacks.",
+   "agree_with_adjudicator": false,
+   "reason": "Adjudicator premise is false: MobilePhone, Laptop and Tablet are already under PersonalComputer, and HardwareDevice is not its parent (it holds components like GPU, NIC, input devices), so the revise would move to a different branch, not a common parent."
+  },
+  {
+   "row_id": "R025",
+   "final_verdict": "keep",
+   "final_verb": "d3f:creates",
+   "final_artifact_iri": "d3f:DomainRegistration",
+   "final_evidence_quote": "Adversaries may use acquired domains for a variety of purposes",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R026",
+   "final_verdict": "keep",
+   "final_verb": "d3f:impairs",
+   "final_artifact_iri": "d3f:TransducerSensor",
+   "final_evidence_quote": "disrupt or degrade the sensors used in capturing data, such as laser pointers, light bulbs, or other tools",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R029",
+   "final_verdict": "keep",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "and its annotations",
+   "agree_with_adjudicator": false,
+   "reason": "Retire on child redundancy contradicts #618 (a parent row beside its child is accepted); the row is true for the data branch, so keep it as written, with a definite verb like its siblings."
+  },
+  {
+   "row_id": "R031",
+   "final_verdict": "keep",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:SoftwareLibrary",
+   "final_evidence_quote": "software packages that are commonly used in AI-enabled systems",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R033",
+   "final_verdict": "keep",
+   "final_verb": "d3f:executes",
+   "final_artifact_iri": "d3f:ExecutableFile",
+   "final_evidence_quote": "executing some saved code",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R037",
+   "final_verdict": "keep",
+   "final_verb": "d3f:executes",
+   "final_artifact_iri": "d3f:ExecutableFile",
+   "final_evidence_quote": "",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R038",
+   "final_verdict": "keep",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:OutboundInternetWebTraffic",
+   "final_evidence_quote": "",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R039",
+   "final_verdict": "keep",
+   "final_verb": "d3f:executes",
+   "final_artifact_iri": "d3f:ExecutableFile",
+   "final_evidence_quote": "when executed have a deleterious effect",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R041",
+   "final_verdict": "keep",
+   "final_verb": "d3f:uses",
+   "final_artifact_iri": "d3f:DefaultUserAccount",
+   "final_evidence_quote": "",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R046",
+   "final_verdict": "keep",
+   "final_verb": "d3f:uses",
+   "final_artifact_iri": "d3f:Software",
+   "final_evidence_quote": "obtain software capabilities for use in their operations",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: ordinary tooling/capability, not an AI model"
+  },
+  {
+   "row_id": "R047",
+   "final_verdict": "revise",
+   "final_verb": "d3f:uses",
+   "final_artifact_iri": "d3f:SoftwareLibrary",
+   "final_evidence_quote": "Libraries intended for research purposes, such as CleverHans, the Adversarial Robustness Toolbox, and FoolBox, can be weaponized by an adversary",
+   "agree_with_adjudicator": false,
+   "reason": "SoftwareLibrary is right, but the kept quote 'can be weaponized by an adversary' does not name libraries; extend it so the evidence supports the narrower class."
+  },
+  {
+   "row_id": "R051",
+   "final_verdict": "keep",
+   "final_verb": "d3f:creates",
+   "final_artifact_iri": "d3f:Software",
+   "final_evidence_quote": "develop their own capabilities to support operations",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: ordinary tooling/capability, not an AI model"
+  },
+  {
+   "row_id": "R052",
+   "final_verdict": "keep",
+   "final_verb": "d3f:creates",
+   "final_artifact_iri": "d3f:WebResource",
+   "final_evidence_quote": "setting up websites with adversarial information",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: passes review"
+  },
+  {
+   "row_id": "R053",
+   "final_verdict": "keep",
+   "final_verb": "d3f:creates",
+   "final_artifact_iri": "d3f:Software",
+   "final_evidence_quote": "develop custom made attacks",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes the five checks."
+  },
+  {
+   "row_id": "R054",
+   "final_verdict": "revise",
+   "final_verb": "d3f:uses",
+   "final_artifact_iri": "d3f:SoftwareLibrary",
+   "final_evidence_quote": "leverage existing libraries as a starting point",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Quote names libraries; SoftwareLibrary is the most specific true class."
+  },
+  {
+   "row_id": "R055",
+   "final_verdict": "revise",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "directly manipulate an AI model to change its behavior",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: AI model is the model file, not Software (Kirillov, #606)."
+  },
+  {
+   "row_id": "R056",
+   "final_verdict": "revise",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "manipulate an AI model's weights to change it's behavior or performance",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Weights live in the model file; File not Software."
+  },
+  {
+   "row_id": "R057",
+   "final_verdict": "revise",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "directly modify an AI model's architecture to re-define it's behavior",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Model architecture definition lives in the model file; File not Software."
+  },
+  {
+   "row_id": "R065",
+   "final_verdict": "revise",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:InboundInternetWebTraffic",
+   "final_evidence_quote": "high-volume, low-complexity queries",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Row sound; original quote is not in develop text, replace with verbatim quote."
+  },
+  {
+   "row_id": "R073",
+   "final_verdict": "revise",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "access to an offline copy of the target model",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Offline copy of a model is a model file."
+  },
+  {
+   "row_id": "R075",
+   "final_verdict": "revise",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "full access to the target model",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Access to model parameters is access to the model file."
+  },
+  {
+   "row_id": "R076",
+   "final_verdict": "revise",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:WebAPIResource",
+   "final_evidence_quote": "via API access",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Black-box access is via the inference API resource, matching sibling rows."
+  },
+  {
+   "row_id": "R079",
+   "final_verdict": "revise",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "gain full \"white-box\" access to an AI model",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Full white-box access to an AI model means the model file."
+  },
+  {
+   "row_id": "R088",
+   "final_verdict": "keep",
+   "final_verb": "d3f:executes",
+   "final_artifact_iri": "d3f:ShellCommand",
+   "final_evidence_quote": "execute commands",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes the five checks."
+  },
+  {
+   "row_id": "R088x",
+   "final_verdict": "keep",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:DigitalMedia",
+   "final_evidence_quote": "create synthetic media (i.e. imagery, video, audio, and text)",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; verb and target fit the definition."
+  },
+  {
+   "row_id": "R093",
+   "final_verdict": "revise",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:DigitalMedia",
+   "final_evidence_quote": "LLMs that generate synthetic text, visual deepfakes of faces, and audio deepfakes of speech",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Collapse audio/image/text siblings into one produces DigitalMedia (#608)."
+  },
+  {
+   "row_id": "R094",
+   "final_verdict": "retire",
+   "final_verb": null,
+   "final_artifact_iri": null,
+   "final_evidence_quote": null,
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Redundant with collapsed R093 produces DigitalMedia."
+  },
+  {
+   "row_id": "R095",
+   "final_verdict": "retire",
+   "final_verb": null,
+   "final_artifact_iri": null,
+   "final_evidence_quote": null,
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Redundant with collapsed R093 produces DigitalMedia."
+  },
+  {
+   "row_id": "R099",
+   "final_verdict": "retire",
+   "final_verb": null,
+   "final_artifact_iri": null,
+   "final_evidence_quote": null,
+   "agree_with_adjudicator": true,
+   "reason": "Agree: produces URL conflicts with #616/#619 rulings; observable product already covered by Email and mail traffic."
+  },
+  {
+   "row_id": "R105",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: ATT&CK-inherited, no contradiction with rulings"
+  },
+  {
+   "row_id": "R110",
+   "final_verdict": "keep",
+   "final_verb": "d3f:reads",
+   "final_artifact_iri": "d3f:ApplicationConfiguration",
+   "final_evidence_quote": "its own system prompt",
+   "agree_with_adjudicator": false,
+   "reason": "ConfigurationFile is a carrier regression: the object is the system prompt (configuration content) and the file is only the second, optional route; ApplicationConfiguration covers both routes and matches R226's use for agent configuration."
+  },
+  {
+   "row_id": "R111",
+   "final_verdict": "keep",
+   "final_verb": "d3f:creates",
+   "final_artifact_iri": "d3f:DigitalMessage",
+   "final_evidence_quote": "craft prompts",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R112",
+   "final_verdict": "revise",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "a novel model or a poisoned variant of an existing open-source model",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: AI model weights are not Software (Kirillov, issue #606); the published model is a file"
+  },
+  {
+   "row_id": "R113",
+   "final_verdict": "keep",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "poison or manipulate portions of a dataset",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R116",
+   "final_verdict": "keep",
+   "final_verb": "d3f:copies",
+   "final_artifact_iri": "d3f:DigitalMessage",
+   "final_evidence_quote": "replicate the prompt as part of its output",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R122",
+   "final_verdict": "revise",
+   "final_verb": "d3f:obfuscates",
+   "final_artifact_iri": "d3f:DigitalMessage",
+   "final_evidence_quote": "obfuscate prompt injections or retrieval content",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Verb/target fine but quote has non-verbatim tail \"from the user\"; trim to exact develop text"
+  },
+  {
+   "row_id": "R141",
+   "final_verdict": "keep",
+   "final_verb": "d3f:corrupts",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "purposefully corrupt a malicious AI model file",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R142",
+   "final_verdict": "keep",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:OutboundInternetWebTraffic",
+   "final_evidence_quote": "make a request to an adversary controlled server",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R143",
+   "final_verdict": "keep",
+   "final_verb": "d3f:injects",
+   "final_artifact_iri": "d3f:DigitalText",
+   "final_evidence_quote": "LLM Prompt Injection",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R150",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:ApplicationConfigurationFile",
+   "final_evidence_quote": "stored in configuration files",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R151",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:Credential",
+   "final_evidence_quote": "the credentials of other tools or services",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: continuant, right verb, true target"
+  },
+  {
+   "row_id": "R156",
+   "final_verdict": "keep",
+   "final_verb": "d3f:invokes",
+   "final_artifact_iri": "d3f:Application",
+   "final_evidence_quote": "invoke various tools the agent has access to",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; verb and target fit the definition."
+  },
+  {
+   "row_id": "R157",
+   "final_verdict": "revise",
+   "final_verb": "d3f:invokes",
+   "final_artifact_iri": "d3f:Application",
+   "final_evidence_quote": "AI agent tools capable of performing write operations may be invoked",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Verb and target fine; original quote not verbatim in develop, replace."
+  },
+  {
+   "row_id": "R171",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:Process",
+   "final_evidence_quote": "",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: verb and target match the definition; attack-inherited rows mirror D3FEND ATT&CK mapping."
+  },
+  {
+   "row_id": "R176",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:AuthenticationService",
+   "final_evidence_quote": "",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes: verb and target match the definition; attack-inherited rows mirror D3FEND ATT&CK mapping."
+  },
+  {
+   "row_id": "R185",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:AccessToken",
+   "final_evidence_quote": "the victim's authentication tokens for the backend LLM service",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; verb and target fit the definition."
+  },
+  {
+   "row_id": "R187",
+   "final_verdict": "keep",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:DigitalMessage",
+   "final_evidence_quote": "edit existing messages",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; verb and target fit the definition."
+  },
+  {
+   "row_id": "R190",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:WebResource",
+   "final_evidence_quote": "search public websites and/or domains for information about victims",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; verb and target fit the definition."
+  },
+  {
+   "row_id": "R199",
+   "final_verdict": "revise",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:DigitalMedia",
+   "final_evidence_quote": "AI-generated synthetic images, audio, or video",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: F608: audio/video siblings (plus images) collapse to one produces DigitalMedia."
+  },
+  {
+   "row_id": "R200",
+   "final_verdict": "retire",
+   "final_verb": null,
+   "final_artifact_iri": null,
+   "final_evidence_quote": null,
+   "agree_with_adjudicator": true,
+   "reason": "Agree: F608: redundant with collapsed produces DigitalMedia on R199."
+  },
+  {
+   "row_id": "R205",
+   "final_verdict": "keep",
+   "final_verb": "d3f:enumerates",
+   "final_artifact_iri": "d3f:UserInputFunction",
+   "final_evidence_quote": "connect user inputs or LLM outputs to an execution sink (e.g. exec, eval, os.popen)",
+   "agree_with_adjudicator": false,
+   "reason": "A call chain is a path of functions; its source end is the function that receives untrusted user input, which is exactly UserInputFunction's definition, so the row is true and pairs with R204 EvalFunction at the sink end."
+  },
+  {
+   "row_id": "R207",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:Credential",
+   "final_evidence_quote": "accidentally leaked credentials or API keys",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; verb and target fit the definition."
+  },
+  {
+   "row_id": "R213",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:WebFileResource",
+   "final_evidence_quote": "document stores",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Document stores are web file resources; acceptable."
+  },
+  {
+   "row_id": "R218",
+   "final_verdict": "revise",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:WebResource",
+   "final_evidence_quote": "navigating to specific web pages",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Agent navigates to the page; the resource is acted on, not the URL identifier"
+  },
+  {
+   "row_id": "R219",
+   "final_verdict": "keep",
+   "final_verb": "d3f:executes",
+   "final_artifact_iri": "d3f:ExecutableScript",
+   "final_evidence_quote": "execute malicious code",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; target and verb fit the definition."
+  },
+  {
+   "row_id": "R221",
+   "final_verdict": "keep",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:Command",
+   "final_evidence_quote": "generate malicious commands from natural language",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; target and verb fit the definition."
+  },
+  {
+   "row_id": "R225",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:Host",
+   "final_evidence_quote": "gain access to the underlying host",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; target and verb fit the definition."
+  },
+  {
+   "row_id": "R226",
+   "final_verdict": "keep",
+   "final_verb": "d3f:modifies",
+   "final_artifact_iri": "d3f:ApplicationConfiguration",
+   "final_evidence_quote": "modifying an AI Agent's configuration",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; target and verb fit the definition."
+  },
+  {
+   "row_id": "R233",
+   "final_verdict": "revise",
+   "final_verb": "d3f:produces",
+   "final_artifact_iri": "d3f:File",
+   "final_evidence_quote": "AI models, datasets, packages, and MCP servers",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Models/datasets/packages published are files; models are not Software per #606"
+  },
+  {
+   "row_id": "R236",
+   "final_verdict": "keep",
+   "final_verb": "d3f:accesses",
+   "final_artifact_iri": "d3f:Credential",
+   "final_evidence_quote": "manage credentials",
+   "agree_with_adjudicator": true,
+   "reason": "Agree: Passes; target and verb fit the definition."
+  },
+  {
+   "row_id": "R242",
+   "final_verdict": "retire",
+   "final_verb": null,
+   "final_artifact_iri": null,
+   "final_evidence_quote": null,
+   "agree_with_adjudicator": false,
+   "reason": "#619 analog: keep the traffic, drop the URL; R243 produces OutboundInternetWebTraffic already carries the observable, so converting it to WebResource would add a row the maintainer's own precedent dropped (unlike R218, where no traffic row exists)."
+  }
+ ],
+ "answers": {
+  "a": "Revise to creates DomainRegistration: #618 accepts a parent row beside its child so redundancy with T0008.002 is not grounds to retire, and #616 says assert the record; a definite verb matches R021 on the same option list (may-create is a defensible third option but I did not take it).",
+  "b": "Retire: #619 is the direct precedent (keep the traffic, drop the URL), R243 produces OutboundInternetWebTraffic already carries it, and accesses WebResource would attribute the AI service's fetch to the implant.",
+  "c": "Yes, a carrier regression: the system prompt is configuration content and the config file is only the optional second route, so keep reads ApplicationConfiguration (ApplicationConfigurationFile, not ConfigurationFile, would be the file-route class if a second row were ever wanted).",
+  "d": "Both are true and in the digest, but use ServiceApplicationProcess: the maintainers mapped T1046 Network Service Discovery to it in their Sept PRs after #543 had already created NetworkServiceApplicationProcess, and the dead IRI makes the adjudicator's keep wrong either way.",
+  "e": "Yes: DigitalText, DigitalAudio, DigitalImage and DigitalVideo are all direct children of DigitalMedia in the digest, so the collapse is right; use produces to match #608, and it stays definite on T0052 because every phishing message carries text.",
+  "f": "No: #618 says a parent row beside its child is accepted, so neither retire stands on redundancy; R018 is kept (container registries are a distinct referent), and R029 is kept as modifies File with its original verbatim quote."
+ }
+}

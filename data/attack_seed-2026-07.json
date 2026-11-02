@@ -1,0 +1,793 @@
+{
+ "count": 37,
+ "seeded": 21,
+ "seeds": [
+  {
+   "atlas_id": "AML.T0000",
+   "attack_id": "T1596",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0003",
+   "attack_id": "T1594",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0006",
+   "attack_id": "T1595",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0008",
+   "attack_id": "T1583",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0008.002",
+   "attack_id": "T1583.001",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0008.004",
+   "attack_id": "T1583.007",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0011",
+   "attack_id": "T1204",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:ExecutableFile",
+     "label": "Executable File",
+     "verbs": [
+      "d3f:executes"
+     ]
+    },
+    {
+     "iri": "d3f:OutboundInternetWebTraffic",
+     "label": "Outbound Internet Web Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:URL",
+     "label": "URL",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0011.003",
+   "attack_id": "T1204",
+   "in_member_set": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:ExecutableFile",
+     "label": "Executable File",
+     "verbs": [
+      "d3f:executes"
+     ]
+    },
+    {
+     "iri": "d3f:OutboundInternetWebTraffic",
+     "label": "Outbound Internet Web Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:URL",
+     "label": "URL",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0012",
+   "attack_id": "T1078",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CloudUserAccount",
+     "label": "Cloud User Account",
+     "verbs": [
+      "d3f:uses"
+     ]
+    },
+    {
+     "iri": "d3f:DefaultUserAccount",
+     "label": "Default User Account",
+     "verbs": [
+      "d3f:uses"
+     ]
+    },
+    {
+     "iri": "d3f:DomainUserAccount",
+     "label": "Domain User Account",
+     "verbs": [
+      "d3f:uses"
+     ]
+    },
+    {
+     "iri": "d3f:LocalUserAccount",
+     "label": "Local User Account",
+     "verbs": [
+      "d3f:uses"
+     ]
+    },
+    {
+     "iri": "d3f:UserAccount",
+     "label": "User Account",
+     "verbs": [
+      "d3f:uses"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0016",
+   "attack_id": "T1588",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0016.001",
+   "attack_id": "T1588.002",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0017",
+   "attack_id": "T1587",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0021",
+   "attack_id": "T1585",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0036",
+   "attack_id": "T1213",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CodeRepository",
+     "label": "Code Repository",
+     "verbs": [
+      "d3f:reads"
+     ]
+    },
+    {
+     "iri": "d3f:Resource",
+     "label": "Resource",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:WebFileResource",
+     "label": "Web File Resource",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0037",
+   "attack_id": "T1005",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:File",
+     "label": "File",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:LocalResource",
+     "label": "Local Resource",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0049",
+   "attack_id": "T1190",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:DatabaseQuery",
+     "label": "Database Query",
+     "verbs": [
+      "d3f:injects"
+     ]
+    },
+    {
+     "iri": "d3f:InboundInternetNetworkTraffic",
+     "label": "Inbound Internet Network Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:ProcessSegment",
+     "label": "Process Segment",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0050",
+   "attack_id": "T1059",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:ExecutableScript",
+     "label": "Executable Script",
+     "verbs": [
+      "d3f:executes"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0052",
+   "attack_id": "T1566",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:Email",
+     "label": "Email",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:File",
+     "label": "File",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:InboundInternetMailTraffic",
+     "label": "Inbound Internet Mail Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:URL",
+     "label": "URL",
+     "verbs": [
+      "d3f:produces"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0055",
+   "attack_id": "T1552",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CloudInstanceMetadata",
+     "label": "Cloud Instance Metadata",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:CommandHistoryLogFile",
+     "label": "Command History Log File",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:Credential",
+     "label": "Credential",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:File",
+     "label": "File",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:GroupPolicy",
+     "label": "Group Policy",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:PrivateKey",
+     "label": "Private Key",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:SystemConfigurationDatabase",
+     "label": "System Configuration Database",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0073",
+   "attack_id": "T1656",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0074",
+   "attack_id": "T1036",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:ExecutableBinary",
+     "label": "Executable Binary",
+     "verbs": [
+      "d3f:creates"
+     ]
+    },
+    {
+     "iri": "d3f:ExecutableFile",
+     "label": "Executable File",
+     "verbs": [
+      "d3f:may-create"
+     ]
+    },
+    {
+     "iri": "d3f:File",
+     "label": "File",
+     "verbs": [
+      "d3f:creates",
+      "d3f:may-create"
+     ]
+    },
+    {
+     "iri": "d3f:FileSystemMetadata",
+     "label": "File System Metadata",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:JobSchedule",
+     "label": "Job Schedule",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:MoveFile",
+     "label": "Move File",
+     "verbs": [
+      "d3f:invokes"
+     ]
+    },
+    {
+     "iri": "d3f:OperatingSystemExecutableFile",
+     "label": "Operating System Executable File",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0075",
+   "attack_id": "T1526",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CloudConfiguration",
+     "label": "Cloud Configuration",
+     "verbs": [
+      "d3f:reads"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0078",
+   "attack_id": "T1189",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:OutboundInternetNetworkTraffic",
+     "label": "Outbound Internet Network Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:ProcessSegment",
+     "label": "Process Segment",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:URL",
+     "label": "URL",
+     "verbs": [
+      "d3f:produces"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0079",
+   "attack_id": "T1608",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0087",
+   "attack_id": "T1589",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0089",
+   "attack_id": "T1057",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CreateProcess",
+     "label": "Create Process",
+     "verbs": [
+      "d3f:may-invoke"
+     ]
+    },
+    {
+     "iri": "d3f:GetRunningProcesses",
+     "label": "Get Running Processes",
+     "verbs": [
+      "d3f:may-invoke"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0090",
+   "attack_id": "T1003",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:AuthenticationService",
+     "label": "Authentication Service",
+     "verbs": [
+      "d3f:accesses",
+      "d3f:may-access"
+     ]
+    },
+    {
+     "iri": "d3f:EncryptedCredential",
+     "label": "Encrypted Credential",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:EventLog",
+     "label": "Event Log",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:IntranetAdministrativeNetworkTraffic",
+     "label": "Intranet Administrative Network Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:Log",
+     "label": "Log",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:OperatingSystemFile",
+     "label": "Operating System File",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:PasswordFile",
+     "label": "Password File",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:Process",
+     "label": "Process",
+     "verbs": [
+      "d3f:accesses",
+      "d3f:may-access"
+     ]
+    },
+    {
+     "iri": "d3f:ProcessImage",
+     "label": "Process Image",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:SystemPasswordDatabase",
+     "label": "System Password Database",
+     "verbs": [
+      "d3f:may-access"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0091",
+   "attack_id": "T1550",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:AccessToken",
+     "label": "Access Token",
+     "verbs": [
+      "d3f:uses"
+     ]
+    },
+    {
+     "iri": "d3f:AuthenticationService",
+     "label": "Authentication Service",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:NetworkTraffic",
+     "label": "Network Traffic",
+     "verbs": [
+      "d3f:may-produce"
+     ]
+    },
+    {
+     "iri": "d3f:SessionCookie",
+     "label": "Session Cookie",
+     "verbs": [
+      "d3f:adds"
+     ]
+    },
+    {
+     "iri": "d3f:WebNetworkTraffic",
+     "label": "Web Network Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0091.000",
+   "attack_id": "T1550.001",
+   "in_member_set": true,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:AccessToken",
+     "label": "Access Token",
+     "verbs": [
+      "d3f:uses"
+     ]
+    },
+    {
+     "iri": "d3f:AuthenticationService",
+     "label": "Authentication Service",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:NetworkTraffic",
+     "label": "Network Traffic",
+     "verbs": [
+      "d3f:may-produce"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0091.001",
+   "attack_id": "T1550.004",
+   "in_member_set": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:AuthenticationService",
+     "label": "Authentication Service",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    },
+    {
+     "iri": "d3f:SessionCookie",
+     "label": "Session Cookie",
+     "verbs": [
+      "d3f:adds"
+     ]
+    },
+    {
+     "iri": "d3f:WebNetworkTraffic",
+     "label": "Web Network Traffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0095",
+   "attack_id": "T1593",
+   "in_member_set": true,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0095.000",
+   "attack_id": "T1593.003",
+   "in_member_set": false,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0097",
+   "attack_id": "T1497",
+   "in_member_set": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:GetSystemTime",
+     "label": "Get System Time",
+     "verbs": [
+      "d3f:may-invoke"
+     ]
+    },
+    {
+     "iri": "d3f:SystemTimeApplication",
+     "label": "System Time Application",
+     "verbs": [
+      "d3f:may-run"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0105",
+   "attack_id": "T1611",
+   "in_member_set": false,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0106",
+   "attack_id": "T1211",
+   "in_member_set": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:ProcessCodeSegment",
+     "label": "Process Code Segment",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:StackFrame",
+     "label": "Stack Frame",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0107",
+   "attack_id": "T1211",
+   "in_member_set": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:ProcessCodeSegment",
+     "label": "Process Code Segment",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:StackFrame",
+     "label": "Stack Frame",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0113",
+   "attack_id": "T1539",
+   "in_member_set": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:SessionCookie",
+     "label": "Session Cookie",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    }
+   ]
+  }
+ ]
+}

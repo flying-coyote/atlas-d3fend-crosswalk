@@ -1,0 +1,1560 @@
+{
+ "unit": "V2",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0120",
+   "label": "AI Artifact Repository",
+   "definition": "Adversaries may repurpose AI artifact repositories as asynchronous command-and-control channels. Commands, payloads, or tasking may be placed in repository objects for a compromised system to retrieve or poll. The compromised system may then write execution results, status, or collected information back to the repository for retrieval by the adversary.\n\nThis communication can use ordinary artifact and repository operations, such as reading or updating artifact content, metadata, or revisions through an API or version-control interface. The repository acts as a message queue or dead drop, allowing the parties to exchange information without a continuous direct connection and potentially blending the activity with legitimate artifact traffic.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0120#m0",
+     "kind": "mapping",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Repository",
+     "evidence_quote": "repurpose AI artifact repositories",
+     "rationale": "Repository serves as C2 dead drop",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0120#m1",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Command",
+     "evidence_quote": "Commands, payloads, or tasking may be placed",
+     "rationale": "Tasking placed as commands in repository objects",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Repository is the channel; stored models are incidental"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0121",
+   "label": "AI Agent Environment Reconstruction",
+   "definition": "An autonomous AI agent may reconstruct the environment needed to continue an existing operation after its execution environment is lost, reset, replaced, denied, or made unusable. The agent may recover or recreate tools, dependencies, configuration, credentials or access paths, communication or coordination resources, working artifacts, and externally stored operational state in order to resume the same objective.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0121#m0",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "evidence_quote": "recover or recreate tools, dependencies, configuration",
+     "rationale": "Agent recreates configuration for the lost environment",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0121#m1",
+     "kind": "mapping",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "evidence_quote": "credentials or access paths",
+     "rationale": "Agent recovers credentials to resume access",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory",
+     "agent-tool-definition"
+    ],
+    "why": "Externally stored operational state and recreated tools are agent memory and tool definitions"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0122",
+   "label": "Exploitation of Remote Services",
+   "definition": "Adversaries may exploit a software or design weakness in a service reachable from their current environment to gain unauthorized access to another system, component, network, or trust boundary. Exploitation may allow the adversary to execute code, access protected resources, invoke unauthorized operations, obtain the service's privileges, or cause the service to make network requests or perform actions on the adversary's behalf.\n\nIn AI environments, remote services may include package caches, artifact and model registries, dataset services, evaluation infrastructure, inference gateways, experiment trackers, vector databases, notebooks, training pipelines, orchestration services, and cloud or cluster control-plane interfaces. These services may be reachable from otherwise isolated training, evaluation, or agent workloads and can provide transitive access to internal infrastructure or external networks.\n\nExploitation does not require compromise of the remote service's underlying host. For example, an adversary may exploit a server-side request vulnerability in a shared service to cross a network-containment boundary while leaving the service host itself uncompromised. Exploitation that produces host access, privilege escalation, credential disclosure, command execution, or another effect should be mapped separately to the applicable technique.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0122",
+     "attack_id": "T1210",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "seeded",
+     "artifacts": [
+      {
+       "iri": "d3f:IntranetNetworkTraffic",
+       "verbs": [
+        "d3f:produces"
+       ]
+      },
+      {
+       "iri": "d3f:ProcessCodeSegment",
+       "verbs": [
+        "d3f:may-modify"
+       ]
+      },
+      {
+       "iri": "d3f:ProcessSegment",
+       "verbs": [
+        "d3f:may-modify"
+       ]
+      },
+      {
+       "iri": "d3f:StackFrame",
+       "verbs": [
+        "d3f:may-modify"
+       ]
+      }
+     ]
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0122#m0",
+     "kind": "mapping",
+     "verb": "d3f:abuses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "evidence_quote": "exploit a software or design weakness in a service",
+     "rationale": "Adversary exploits weakness in a remote service",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0122#a0",
+     "kind": "attack_inherited",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:IntranetNetworkTraffic",
+     "rationale": "Exploitation traverses the network, also true for AI services"
+    },
+    {
+     "row_id": "AML.T0122#a1",
+     "kind": "attack_inherited",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:ProcessCodeSegment",
+     "rationale": "Code execution may modify process code"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Services are ordinary software; no model artifact needed"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0123",
+   "label": "Obfuscated Files or Information",
+   "definition": "Adversaries may attempt to make an executable or file difficult to discover or analyze by encrypting, encoding, or otherwise obfuscating its contents on the system or in transit. This is common behavior that can be used across different platforms and the network to evade defenses.\n\nObfuscation may target AI-enabled defensive systems, including malware classifiers, content filters, secret scanners, and automated review systems. Content that appears benign or incomplete to a person or detector may be decoded, assembled, or interpreted by a downstream application, tool, or compromised system.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0123",
+     "attack_id": "T1027",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "seeded",
+     "artifacts": [
+      {
+       "iri": "d3f:DigitalArtifact",
+       "verbs": [
+        "d3f:hides"
+       ]
+      },
+      {
+       "iri": "d3f:ExecutableBinary",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:ExecutableFile",
+       "verbs": [
+        "d3f:creates",
+        "d3f:obfuscates"
+       ]
+      },
+      {
+       "iri": "d3f:JavaScriptBlob",
+       "verbs": [
+        "d3f:creates"
+       ]
+      }
+     ]
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0123#m0",
+     "kind": "mapping",
+     "verb": "d3f:obfuscates",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "encrypting, encoding, or otherwise obfuscating its contents",
+     "rationale": "Files are obfuscated to evade detection",
+     "confidence": "high"
+    },
+    {
+     "row_id": "AML.T0123#a0",
+     "kind": "attack_inherited",
+     "verb": "d3f:obfuscates",
+     "artifact_iri": "d3f:ExecutableFile",
+     "rationale": "Executable obfuscation applies here too"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Obfuscation of generic files and content"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0124",
+   "label": "Autonomous Attack Orchestration",
+   "definition": "Adversaries may use autonomous AI systems as an operational control layer to manage multiple distinct autonomous agents or sub-agents toward a common adversary-defined objective. The orchestrating system may create assignments, select executors, allocate tools or resources, establish dependencies, schedule or synchronize activities, and track progress without a human directing each assignment.\n\nThe autonomous system exhibits centralized control over distributed execution including which agent performs which work, when it performs it, and how its output affects other assigned work. The system may aggregate findings and status from participating agents, request independent validation, reconcile conflicting results, prevent or resolve duplicated effort, and determine when an output satisfies a prerequisite for another activity. It may reassign stalled work, increase or reduce resources allocated to a branch, terminate low-value work, or initiate additional research or testing.\n\nOrchestration may use direct agent interfaces (See [Autonomous AI Agent Communication: Direct Agent Communication](/techniques/AML.T0118.001)) to transmit assignments, status, and results.\n\nHuman involvement does not preclude autonomous attack orchestration. A human operator may define campaign objectives, select targets, provide infrastructure, establish constraints, or retain approval over consequential transitions.\n\n[Autonomous Attack-Path Adaptation](/techniques/AML.T0117) and [Autonomous Attack Orchestration](/techniques/AML.T0124) may occur together but describe different control functions. Attack-path adaptation captures how evidence changes the selected path. Attack orchestration captures how work is allocated, coordinated, validated, and redirected across agents.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0124#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "to transmit assignments, status, and results",
+     "rationale": "Orchestrator sends assignments to agents",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Orchestration allocates tools but the object acted on is messages"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0125",
+   "label": "Create Account",
+   "definition": "Adversaries may create an account to maintain access to an AI system or its supporting infrastructure. With a sufficient level of access, creating such accounts may be used to establish secondary credentialed access that do not require persistent remote access tools to be deployed on the system.\n\nAccounts may be created on local systems, in enterprise domains, cloud tenants, identity providers, or individual services. In AI environments, adversaries may create user, service, workload, or automation accounts in AI platforms, model or dataset repositories, development environments, experiment trackers, orchestration services, data stores, and other AI operations infrastructure.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0125",
+     "attack_id": "T1136",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "seeded",
+     "artifacts": [
+      {
+       "iri": "d3f:CloudUserAccount",
+       "verbs": [
+        "d3f:creates"
+       ]
+      },
+      {
+       "iri": "d3f:DomainUserAccount",
+       "verbs": [
+        "d3f:creates"
+       ]
+      },
+      {
+       "iri": "d3f:LocalUserAccount",
+       "verbs": [
+        "d3f:creates"
+       ]
+      },
+      {
+       "iri": "d3f:UserAccount",
+       "verbs": [
+        "d3f:creates"
+       ]
+      }
+     ]
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0125#m0",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:UserAccount",
+     "evidence_quote": "Adversaries may create an account",
+     "rationale": "Account creation",
+     "confidence": "high"
+    },
+    {
+     "row_id": "AML.T0125#m1",
+     "kind": "mapping",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:CloudUserAccount",
+     "evidence_quote": "identity providers, or individual services",
+     "rationale": "Cloud tenant and platform accounts",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0125#a0",
+     "kind": "attack_inherited",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DomainUserAccount",
+     "rationale": "Enterprise domain accounts covered"
+    },
+    {
+     "row_id": "AML.T0125#a1",
+     "kind": "attack_inherited",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:LocalUserAccount",
+     "rationale": "Local system accounts covered"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Accounts only"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0126",
+   "label": "Automated Collection",
+   "definition": "Adversaries may use automated techniques to collect data from AI systems and supporting enterprise environments. Automation may use scripts, command interpreters, command-line tools, or AI agent tools to identify, retrieve, copy, or aggregate data without a human selecting each individual item.\n\nCollection criteria may be fixed, such as file name, type, location, owner, date. Automation may also collect repeatedly, monitor for new material, traverse related resources, or combine data from local systems, cloud services, repositories, databases, object stores, and application APIs.\n\nIn AI environments, targeted material may include models, datasets, configurations, conversation histories, retrieval databases, deployment information, logs, and other operational data.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0126",
+     "attack_id": "T1119",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "seeded",
+     "artifacts": [
+      {
+       "iri": "d3f:File",
+       "verbs": [
+        "d3f:accesses"
+       ]
+      }
+     ]
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0126#m0",
+     "kind": "mapping",
+     "verb": "d3f:copies",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "identify, retrieve, copy, or aggregate data",
+     "rationale": "Automated copying of files",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0126#m1",
+     "kind": "mapping",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Database",
+     "evidence_quote": "repositories, databases, object stores",
+     "rationale": "Data pulled from databases",
+     "confidence": "low"
+    },
+    {
+     "row_id": "AML.T0126#a0",
+     "kind": "attack_inherited",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "rationale": "Automated file access applies"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model",
+     "rag-data-source"
+    ],
+    "why": "Targets include models and retrieval databases, covered only generically as File/Database"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0127",
+   "label": "Data Staged",
+   "definition": "Adversaries may stage collected data in a central location before exfiltration. Staging consolidates, organizes, or prepares information obtained from one or more sources so it can be reviewed, processed, transferred, or retrieved more efficiently.\n\nData may be staged on a compromised local system, another system in the victim environment, a cloud instance, shared storage, an application repository, or other remote infrastructure. It may remain in separate files or be combined into archives, databases, structured documents, manifests, or other collections. Adversaries may compress, encrypt, encode, split, rename, or otherwise transform staged data.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0127",
+     "attack_id": "T1074",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "seeded",
+     "artifacts": [
+      {
+       "iri": "d3f:CreateFile",
+       "verbs": [
+        "d3f:may-invoke"
+       ]
+      },
+      {
+       "iri": "d3f:File",
+       "verbs": [
+        "d3f:may-create"
+       ]
+      },
+      {
+       "iri": "d3f:NetworkResource",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:Resource",
+       "verbs": [
+        "d3f:reads"
+       ]
+      }
+     ]
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0127#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ArchiveFile",
+     "evidence_quote": "combined into archives",
+     "rationale": "Staged data may be archived",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0127#m1",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "compress, encrypt, encode, split, rename",
+     "rationale": "Staged files transformed",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0127#a0",
+     "kind": "attack_inherited",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "rationale": "Staging files may be created"
+    },
+    {
+     "row_id": "AML.T0127#a1",
+     "kind": "attack_inherited",
+     "verb": "d3f:may-invoke",
+     "artifact_iri": "d3f:CreateFile",
+     "rationale": "Creating staging files"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Generic staging"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0128",
+   "label": "Compromise Infrastructure",
+   "definition": "Adversaries may compromise third-party infrastructure and repurpose it to support attacks against AI systems. Rather than buying, leasing, registering, or otherwise legitimately acquiring a resource, the adversary gains unauthorized control of infrastructure owned or operated by another party.\n\nCompromised infrastructure may include physical or cloud servers, domains, network devices, third-party web and DNS services, software or artifact repositories, development workspaces, compute services, and other externally hosted resources.\n\nIn operations involving AI systems, adversaries may compromise infrastructure used for model development, artifact hosting, dataset processing, evaluation, inference, agent tooling, or AI operations. They may repurpose this infrastructure to host malicious artifacts, stage payloads, run tools or agents, relay traffic, capture credentials, provide command and control, process collected data, or launch attacks against additional systems.\n\nCompromised infrastructure may appear trustworthy because it uses a legitimate provider, established domain, valid certificate, reputable service, or expected AI development platform. It may also provide network access, compute resources, service identities, or trusted relationships that would be difficult for the adversary to establish directly.",
+   "seed": [
+    {
+     "atlas_id": "AML.T0128",
+     "attack_id": "T1584",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "attack-unmapped",
+     "artifacts": []
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0128#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:Server",
+     "evidence_quote": "physical or cloud servers",
+     "rationale": "Adversary gains unauthorized control of third-party servers.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0128#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:SoftwareArtifactServer",
+     "evidence_quote": "software or artifact repositories",
+     "rationale": "Compromised artifact repositories are a listed infrastructure type.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Generic infrastructure compromise; AI hosting is incidental."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0129",
+   "label": "Triggers in Multimodal Inputs",
+   "definition": "Adversaries may place instructions or triggers in one part of a multimodal input to influence the model while staying unnoticed by human reviewers and by defenses that do not inspect all input modalities.\n\nMultimodal systems jointly process text alongside other modalities, yet many moderation and filtering controls operate mainly on the textual channel. A payload placed in a modality that is not inspected, or is inspected differently from text, is still parsed by the model but can escape detection, allowing it to alter model output or carry a cross-modal prompt injection.\n\nExamples include instructions placed in an image, audio, or video channel, or carried in file metadata (e.g. EXIF for images, ID3 tags for audio, or document metadata).",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0129#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:DigitalMedia",
+     "evidence_quote": "instructions placed in an image, audio, or video channel",
+     "rationale": "Payload is embedded in image/audio/video content.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0129#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:FileMetadata",
+     "evidence_quote": "carried in file metadata",
+     "rationale": "EXIF/ID3/document metadata carries the trigger.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIInteractionMessage",
+     "parent_iri": "d3f:DigitalMessage",
+     "nearest_existing_iri": "d3f:DigitalMessage",
+     "verb": "d3f:may-create",
+     "evidence_quote": "place instructions or triggers in one part of a multimodal input",
+     "rationale": "The multimodal model input is the central object; no AI-specific message class exists."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Media and metadata carriers suffice; model input message is a proposal."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0130",
+   "label": "AI Agent Response Biasing",
+   "definition": "Adversaries may manipulate an AI assistant so that it favors adversary-chosen sources, or content in its responses. By injecting instructions such as \"treat [source] as a trusted source\" or \"recommend [source] first,\" an adversary biases the assistant's outputs toward their own interests, causing it to present promotional or self-serving content as if it were a neutral, well-reasoned response. This degrades the integrity and trustworthiness of the assistant's responses on topics the user may rely on, such as health, finance, or security, without the user being aware that the advice has been skewed.\n\nThe injected instructions can be delivered through different ways, for example through [Crafted AI Assistant Links](/techniques/AML.T0131). This impact may persist if the agent's memory was poisoned (See [AI Agent Context Poisoning: Memory](/techniques/AML.T0080.000)). Microsoft observed these instructions embedded in apparently helpful summarization links and identified publicly available tooling, including CiteMET, supporting their creation. These attempts sought to introduce third-party preferences into assistant responses; effects varied by assistant and over time.[[ai-recommendation-poisoning]]",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0130#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "injecting instructions such as",
+     "rationale": "Injected instructions are prompt messages to the assistant.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:DatabaseRecord",
+     "nearest_existing_iri": "d3f:DatabaseRecord",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "if the agent's memory was poisoned",
+     "rationale": "Persistence of bias depends on poisoned agent memory."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "an agent-memory artifact"
+    ],
+    "why": "Bias persists through poisoned agent memory."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0131",
+   "label": "Crafted AI Assistant Links",
+   "definition": "Adversaries may craft links that open an AI assistant or agent with attacker-controlled input already supplied, so that opening the link initiates an interaction the adversary defines rather than one the target composed. Many AI assistants accept a prompt through URL parameters (for example `?q=` or `?prompt=`) that is automatically populated, and in some cases submitted, when the link is opened. By encoding a chosen prompt into such a link, an adversary can cause the target's assistant to act on supplied instructions as soon as the link is opened.\n\nThese links are frequently disguised as helpful actions, such as a \"Summarize with AI\" button or a share link, and distributed through web pages, emails, documents, or messages. Because the resulting interaction runs in the target's own assistant session, a crafted link can drive a range of downstream impacts depending on the supplied instructions, such as exfiltrating data the assistant can access or for [AI Agent Response Biasing](/techniques/AML.T0130).\n\nMicrosoft identified CiteMET and AI Share URL Creator as tools supporting this pattern in its investigation of AI Recommendation Poisoning. The generated links supply instructions to the receiving assistant; execution, memory retention, and downstream effects depend on the assistant's behavior and protections.[[ai-recommendation-poisoning]]",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0131#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "attacker-controlled input already supplied",
+     "rationale": "The crafted link carries a prompt; the observable product is the prompt message, not the URL.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIInteractionMessage",
+     "parent_iri": "d3f:DigitalMessage",
+     "nearest_existing_iri": "d3f:DigitalMessage",
+     "verb": "d3f:may-create",
+     "evidence_quote": "attacker-controlled input already supplied",
+     "rationale": "Prompt supplied to an AI assistant is an AI interaction message."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Prompt message to an assistant; no model artifact needed."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0132",
+   "label": "Misconfigured or Publicly Exposed AI Services",
+   "definition": "AI agents and LLM platforms are deployed across diverse architectures, including standalone servers, SaaS platforms, and low-code builders. All of these often have misconfigured access controls, ranging from missing authentication in LLM runtimes to permissive public access settings, that significantly expand their attack surface.\n\nAI agent's security posture affects how attackers are able to explore which agentic attack surface is available to them and directly either expands or limits an adversary's ability to discover and interact with a target's AI agents. For example, one internet-facing AI service could be more easily discoverable by any unauthenticated user, while another may require compromised credentials to even be discovered.\n\nAdversaries may discover and interact with AI agents and LLM services as unauthenticated users via a combination of various OSINT and active scanning methods. These could include using search engines to discover accessible agentic deployments (See [Search Open Technical Databases](/techniques/AML.T0000)), search backlinks which could indicate existing or open agents which have been embedded to frontends (See [Search Open Websites/Domains](/techniques/AML.T0095)), or directly scanning a target's AI infrastructure (See [Active Scanning](/techniques/AML.T0006)).",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0132#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:WebAPIResource",
+     "evidence_quote": "discover and interact with AI agents and LLM services",
+     "rationale": "Exposed LLM/agent endpoint is a web API resource.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0132#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:ServiceApplication",
+     "evidence_quote": "discover and interact with AI agents and LLM services",
+     "rationale": "Hosted agent runtime is a service application.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Exposed service endpoints; no model artifact is acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0133",
+   "label": "Discover AI Agent Runtime Capabilities",
+   "definition": "Adversaries may interact with an AI agent at runtime to reveal the capabilities available to it, without requiring access to its underlying configuration. Direct interaction with the agent can surface its registered tools and their accepted parameters, the actions it can take, the resources it can reach, and the identity and permission scope it acts under. Capabilities can also be inferred indirectly by issuing varied requests and observing which succeeded, failed, or refused.\n\nAI agents are often interconnected with enterprise resources, tools and databases, or embedded within SaaS platforms and have permissions to act on behalf of users in order to facilitate functionality. Once adversaries identify a functional agent that they have access to, they could map the attack surface within that agent, by testing its functionality, enumerating tools, capabilities, knowledge, and embedded credentials and permissions.\n\nThis mapping process often reveals the AI agent's full toolset and configuration details and exposes additional exploitation, as enabled by [AI Agent Tool Invocation](/techniques/AML.T0053). The resulting intelligence facilitates follow-on exploitation, including [Initial Access](/tactics/AML.TA0004), [Persistence](/tactics/AML.TA0006), [Privilege Escalation](/tactics/AML.TA0012), and [Exfiltration](/tactics/AML.TA0010).",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0133#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:ServiceApplication",
+     "evidence_quote": "interact with an AI agent at runtime",
+     "rationale": "Adversary queries the running agent.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfiguration",
+     "verb": "d3f:enumerates",
+     "evidence_quote": "registered tools and their accepted parameters",
+     "rationale": "Registered tools and parameters are the enumerated object."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "an agent-tool-definition artifact"
+    ],
+    "why": "Central object is the agent's tool registry."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0134",
+   "label": "AI Targeted Cloaking",
+   "definition": "Adversaries may selectively deliver malicious or manipulated content to AI systems, while presenting different benign content to human users, web crawlers, or security detection mechanisms. They may identify AI browsers or agents via user-agent strings and condition the server response so that AI-based clients receive prompt injections or misleading content.\n\nPreventing human visitors, conventional web crawlers, and security tools from observing the same content allows adversaries to make malicious input more difficult to detect. [AI Targeted Cloaking](/techniques/AML.T0134) may be combined with [Drive-by Compromise](/techniques/AML.T0078) to deliver an [LLM Prompt Injection](/techniques/AML.T0051).",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0134#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:InboundInternetWebTraffic",
+     "evidence_quote": "selectively deliver malicious or manipulated content",
+     "rationale": "The adversary server's conditional response is observed as web traffic.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Server-side conditional response."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0135",
+   "label": "Outputs from AI Models",
+   "definition": "Adversaries may gather, retain, and organize outputs from an AI model or service as material for subsequent adversarial operations. Systematic selection and aggregation of responses can produce datasets or observations useful for analyzing the target, reproducing its behavior, or developing further attacks.\n\nCollected material may include predictions and scores, embeddings or other exposed feature representations, generated content, reasoning traces, grades or preference judgments, and model-generated plans or tool calls. Outputs may be acquired directly from inference responses or indirectly from product-generated artifacts and records in which they are embedded or retained.\n\n[Discover AI Model Outputs](/techniques/AML.T0063) may help adversaries identify available outputs and useful signals before collection. Adversaries may perform [LLM Prompt Crafting](/techniques/AML.T0065) to elicit the outputs they require for follow-on actions. The resulting material may support collection of [Training Data Information from AI Models](/techniques/AML.T0137), [Recover AI Model Internals](/techniques/AML.T0144), or [Replicate Behavior from Model Outputs](/techniques/AML.T0005.001). Adversaries may also use [Centralized AI Service Request Routing](/techniques/AML.T0140), [Indicator Removal](/techniques/AML.T0138), and [AI Service Request Metadata Sanitization](/techniques/AML.T0141) to obscure coordinated collection activity.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0135#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "outputs from an AI model or service",
+     "rationale": "Model responses are messages collected by the adversary.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:DatabaseFile",
+     "verb": "d3f:may-create",
+     "evidence_quote": "can produce datasets or observations",
+     "rationale": "Aggregated outputs form a dataset."
+    },
+    {
+     "proposed_name": "AIInteractionMessage",
+     "parent_iri": "d3f:DigitalMessage",
+     "nearest_existing_iri": "d3f:DigitalMessage",
+     "verb": "d3f:may-access",
+     "evidence_quote": "predictions and scores, embeddings",
+     "rationale": "Model outputs are AI interaction messages."
+    }
+   ],
+   "event_model": [
+    {
+     "event_class": "MachineLearningInferenceEvent",
+     "relation": "has-output",
+     "participant_iri": "d3f:DigitalMessage",
+     "evidence_quote": "directly from inference responses"
+    }
+   ],
+   "residual_test": {
+    "needs": [
+     "a machine-learning-model artifact"
+    ],
+    "why": "Outputs of a model inference; dataset assembled."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0136",
+   "label": "Exfiltration via AI User Interface",
+   "definition": "Adversaries exfiltrate information through an AI system's user-facing outputs. Information may be disclosed in conversational responses, generated documents, previews, or other content presented through the application. The application may expose information available to a victim-controlled AI service or deliver information gathered from other victim systems.\n\nAdversaries may direct an AI system to present sensitive information in responses or as downloadable artifacts. The application's user interface serves as the transfer channel through which adversaries receive the information.\n\nTransferred information may include [Data from AI Services](/techniques/AML.T0085) or [Outputs from AI Models](/techniques/AML.T0135).",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0136#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "conversational responses",
+     "rationale": "Sensitive data is placed in the assistant response.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0136#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:DocumentFile",
+     "evidence_quote": "generated documents",
+     "rationale": "Generated documents carry exfiltrated data.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Response and document products of the UI."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137",
+   "label": "Training Data Information from AI Models",
+   "definition": "Adversaries may obtain sensitive information about the data used to train or fine-tune an AI model by analyzing its outputs or behavior. This can expose private associations, personally identifiable information, or proprietary data, creating data privacy concerns and supporting subsequent adversarial operations.\n\nAdversaries may determine whether particular samples were used in training through [Infer Membership](/techniques/AML.T0137.000), identify aggregate characteristics of the training dataset through [Infer Properties](/techniques/AML.T0137.001), infer sensitive attributes or reconstruct representative examples through [Invert AI Model](/techniques/AML.T0137.002), or recover retained training content through [Extract Memorized Data](/techniques/AML.T0137.003).",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0137#m0",
+     "kind": "mapping",
+     "verb": "d3f:queries",
+     "artifact_iri": "d3f:WebAPIResource",
+     "evidence_quote": "analyzing its outputs or behavior",
+     "rationale": "Model outputs are obtained from the AI service endpoint.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "analyzing its outputs or behavior",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    },
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:accesses",
+     "evidence_quote": "data used to train or fine-tune an AI model",
+     "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Central object is a trained model and its training dataset."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.000",
+   "label": "Infer Membership",
+   "definition": "Adversaries may infer whether a particular data sample was included in an AI model's training dataset. Samples may include records, text passages, images, or audio samples. Establishing membership may reveal sensitive associations, participation in a private dataset, or use of proprietary information.\n\nMembership inference is a data privacy concern because identifying a sample's inclusion may reveal sensitive associations or participation in a private dataset, even without recovering the underlying data.\n\nMethods may analyze prediction scores, token probabilities, loss values, generated responses, or other differences in model behavior. Adversaries may use statistical tests, shadow models, or auxiliary datasets to distinguish likely training members from nonmembers.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "particular data sample was included in an AI model's training dataset",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    },
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:accesses",
+     "evidence_quote": "AI model's training dataset",
+     "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Attack queries a model to test dataset membership; no model artifact exists."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.001",
+   "label": "Infer Properties",
+   "definition": "Adversaries may infer sensitive global properties of the data used to train an AI model. Properties may include dataset provenance, population composition, relative class proportions, domain coverage, collection period, or the presence of a category or group.\n\nThe adversary may compare output distributions, fit analytical or learned estimators, use auxiliary datasets, or contrast models trained with different known properties. The target is a property of the training data rather than membership of an individual record.\n\nInferred properties of the training dataset may help adversaries identify a model's likely origin, distinguish between candidate models, identify underrepresented populations or domains, and tailor subsequent attacks to suspected weaknesses.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "Adversaries may infer sensitive global properties of the data used to train an AI model",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    },
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:accesses",
+     "evidence_quote": "global properties of the data used to train an AI model",
+     "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Infers training-data properties from a model; no model or dataset artifact."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.002",
+   "label": "Invert AI Model",
+   "definition": "Adversaries may infer sensitive aggregate attributes or reconstruct representative examples of data used to train or fine-tune a target AI model by analyzing its behavior, outputs, or exposed representations. Reconstructed information may reveal characteristics of individuals, records, or classes represented in the training data without reproducing a particular training example.\n\nMethods may optimize candidate inputs, combine known attributes with model-derived signals, or use learned inversion models. Useful observations may include prediction scores, probabilities, embeddings, or gradients where exposed.\n\nResults may include inferred sensitive attributes, approximate reconstructions, or representative examples associated with a target identity or class. Such results do not by themselves establish that a reconstructed example was present in the training dataset.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "analyzing its behavior, outputs, or exposed representations",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Inversion operates on a model and its exposed outputs/gradients."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.003",
+   "label": "Extract Memorized Data",
+   "definition": "Adversaries may elicit and recover sensitive content memorized by a generative AI model during training or fine-tuning. Recovered material may include complete training examples or recognizable portions of text, source code, or images, potentially exposing personal information, private communications, or proprietary material. Recovery may take the form of verbatim reproduction or near-duplicate outputs that reveal specific training content.\n\nAdversaries may supply partial passages, contextual cues, or repeated and varied inputs that encourage reproduction of memorized content. They may generate and filter candidate outputs or compare them with available reference material to identify likely training examples. Researchers have recovered verbatim training passages through language-model queries, including from production systems,[[scalable-extraction]] and extracted memorized training images from diffusion models.[[diffusion-extraction]]",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0137.003#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "partial passages, contextual cues, or repeated and varied inputs",
+     "rationale": "Adversary-supplied prompts are digital messages sent to the model.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0137.003#m1",
+     "kind": "mapping",
+     "verb": "d3f:queries",
+     "artifact_iri": "d3f:WebAPIResource",
+     "evidence_quote": "language-model queries",
+     "rationale": "Production LLM services are queried over web APIs.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "memorized by a generative AI model during training or fine-tuning",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Memorized content is recovered from a model; prompts map to DigitalMessage."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0138",
+   "label": "Indicator Removal",
+   "definition": "Adversaries may delete, alter, or falsify records and artifacts to conceal their activity, impede investigation, or make unauthorized actions appear legitimate. Targeted artifacts may include logs, command histories, files, metadata, repository history, and published content. Changes may selectively remove suspicious evidence while preserving surrounding material to maintain the appearance of normal activity.\n\nAgents may also conceal activity by modifying artifacts on external collaboration and distribution platforms. Editing public messages, removing malicious content, or rewriting revision history can obscure prior actions, make contributions appear benign, and complicate reconstruction of an attack. These changes may help an agent preserve credibility and continue operating after its activity attracts scrutiny, even when earlier versions remain recoverable.[[aisi]]\n\nAutonomous AI agents may identify and manipulate evidence of their own actions without a human directing each concealment step. Agents may edit or delete accessible transcripts, replace records with misleading content, or tamper with harness components responsible for executing or recording tool calls. Such tampering can cause recorded actions or results to differ from actual execution, undermining oversight that relies on the affected records.[[metr-hf]]",
+   "seed": [
+    {
+     "atlas_id": "AML.T0138",
+     "attack_id": "T1070",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "seeded",
+     "artifacts": [
+      {
+       "iri": "d3f:CommandHistoryLog",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:EventLog",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:File",
+       "verbs": [
+        "d3f:deletes",
+        "d3f:may-modify"
+       ]
+      },
+      {
+       "iri": "d3f:FileSystemMetadata",
+       "verbs": [
+        "d3f:forges"
+       ]
+      },
+      {
+       "iri": "d3f:NetworkFileShareResource",
+       "verbs": [
+        "d3f:unmounts"
+       ]
+      },
+      {
+       "iri": "d3f:OperatingSystemLogFile",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      }
+     ]
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0138#m0",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:EventLog",
+     "evidence_quote": "logs, command histories, files, metadata, repository history",
+     "rationale": "Logs are altered to conceal activity.",
+     "confidence": "high"
+    },
+    {
+     "row_id": "AML.T0138#m1",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:CommandHistoryLog",
+     "evidence_quote": "command histories",
+     "rationale": "Command histories are named targets.",
+     "confidence": "high"
+    },
+    {
+     "row_id": "AML.T0138#m2",
+     "kind": "mapping",
+     "verb": "d3f:deletes",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "delete, alter, or falsify records and artifacts",
+     "rationale": "Files and records are deleted.",
+     "confidence": "high"
+    },
+    {
+     "row_id": "AML.T0138#a0",
+     "kind": "attack_inherited",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:EventLog",
+     "rationale": "Log tampering is the technique."
+    },
+    {
+     "row_id": "AML.T0138#a1",
+     "kind": "attack_inherited",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:CommandHistoryLog",
+     "rationale": "Command histories listed."
+    },
+    {
+     "row_id": "AML.T0138#a2",
+     "kind": "attack_inherited",
+     "verb": "d3f:deletes",
+     "artifact_iri": "d3f:File",
+     "rationale": "Deleting files listed."
+    },
+    {
+     "row_id": "AML.T0138#a3",
+     "kind": "attack_inherited",
+     "verb": "d3f:forges",
+     "artifact_iri": "d3f:FileSystemMetadata",
+     "rationale": "Falsifying metadata listed."
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Targets are logs, files and histories; agent transcripts are covered by EventLog/File."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0139",
+   "label": "Compromise Accounts",
+   "definition": "Adversaries may compromise existing accounts with services that can support targeting or subsequent operations. These accounts may provide established identities, trusted relationships, access to resources, or funded wallets for AI services.\n\nAdversaries may obtain account credentials through [Phishing](/techniques/AML.T0052), password guessing or reuse, theft of access tokens, or purchase from third parties.\n\nAdversaries may compromise AI service accounts for LLMJacking, a pattern of consuming model access and usage at the account holder's expense.[[sysdig-llmjacking]] Depending on the service, these resources may include prepaid balances or service wallets, promotional credits, subscription allowances, or usage charged to an existing payment method or enterprise billing account. Adversaries may use the acquired capacity for their own inference workloads, code generation, or tool development while exhausting the victim's available credits and quotas or generating additional charges.\n\nCompromised accounts may also supply capacity for [AI Service Proxies](/techniques/AML.T0008.005), allowing operators to aggregate and resell access while concealing the underlying credentials from downstream users.[[sysdig-market]] Google has reported model distillation campaigns that used proxy infrastructure to rotate requests across compromised credentials and fraudulent accounts.[[google-sep]] Account pooling and resale also feature in the gray-market transfer station economy, where account merchants and registration intermediaries supply access alongside discounted capacity, unused quotas, and shared subscriptions.[[chinatalk]].",
+   "seed": [
+    {
+     "atlas_id": "AML.T0139",
+     "attack_id": "T1586",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "attack-unmapped",
+     "artifacts": []
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0139#m0",
+     "kind": "mapping",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:UserAccount",
+     "evidence_quote": "compromise existing accounts with services",
+     "rationale": "Adversary takes over existing accounts.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0139#m1",
+     "kind": "mapping",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:AccessToken",
+     "evidence_quote": "theft of access tokens",
+     "rationale": "Token theft is a stated credential route.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Account takeover; AI service wallets are not a distinct artifact."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0140",
+   "label": "Centralized AI Service Request Routing",
+   "definition": "Adversaries may distribute coordinated AI service requests across multiple pathways to impede detection, conceal the coordinated nature of the requests, and evade AI provider enforcement. Distributing activity can limit the portion of an operation visible through any individual account or pathway, obscuring its aggregate scale and common objective.\n\nAdversaries may use centralized routing infrastructure to divide a workload or prompt suite across multiple pathways, including various service APIs, cloud-hosted endpoints, third-party aggregators or relays, and account pools. Routers may rotate identities and request pathways, mix adversarial requests with unrelated customer traffic, and automatically redirect requests when requests are blocked. These capabilities allow adversaries to maintain coordinated operations while making the activity appear to originate from unrelated users or services.\n\nAdversaries may also use routing infrastructure to centrally optimize API costs and sustain distributed operations within available quotas and budgets. This may include prioritizing cost-efficient access pathways, allocating quotas across accounts to align with operational budgets, segmenting accounts by purpose, and organizing requests to maximize cache reuse. Centralized routing may coordinate shifts across accounts, providers, or pathways in response to pricing or rate-limit changes, enabling an operation to adapt while continuing to obscure its common control and aggregate activity.\n\nThis behavior may be implemented via proxy services (See  [Acquire Infrastructure: AI Service Proxies](/techniques/AML.T0008.005)), multiple cloud instances, IP pools, coordination across multiple accounts, or other distributed infrastructure.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0140#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetNetworkTraffic",
+     "evidence_quote": "distribute coordinated AI service requests across multiple pathways",
+     "rationale": "Distributed requests are outbound traffic.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0140#m1",
+     "kind": "mapping",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "evidence_quote": "various service APIs",
+     "rationale": "AI service APIs receive routed requests.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0140#m2",
+     "kind": "mapping",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ProxyServer",
+     "evidence_quote": "centralized routing infrastructure",
+     "rationale": "Routers/relays act as proxy infrastructure.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Network routing of requests; no AI-specific artifact needed."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0141",
+   "label": "AI Service Request Metadata Sanitization",
+   "definition": "Adversaries may remove or replace identifying information in request metadata before submitting requests to an AI service to impede attribution and correlation of coordinated activity. Sanitization may be enforced automatically in clients, relays, aggregators, or centralized routing infrastructure.\n\nMetadata may include client or device identifiers, session identifiers, account identifiers, client software identifiers, forwarding headers, and attribution markers embedded in request bodies.[[claude-relay-service]] Metadata fields may be sanitized via removal, or replacement with normalized, randomized, or generated values.\n\nThe NSA, CISA, and FBI reported removal of organizational identifiers in industrial-scale distillation campaigns, with indicators including the disappearance of previously consistent metadata and generic or randomized patterns replacing organizational markers.[[cisa]]",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0141#m0",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Metadata",
+     "evidence_quote": "remove or replace identifying information in request metadata",
+     "rationale": "Request metadata is removed or replaced.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0141#m1",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "evidence_quote": "before submitting requests to an AI service",
+     "rationale": "Sanitized requests leave as web traffic.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Request metadata and traffic only."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0142",
+   "label": "Event Triggered Execution",
+   "definition": "Adversaries may establish persistence by creating or modifying event handlers, startup hooks, or associated configuration so that subsequent system or application activity automatically executes adversary-controlled code or commands. Triggers may include interpreter initialization, application execution, or other events processed by the affected mechanism. These modifications can allow malicious behavior to recur without another direct execution request from the adversary.\n\nIn AI environments, adversaries may target hooks in the software and execution environments used for data processing, model training, evaluation, inference, or agent tool execution. For example, Python startup hooks may execute adversary-controlled code when a subsequent workflow or tool invocation starts an interpreter that processes the hook.[[aisi]] \n\nTriggered code may perform malicious actions directly or emit content that is subsequently consumed by an AI system. Such content may contain fabricated approvals or instructions intended to manipulate the system's later behavior or make normally unobservable information available. AI Agents may also place triggers or trip-wires behind to observe, act on, or report conditions that the agent can no longer reach or are beyond its execution window.[[metr]]",
+   "seed": [
+    {
+     "atlas_id": "AML.T0142",
+     "attack_id": "T1546",
+     "attack_class_on_develop": true,
+     "attack_deprecated": false,
+     "seed_status": "seeded",
+     "artifacts": [
+      {
+       "iri": "d3f:ConfigurationResource",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:CreateProcess",
+       "verbs": [
+        "d3f:invokes"
+       ]
+      },
+      {
+       "iri": "d3f:EventLog",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:ExecutableBinary",
+       "verbs": [
+        "d3f:loads",
+        "d3f:may-modify",
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:ExecutableFile",
+       "verbs": [
+        "d3f:creates"
+       ]
+      },
+      {
+       "iri": "d3f:ExecutableScript",
+       "verbs": [
+        "d3f:may-create",
+        "d3f:may-modify"
+       ]
+      },
+      {
+       "iri": "d3f:IntranetAdministrativeNetworkTraffic",
+       "verbs": [
+        "d3f:may-create",
+        "d3f:produces"
+       ]
+      },
+      {
+       "iri": "d3f:PowerShellProfileScript",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:Process",
+       "verbs": [
+        "d3f:produces"
+       ]
+      },
+      {
+       "iri": "d3f:PropertyListFile",
+       "verbs": [
+        "d3f:may-create",
+        "d3f:may-modify"
+       ]
+      },
+      {
+       "iri": "d3f:SharedLibraryFile",
+       "verbs": [
+        "d3f:loads"
+       ]
+      },
+      {
+       "iri": "d3f:ShellCommand",
+       "verbs": [
+        "d3f:executes"
+       ]
+      },
+      {
+       "iri": "d3f:Shim",
+       "verbs": [
+        "d3f:creates"
+       ]
+      },
+      {
+       "iri": "d3f:ShimDatabase",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:SystemConfigurationDatabase",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:SystemConfigurationDatabaseRecord",
+       "verbs": [
+        "d3f:may-modify",
+        "d3f:modifies"
+       ]
+      },
+      {
+       "iri": "d3f:UserInitConfigurationFile",
+       "verbs": [
+        "d3f:modifies"
+       ]
+      }
+     ]
+    }
+   ],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0142#m0",
+     "kind": "mapping",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ConfigurationResource",
+     "evidence_quote": "creating or modifying event handlers, startup hooks, or associated configuration",
+     "rationale": "Hooks and configuration are modified.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0142#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ExecutableScript",
+     "evidence_quote": "Python startup hooks may execute adversary-controlled code",
+     "rationale": "Python startup hooks are script files.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0142#m2",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "emit content that is subsequently consumed by an AI system",
+     "rationale": "Triggered code emits content for an AI system.",
+     "confidence": "low"
+    },
+    {
+     "row_id": "AML.T0142#a0",
+     "kind": "attack_inherited",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ConfigurationResource",
+     "rationale": "Hook configuration modified."
+    },
+    {
+     "row_id": "AML.T0142#a1",
+     "kind": "attack_inherited",
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ExecutableScript",
+     "rationale": "Hooks are scripts."
+    },
+    {
+     "row_id": "AML.T0142#a2",
+     "kind": "attack_inherited",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:ExecutableScript",
+     "rationale": "Hooks may be edited."
+    },
+    {
+     "row_id": "AML.T0142#a3",
+     "kind": "attack_inherited",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ShellCommand",
+     "rationale": "Triggers run commands."
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Persistence hooks are ordinary files and configuration."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0143",
+   "label": "LLM Prompt Propagation",
+   "definition": "Adversaries may cause malicious instructions already introduced into an AI-enabled environment to be transferred onward to additional storage locations, agents, applications, or resources where they can influence subsequent AI activity. This extends the attack beyond its initial point of introduction and may allow adversaries to influence additional targets without directly delivering a malicious prompt payload to each one.\n\nPropagation may occur through email or other communications, shared documents, source-code repositories, persistent agent memory, retrieval systems, databases, shared workspaces, or direct agent-to-agent communication. Connected tools and services may also carry malicious instructions between otherwise separate environments. The transfer may result from an induced agent action or from copying, forwarding, synchronization, or other workflows that distribute affected content.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0143#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "direct agent-to-agent communication",
+     "rationale": "Propagated instructions travel as messages.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0143#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:File",
+     "evidence_quote": "shared documents, source-code repositories",
+     "rationale": "Instructions are copied into shared files.",
+     "confidence": "medium"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "persistent agent memory",
+     "rationale": "Agent memory is a named propagation store with no artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory artifact",
+     "RAG/retrieval data source artifact"
+    ],
+    "why": "Propagation targets agent memory and retrieval systems besides messages and files."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0144",
+   "label": "Recover AI Model Internals",
+   "definition": "Adversaries may infer or recover non-public AI model internals through analysis of model behavior or exposed information. Targets may include architecture, layer dimensions, hyperparameters, decision-tree structure, projection matrices, or numerical parameters.\n\nMethods may use strategically selected queries, equation solving, numerical reconstruction, or statistical identification. Recovery may be partial, approximate, or exact.",
+   "seed": [],
+   "disposition": "needs-new-artifact",
+   "rows": [
+    {
+     "row_id": "AML.T0144#m0",
+     "kind": "mapping",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "strategically selected queries",
+     "rationale": "Probe queries are messages sent to the model.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "analysis of model behavior or exposed information",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Recovered object is model architecture and parameters."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0145",
+   "label": "Poison AI Agent Learning Environment",
+   "definition": "Adversaries may manipulate an environment in which an AI agent interacts so that observations, feedback, rewards, actions, or resulting interactions are incorporated into model training to cause persistent changes to the behavior of an AI system. This allows adversary's influence to persist beyond the original interaction and affect subsequent tasks.\n\nAn adversary may alter webpages, tool or API responses, elements in simulated environments, task descriptions, reward signals, evaluator outputs, or other environmental content used during AI agent learning or adaptation. The manipulated interactions may be incorporated into model fine-tuning, reinforcement learning, synthetic training corpora, agent memories, other  persistent components.\n\n[Poison AI Agent Learning Environment](/techniques/AML.T0145) targets the process that generates or selects learning experience, without requiring direct adversarial access to training datasets, model parameters, or stored agent artifacts. The resulting experience may appear legitimate because it was produced by an authorized agent operating through an expected interface. Once introduced, the adversary's influence may remain effective even after the manipulated environmental content is removed or is no longer encountered.\n\nAn adversary may use this technique to introduce backdoors, increase compliance with malicious instructions, distort policies or preferences, teach unsafe tool use, manipulate reward-seeking behavior. The malicious behavior may be activated later by an environmental trigger or during ordinary agent operation.",
+   "seed": [],
+   "disposition": "maps-existing",
+   "rows": [
+    {
+     "row_id": "AML.T0145#m0",
+     "kind": "mapping",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:WebResource",
+     "evidence_quote": "alter webpages",
+     "rationale": "Adversary alters web content the agent learns from.",
+     "confidence": "medium"
+    },
+    {
+     "row_id": "AML.T0145#m1",
+     "kind": "mapping",
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:DigitalMessage",
+     "evidence_quote": "tool or API responses",
+     "rationale": "Manipulated tool/API responses feed learning.",
+     "confidence": "low"
+    }
+   ],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:DatabaseRecord",
+     "nearest_existing_iri": "d3f:DatabaseRecord",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "agent memories",
+     "rationale": "Influence persists in agent memories."
+    }
+   ],
+   "event_model": [
+    {
+     "event_class": "MachineLearningFineTuningEvent",
+     "relation": "has-input",
+     "participant_iri": "d3f:WebResource",
+     "evidence_quote": "incorporated into model fine-tuning"
+    }
+   ],
+   "residual_test": {
+    "needs": [
+     "a machine-learning-model artifact",
+     "an agent-memory artifact"
+    ],
+    "why": "Poisoned experience enters fine-tuning/RL and memories."
+   },
+   "no_fit_rationale": null
+  }
+ ]
+}

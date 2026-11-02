@@ -1,0 +1,2082 @@
+{
+ "stage": "core",
+ "techniques": 56,
+ "rows_seen": 116,
+ "rows_rejected": 0,
+ "disposition_notes": 0,
+ "structural_problems": [],
+ "warnings": [
+  "G7 CONCENTRATION: d3f:File targeted by 16/89 kept rows (>15%)",
+  "G7 CONCENTRATION: d3f:DigitalMessage targeted by 15/89 kept rows (>15%)"
+ ],
+ "results": {
+  "AML.T0000.003": {
+   "source": "map-B1.output.json",
+   "disposition": "no-fit",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": "The adversary queries a third-party internet-scan service and its stored results; no existing artifact honestly denotes the scan-data service, and the victim system is explicitly not touched."
+  },
+  "AML.T0006.000": {
+   "source": "map-B1.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:enumerates",
+      "artifact_iri": "d3f:WebAPIResource",
+      "confidence": "medium",
+      "evidence_quote": "discover live AI agents, endpoints, and associated metadata",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Discovered hosted agent endpoints are web API resources."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0006.001": {
+   "source": "map-B1.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:queries",
+      "artifact_iri": "d3f:WebAPIResource",
+      "confidence": "high",
+      "evidence_quote": "query documented or undocumented APIs",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "The control-plane and identity APIs queried are web API resources."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0006.002": {
+   "source": "map-B1.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:enumerates",
+      "artifact_iri": "d3f:ServiceApplication",
+      "confidence": "low",
+      "evidence_quote": "deployed AI backends, model-serving endpoints, and AI agent infrastructure",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Scanning identifies network-facing service applications hosting AI runtimes."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0006.003": {
+   "source": "map-B1.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "send crafted inputs",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "The adversary sends crafted messages to triggers such as email, webhooks and chat channels."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0016.003": {
+   "source": "map-B1.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "ExploitCode",
+      "parent_iri": "d3f:Software",
+      "nearest_existing_iri": "d3f:ExecutableScript",
+      "verb": "d3f:uses",
+      "evidence_quote": "search for and obtain exploits",
+      "rationale": "No D3FEND class denotes exploit code; Software entails executable content and is the honest parent."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0016.004": {
+   "source": "map-B1.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:uses",
+      "artifact_iri": "d3f:Software",
+      "confidence": "medium",
+      "evidence_quote": "distributed as Model Context Protocol servers, plugins, skills",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "MCP servers, plugins and connectors are executable software."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIToolDefinition",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:Software",
+      "verb": "d3f:uses",
+      "evidence_quote": "model-visible descriptions and executable interfaces",
+      "rationale": "The model-visible tool description and schema that steers agent tool selection has no D3FEND class."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0017.001": {
+   "source": "map-B1.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "ExploitCode",
+      "parent_iri": "d3f:Software",
+      "nearest_existing_iri": "d3f:ExecutableScript",
+      "verb": "d3f:creates",
+      "evidence_quote": "develop or materially adapt an exploit capability",
+      "rationale": "The agent brings an exploit capability into being; no existing class denotes exploit code."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0017.002": {
+   "source": "map-B1.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:Software",
+      "confidence": "high",
+      "evidence_quote": "creating executable functionality",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Tool servers, plugins and connectors are software with executable content."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIToolDefinition",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:Software",
+      "verb": "d3f:creates",
+      "evidence_quote": "model-visible tool descriptions",
+      "rationale": "Developed model-visible tool descriptions and input schemas have no D3FEND class."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0017.003": {
+   "source": "map-B1.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:Software",
+      "confidence": "high",
+      "evidence_quote": "develop malware to support their operations",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Malware is software the adversary brings into being."
+     },
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:ExecutableScript",
+      "confidence": "medium",
+      "evidence_quote": "creating or modifying malicious scripts",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Malicious scripts are one named form of the developed malware."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0018.003": {
+   "source": "map-B1.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "package this logic alongside model weights in a single distributable artifact",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "The GGUF-style model file bundles the template logic; a model file maps to File, not Software."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIPromptConfiguration",
+      "parent_iri": "d3f:ApplicationConfiguration",
+      "nearest_existing_iri": "d3f:ApplicationConfigurationFile",
+      "verb": "d3f:modifies",
+      "evidence_quote": "embedded system instructions, tokenizer settings, tool-call formatting",
+      "rationale": "Prompt templates, role delimiters and tokenizer settings form configuration with no D3FEND class."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0085.002": {
+   "source": "map-B2.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "user messages, model responses, conversation summaries",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Conversation messages and responses are digital messages the adversary collects."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIAgentMemoryRecord",
+      "parent_iri": "d3f:Record",
+      "nearest_existing_iri": "d3f:Record",
+      "verb": "d3f:may-access",
+      "evidence_quote": "retained user facts and preferences",
+      "rationale": "Stored cross-session memory records (facts, preferences) have no existing kind."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0085.003": {
+   "source": "map-B2.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:ApplicationConfiguration",
+      "confidence": "medium",
+      "evidence_quote": "non-public instructions used to configure the behavior",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "System instructions configure the AI application; closest existing kind."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIPromptConfiguration",
+      "parent_iri": "d3f:ApplicationConfiguration",
+      "nearest_existing_iri": "d3f:ApplicationConfiguration",
+      "verb": "d3f:may-access",
+      "evidence_quote": "non-public instructions used to configure the behavior of an AI model or agent",
+      "rationale": "System prompts are a distinct configuration kind."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0110.000": {
+   "source": "map-B2.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:ApplicationConfiguration",
+      "confidence": "low",
+      "evidence_quote": "tool descriptions, docstrings, parameter names",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Model-visible tool definitions act as configuration; generic fit only."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIToolDefinition",
+      "parent_iri": "d3f:ApplicationConfiguration",
+      "nearest_existing_iri": "d3f:ApplicationConfiguration",
+      "verb": "d3f:may-modify",
+      "evidence_quote": "model-visible definition or operational instructions of an AI agent tool",
+      "rationale": "Model-visible tool descriptions, schemas and manifests are a distinct artifact."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0110.001": {
+   "source": "map-B2.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:Software",
+      "confidence": "medium",
+      "evidence_quote": "poison the executable implementation of an AI agent tool",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Tool code is attack-tooling software whose executable logic is altered."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0110.002": {
+   "source": "map-B2.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-produce",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "deliberately returning content intended to influence",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "The compromised tool produces a response message injected into model context."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0115": {
+   "source": "map-B2.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:File",
+      "confidence": "low",
+      "evidence_quote": "create or modify AI artifacts and publish them",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Generic AI artifacts (datasets, models, tools) are file-borne; specific children carry the detail."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0115.000": {
+   "source": "map-B2.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "publish poisoned datasets intended for training",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "A dataset is distributed as files; no dedicated dataset kind exists."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "Dataset",
+      "parent_iri": "d3f:File",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:may-create",
+      "evidence_quote": "publish poisoned datasets intended for training or fine-tuning",
+      "rationale": "Training data collections lack a kind."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0115.001": {
+   "source": "map-B2.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "publish poisoned AI models",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Model weights are a File, not Software."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIModel",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:may-create",
+      "evidence_quote": "publish poisoned AI models",
+      "rationale": "Trained models and weights lack a kind."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0115.002": {
+   "source": "map-B2.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:Application",
+      "confidence": "medium",
+      "evidence_quote": "create and publish poisoned AI agent tools",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Agent tools are tooling software."
+     },
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:SoftwarePackage",
+      "confidence": "low",
+      "evidence_quote": "package registries",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Tools are distributed as packages via registries."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0116": {
+   "source": "map-B2.output.json",
+   "disposition": "no-fit",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": "Technique describes the actor's autonomous decision process (hypothesis, source selection, scope judgment), not an artifact acted on; reconnaissance targets are covered by ATT&CK-derived rows."
+  },
+  "AML.T0117": {
+   "source": "map-B2.output.json",
+   "disposition": "no-fit",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": "Describes adaptive replanning across observation-decision-action cycles; objects (exploits, identities, tools) are too heterogeneous and the central subject is the agent process."
+  },
+  "AML.T0118": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "exchange operational information",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Agents emit messages carrying tasking and results"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0118.000": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "creating or modifying artifacts in a shared resource",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Agents write files to shared storage"
+     },
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "creating or modifying artifacts in a shared resource",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Agents update shared artifacts"
+     },
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:Database",
+      "confidence": "low",
+      "evidence_quote": "message board, database, object store",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Database may be the shared resource"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0118.001": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "operational context, discoveries, objectives, tasking",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Direct agent-to-agent message"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0119": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:File",
+      "confidence": "low",
+      "evidence_quote": "submit, publish, or modify an artifact",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary submits a crafted artifact to the pipeline"
+     },
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:File",
+      "confidence": "low",
+      "evidence_quote": "submit, publish, or modify an artifact",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary modifies an existing artifact"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0120": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:uses",
+      "artifact_iri": "d3f:Repository",
+      "confidence": "medium",
+      "evidence_quote": "repurpose AI artifact repositories",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Repository serves as C2 dead drop"
+     },
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:Command",
+      "confidence": "medium",
+      "evidence_quote": "Commands, payloads, or tasking may be placed",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Tasking placed as commands in repository objects"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0121": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:ApplicationConfiguration",
+      "confidence": "medium",
+      "evidence_quote": "recover or recreate tools, dependencies, configuration",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Agent recreates configuration for the lost environment"
+     },
+     {
+      "verb": "d3f:accesses",
+      "artifact_iri": "d3f:Credential",
+      "confidence": "low",
+      "evidence_quote": "credentials or access paths",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Agent recovers credentials to resume access"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0122": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:abuses",
+      "artifact_iri": "d3f:ServiceApplication",
+      "confidence": "medium",
+      "evidence_quote": "exploit a software or design weakness in a service",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary exploits weakness in a remote service"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:IntranetNetworkTraffic",
+      "rationale": "Exploitation traverses the network, also true for AI services"
+     },
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:ProcessCodeSegment",
+      "rationale": "Code execution may modify process code"
+     }
+    ]
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0123": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:obfuscates",
+      "artifact_iri": "d3f:File",
+      "confidence": "high",
+      "evidence_quote": "encrypting, encoding, or otherwise obfuscating its contents",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Files are obfuscated to evade detection"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": [
+     {
+      "verb": "d3f:obfuscates",
+      "artifact_iri": "d3f:ExecutableFile",
+      "rationale": "Executable obfuscation applies here too"
+     }
+    ]
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0124": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "to transmit assignments, status, and results",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Orchestrator sends assignments to agents"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0125": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:UserAccount",
+      "confidence": "high",
+      "evidence_quote": "Adversaries may create an account",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Account creation"
+     },
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:CloudUserAccount",
+      "confidence": "medium",
+      "evidence_quote": "identity providers, or individual services",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Cloud tenant and platform accounts"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": [
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:DomainUserAccount",
+      "rationale": "Enterprise domain accounts covered"
+     },
+     {
+      "verb": "d3f:creates",
+      "artifact_iri": "d3f:LocalUserAccount",
+      "rationale": "Local system accounts covered"
+     }
+    ]
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0126": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:copies",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "identify, retrieve, copy, or aggregate data",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Automated copying of files"
+     },
+     {
+      "verb": "d3f:accesses",
+      "artifact_iri": "d3f:Database",
+      "confidence": "low",
+      "evidence_quote": "repositories, databases, object stores",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Data pulled from databases"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": [
+     {
+      "verb": "d3f:accesses",
+      "artifact_iri": "d3f:File",
+      "rationale": "Automated file access applies"
+     }
+    ]
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0127": {
+   "source": "map-B3.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:ArchiveFile",
+      "confidence": "medium",
+      "evidence_quote": "combined into archives",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Staged data may be archived"
+     },
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "compress, encrypt, encode, split, rename",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Staged files transformed"
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:File",
+      "rationale": "Staging files may be created"
+     },
+     {
+      "verb": "d3f:may-invoke",
+      "artifact_iri": "d3f:CreateFile",
+      "rationale": "Creating staging files"
+     }
+    ]
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0128": {
+   "source": "map-B4.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:Server",
+      "confidence": "medium",
+      "evidence_quote": "physical or cloud servers",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary gains unauthorized control of third-party servers."
+     },
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:SoftwareArtifactServer",
+      "confidence": "medium",
+      "evidence_quote": "software or artifact repositories",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Compromised artifact repositories are a listed infrastructure type."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0129": {
+   "source": "map-B4.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:DigitalMedia",
+      "confidence": "medium",
+      "evidence_quote": "instructions placed in an image, audio, or video channel",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Payload is embedded in image/audio/video content."
+     },
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:FileMetadata",
+      "confidence": "medium",
+      "evidence_quote": "carried in file metadata",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "EXIF/ID3/document metadata carries the trigger."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIInteractionMessage",
+      "parent_iri": "d3f:DigitalMessage",
+      "nearest_existing_iri": "d3f:DigitalMessage",
+      "verb": "d3f:may-create",
+      "evidence_quote": "place instructions or triggers in one part of a multimodal input",
+      "rationale": "The multimodal model input is the central object; no AI-specific message class exists."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0130": {
+   "source": "map-B4.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "low",
+      "evidence_quote": "injecting instructions such as",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Injected instructions are prompt messages to the assistant."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIAgentMemoryRecord",
+      "parent_iri": "d3f:DatabaseRecord",
+      "nearest_existing_iri": "d3f:DatabaseRecord",
+      "verb": "d3f:may-modify",
+      "evidence_quote": "if the agent's memory was poisoned",
+      "rationale": "Persistence of bias depends on poisoned agent memory."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0131": {
+   "source": "map-B4.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "low",
+      "evidence_quote": "attacker-controlled input already supplied",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "The crafted link carries a prompt; the observable product is the prompt message, not the URL."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIInteractionMessage",
+      "parent_iri": "d3f:DigitalMessage",
+      "nearest_existing_iri": "d3f:DigitalMessage",
+      "verb": "d3f:may-create",
+      "evidence_quote": "attacker-controlled input already supplied",
+      "rationale": "Prompt supplied to an AI assistant is an AI interaction message."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0132": {
+   "source": "map-B4.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:WebAPIResource",
+      "confidence": "medium",
+      "evidence_quote": "discover and interact with AI agents and LLM services",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Exposed LLM/agent endpoint is a web API resource."
+     },
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:ServiceApplication",
+      "confidence": "low",
+      "evidence_quote": "discover and interact with AI agents and LLM services",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Hosted agent runtime is a service application."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0133": {
+   "source": "map-B4.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:ServiceApplication",
+      "confidence": "low",
+      "evidence_quote": "interact with an AI agent at runtime",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary queries the running agent."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIToolDefinition",
+      "parent_iri": "d3f:ApplicationConfiguration",
+      "nearest_existing_iri": "d3f:ApplicationConfiguration",
+      "verb": "d3f:enumerates",
+      "evidence_quote": "registered tools and their accepted parameters",
+      "rationale": "Registered tools and parameters are the enumerated object."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0134": {
+   "source": "map-B4.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-produce",
+      "artifact_iri": "d3f:InboundInternetWebTraffic",
+      "confidence": "medium",
+      "evidence_quote": "selectively deliver malicious or manipulated content",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "The adversary server's conditional response is observed as web traffic."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0135": {
+   "source": "map-B4.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-access",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "low",
+      "evidence_quote": "outputs from an AI model or service",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Model responses are messages collected by the adversary."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "Dataset",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:DatabaseFile",
+      "verb": "d3f:may-create",
+      "evidence_quote": "can produce datasets or observations",
+      "rationale": "Aggregated outputs form a dataset."
+     },
+     {
+      "proposed_name": "AIInteractionMessage",
+      "parent_iri": "d3f:DigitalMessage",
+      "nearest_existing_iri": "d3f:DigitalMessage",
+      "verb": "d3f:may-access",
+      "evidence_quote": "predictions and scores, embeddings",
+      "rationale": "Model outputs are AI interaction messages."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0136": {
+   "source": "map-B4.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-produce",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "conversational responses",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Sensitive data is placed in the assistant response."
+     },
+     {
+      "verb": "d3f:may-produce",
+      "artifact_iri": "d3f:DocumentFile",
+      "confidence": "medium",
+      "evidence_quote": "generated documents",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Generated documents carry exfiltrated data."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0137": {
+   "source": "map-B5.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:queries",
+      "artifact_iri": "d3f:WebAPIResource",
+      "confidence": "low",
+      "evidence_quote": "analyzing its outputs or behavior",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Model outputs are obtained from the AI service endpoint."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIModel",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:queries",
+      "evidence_quote": "analyzing its outputs or behavior",
+      "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+     },
+     {
+      "proposed_name": "Dataset",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:accesses",
+      "evidence_quote": "data used to train or fine-tune an AI model",
+      "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0137.000": {
+   "source": "map-B5.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIModel",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:queries",
+      "evidence_quote": "particular data sample was included in an AI model's training dataset",
+      "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+     },
+     {
+      "proposed_name": "Dataset",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:accesses",
+      "evidence_quote": "AI model's training dataset",
+      "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0137.001": {
+   "source": "map-B5.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIModel",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:queries",
+      "evidence_quote": "Adversaries may infer sensitive global properties of the data used to train an AI model",
+      "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+     },
+     {
+      "proposed_name": "Dataset",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:accesses",
+      "evidence_quote": "global properties of the data used to train an AI model",
+      "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0137.002": {
+   "source": "map-B5.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIModel",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:queries",
+      "evidence_quote": "analyzing its behavior, outputs, or exposed representations",
+      "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0137.003": {
+   "source": "map-B5.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "partial passages, contextual cues, or repeated and varied inputs",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary-supplied prompts are digital messages sent to the model."
+     },
+     {
+      "verb": "d3f:queries",
+      "artifact_iri": "d3f:WebAPIResource",
+      "confidence": "medium",
+      "evidence_quote": "language-model queries",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Production LLM services are queried over web APIs."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIModel",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:queries",
+      "evidence_quote": "memorized by a generative AI model during training or fine-tuning",
+      "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0138": {
+   "source": "map-B5.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:EventLog",
+      "confidence": "high",
+      "evidence_quote": "logs, command histories, files, metadata, repository history",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Logs are altered to conceal activity."
+     },
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:CommandHistoryLog",
+      "confidence": "high",
+      "evidence_quote": "command histories",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Command histories are named targets."
+     },
+     {
+      "verb": "d3f:deletes",
+      "artifact_iri": "d3f:File",
+      "confidence": "high",
+      "evidence_quote": "delete, alter, or falsify records and artifacts",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Files and records are deleted."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": [
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:EventLog",
+      "rationale": "Log tampering is the technique."
+     },
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:CommandHistoryLog",
+      "rationale": "Command histories listed."
+     },
+     {
+      "verb": "d3f:deletes",
+      "artifact_iri": "d3f:File",
+      "rationale": "Deleting files listed."
+     },
+     {
+      "verb": "d3f:forges",
+      "artifact_iri": "d3f:FileSystemMetadata",
+      "rationale": "Falsifying metadata listed."
+     }
+    ]
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0139": {
+   "source": "map-B5.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:accesses",
+      "artifact_iri": "d3f:UserAccount",
+      "confidence": "medium",
+      "evidence_quote": "compromise existing accounts with services",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary takes over existing accounts."
+     },
+     {
+      "verb": "d3f:accesses",
+      "artifact_iri": "d3f:AccessToken",
+      "confidence": "medium",
+      "evidence_quote": "theft of access tokens",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Token theft is a stated credential route."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0140": {
+   "source": "map-B5.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:OutboundInternetNetworkTraffic",
+      "confidence": "medium",
+      "evidence_quote": "distribute coordinated AI service requests across multiple pathways",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Distributed requests are outbound traffic."
+     },
+     {
+      "verb": "d3f:accesses",
+      "artifact_iri": "d3f:WebAPIResource",
+      "confidence": "medium",
+      "evidence_quote": "various service APIs",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "AI service APIs receive routed requests."
+     },
+     {
+      "verb": "d3f:uses",
+      "artifact_iri": "d3f:ProxyServer",
+      "confidence": "medium",
+      "evidence_quote": "centralized routing infrastructure",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Routers/relays act as proxy infrastructure."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0141": {
+   "source": "map-B5.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:Metadata",
+      "confidence": "medium",
+      "evidence_quote": "remove or replace identifying information in request metadata",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Request metadata is removed or replaced."
+     },
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:OutboundInternetWebTraffic",
+      "confidence": "low",
+      "evidence_quote": "before submitting requests to an AI service",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Sanitized requests leave as web traffic."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0142": {
+   "source": "map-B5.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:ConfigurationResource",
+      "confidence": "medium",
+      "evidence_quote": "creating or modifying event handlers, startup hooks, or associated configuration",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Hooks and configuration are modified."
+     },
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:ExecutableScript",
+      "confidence": "medium",
+      "evidence_quote": "Python startup hooks may execute adversary-controlled code",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Python startup hooks are script files."
+     },
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "low",
+      "evidence_quote": "emit content that is subsequently consumed by an AI system",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Triggered code emits content for an AI system."
+     }
+    ],
+    "new_artifact_proposals": [],
+    "attack_inherited": [
+     {
+      "verb": "d3f:modifies",
+      "artifact_iri": "d3f:ConfigurationResource",
+      "rationale": "Hook configuration modified."
+     },
+     {
+      "verb": "d3f:may-create",
+      "artifact_iri": "d3f:ExecutableScript",
+      "rationale": "Hooks are scripts."
+     },
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:ExecutableScript",
+      "rationale": "Hooks may be edited."
+     },
+     {
+      "verb": "d3f:executes",
+      "artifact_iri": "d3f:ShellCommand",
+      "rationale": "Triggers run commands."
+     }
+    ]
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0143": {
+   "source": "map-B5.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "medium",
+      "evidence_quote": "direct agent-to-agent communication",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Propagated instructions travel as messages."
+     },
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:File",
+      "confidence": "medium",
+      "evidence_quote": "shared documents, source-code repositories",
+      "checklist": {
+       "a": "continuant",
+       "b": "carrier",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Instructions are copied into shared files."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIAgentMemoryRecord",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:may-modify",
+      "evidence_quote": "persistent agent memory",
+      "rationale": "Agent memory is a named propagation store with no artifact."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0144": {
+   "source": "map-B5.output.json",
+   "disposition": "needs-new-artifact",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:produces",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "low",
+      "evidence_quote": "strategically selected queries",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Probe queries are messages sent to the model."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIModel",
+      "parent_iri": "d3f:DigitalInformation",
+      "nearest_existing_iri": "d3f:File",
+      "verb": "d3f:queries",
+      "evidence_quote": "analysis of model behavior or exposed information",
+      "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  },
+  "AML.T0145": {
+   "source": "map-B4.output.json",
+   "disposition": "maps-existing",
+   "keeps": {
+    "mappings": [
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:WebResource",
+      "confidence": "medium",
+      "evidence_quote": "alter webpages",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Adversary alters web content the agent learns from."
+     },
+     {
+      "verb": "d3f:may-modify",
+      "artifact_iri": "d3f:DigitalMessage",
+      "confidence": "low",
+      "evidence_quote": "tool or API responses",
+      "checklist": {
+       "a": "continuant",
+       "b": "content",
+       "c": "kind",
+       "d": "ok",
+       "e": "ok"
+      },
+      "rationale": "Manipulated tool/API responses feed learning."
+     }
+    ],
+    "new_artifact_proposals": [
+     {
+      "proposed_name": "AIAgentMemoryRecord",
+      "parent_iri": "d3f:DatabaseRecord",
+      "nearest_existing_iri": "d3f:DatabaseRecord",
+      "verb": "d3f:may-modify",
+      "evidence_quote": "agent memories",
+      "rationale": "Influence persists in agent memories."
+     }
+    ],
+    "attack_inherited": []
+   },
+   "rejects": [],
+   "disposition_note": null,
+   "no_fit_rationale": null
+  }
+ }
+}

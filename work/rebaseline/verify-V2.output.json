@@ -1,0 +1,784 @@
+{
+ "unit": "V2",
+ "rows": [
+  {
+   "row_id": "AML.T0120#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Repository is the continuant channel the C2 rides on; SoftwareRepository would be false for model/dataset hubs."
+  },
+  {
+   "row_id": "AML.T0120#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-create",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Commands are one of three alternatives ('Commands, payloads, or tasking may be placed'), so creation of a Command is optional."
+  },
+  {
+   "row_id": "AML.T0121#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-create",
+   "new_artifact_iri": "d3f:ConfigurationResource",
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "'may recover or recreate' is optional and recovery is not creation; 'configuration' of a rebuilt environment is not only application config, so the true class is the parent."
+  },
+  {
+   "row_id": "AML.T0121#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-access",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "'credentials or access paths' is a disjunction inside an optional list."
+  },
+  {
+   "row_id": "AML.T0122#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Weakness in a service application, abuses is the right verb and ServiceApplication is the most specific true class."
+  },
+  {
+   "row_id": "AML.T0122#a0",
+   "verdict": "revise",
+   "new_verb": null,
+   "new_artifact_iri": "d3f:NetworkTraffic",
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "ATLAS scope includes cloud control-plane interfaces and 'external networks', so IntranetNetworkTraffic (true of lateral-movement T1210) is not always true here."
+  },
+  {
+   "row_id": "AML.T0122#a1",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "ATLAS text says exploitation 'does not require compromise of the remote service's underlying host' and code-execution effects 'should be mapped separately'; ATT&CK-only truth."
+  },
+  {
+   "row_id": "AML.T0123#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Definition names the object directly ('an executable or file'); no more specific class is true of every case."
+  },
+  {
+   "row_id": "AML.T0123#a0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "'an executable' is named; parent File plus child ExecutableFile under one verb is acceptable per #618."
+  },
+  {
+   "row_id": "AML.T0124#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-produce",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Quote sits under 'Orchestration may use direct agent interfaces', so messaging is an optional channel; DigitalMessage is the right placeholder until AIInteractionMessage exists."
+  },
+  {
+   "row_id": "AML.T0125#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Account creation; UserAccount is the most specific common parent of the enumerated account kinds."
+  },
+  {
+   "row_id": "AML.T0125#m1",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "#608: local/domain/cloud children just enumerate UserAccount; also the quote ('identity providers, or individual services') does not evidence CloudUserAccount."
+  },
+  {
+   "row_id": "AML.T0125#a0",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "#608 sibling enumeration collapses to the UserAccount row."
+  },
+  {
+   "row_id": "AML.T0125#a1",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "#608 sibling enumeration collapses to the UserAccount row."
+  },
+  {
+   "row_id": "AML.T0126#m0",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Copying is one optional act in 'identify, retrieve, copy, or aggregate' and no may-copy verb exists; a0 accesses File already covers it."
+  },
+  {
+   "row_id": "AML.T0126#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-access",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Databases are one of several optional sources the automation 'may also ... combine data from'."
+  },
+  {
+   "row_id": "AML.T0126#a0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Collection criteria are file name/type/location, so file access is true of the ATLAS technique."
+  },
+  {
+   "row_id": "AML.T0127#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "'may remain in separate files or be combined into archives' makes ArchiveFile optional; verb and class correct."
+  },
+  {
+   "row_id": "AML.T0127#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-modify",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "'Adversaries may compress, encrypt, encode, split, rename, or otherwise transform' is optional transformation."
+  },
+  {
+   "row_id": "AML.T0127#a0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Staged data may be written to files; true of ATLAS staging."
+  },
+  {
+   "row_id": "AML.T0127#a1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Maintainer pattern for local staging, kept optional by may-invoke; weakly true when staging is cloud/repo-side, flag only."
+  },
+  {
+   "row_id": "AML.T0128#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Servers are an optional listed infrastructure kind; Server is a kind, not a role."
+  },
+  {
+   "row_id": "AML.T0128#m1",
+   "verdict": "revise",
+   "new_verb": null,
+   "new_artifact_iri": "d3f:ArtifactServer",
+   "new_evidence_quote": null,
+   "checklist_failure": "5",
+   "reason": "SoftwareArtifactServer is for software packages; AI model/dataset hosting is not Software, so the true class is the common parent ArtifactServer."
+  },
+  {
+   "row_id": "AML.T0129#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "DigitalMedia is the most specific common parent of image/audio/video (#608 collapse already applied)."
+  },
+  {
+   "row_id": "AML.T0129#m1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "EXIF/ID3/document metadata is exactly FileMetadata."
+  },
+  {
+   "row_id": "AML.T0130#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:produces",
+   "new_artifact_iri": null,
+   "new_evidence_quote": "causing it to present promotional or self-serving content",
+   "checklist_failure": "2",
+   "reason": "The injected instruction is T0131's artifact; T0130's own object is the biased assistant response it produces."
+  },
+  {
+   "row_id": "AML.T0131#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Link-populated prompt is the interaction message (#619: not the URL); may- is right because submission happens only 'in some cases'."
+  },
+  {
+   "row_id": "AML.T0132#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:accesses",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "'Adversaries may discover and interact' is the technique's standard phrasing, not optionality; interacting with the exposed endpoint is the core act."
+  },
+  {
+   "row_id": "AML.T0132#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:abuses",
+   "new_artifact_iri": "d3f:AccessControlConfiguration",
+   "new_evidence_quote": "misconfigured access controls",
+   "checklist_failure": "5",
+   "reason": "Duplicates m0's quote at a generic Software class; the technique's distinctive object is the misconfigured access control the adversary takes advantage of."
+  },
+  {
+   "row_id": "AML.T0133#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:accesses",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Runtime interaction with the agent is the defining act, not optional; ServiceApplication kept per maintainer precedent for AI services."
+  },
+  {
+   "row_id": "AML.T0134#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:produces",
+   "new_artifact_iri": "d3f:OutboundInternetWebTraffic",
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "The AI client inside the network initiates the connection, so the conditioned response rides outbound web traffic by D3FEND's direction definitions; delivery is the core act."
+  },
+  {
+   "row_id": "AML.T0135#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Outputs come 'directly from inference responses' or from records, so message access is optional; placeholder for AIInteractionMessage."
+  },
+  {
+   "row_id": "AML.T0136#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Conversational responses are the UI channel and one of several optional forms; DigitalMessage placeholder for AIInteractionMessage."
+  },
+  {
+   "row_id": "AML.T0136#m1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "'downloadable artifacts' makes the generated document a file; optional form."
+  },
+  {
+   "row_id": "AML.T0137#m0",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "5",
+   "reason": "Definition mentions no API or service (white-box/local models qualify); quote does not evidence WebAPIResource. Real object is the AIModel proposal."
+  },
+  {
+   "row_id": "AML.T0137.003#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Supplying inputs is core; the passages/cues/varied inputs are prompts sent to the model."
+  },
+  {
+   "row_id": "AML.T0137.003#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-query",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Quote is from a research anecdote and diffusion-model extraction can be local, so the web API is optional."
+  },
+  {
+   "row_id": "AML.T0138#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Logs are the canonical altered record."
+  },
+  {
+   "row_id": "AML.T0138#m1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Named target; parent EventLog plus child under one verb is acceptable per #618."
+  },
+  {
+   "row_id": "AML.T0138#m2",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Follows the maintainer T1070 deletes File pattern; no may-delete verb exists."
+  },
+  {
+   "row_id": "AML.T0138#a0",
+   "verdict": "revise",
+   "new_verb": "d3f:modifies",
+   "new_artifact_iri": "d3f:CodeRepository",
+   "new_evidence_quote": "rewriting revision history",
+   "checklist_failure": "calibration",
+   "reason": "Exact duplicate of m0; slot reused for the ATLAS-specific target (revision history) that no row carries."
+  },
+  {
+   "row_id": "AML.T0138#a1",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "Exact duplicate of m1."
+  },
+  {
+   "row_id": "AML.T0138#a2",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "Exact duplicate of m2."
+  },
+  {
+   "row_id": "AML.T0138#a3",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Falsifying file metadata (timestomping) is one true reading of 'falsify ... metadata'."
+  },
+  {
+   "row_id": "AML.T0139#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Account takeover is the core act."
+  },
+  {
+   "row_id": "AML.T0139#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-access",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Token theft is one of four alternative credential routes."
+  },
+  {
+   "row_id": "AML.T0140#m0",
+   "verdict": "revise",
+   "new_verb": null,
+   "new_artifact_iri": "d3f:OutboundInternetWebTraffic",
+   "new_evidence_quote": null,
+   "checklist_failure": "5",
+   "reason": "AI service API requests are web-protocol; consistent with T0141#m1."
+  },
+  {
+   "row_id": "AML.T0140#m1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Service APIs receiving routed requests."
+  },
+  {
+   "row_id": "AML.T0140#m2",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "A router dispatching requests on behalf of clients is a proxy by kind; no may-use verb exists."
+  },
+  {
+   "row_id": "AML.T0141#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Request metadata is Metadata; no header/request-metadata subclass exists."
+  },
+  {
+   "row_id": "AML.T0141#m1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Requests leave the adversary's client as outbound web traffic."
+  },
+  {
+   "row_id": "AML.T0142#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Hooks and associated configuration; ConfigurationResource is the true common parent."
+  },
+  {
+   "row_id": "AML.T0142#m1",
+   "verdict": "revise",
+   "new_verb": null,
+   "new_artifact_iri": "d3f:InitScript",
+   "new_evidence_quote": null,
+   "checklist_failure": "5",
+   "reason": "Python startup hooks initialize an interpreter process, which is InitScript's definition; a1/a2 keep the ExecutableScript parent (#618)."
+  },
+  {
+   "row_id": "AML.T0142#m2",
+   "verdict": "revise",
+   "new_verb": "d3f:may-produce",
+   "new_artifact_iri": "d3f:DigitalText",
+   "new_evidence_quote": null,
+   "checklist_failure": "2",
+   "reason": "'may ... emit content' is optional, and the emitted fabricated approvals/instructions are content, not necessarily a message."
+  },
+  {
+   "row_id": "AML.T0142#a0",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "calibration",
+   "reason": "Exact duplicate of m0."
+  },
+  {
+   "row_id": "AML.T0142#a1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Hooks may be new scripts; parent of m1."
+  },
+  {
+   "row_id": "AML.T0142#a2",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Existing hooks may be edited."
+  },
+  {
+   "row_id": "AML.T0142#a3",
+   "verdict": "revise",
+   "new_verb": "d3f:may-execute",
+   "new_artifact_iri": "d3f:Command",
+   "new_evidence_quote": "automatically executes adversary-controlled code or commands",
+   "checklist_failure": "5",
+   "reason": "ShellCommand is ATT&CK-specific; Python hooks run code, so commands are optional and not necessarily shell."
+  },
+  {
+   "row_id": "AML.T0143#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-produce",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "Agent-to-agent communication is one of many optional propagation paths."
+  },
+  {
+   "row_id": "AML.T0143#m1",
+   "verdict": "revise",
+   "new_verb": null,
+   "new_artifact_iri": "d3f:DocumentFile",
+   "new_evidence_quote": "shared documents",
+   "checklist_failure": "5",
+   "reason": "Shared documents are DocumentFile; source-code repositories are not Files (CodeRepository is a Database), so File was both generic and a poor fit."
+  },
+  {
+   "row_id": "AML.T0144#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-produce",
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "4",
+   "reason": "'Methods may use strategically selected queries, equation solving...' makes probe queries one option."
+  },
+  {
+   "row_id": "AML.T0145#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Webpages are an optional listed alteration target; WebResource correct."
+  },
+  {
+   "row_id": "AML.T0145#m1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Tool/API responses are messages delivered to the agent; optional listed target."
+  }
+ ],
+ "techniques": [
+  {
+   "atlas_id": "AML.T0120",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "No traffic row; per #619 the observable is repository API/web traffic (e.g. may-produce OutboundInternetWebTraffic), worth adding."
+  },
+  {
+   "atlas_id": "AML.T0121",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Residual names agent-memory and tool-definition needs but no proposals were filed; disposition maps-existing hides that gap."
+  },
+  {
+   "atlas_id": "AML.T0122",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Inherited execution-effect rows conflict with the ATLAS scoping sentence; keep only access/traffic effects."
+  },
+  {
+   "atlas_id": "AML.T0123",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AI-classifier evasion angle has no distinct artifact; File/ExecutableFile honest."
+  },
+  {
+   "atlas_id": "AML.T0124",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Messages are the right object; should cite AIInteractionMessage proposal rather than leave residual pointing at tool definitions."
+  },
+  {
+   "atlas_id": "AML.T0125",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Collapse to creates UserAccount per #608."
+  },
+  {
+   "atlas_id": "AML.T0126",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Residual flags models and retrieval DBs but no AIModel proposal filed; it should be."
+  },
+  {
+   "atlas_id": "AML.T0127",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Generic staging; fine."
+  },
+  {
+   "atlas_id": "AML.T0128",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Listed 'domains' compromise could carry may-modify DomainRegistration per #616 (record, not name)."
+  },
+  {
+   "atlas_id": "AML.T0129",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIInteractionMessage ⊑ DigitalMessage matches MITRE's preferred name; disposition 'maps-existing' contradicts the filed proposal."
+  },
+  {
+   "atlas_id": "AML.T0130",
+   "proposals_verdict": "wrong-parent",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIAgentMemoryRecord ⊑ DatabaseRecord here but ⊑ DigitalInformation in T0143: one name, two parents. Memory is content held in DB/vector/file stores, so DigitalInformation (no 'Record' in name) is right; also should file AIInteractionMessage for the biased response."
+  },
+  {
+   "atlas_id": "AML.T0131",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIInteractionMessage ⊑ DigitalMessage correct; prompt not URL per #619."
+  },
+  {
+   "atlas_id": "AML.T0132",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Access-control misconfiguration is the distinctive object; now carried by revised m1."
+  },
+  {
+   "atlas_id": "AML.T0133",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIToolDefinition ⊑ ApplicationConfiguration with enumerates is a real gap (AIToolInvocation ⊑ Command covers invocation, not the registry)."
+  },
+  {
+   "atlas_id": "AML.T0134",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Traffic direction corrected to outbound."
+  },
+  {
+   "atlas_id": "AML.T0135",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "sound",
+   "no_fit_verdict": "n/a",
+   "note": "Dataset ⊑ DigitalInformation is a real gap (DatabaseFile is a carrier); inference has-output DigitalMessage fits the established event pattern."
+  },
+  {
+   "atlas_id": "AML.T0136",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Should cite AIInteractionMessage for conversational responses."
+  },
+  {
+   "atlas_id": "AML.T0137",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIModel parent sound; Dataset parent sound but its verb 'accesses' contradicts the premise (inference without access to training data) and should not be accesses."
+  },
+  {
+   "atlas_id": "AML.T0137.000",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Zero rows is honest: membership inference acts on a model that has no artifact. Same Dataset 'accesses' verb error as T0137."
+  },
+  {
+   "atlas_id": "AML.T0137.001",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Zero rows honest; Dataset proposal verb 'accesses' wrong for the same reason (property is inferred, data not accessed)."
+  },
+  {
+   "atlas_id": "AML.T0137.002",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Zero rows honest; AIModel proposal is the only true target."
+  },
+  {
+   "atlas_id": "AML.T0137.003",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIModel proposal sound; prompt rows are fine placeholders."
+  },
+  {
+   "atlas_id": "AML.T0138",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Agent transcripts and harness components are not obviously EventLog; revision history now carried by CodeRepository."
+  },
+  {
+   "atlas_id": "AML.T0139",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AI service wallets/credits have no artifact; acceptable residual."
+  },
+  {
+   "atlas_id": "AML.T0140",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Fine after traffic class aligned with T0141."
+  },
+  {
+   "atlas_id": "AML.T0141",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Fine."
+  },
+  {
+   "atlas_id": "AML.T0142",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Agent trip-wires sentence has no artifact; acceptable."
+  },
+  {
+   "atlas_id": "AML.T0143",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Parent DigitalInformation is right, but harmonize with T0130/T0145 under one name (drop 'Record'); disposition 'maps-existing' contradicts the proposal."
+  },
+  {
+   "atlas_id": "AML.T0144",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIModel proposal is the real object (architecture/parameters)."
+  },
+  {
+   "atlas_id": "AML.T0145",
+   "proposals_verdict": "wrong-parent",
+   "event_model_verdict": "sound",
+   "no_fit_verdict": "n/a",
+   "note": "AIAgentMemoryRecord ⊑ DatabaseRecord conflicts with T0143's DigitalInformation parent. Event is real but has-input WebResource is the wrong participant: fine-tuning ingests the manipulated interaction/experience records, not the webpage. Disposition mismatch with proposal."
+  }
+ ]
+}

@@ -1,0 +1,578 @@
+{
+ "unit": "ADJ-05",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0096",
+   "label": "AI Service API",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may communicate using the API of an AI service on the victim's system. The adversary's commands to the victim system, and often the results, are embedded in the normal traffic of the AI service.\n\nAn AI service API command and control channel is covert because the adversary's commands blend in with normal communications, so an adversary may use this technique to avoid detection. Using existing infrastructure on the victim's system allows the adversary to live off the land, further reducing their footprint.\n\nAI service APIs may be abused as C2 channels when an adversary wants to be stealthy and maintain long-term persistence for espionage activities [[microsoft]].",
+   "latest_id": "AML.T0096",
+   "definition_latest": "Adversaries may communicate using the API of an AI service on the victim's system. The adversary's commands to the victim system, and often the results, are embedded in the normal traffic of the AI service.\n\nAn AI service API command and control channel is covert because the adversary's commands blend in with normal communications, so an adversary may use this technique to avoid detection. Using existing infrastructure on the victim's system allows the adversary to live off the land, further reducing their footprint.\n\nAI service APIs may be abused as C2 channels when an adversary wants to be stealthy and maintain long-term persistence for espionage activities [[microsoft]].",
+   "latest_name": "AI Service API",
+   "rows": [
+    {
+     "row_id": "R208",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "artifact_label": "Outbound Internet Web Traffic",
+     "disposition": "maps-existing",
+     "evidence_quote": "the normal traffic of the AI service",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0097",
+   "label": "Virtualization/Sandbox Evasion",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may employ various means to detect and avoid virtualization and analysis environments. This may include changing behaviors based on the results of checks for the presence of artifacts indicative of a virtual machine environment (VME) or sandbox. If the adversary detects a VME, they may alter their malware to disengage from the victim or conceal the core functions of the implant. They may also search for VME artifacts before dropping secondary or additional payloads.\n\nAdversaries may use several methods to accomplish Virtualization/Sandbox Evasion such as checking for security monitoring tools (e.g., Sysinternals, Wireshark, etc.) or other system artifacts associated with analysis or virtualization such as registry keys (e.g. substrings matching Vmware, VBOX, QEMU), environment variables (e.g. substrings matching VBOX, VMWARE, PARALLELS), NIC MAC addresses (e.g. prefixes 00-05-69 (VMWare) or 08-00-27 (VirtualBox)), running processes (e.g. vmware.exe, vboxservice.exe, qemu-ga.exe) [[research]].",
+   "latest_id": "AML.T0097",
+   "definition_latest": "Adversaries may employ various means to detect and avoid virtualization and analysis environments. This may include changing behaviors based on the results of checks for the presence of artifacts indicative of a virtual machine environment (VME) or sandbox. If the adversary detects a VME, they may alter their malware to disengage from the victim or conceal the core functions of the implant. They may also search for VME artifacts before dropping secondary or additional payloads.\n\nAdversaries may use several methods to accomplish Virtualization/Sandbox Evasion such as checking for security monitoring tools (e.g., Sysinternals, Wireshark, etc.) or other system artifacts associated with analysis or virtualization such as registry keys (e.g. substrings matching Vmware, VBOX, QEMU), environment variables (e.g. substrings matching VBOX, VMWARE, PARALLELS), NIC MAC addresses (e.g. prefixes 00-05-69 (VMWare) or 08-00-27 (VirtualBox)), running processes (e.g. vmware.exe, vboxservice.exe, qemu-ga.exe) [[research]].",
+   "latest_name": "Virtualization/Sandbox Evasion",
+   "rows": [
+    {
+     "row_id": "R209",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WindowsRegistryKey",
+     "artifact_label": "Windows Registry Key",
+     "disposition": "maps-existing",
+     "evidence_quote": "registry keys",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R210",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ProcessEnvironmentVariable",
+     "artifact_label": "Process Environment Variable",
+     "disposition": "maps-existing",
+     "evidence_quote": "environment variables",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R211",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:MACAddress",
+     "artifact_label": "M A C Address",
+     "disposition": "maps-existing",
+     "evidence_quote": "NIC MAC addresses",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0098",
+   "label": "AI Agent Tool Credential Harvesting",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to use their access to an AI agent on the victim's system to retrieve data from available agent tools to collect credentials. Agent tools may connect to a wide range of sources that may contain credentials including document stores (e.g. SharePoint, OneDrive or Google Drive), code repositories (e.g. GitHub or GitLab), or enterprise productivity tools (e.g. as email providers or Slack), and local notetaking tools (e.g. Obsidian or Apple Notes).",
+   "latest_id": "AML.T0098",
+   "definition_latest": "Adversaries may attempt to use their access to an AI agent on the victim's system to retrieve data from available agent tools to collect credentials. Agent tools may connect to a wide range of sources that may contain credentials including document stores (e.g. SharePoint, OneDrive or Google Drive), code repositories (e.g. GitHub or GitLab), or enterprise productivity tools (e.g. as email providers or Slack), and local notetaking tools (e.g. Obsidian or Apple Notes).",
+   "latest_name": "AI Agent Tool Credential Harvesting",
+   "rows": [
+    {
+     "row_id": "R212",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "maps-existing",
+     "evidence_quote": "collect credentials",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R213",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebFileResource",
+     "artifact_label": "Web File Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "document stores",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R214",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CodeRepository",
+     "artifact_label": "Code Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "code repositories",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R215",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Email",
+     "artifact_label": "Email",
+     "disposition": "maps-existing",
+     "evidence_quote": "email providers",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0099",
+   "label": "AI Agent Tool Data Poisoning",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may place malicious content on a victim's system where it can be retrieved by an AI Agent Tool. This may be accomplished by placing documents in a location that will be ingested by a service the AI agent has associated tools for.\n\nThe content may be targeted such that it would often be retrieved by common queries. The adversary's content may include false or misleading information. It may also include prompt injections with malicious instructions.",
+   "latest_id": "AML.T0099",
+   "definition_latest": "Adversaries may manipulate data in a victim-controlled, trusted, or connected data source that is accessible through an AI agent tool. Poisoned data may be placed in document repositories, databases, source-code repositories, knowledge bases, search indexes, enterprise applications, or third-party data services used by the agent.\n\nThe content may be crafted to appear in common tool queries or retrieval operations. It may contain false or misleading information or malicious instructions intended to produce an [LLM Prompt Injection: Indirect](/techniques/AML.T0051.001) when retrieved.\n\nThis technique concerns manipulation of a data source that an agent tool treats as a source of information. When the adversary introduces the content through a victim-controlled public-facing application, the activity may also constitute [Prompt Infiltration via Public-Facing Application](/techniques/AML.T0093). Content retrieved directly from an adversary-controlled website may instead constitute [Drive-by Compromise](/techniques/AML.T0078). A malicious or compromised tool that deliberately alters its own runtime result constitutes [AI Agent Tool Poisoning: Runtime Response](/techniques/AML.T0110.002).",
+   "latest_name": "AI Agent Tool Data Poisoning",
+   "rows": [
+    {
+     "row_id": "R216",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DocumentFile",
+     "artifact_label": "Document File",
+     "disposition": "maps-existing",
+     "evidence_quote": "placing documents in a location",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0100",
+   "label": "AI Agent Clickbait",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may craft deceptive web content designed to bait Computer-Using AI agents or AI web browsers into taking unintended actions, such as clicking buttons, copying code, or navigating to specific web pages. These attacks exploit the agent's interpretation of UI content, visual cues, or prompt-like language embedded in the site. When successful, they can lead the agent to inadvertently copy and execute malicious code on the user's operating system.",
+   "latest_id": "AML.T0100",
+   "definition_latest": "Adversaries may craft deceptive content designed to bait computer-using AI agents or AI web browsers and tools into taking unintended actions, such as clicking buttons, copying code, or navigating to specific web pages. These attacks exploit the agent's interpretation of UI content, visual cues, and natural language embedded in processed artifacts, such as a website or a document, and aim at the agent's decision process rather than a human reader's. \n\nWhen successful, AI Agent Clickbait can lead the victim's agent to inadvertently copy and execute malicious code on the user's operating system or perform data exfiltration. The AI Agent Clickbait may also include a [LLM Prompt Injection: Indirect](/techniques/AML.T0051.001), which can influence or manipulate the victim's agent in adversary-controlled ways.",
+   "latest_name": "AI Agent Clickbait",
+   "rows": [
+    {
+     "row_id": "R217",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:WebResource",
+     "artifact_label": "Web Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "deceptive web content",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R218",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:URL",
+     "artifact_label": "U R L",
+     "disposition": "maps-existing",
+     "evidence_quote": "navigating to specific web pages",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R219",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableScript",
+     "artifact_label": "Executable Script",
+     "disposition": "maps-existing",
+     "evidence_quote": "execute malicious code",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0101",
+   "label": "Data Destruction via AI Agent Tool Invocation",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may invoke an AI agent's tool capable of performing mutative operations to perform Data Destruction. Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources.",
+   "latest_id": "AML.T0101",
+   "definition_latest": "Adversaries may invoke an AI agent's tool capable of performing mutative operations to perform Data Destruction. Adversaries may destroy data and files on specific systems or in large numbers on a network to interrupt availability to systems, services, and network resources.",
+   "latest_name": "Data Destruction via AI Agent Tool Invocation",
+   "rows": [
+    {
+     "row_id": "R220",
+     "verb": "d3f:deletes",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing",
+     "evidence_quote": "destroy data and files",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0102",
+   "label": "Generate Malicious Commands",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may use large language models (LLMs) to dynamically generate malicious commands from natural language. Dynamically generated commands may be harder detect as the attack signature is constantly changing. AI-generated commands may also allow adversaries to more rapidly adapt to different environments and adjust their tactics.\n\nAdversaries may utilize LLMs present in the victim's environment or call out to externally hosted services. [APT28](https://attack.mitre.org/groups/G0007) utilized a model hosted on HuggingFace in a campaign with their LAMEHUG malware [[logpoint]]. In either case prompts to generate malicious code can blend in with normal traffic.",
+   "latest_id": "AML.T0102",
+   "definition_latest": "Adversaries may use large language models (LLMs) to dynamically generate malicious commands from natural language. Dynamically generated commands may be harder to detect as the attack signature is constantly changing. AI-generated commands may also allow adversaries to more rapidly adapt to different environments and adjust their tactics.\n\nAdversaries may utilize LLMs present in the victim's environment or call out to externally hosted services. [APT28](https://attack.mitre.org/groups/G0007) utilized a model hosted on HuggingFace in a campaign with their LAMEHUG malware [[logpoint]]. In either case prompts to generate malicious code can blend in with normal traffic.",
+   "latest_name": "Generate Malicious Commands",
+   "rows": [
+    {
+     "row_id": "R221",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Command",
+     "artifact_label": "Command",
+     "disposition": "maps-existing",
+     "evidence_quote": "generate malicious commands from natural language",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R222",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web A P I Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "call out to externally hosted services",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0103",
+   "label": "Deploy AI Agent",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may launch AI agents in the victim's environment to execute actions on their behalf. AI agents may have access to a wide range of tools and data sources, as well as permissions to access and interact with other services and systems in the victim's environment. The adversary may leverage these capabilities to carry out their operations.\n\nAdversaries may configure the AI agent by providing an initial system prompt and granting access to tools, effectively defining their goals for the agent to achieve. They may deploy the agent with excessive trust permissions and disable any user interactions to ensure the agent's actions aren't blocked.\n\nLaunching an AI agent may provide for some autonomous behavior, allowing for the agent to make decisions and determine how to achieve the adversary's goals. This also represents a loss of control for the adversary.",
+   "latest_id": "AML.T0103",
+   "definition_latest": "Adversaries may launch AI agents in the victim's environment to execute actions on their behalf. AI agents may have access to a wide range of tools and data sources, as well as permissions to access and interact with other services and systems in the victim's environment. The adversary may leverage these capabilities to carry out their operations.\n\nAdversaries may configure the AI agent by providing an initial system prompt and granting access to tools, effectively defining their goals for the agent to achieve. They may deploy the agent with excessive trust permissions and disable any user interactions to ensure the agent's actions aren't blocked.\n\nLaunching an AI agent may provide for some autonomous behavior, allowing for the agent to make decisions and determine how to achieve the adversary's goals. This also represents a loss of control for the adversary.",
+   "latest_name": "Deploy AI Agent",
+   "rows": [
+    {
+     "row_id": "R223",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:AccessControlConfiguration",
+     "artifact_label": "Access Control Configuration",
+     "disposition": "maps-existing",
+     "evidence_quote": "granting access to tools",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0104",
+   "label": "Publish Poisoned AI Agent Tool",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may create and publish poisoned AI agent tools. Poisoned tools may contain an [LLM Prompt Injection](/techniques/AML.T0051), which can lead to a variety of impacts.\n\nTools may be published to open source version control repositories (e.g. GitHub, GitLab), to package registries (e.g. npm), or to repositories specifically designed for sharing tools (e.g. OpenClaw Hub). These registries may be largely unregulated and may contain many poisoned tools [[opensourcemalware]]. Tools may also be published as remotely hosted servers [[mcpservers]].",
+   "latest_id": "AML.T0115.002",
+   "definition_latest": "Adversaries may create and publish poisoned AI agent tools. Poisoned tools may contain malicious model-visible definitions or instructions, hidden executable behavior, or runtime responses designed to manipulate an AI agent. Tools may be published through source code repositories, package registries, agent tool or skill registries, or adversary-controlled remote services. The tool may be newly created or a modified variant of a legitimate tool and may produce malicious behavior when selected, installed, or invoked by a victim's AI agent.\n\nAdversaries may distribute poisoned tools through open-source version control repositories (e.g. GitHub, GitLab), package registries (e.g. npm), or to repositories specifically designed for sharing tools (e.g. OpenClaw Hub). These registries may be largely unregulated and may contain many poisoned tools [[opensourcemalware]]. Tools may also be published as remotely hosted servers [[mcpservers]].",
+   "latest_name": "AI Agent Tools",
+   "rows": [
+    {
+     "row_id": "R224",
+     "verb": "d3f:adds",
+     "artifact_iri": "d3f:CodeRepository",
+     "artifact_label": "Code Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "open source version control repositories",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0105",
+   "label": "Escape to Host",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may break out of a container or virtualized environment to gain access to the underlying host. This can allow an adversary access to other containerized or virtualized resources from the host level or to the host itself. In principle, containerized / virtualized resources should provide a clear separation of application functionality and be isolated from the host environment.\n\nThere are many ways an adversary may escape from a container or sandbox environment via AI Systems. For example, modifying an AI Agent's configuration to disable safety features or user confirmations could allow the adversary to invoke tools to be run on host environments rather than in the sandbox.",
+   "latest_id": "AML.T0105",
+   "definition_latest": "Adversaries may break out of a container or virtualized environment to gain access to the underlying host. This can allow an adversary access to other containerized or virtualized resources from the host level or to the host itself. In principle, containerized / virtualized resources should provide a clear separation of application functionality and be isolated from the host environment.\n\nThere are many ways an adversary may escape from a container or sandbox environment via AI Systems. For example, modifying an AI Agent's configuration to disable safety features or user confirmations could allow the adversary to invoke tools to be run on host environments rather than in the sandbox.",
+   "latest_name": "Escape to Host",
+   "rows": [
+    {
+     "row_id": "R225",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Host",
+     "artifact_label": "Host",
+     "disposition": "maps-existing",
+     "evidence_quote": "gain access to the underlying host",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R226",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "artifact_label": "Application Configuration",
+     "disposition": "maps-existing",
+     "evidence_quote": "modifying an AI Agent's configuration",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0106",
+   "label": "Exploitation for Credential Access",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code.",
+   "latest_id": "AML.T0106",
+   "definition_latest": "Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code.",
+   "latest_name": "Exploitation for Credential Access",
+   "rows": [
+    {
+     "row_id": "R227",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "maps-existing",
+     "evidence_quote": "collect credentials",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0107",
+   "label": "Exploitation for Defense Evasion",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may exploit a system or application vulnerability to bypass security features. Exploitation of a vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. Vulnerabilities may exist in defensive security software that can be used to disable or circumvent them.",
+   "latest_id": "AML.T0107",
+   "definition_latest": "Adversaries may exploit a system or application vulnerability to bypass security features. Exploitation of a vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. Vulnerabilities may exist in defensive security software that can be used to disable or circumvent them.",
+   "latest_name": "Exploitation for Defense Evasion",
+   "rows": [
+    {
+     "row_id": "R228",
+     "verb": "d3f:disables",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "defensive security software",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0108",
+   "label": "AI Agent",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may abuse AI agents present on the victim's system for command and control. AI agents are often granted access to tools that can execute shell commands, reach out to the internet, and interact with other services in the victim's environment, making them capable C2 agents.\n\nThe adversary may modify the behavior of an AI agent for C2 via [LLM Prompt Injection](/techniques/AML.T0051) and rely on the agent's ability to invoke tools to retrieve and execute the adversary's commands. They may maintain persistent control of an agent via [Modify AI Agent Configuration](/techniques/AML.T0081) or [AI Agent Context Poisoning](/techniques/AML.T0080). They may instruct the agent to not report their actions to the user in an attempt to remain covert.",
+   "latest_id": "AML.T0108",
+   "definition_latest": "Adversaries may abuse AI agents present on the victim's system for command and control. AI agents are often granted access to tools that can execute shell commands, reach out to the internet, and interact with other services in the victim's environment, making them capable C2 agents.\n\nThe adversary may modify the behavior of an AI agent for C2 via [LLM Prompt Injection](/techniques/AML.T0051) and rely on the agent's ability to invoke tools to retrieve and execute the adversary's commands. They may maintain persistent control of an agent via [Modify AI Agent Configuration](/techniques/AML.T0081) or [AI Agent Context Poisoning](/techniques/AML.T0080). They may instruct the agent to not report their actions to the user in an attempt to remain covert.",
+   "latest_name": "AI Agent",
+   "rows": [
+    {
+     "row_id": "R229",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ShellCommand",
+     "artifact_label": "Shell Command",
+     "disposition": "maps-existing",
+     "evidence_quote": "execute shell commands",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R230",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetNetworkTraffic",
+     "artifact_label": "Outbound Internet Network Traffic",
+     "disposition": "maps-existing",
+     "evidence_quote": "reach out to the internet",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0109",
+   "label": "AI Supply Chain Rug Pull",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may publish legitimate AI components or software, gain user adoption, then push an update with a malicious variant, leading to [AI Supply Chain Compromise](/techniques/AML.T0010). More scrutiny is often placed on a supply chain dependency when it is first being considered for inclusion in an AI system. Performing a rug pull may allow adversaries to bypass these defenses and be more likely to achieve [Initial Access](/tactics/AML.TA0004).\n\nAdversaries may publish malicious AI components via [Publish Poisoned Models](/techniques/AML.T0058), [Publish Poisoned Datasets](/techniques/AML.T0019), or [Publish Poisoned AI Agent Tool](/techniques/AML.T0104).\n\nAdversaries may use other techniques (See [AI Supply Chain Reputation Inflation](/techniques/AML.T0111)) to gain user trust and increase adoption before performing the rug pull.",
+   "latest_id": "AML.T0109",
+   "definition_latest": "Adversaries may publish legitimate AI components or software, gain user adoption, then push an update with a malicious variant, leading to [Supply Chain Compromise](/techniques/AML.T0010). More scrutiny is often placed on a supply chain dependency when it is first being considered for inclusion in an AI system. Performing a rug pull may allow adversaries to bypass these defenses and be more likely to achieve [Initial Access](/tactics/AML.TA0004).\n\nAdversaries may [Publish Poisoned AI Artifacts](/techniques/AML.T0115), then attempt to gain user trust and increase adoption before performing the rug pull (See [AI Supply Chain Reputation Inflation](/techniques/AML.T0111)).",
+   "latest_name": "AI Supply Chain Rug Pull",
+   "rows": [
+    {
+     "row_id": "R231",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "push an update with a malicious variant",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0111",
+   "label": "AI Supply Chain Reputation Inflation",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "AI Supply Chain Reputation Inflation is the process of building or leveraging genuinely credible-looking trust signals to increase the perceived legitimacy of AI supply chain components, with the goal of driving adoption of malicious or compromised assets.\n\nAdversaries use established developer accounts with a history of legitimate projects and contributions to publish AI models, datasets, packages, and MCP servers that appear trustworthy. They build reputation through real adoption signals such as downloads, GitHub stars, forks, and inclusion in dependency chains, often releasing benign versions before introducing malicious updates via [AI Supply Chain Rug Pull](/techniques/AML.T0109).\n\nBy relying on authentic history and usage patterns, these components pass both human and automated trust checks, increasing the likelihood they are adopted without scrutiny.",
+   "latest_id": "AML.T0111",
+   "definition_latest": "AI Supply Chain Reputation Inflation is the process of building or leveraging genuinely credible-looking trust signals to increase the perceived legitimacy of AI supply chain components, with the goal of driving adoption of malicious or compromised assets.\n\nAdversaries use established developer accounts with a history of legitimate projects and contributions to publish AI models, datasets, packages, and MCP servers that appear trustworthy. They build reputation through real adoption signals such as downloads, GitHub stars, forks, and inclusion in dependency chains, often releasing benign versions before introducing malicious updates via [AI Supply Chain Rug Pull](/techniques/AML.T0109).\n\nBy relying on authentic history and usage patterns, these components pass both human and automated trust checks, increasing the likelihood they are adopted without scrutiny.",
+   "latest_name": "AI Supply Chain Reputation Inflation",
+   "rows": [
+    {
+     "row_id": "R232",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:UserAccount",
+     "artifact_label": "User Account",
+     "disposition": "maps-existing",
+     "evidence_quote": "established developer accounts",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R233",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "AI models, datasets, packages, and MCP servers",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0112",
+   "label": "Machine Compromise",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may compromise a machine by exploiting or manipulating AI-enabled components on the system. Compromising a victim system allows the adversary to execute arbitrary code, steal credentials, exfiltrate data, and continue to persist on the system.\n\nAdversaries may target a [Local AI Agent](/techniques/AML.T0112.000) which if compromised grants them the capabilities and permissions of the agent, or [AI Artifacts](/techniques/AML.T0112.001) which can contain embedded malware.",
+   "latest_id": "AML.T0112",
+   "definition_latest": "Adversaries may compromise a machine by exploiting or manipulating AI-enabled components on the system. Compromising a victim system allows the adversary to execute arbitrary code, steal credentials, exfiltrate data, and continue to persist on the system.\n\nAdversaries may target a [Local AI Agent](/techniques/AML.T0112.000) which if compromised grants them the capabilities and permissions of the agent, or [AI Artifacts](/techniques/AML.T0112.001) which can contain embedded malware.",
+   "latest_name": "Machine Compromise",
+   "rows": [
+    {
+     "row_id": "R234",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "artifact_label": "Executable File",
+     "disposition": "maps-existing",
+     "evidence_quote": "execute arbitrary code",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R235",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "maps-existing",
+     "evidence_quote": "steal credentials",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0112.000",
+   "label": "Local AI Agent",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may achieve full system compromise by abusing AI agents running locally on a host, such as computer-use agents or AI-driven browsers. These agents are designed to autonomously interact with the operating system, applications, and external services, often with broad permissions to execute commands, access files, manage credentials, and control user workflows.\n\nIf an adversary is able to take control of an AI agent's behavior, they effectively gain the same level of access as the agent. This can result in complete control over the machine, including executing arbitrary code, accessing or exfiltrating sensitive data, modifying system configurations, and establishing persistence.",
+   "latest_id": "AML.T0112.000",
+   "definition_latest": "Adversaries may achieve full system compromise by abusing AI agents running locally on a host, such as computer-use agents or AI-driven browsers. These agents are designed to autonomously interact with the operating system, applications, and external services, often with broad permissions to execute commands, access files, manage credentials, and control user workflows.\n\nIf an adversary is able to take control of an AI agent's behavior, they effectively gain the same level of access as the agent. This can result in complete control over the machine, including executing arbitrary code, accessing or exfiltrating sensitive data, modifying system configurations, and establishing persistence.",
+   "latest_name": "Local AI Agent",
+   "rows": [
+    {
+     "row_id": "R236",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "artifact_label": "Credential",
+     "disposition": "maps-existing",
+     "evidence_quote": "manage credentials",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R237",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "artifact_label": "Executable File",
+     "disposition": "maps-existing",
+     "evidence_quote": "executing arbitrary code",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0112.001",
+   "label": "AI Artifacts",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may achieve full system compromise by introducing malicious AI artifacts, such as models or data, that contain embedded malware or other malicious commands. AI artifacts are often stored in model registries or data stores and may affect many systems that pull these resources.\n\nMalicious content stored in AI artifacts may be executed as a result of unsafe serialization formats (e.g. Python pickle) or by other bundled scripts or notebooks.",
+   "latest_id": "AML.T0112.001",
+   "definition_latest": "Adversaries may achieve full system compromise by introducing malicious AI artifacts, such as models or data, that contain embedded malware or other malicious commands. AI artifacts are often stored in model registries or data stores and may affect many systems that pull these resources.\n\nMalicious content stored in AI artifacts may be executed as a result of unsafe serialization formats (e.g. Python pickle) or by other bundled scripts or notebooks.",
+   "latest_name": "AI Artifacts",
+   "rows": [
+    {
+     "row_id": "R238",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableScript",
+     "artifact_label": "Executable Script",
+     "disposition": "maps-existing",
+     "evidence_quote": "bundled scripts",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0113",
+   "label": "Steal Web Session Cookie",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may steal web application or service session cookies used to authenticate users to AI-enabled systems, AI services, or supporting enterprise applications.\n\nWeb applications often use session cookies as authentication tokens after a user has signed in. These cookies may remain valid for extended periods of time, even when the application is not actively being used. In AI systems, session cookies may provide access to chat interfaces, AI agents, AI service consoles, customer support platforms, model management dashboards, or other tools connected to sensitive data and workflows.\n\nAdversaries may obtain session cookies from browser storage, process memory, network traffic, or applications that store authentication material in memory. They may also steal cookies by injecting malicious JavaScript into AI-rendered content, abusing unsafe rendering of LLM outputs, or tricking users or AI operators into opening poisoned content that executes in their browser.\n\nIn attacks on AI systems, session cookie theft can allow adversaries to bypass normal authentication flows and gain access to privileged AI-enabled applications without knowing the victim's username, password, or MFA secret. Stolen cookies may then be used with [Use Alternate Authentication Material: Web Session Cookie](/techniques/AML.T0091.001) to access the corresponding service as the victim.",
+   "latest_id": "AML.T0113",
+   "definition_latest": "Adversaries may steal web application or service session cookies used to authenticate users to AI-enabled systems, AI services, or supporting enterprise applications.\n\nWeb applications often use session cookies as authentication tokens after a user has signed in. These cookies may remain valid for extended periods of time, even when the application is not actively being used. In AI systems, session cookies may provide access to chat interfaces, AI agents, AI service consoles, customer support platforms, model management dashboards, or other tools connected to sensitive data and workflows.\n\nAdversaries may obtain session cookies from browser storage, process memory, network traffic, or applications that store authentication material in memory. They may also steal cookies by injecting malicious JavaScript into AI-rendered content, abusing unsafe rendering of LLM outputs, or tricking users or AI operators into opening poisoned content that executes in their browser.\n\nIn attacks on AI systems, session cookie theft can allow adversaries to bypass normal authentication flows and gain access to privileged AI-enabled applications without knowing the victim's username, password, or MFA secret. Stolen cookies may then be used with [Use Alternate Authentication Material: Web Session Cookie](/techniques/AML.T0091.001) to access the corresponding service as the victim.",
+   "latest_name": "Steal Web Session Cookie",
+   "rows": [
+    {
+     "row_id": "R239",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Process",
+     "artifact_label": "Process",
+     "disposition": "maps-existing",
+     "evidence_quote": "process memory",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R240",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:ExecutableScript",
+     "artifact_label": "Executable Script",
+     "disposition": "maps-existing",
+     "evidence_quote": "injecting malicious JavaScript into AI-rendered content",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0114",
+   "label": "AI Service Web Interface",
+   "wave": "annex",
+   "open_pr": null,
+   "definition_develop": "Adversaries may communicate with compromised systems by abusing the web interface of an AI service as an intermediary command-and-control relay. Instead of connecting directly to attacker-controlled infrastructure or using an AI provider's API, malware may open or automate a browser, embedded browser, or WebView component to interact with a public AI assistant.\n\nThe malware may prompt the AI assistant to fetch an attacker-controlled URL, include victim data in URL parameters or prompt content, and return attacker-supplied content through the AI assistant's response. The implant can then parse the response and execute embedded instructions.\n\nThis technique is especially useful when an AI web interface permits anonymous or unauthenticated browsing, summarization, or URL-fetch behavior. In those cases, adversaries may avoid controls that depend on API keys, service accounts, user identities, or revocable credentials.\n\nThis technique allows command-and-control traffic to blend into apparently legitimate AI web traffic to trusted service domains. In this pattern, the AI service acts as a proxy between the compromised system and attacker-controlled infrastructure, shifting detection from API key and account monitoring toward browser automation, prompt content, URL-fetch behavior, and AI service telemetry.",
+   "latest_id": "AML.T0114",
+   "definition_latest": "Adversaries may communicate with compromised systems by abusing the web interface of an AI service as an intermediary command-and-control relay. Instead of connecting directly to attacker-controlled infrastructure or using an AI provider's API, malware may open or automate a browser, embedded browser, or WebView component to interact with a public AI assistant.\n\nThe malware may prompt the AI assistant to fetch an attacker-controlled URL, include victim data in URL parameters or prompt content, and return attacker-supplied content through the AI assistant's response. The implant can then parse the response and execute embedded instructions.\n\nThis technique is especially useful when an AI web interface permits anonymous or unauthenticated browsing, summarization, or URL-fetch behavior. In those cases, adversaries may avoid controls that depend on API keys, service accounts, user identities, or revocable credentials.\n\nThis technique allows command-and-control traffic to blend into apparently legitimate AI web traffic to trusted service domains. In this pattern, the AI service acts as a proxy between the compromised system and attacker-controlled infrastructure, shifting detection from API key and account monitoring toward browser automation, prompt content, URL-fetch behavior, and AI service telemetry.",
+   "latest_name": "AI Service Web Interface",
+   "rows": [
+    {
+     "row_id": "R241",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Browser",
+     "artifact_label": "Browser",
+     "disposition": "maps-existing",
+     "evidence_quote": "open or automate a browser, embedded browser, or WebView component",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R242",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:URL",
+     "artifact_label": "U R L",
+     "disposition": "maps-existing",
+     "evidence_quote": "fetch an attacker-controlled URL",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R243",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "artifact_label": "Outbound Internet Web Traffic",
+     "disposition": "maps-existing",
+     "evidence_quote": "command-and-control traffic to blend into apparently legitimate AI web traffic",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R244",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:Command",
+     "artifact_label": "Command",
+     "disposition": "maps-existing",
+     "evidence_quote": "execute embedded instructions",
+     "notes": "upheld"
+    }
+   ]
+  }
+ ]
+}

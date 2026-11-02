@@ -1,0 +1,854 @@
+{
+ "unit": "ADJ-02",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0017.000",
+   "label": "Adversarial AI Attacks",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may develop their own adversarial attacks.\nThey may leverage existing libraries as a starting point ([Adversarial AI Attack Implementations](/techniques/AML.T0016.000)).\nThey may implement ideas described in public research papers or develop custom made attacks for the victim model.",
+   "latest_id": "AML.T0017.000",
+   "definition_latest": "Adversaries may develop their own adversarial attacks.\nThey may leverage existing libraries as a starting point ([Adversarial AI Attack Implementations](/techniques/AML.T0016.000)).\nThey may implement ideas described in public research papers or develop custom made attacks for the victim model.",
+   "latest_name": "Adversarial AI Attacks",
+   "rows": [
+    {
+     "row_id": "R053",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "develop custom made attacks",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R054",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "leverage existing libraries as a starting point",
+     "notes": "two downgrades -> ships at low confidence | narrowed d3f:Software -> d3f:SoftwareLibrary per verifier"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018",
+   "label": "Manipulate AI Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may directly manipulate an AI model to change its behavior or introduce malicious code. Manipulating a model gives the adversary a persistent change in the system. This can include poisoning the model by changing its weights, modifying the model architecture to change its behavior, and embedding malware which may be executed when the model is loaded.",
+   "latest_id": "AML.T0018",
+   "definition_latest": "Adversaries may manipulate an AI model artifact or its bundled components to change AI system behavior, introduce malicious code, or establish persistent malicious functionality. This may include modifying model weights, model architecture, or prompt-construction logic.  \n\nManipulated artifacts may retain expected behavior under ordinary conditions while activating malicious behavior only for selected inputs, contexts, or deployment conditions.",
+   "latest_name": "Manipulate AI Model",
+   "rows": [
+    {
+     "row_id": "R055",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "directly manipulate an AI model to change its behavior",
+     "notes": "Generic software integrity and tamper-detection countermeasures (hashing, code-signing verification) already scoped to Software apply to catching an unauthorized change to a model artifact, even without a weights-specific detector."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018.000",
+   "label": "Poison AI Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may manipulate an AI model's weights to change it's behavior or performance, resulting in a poisoned model.\nAdversaries may poison a model by directly manipulating its weights, training the model on poisoned data, further fine-tuning the model, or otherwise interfering with its training process.\n\nThe change in behavior of poisoned models may be limited to targeted categories in predictive AI models, or targeted topics, concepts, or facts in generative AI models, or aim for a general performance degradation.",
+   "latest_id": "AML.T0018.000",
+   "definition_latest": "Adversaries may manipulate an AI model's weights to change it's behavior or performance, resulting in a poisoned model.\nAdversaries may poison a model by directly manipulating its weights, training the model on poisoned data, further fine-tuning the model, or otherwise interfering with its training process. \n\nThe change in behavior of poisoned models may be limited to targeted categories in predictive AI models, or targeted topics, concepts, or facts in generative AI models, or aim for a general performance degradation.",
+   "latest_name": "Poison AI Model",
+   "rows": [
+    {
+     "row_id": "R056",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "manipulate an AI model's weights to change it's behavior or performance",
+     "notes": "Software integrity/tamper-detection countermeasures apply directly to catching a poisoned weight set delivered as a modified model artifact."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018.001",
+   "label": "Modify AI Model Architecture",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may directly modify an AI model's architecture to re-define it's behavior. This can include adding or removing layers as well as adding pre or post-processing operations.\n\nThe effects could include removing the ability to predict certain classes, adding erroneous operations to increase computation costs, or degrading performance. Additionally, a separate adversary-defined network could be injected into the computation graph, which can change the behavior based on the inputs, effectively creating a backdoor.",
+   "latest_id": "AML.T0018.001",
+   "definition_latest": "Adversaries may directly modify an AI model's architecture to re-define it's behavior. This can include adding or removing layers as well as adding pre or post-processing operations.\n\nThe effects could include removing the ability to predict certain classes, adding erroneous operations to increase computation costs, or degrading performance. Additionally, a separate adversary-defined network could be injected into the computation graph, which can change the behavior based on the inputs, effectively creating a backdoor.",
+   "latest_name": "Modify AI Model Architecture",
+   "rows": [
+    {
+     "row_id": "R057",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "directly modify an AI model's architecture to re-define it's behavior",
+     "notes": "Configuration/structure-change-detection countermeasures already scoped to Software apply to detecting an unauthorized architecture edit, the same class of defense that catches unauthorized code or config changes generally."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018.002",
+   "label": "Embed Malware",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may embed malicious code into AI Model files.\nAI models may be packaged as a combination of instructions and weights.\nSome formats such as pickle files are unsafe to deserialize because they can contain unsafe calls such as exec.\nModels with embedded malware may still operate as expected.\nIt may allow them to achieve Execution, Command & Control, or Exfiltrate Data.",
+   "latest_id": "AML.T0018.002",
+   "definition_latest": "Adversaries may embed malicious code into AI Model files.\nAI models may be packaged as a combination of instructions and weights.\nSome formats such as pickle files are unsafe to deserialize because they can contain unsafe calls such as exec.\nModels with embedded malware may still operate as expected.\nIt may allow them to achieve Execution, Command & Control, or Exfiltrate Data.",
+   "latest_name": "Embed Malware",
+   "rows": [
+    {
+     "row_id": "R058",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "embed malicious code into AI Model files",
+     "notes": "File-analysis, deserialization-scanning, and malware-scanning countermeasures already scoped to File apply directly, since the technique itself frames the target as a file (e.g., unsafe pickle deserialization) rather than a runtime model state."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0019",
+   "label": "Publish Poisoned Datasets",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may [Poison Training Data](/techniques/AML.T0020) and publish it to a public location.\nThe poisoned dataset may be a novel dataset or a poisoned variant of an existing open source dataset.\nThis data may be introduced to a victim system via [AI Supply Chain Compromise](/techniques/AML.T0010).",
+   "latest_id": "AML.T0115.000",
+   "definition_latest": "Adversaries may publish poisoned datasets intended for training or fine-tuning AI models. The dataset may be newly created or a modified variant of a legitimate dataset and may contain manipulated samples, labels, annotations, or metadata.\n\nAdversaries may distribute poisoned datasets through dataset repositories, code repositories, file-sharing services, or compromised data sources. A victim that incorporates the dataset into a training pipeline may be affected by [Training Data Poisoning](/techniques/AML.T0020), potentially through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "latest_name": "Datasets",
+   "rows": [
+    {
+     "row_id": "R059",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "a novel dataset or a poisoned variant of an existing open source dataset",
+     "notes": "Provenance/integrity-verification countermeasures scoped to File meaningfully apply to detecting a tampered public dataset before it is ingested downstream, the same defense class used for any untrusted published file."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0020",
+   "label": "Poison Training Data",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to poison datasets used by an AI model by modifying the underlying data or its labels.\nThis allows the adversary to embed vulnerabilities in AI models trained on the data that may not be easily detectable.\nData poisoning attacks may or may not require modifying the labels.\nThe embedded vulnerability is activated at a later time by data samples with an [Insert Backdoor Trigger](/techniques/AML.T0043.004)\n\nPoisoned data can be introduced via [AI Supply Chain Compromise](/techniques/AML.T0010) or the data may be poisoned after the adversary gains [Initial Access](/tactics/AML.TA0004) to the system.",
+   "latest_id": "AML.T0020",
+   "definition_latest": "Adversaries may manipulate data used for training or fine-tuning an AI model to influence the resulting model's behavior. Adversaries may add, remove, or modify data samples; alter labels or annotations; or manipulate feedback and data-collection processes.\n\nTraining data poisoning may cause targeted errors, introduce biased or unsafe behavior, degrade model performance, or embed backdoors activated by specific inputs. The resulting behavior may persist in the trained model after the poisoned data is no longer accessible.\n\nAdversaries may poison data directly after gaining access to a training pipeline, or poisoned datasets may be introduced through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "latest_name": "Training Data Poisoning",
+   "rows": [
+    {
+     "row_id": "R060",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "modifying the underlying data or its labels",
+     "notes": "File-integrity monitoring and data-provenance-verification countermeasures already scoped to File apply directly to detecting tampered training data, regardless of the downstream ML-specific consequence."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0024",
+   "label": "Exfiltration via AI Inference API",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may exfiltrate private information via [AI Model Inference API Access](/techniques/AML.T0040).\nAI Models have been shown leak private information about their training data (e.g.  [Infer Training Data Membership](/techniques/AML.T0024.000), [Invert AI Model](/techniques/AML.T0024.001)).\nThe model itself may also be extracted ([Extract AI Model](/techniques/AML.T0024.002)) for the purposes of [AI Intellectual Property Theft](/techniques/AML.T0048.004).\n\nExfiltration of information relating to private training data raises privacy concerns.\nPrivate training data may include personally identifiable information, or other protected data.",
+   "latest_id": "AML.T0024",
+   "definition_latest": "Adversaries may exfiltrate information from a victim-controlled AI model or service through responses returned by its inference API. Transferred information may include predictions, scores, embeddings, generated content (e.g. text or images), or other sensitive information disclosed in model responses. Responses may be received directly or relayed through an intermediary.\n\nAdversaries may submit inputs designed to cause information to be returned through ordinary API response fields or streaming outputs. The inference API response serves as the transfer channel, including when adversaries use valid accounts or credentials to obtain responses as part of an unauthorized extraction operation.\n\nReceived responses may be gathered as [Outputs from AI Models](/techniques/AML.T0135), analyzed to obtain [Training Data Information from AI Models](/techniques/AML.T0137), used to [Craft Adversarial Data](/techniques/AML.T0043), or to [Replicate Behavior from Model Outputs](/techniques/AML.T0005.001).",
+   "latest_name": "Exfiltration via AI Inference API",
+   "rows": [
+    {
+     "row_id": "R061",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "AI Model Inference API Access",
+     "notes": "API-level countermeasures (query-pattern/rate-limit analysis, output access control, anomaly detection on the resource) are the actual defense surface for repeated-query exfiltration through an inference endpoint -- this is not a generic Software mapping, it targets the exact access channel named in"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0024.001",
+   "label": "Invert AI Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "AI models' training data could be reconstructed by exploiting the confidence scores that are available via an inference API.\nBy querying the inference API strategically, adversaries can back out potentially private information embedded within the training data.\nThis could lead to privacy violations if the attacker can reconstruct the data of sensitive features used in the algorithm.",
+   "latest_id": "AML.T0137.002",
+   "definition_latest": "Adversaries may infer sensitive aggregate attributes or reconstruct representative examples of data used to train or fine-tune a target AI model by analyzing its behavior, outputs, or exposed representations. Reconstructed information may reveal characteristics of individuals, records, or classes represented in the training data without reproducing a particular training example.\n\nMethods may optimize candidate inputs, combine known attributes with model-derived signals, or use learned inversion models. Useful observations may include prediction scores, probabilities, embeddings, or gradients where exposed.\n\nResults may include inferred sensitive attributes, approximate reconstructions, or representative examples associated with a target identity or class. Such results do not by themselves establish that a reconstructed example was present in the training dataset.",
+   "latest_name": "Invert AI Model",
+   "rows": [
+    {
+     "row_id": "R062",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "an inference API",
+     "notes": "Model-inversion defenses in practice are implemented as controls on the inference API response surface (rounding/perturbing confidence scores, rate-limiting strategic query sequences) -- WebAPIResource is exactly where those countermeasures attach, not a generic stand-in."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0024.002",
+   "label": "Extract AI Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may extract a functional copy of a private model.\nBy repeatedly querying the victim's [AI Model Inference API Access](/techniques/AML.T0040), the adversary can collect the target model's inferences into a dataset.\nThe inferences are used as labels for training a separate model offline that will mimic the behavior and performance of the target model.\n\nAdversaries may extract the model to avoid paying per query in an artificial-intelligence-as-a-service (AIaaS) setting.\nModel extraction is used for [AI Intellectual Property Theft](/techniques/AML.T0048.004).",
+   "latest_id": "AML.T0005.001",
+   "definition_latest": "Adversaries may replicate an AI model's behavior or selected capabilities by training or adapting another model using outputs or other sources of supervision obtained from the target. Supervisory material may include labels, scores, probabilities, generated responses, reasoning explanations, evaluations, reward or preference signals, and tool-use or agent interaction trajectories.\n\nThe adversary may use supervised learning, knowledge distillation, supervised fine-tuning, reinforcement learning, or related methods. Target-generated material may be filtered, combined with other data, or acquired from multiple teacher models. The resulting model may reproduce selected capabilities rather than the target's full behavior, architecture, parameters, or output ontology.",
+   "latest_name": "Replicate Behavior from Model Outputs",
+   "rows": [
+    {
+     "row_id": "R063",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "AI Model Inference API Access",
+     "notes": "Query-pattern and rate-limiting countermeasures on the inference API resource are the standard defense against exactly this repeated-querying extraction technique, independent of any model-specific artifact."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0029",
+   "label": "Denial of AI Service",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may target AI-enabled systems with a flood of requests for the purpose of degrading or shutting down the service.\nSince many AI systems require significant amounts of specialized compute, they are often expensive bottlenecks that can become overloaded.\nAdversaries can intentionally craft inputs that require heavy amounts of useless compute from the AI system.",
+   "latest_id": "AML.T0029",
+   "definition_latest": "Adversaries may target AI-enabled systems with a flood of requests for the purpose of degrading or shutting down the service.\nSince many AI systems require significant amounts of specialized compute, they are often expensive bottlenecks that can become overloaded.\nAdversaries can intentionally craft inputs that require heavy amounts of useless compute from the AI system.",
+   "latest_name": "Denial of AI Service",
+   "rows": [
+    {
+     "row_id": "R064",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "artifact_label": "Service Application",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "AI-enabled systems",
+     "notes": "Rate-limiting, load-shedding, and resource-quota countermeasures that already apply to any ServiceApplication under flood conditions apply directly here -- the compute-intensiveness of AI inference just lowers the attacker's cost-per-request, it doesn't change what a defender protects."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0034",
+   "label": "Cost Harvesting",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may deliberately drive a victim's AI services beyond normal operating capacity with the intent of increasing the cost of services. This may be achieved via high-volume, low-complexity queries ([Excessive Queries](/techniques/AML.T0034.000)) or low-volume, high-complexity queries ([Resource-Intensive Queries](/techniques/AML.T0034.001)). In Generative AI or Agentic AI systems, adversarial prompts may be introduced into the model's context to cause ([Agentic Resource Consumption](/techniques/AML.T0034.002)).\n\nUnlike resource hijacking, where adversaries may leverage AI resources such as computational, memory, or storage for their own purposes, cost harvesting focuses on resource-centric pressure to a service to ultimately cause financial harm to the victim.\n\nCost Harvesting is especially relevant for cloud-hosted, pay-per-use AI/ML platforms (e.g., LLM APIs, generative image services, vision-language pipelines). By manipulating request volume or request complexity, an attacker can:\n- Inflate the victim's compute or storage consumption, leading to higher operational costs.\n- Trigger autoscaling mechanisms that provision additional resources, further amplifying cost and exposure.\n- Saturate internal queues or GPU/TPU pipelines, causing latency spikes, request throttling, or outright service unavailability for legitimate users.",
+   "latest_id": "AML.T0034",
+   "definition_latest": "Adversaries may deliberately drive a victim's AI services beyond normal operating capacity with the intent of increasing the cost of services. This may be achieved via high-volume, low-complexity queries ([Excessive Queries](/techniques/AML.T0034.000)) or low-volume, high-complexity queries ([Resource-Intensive Queries](/techniques/AML.T0034.001)). In Generative AI or Agentic AI systems, adversarial prompts may be introduced into the model's context to cause ([Agentic Resource Consumption](/techniques/AML.T0034.002)).\n\nUnlike resource hijacking, where adversaries may leverage AI resources such as computational, memory, or storage for their own purposes, cost harvesting focuses on resource-centric pressure to a service to ultimately cause financial harm to the victim.\n\nCost Harvesting is especially relevant for cloud-hosted, pay-per-use AI/ML platforms (e.g., LLM APIs, generative image services, vision-language pipelines). By manipulating request volume or request complexity, an attacker can:\n- Inflate the victim's compute or storage consumption, leading to higher operational costs.\n- Trigger autoscaling mechanisms that provision additional resources, further amplifying cost and exposure.\n- Saturate internal queues or GPU/TPU pipelines, causing latency spikes, request throttling, or outright service unavailability for legitimate users.",
+   "latest_name": "Cost Harvesting",
+   "rows": [
+    {
+     "row_id": "R065",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:InboundInternetWebTraffic",
+     "artifact_label": "Inbound Internet Web Traffic",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "useless queries",
+     "notes": "Network-traffic-analysis and rate-limiting countermeasures on inbound web traffic directly target the flood of useless/costly queries this technique sends -- already vetted and kept from the prior pass, and independently confirmed here."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0035",
+   "label": "AI Artifact Collection",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may collect AI artifacts for [Exfiltration](/tactics/AML.TA0010) or for use in [AI Attack Staging](/tactics/AML.TA0001).\nAI artifacts include models and datasets as well as other telemetry data produced when interacting with a model.",
+   "latest_id": "AML.T0035",
+   "definition_latest": "Adversaries may collect AI artifacts for [Exfiltration](/tactics/AML.TA0010) or for use in [AI Attack Adaptation](/tactics/AML.TA0001).\nAI artifacts include models and datasets as well as other telemetry data produced when interacting with a model.",
+   "latest_name": "AI Artifact Collection",
+   "rows": [
+    {
+     "row_id": "R066",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "AI artifacts include models and datasets",
+     "notes": "File-level access-monitoring and DLP countermeasures apply generically to any file being collected for exfiltration, independent of whether its content is model weights or a dataset -- that's precisely the property a collection technique's countermeasures need, and it complements the already-kept d3"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0036",
+   "label": "Data from Information Repositories",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may leverage information repositories to mine valuable information.\nInformation repositories are tools that allow for storage of information, typically to facilitate collaboration or information sharing between users, and can store a wide variety of data that may aid adversaries in further objectives, or direct access to the target information.\n\nInformation stored in a repository may vary based on the specific instance or environment.\nSpecific common information repositories include SharePoint, Confluence, and enterprise databases such as SQL Server.",
+   "latest_id": "AML.T0036",
+   "definition_latest": "Adversaries may leverage information repositories to mine valuable information.\nInformation repositories are tools that allow for storage of information, typically to facilitate collaboration or information sharing between users, and can store a wide variety of data that may aid adversaries in further objectives, or direct access to the target information.\n\nInformation stored in a repository may vary based on the specific instance or environment.\nSpecific common information repositories include SharePoint, Confluence, and enterprise databases such as SQL Server.",
+   "latest_name": "Data from Information Repositories",
+   "rows": [
+    {
+     "row_id": "R067",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CollaborativeSoftware",
+     "artifact_label": "Collaborative Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "facilitate collaboration or information sharing between users",
+     "notes": "two downgrades -> ships at low confidence"
+    },
+    {
+     "row_id": "R068",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Database",
+     "artifact_label": "Database",
+     "disposition": "maps-existing",
+     "evidence_quote": "enterprise databases such as SQL Server",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R069",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebFileResource",
+     "artifact_label": "Web File Resource",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R070",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:CodeRepository",
+     "artifact_label": "Code Repository",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0040",
+   "label": "AI Model Inference API Access",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may gain access to a model via legitimate access to the inference API.\nInference API access can be a source of information to the adversary ([Discover AI Model Ontology](/techniques/AML.T0013), [Discover AI Model Family](/techniques/AML.T0014)), a means of staging the attack ([Verify Attack](/techniques/AML.T0042), [Craft Adversarial Data](/techniques/AML.T0043)), or for introducing data to the target system for Impact ([Evade AI Model](/techniques/AML.T0015), [Erode AI Model Integrity](/techniques/AML.T0031)).\n\nMany systems rely on the same models provided via an inference API, which means they share the same vulnerabilities. This is especially true of foundation models which are prohibitively resource intensive to train. Adversaries may use their access to model APIs to identify vulnerabilities such as jailbreaks or hallucinations and then target applications that use the same models.",
+   "latest_id": "AML.T0040",
+   "definition_latest": "Adversaries may gain access to a model via legitimate access to the inference API.\nInference API access can be a source of information to the adversary ([Discover AI Model Ontology](/techniques/AML.T0013), [Discover AI Model Family](/techniques/AML.T0014)), a means of staging the attack ([Verify Attack](/techniques/AML.T0042), [Craft Adversarial Data](/techniques/AML.T0043)), or for introducing data to the target system for Impact ([Evade AI Model](/techniques/AML.T0015), [Erode AI Model Integrity](/techniques/AML.T0031)).\n\nMany systems rely on the same models provided via an inference API, which means they share the same vulnerabilities. This is especially true of foundation models which are prohibitively resource intensive to train. Adversaries may use their access to model APIs to identify vulnerabilities such as jailbreaks or hallucinations and then target applications that use the same models.",
+   "latest_name": "AI Model Inference API Access",
+   "rows": [
+    {
+     "row_id": "R071",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "the inference API",
+     "notes": "Access-control, authentication-scoping, and query-monitoring countermeasures on the web API resource are the direct defense against this technique, which is explicitly about gaining and reusing legitimate API access -- no model-internals artifact is needed to make the inference meaningful."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0041",
+   "label": "Physical Environment Access",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "In addition to the attacks that take place purely in the digital domain, adversaries may also exploit the physical environment for their attacks.\nIf the model is interacting with data collected from the real world in some way, the adversary can influence the model through access to wherever the data is being collected.\nBy modifying the data in the collection process, the adversary can perform modified versions of attacks designed for digital access.",
+   "latest_id": "AML.T0041",
+   "definition_latest": "In addition to the attacks that take place purely in the digital domain, adversaries may also exploit the physical environment for their attacks.\nIf the model is interacting with data collected from the real world in some way, the adversary can influence the model through access to wherever the data is being collected.\nBy modifying the data in the collection process, the adversary can perform modified versions of attacks designed for digital access.",
+   "latest_name": "Physical Environment Access",
+   "rows": [
+    {
+     "row_id": "R072",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:TransducerSensor",
+     "artifact_label": "Transducer Sensor",
+     "disposition": "maps-existing",
+     "evidence_quote": "wherever the data is being collected",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0042",
+   "label": "Verify Attack",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries can verify the efficacy of their attack via an inference API or access to an offline copy of the target model.\nThis gives the adversary confidence that their approach works and allows them to carry out the attack at a later time of their choosing.\nThe adversary may verify the attack once but use it against many edge devices running copies of the target model.\nThe adversary may verify their attack digitally, then deploy it in the [Physical Environment Access](/techniques/AML.T0041) at a later time.\nVerifying the attack may be hard to detect since the adversary can use a minimal number of queries or an offline copy of the model.",
+   "latest_id": "AML.T0042",
+   "definition_latest": "Adversaries can verify the efficacy of their attack via an inference API or access to an offline copy of the target model.\nThis gives the adversary confidence that their approach works and allows them to carry out the attack at a later time of their choosing.\nThe adversary may verify the attack once but use it against many edge devices running copies of the target model.\nThe adversary may verify their attack digitally, then deploy it in the [Physical Environment Access](/techniques/AML.T0041) at a later time.\nVerifying the attack may be hard to detect since the adversary can use a minimal number of queries or an offline copy of the model.",
+   "latest_name": "Verify Attack",
+   "rows": [
+    {
+     "row_id": "R073",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "access to an offline copy of the target model",
+     "notes": "Protecting an offline copy of proprietary software from unauthorized possession and analysis -- controlling distribution, integrity-checking binaries, licensing/DRM -- is the same countermeasure class that already applies to any commercial software copied off a network; it isn't vacuous, it just isn"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043",
+   "label": "Craft Adversarial Data",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversarial data are inputs to an AI model that have been modified such that they cause the adversary's desired effect in the target model.\nEffects can range from misclassification, to missed detections, to maximizing energy consumption.\nTypically, the modification is constrained in magnitude or location so that a human still perceives the data as if it were unmodified, but human perceptibility may not always be a concern depending on the adversary's intended effect.\nFor example, an adversarial input for an image classification task is an image the AI model would misclassify, but a human would still recognize as containing the correct class.\n\nDepending on the adversary's knowledge of and access to the target model, the adversary may use different classes of algorithms to develop the adversarial example such as [White-Box Optimization](/techniques/AML.T0043.000), [Black-Box Optimization](/techniques/AML.T0043.001), [Black-Box Transfer](/techniques/AML.T0043.002), or [Manual Modification](/techniques/AML.T0043.003).\n\nThe adversary may [Verify Attack](/techniques/AML.T0042) their approach works if they have white-box or inference API access to the model.\nThis allows the adversary to gain confidence their attack is effective \"live\" environment where their attack may be noticed.\nThey can then use the attack at a later time to accomplish their goals.\nAn adversary may optimize adversarial examples for [Evade AI Model](/techniques/AML.T0015), or to [Erode AI Model Integrity](/techniques/AML.T0031).",
+   "latest_id": "AML.T0043",
+   "definition_latest": "Adversarial data are inputs to an AI model that have been modified such that they cause the adversary's desired effect in the target model.\nEffects can range from misclassification, to missed detections, to maximizing energy consumption.\nTypically, the modification is constrained in magnitude or location so that a human still perceives the data as if it were unmodified, but human perceptibility may not always be a concern depending on the adversary's intended effect.\nFor example, an adversarial input for an image classification task is an image the AI model would misclassify, but a human would still recognize as containing the correct class.\n\nDepending on the adversary's knowledge of and access to the target model, the adversary may use different classes of algorithms to develop the adversarial example such as [White-Box Optimization](/techniques/AML.T0043.000), [Black-Box Optimization](/techniques/AML.T0043.001), [Black-Box Transfer](/techniques/AML.T0043.002), or [Manual Modification](/techniques/AML.T0043.003).\n\nThe adversary may perform [Verify Attack](/techniques/AML.T0042) to confirm that their approach works if they have white-box or inference API access to the model.\nThis allows the adversary to gain confidence their attack is effective in a live environment where their attack may be noticed.\nThey can then use the attack at a later time to accomplish their goals.\nAn adversary may optimize adversarial examples for [Evade AI Model](/techniques/AML.T0015), or to [Erode AI Model Integrity](/techniques/AML.T0031).",
+   "latest_name": "Craft Adversarial Data",
+   "rows": [
+    {
+     "row_id": "R074",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:DigitalMedia",
+     "artifact_label": "Digital Media",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "a human still perceives the data as if it were unmodified",
+     "notes": "Media integrity and tamper-detection countermeasures (provenance checks, perceptual-hash comparison, input sanitization) directly target the imperceptible, magnitude/location-constrained modification this technique depends on -- not a generic software catch-all."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.000",
+   "label": "White-Box Optimization",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "In White-Box Optimization, the adversary has full access to the target model and optimizes the adversarial example directly.\nAdversarial examples trained in this manner are most effective against the target model.",
+   "latest_id": "AML.T0043.000",
+   "definition_latest": "In White-Box Optimization, the adversary has full access to the target model and optimizes the adversarial example directly.\nAdversarial examples trained in this manner are most effective against the target model.",
+   "latest_name": "White-Box Optimization",
+   "rows": [
+    {
+     "row_id": "R075",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "full access to the target model",
+     "notes": "Access-restriction countermeasures scoped to Software (credential-gated model access, least-privilege serving infrastructure) meaningfully reduce the white-box scenario this subtechnique's entire premise depends on -- the mapping is actionable, not a vacuous label."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.001",
+   "label": "Black-Box Optimization",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "In Black-Box attacks, the adversary has black-box (i.e. [AI Model Inference API Access](/techniques/AML.T0040) via API access) access to the target model.\nWith black-box attacks, the adversary may be using an API that the victim is monitoring.\nThese attacks are generally less effective and require more inferences than [White-Box Optimization](/techniques/AML.T0043.000) attacks, but they require much less access.",
+   "latest_id": "AML.T0043.001",
+   "definition_latest": "In Black-Box attacks, the adversary has black-box (i.e. [AI Model Inference API Access](/techniques/AML.T0040) via API access) access to the target model.\nWith black-box attacks, the adversary may be using an API that the victim is monitoring.\nThese attacks are generally less effective and require more inferences than [White-Box Optimization](/techniques/AML.T0043.000) attacks, but they require much less access.",
+   "latest_name": "Black-Box Optimization",
+   "rows": [
+    {
+     "row_id": "R076",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "artifact_label": "Service Application",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "via API access",
+     "notes": "API-access countermeasures (rate limiting, authentication, anomaly detection on the inference endpoint) are exactly what 'the victim is monitoring' per this subtechnique's own text, so ServiceApplication is directly actionable, not a generic label."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.003",
+   "label": "Manual Modification",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may manually modify the input data to craft adversarial data.\nThey may use their knowledge of the target model to modify parts of the data they suspect helps the model in performing its task.\nThe adversary may use trial and error until they are able to verify they have a working adversarial input.",
+   "latest_id": "AML.T0043.003",
+   "definition_latest": "Adversaries may manually modify the input data to craft adversarial data.\nThey may use their knowledge of the target model to modify parts of the data they suspect helps the model in performing its task.\nThe adversary may use trial and error until they are able to verify they have a working adversarial input.",
+   "latest_name": "Manual Modification",
+   "rows": [
+    {
+     "row_id": "R077",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:DigitalMedia",
+     "artifact_label": "Digital Media",
+     "disposition": "maps-existing",
+     "evidence_quote": "manually modify the input data",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.004",
+   "label": "Insert Backdoor Trigger",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "The adversary may add a perceptual trigger into inference data.\nThe trigger may be imperceptible or non-obvious to humans.\nThis technique is used in conjunction with [Poison AI Model](/techniques/AML.T0018.000) and allows the adversary to produce their desired effect in the target model.",
+   "latest_id": "AML.T0043.004",
+   "definition_latest": "The adversary may add a perceptual trigger into inference data.\nThe trigger may be imperceptible or non-obvious to humans.\nThis technique is used in conjunction with [Poison AI Model](/techniques/AML.T0018.000) and allows the adversary to produce their desired effect in the target model.",
+   "latest_name": "Insert Backdoor Trigger",
+   "rows": [
+    {
+     "row_id": "R078",
+     "verb": "d3f:adds",
+     "artifact_iri": "d3f:DigitalMedia",
+     "artifact_label": "Digital Media",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "add a perceptual trigger into inference data",
+     "notes": "Media-integrity and statistical anomaly-detection countermeasures scoped to DigitalMedia (perceptual-hash comparison, outlier detection on inference inputs) directly target the imperceptible/non-obvious trigger this technique inserts, not a generic catch-all."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0044",
+   "label": "Full AI Model Access",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may gain full \"white-box\" access to an AI model.\nThis means the adversary has complete knowledge of the model architecture, its parameters, and class ontology.\nThey may exfiltrate the model to [Craft Adversarial Data](/techniques/AML.T0043) and [Verify Attack](/techniques/AML.T0042) in an offline where it is hard to detect their behavior.",
+   "latest_id": "AML.T0044",
+   "definition_latest": "Adversaries may gain full \"white-box\" access to an AI model.\nThis means the adversary has complete knowledge of the model architecture, its parameters, and class ontology.\nThey may exfiltrate the model to [Craft Adversarial Data](/techniques/AML.T0043) and [Verify Attack](/techniques/AML.T0042) in an offline environment where it is hard to detect their behavior.",
+   "latest_name": "Full AI Model Access",
+   "rows": [
+    {
+     "row_id": "R079",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "gain full \"white-box\" access to an AI model",
+     "notes": "Access-control and key-material protection countermeasures over Software (encrypted model storage, credential-gated serving infrastructure, least-privilege deployment) meaningfully reduce the exact white-box-access scenario this technique's title and definition center on. The definition's second fac"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0046",
+   "label": "Spamming AI System with Chaff Data",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may spam the AI system with chaff data that causes increase in the number of detections.\nThis can cause analysts at the victim organization to waste time reviewing and correcting incorrect inferences.\n\nAdversaries may also spam AI agents with excessive low-severity auditable events or agentic actions that require a human-in-the-loop, wasting time for the victim organization in human review of the agentic AI system.",
+   "latest_id": "AML.T0046",
+   "definition_latest": "Adversaries may spam the AI system with chaff data that causes increase in the number of detections.\nThis can cause analysts at the victim organization to waste time reviewing and correcting incorrect inferences.\n\nAdversaries may also spam AI agents with excessive low-severity auditable events or agentic actions that require a human-in-the-loop, wasting time for the victim organization in human review of the agentic AI system.",
+   "latest_name": "Spamming AI System with Chaff Data",
+   "rows": [
+    {
+     "row_id": "R080",
+     "verb": "d3f:abuses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "artifact_label": "Service Application",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "spam the AI system with chaff data",
+     "notes": "Rate-limiting, input-volume anomaly detection, and request-pattern analysis on the exposed inference ServiceApplication meaningfully counter this volumetric chaff-flooding technique aimed at inflating false-positive review load, unlike the bare 'AI system' phrase alone which names no actionable D3FE"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0047",
+   "label": "AI-Enabled Product or Service",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may use a product or service that uses artificial intelligence under the hood to gain access to the underlying AI model.\nThis type of indirect model access may reveal details of the AI model or its inferences in logs or metadata.",
+   "latest_id": "AML.T0047",
+   "definition_latest": "Adversaries may use a product or service that uses artificial intelligence under the hood to gain access to the underlying AI model.\nThis type of indirect model access may reveal details of the AI model or its inferences in logs or metadata.",
+   "latest_name": "AI-Enabled Product or Service",
+   "rows": [
+    {
+     "row_id": "R081",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "artifact_label": "Service Application",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "a product or service that uses artificial intelligence",
+     "notes": "Third-party/vendor AI-service risk controls (API usage monitoring, output/metadata minimization) scoped to ServiceApplication meaningfully address this indirect-access path, matching the technique's own emphasis on the intermediary product or service rather than the model itself."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0048.004",
+   "label": "AI Intellectual Property Theft",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may exfiltrate AI artifacts to steal intellectual property and cause economic harm to the victim organization.\n\nProprietary training data is costly to collect and annotate and may be a target for [Exfiltration](/tactics/AML.TA0010) and theft.\n\nAIaaS providers charge for use of their API.\nAn adversary who has stolen a model via [Exfiltration](/tactics/AML.TA0010) or via [Extract AI Model](/techniques/AML.T0024.002) now has unlimited use of that service without paying the owner of the intellectual property.",
+   "latest_id": "AML.T0048.004",
+   "definition_latest": "Adversaries may appropriate AI-related intellectual property in a manner that causes economic or competitive harm to the victim organization. Targeted material may include model architectures and weights, training data, or model behaviors and capabilities.\n\nAdversaries may steal AI models or other artifacts via exfiltration from the victim system. Access may be obtained through [Valid Accounts](/techniques/AML.T0012), exposed storage, misconfigured permissions, or exploitation of systems that store or serve the AI artifacts. Alternatively, adversaries may collect [Outputs from AI Models](/techniques/AML.T0135) to [Replicate AI Model Behavior](/techniques/AML.T0005) without obtaining the original model artifacts. Model training approaches include knowledge distillation, fine-tuning, and reinforcement learning.\n\nAdversaries may use a stolen or replicated model internally themselves, sell or distribute it, offer competing AI services, or incorporate its capabilities into their own products without compensating the model owner. Possession of the model also allows adversaries to modify or fine-tune it and operate outside the original provider's access controls, usage restrictions, and monitoring. These activities may reduce the victim's competitive advantage and undermine the exclusivity of proprietary AI capabilities.",
+   "latest_name": "AI Intellectual Property Theft",
+   "rows": [
+    {
+     "row_id": "R082",
+     "verb": "d3f:copies",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "Proprietary training data is costly to collect and annotate",
+     "notes": "DLP and exfiltration-detection countermeasures scoped to File (bulk data-transfer monitoring, access logging on training corpora) protect exactly the asset this definition names as the theft target, whose value comes specifically from collection/annotation labor. The definition's separate model-thef"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0049",
+   "label": "Exploit Public-Facing Application",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause unintended or unanticipated behavior. The weakness in the system can be a bug, a glitch, or a design vulnerability. These applications are often websites, but can include databases (like SQL), standard services (like SMB or SSH), network device administration and management protocols (like SNMP and Smart Install), and any other applications with Internet accessible open sockets, such as web servers and related services.",
+   "latest_id": "AML.T0049",
+   "definition_latest": "Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause unintended or unanticipated behavior. The weakness in the system can be a bug, a glitch, or a design vulnerability. These applications are often websites, but can include databases (like SQL), standard services (like SMB or SSH), network device administration and management protocols (like SNMP and Smart Install), and any other applications with Internet accessible open sockets, such as web servers and related services.",
+   "latest_name": "Exploit Public-Facing Application",
+   "rows": [
+    {
+     "row_id": "R083",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DatabaseQuery",
+     "artifact_label": "Database Query",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R084",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ProcessSegment",
+     "artifact_label": "Process Segment",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R085",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:InboundInternetNetworkTraffic",
+     "artifact_label": "Inbound Internet Network Traffic",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0050",
+   "label": "Command and Scripting Interpreter",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms. Most systems come with some built-in command-line interface and scripting capabilities, for example, macOS and Linux distributions include some flavor of Unix Shell while Windows installations include the Windows Command Shell and PowerShell.\n\nThere are also cross-platform interpreters such as Python, as well as those commonly associated with client applications such as JavaScript and Visual Basic.\n\nAdversaries may abuse these technologies in various ways as a means of executing arbitrary commands. Commands and scripts can be embedded in Initial Access payloads delivered to victims as lure documents or as secondary payloads downloaded from an existing C2. Adversaries may also execute commands through interactive terminals/shells, as well as utilize various Remote Services in order to achieve remote Execution.",
+   "latest_id": "AML.T0050",
+   "definition_latest": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms. Most systems come with some built-in command-line interface and scripting capabilities, for example, macOS and Linux distributions include some flavor of Unix Shell while Windows installations include the Windows Command Shell and PowerShell.\n\nThere are also cross-platform interpreters such as Python, as well as those commonly associated with client applications such as JavaScript and Visual Basic.\n\nAdversaries may abuse these technologies in various ways as a means of executing arbitrary commands. Commands and scripts can be embedded in Initial Access payloads delivered to victims as lure documents or as secondary payloads downloaded from an existing C2. Adversaries may also execute commands through interactive terminals/shells, as well as utilize various Remote Services in order to achieve remote Execution.",
+   "latest_name": "Command and Scripting Interpreter",
+   "rows": [
+    {
+     "row_id": "R086",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableBinary",
+     "artifact_label": "Executable Binary",
+     "disposition": "maps-existing",
+     "evidence_quote": "scripts, or binaries",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R087",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableScript",
+     "artifact_label": "Executable Script",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R088",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ShellCommand",
+     "artifact_label": "Shell Command",
+     "disposition": "maps-existing",
+     "evidence_quote": "execute commands",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R089",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:RemoteSession",
+     "artifact_label": "Remote Session",
+     "disposition": "maps-existing",
+     "evidence_quote": "Remote Services",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0051.000",
+   "label": "Direct",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may inject prompts directly as a user of the LLM. This type of injection may be used by the adversary to gain a foothold in the system or to misuse the LLM itself, as for example to generate harmful content.",
+   "latest_id": "AML.T0051.000",
+   "definition_latest": "An adversary may inject prompts directly as a user of the LLM. This type of injection may be used by the adversary to gain a foothold in the system or to misuse the LLM itself, as for example to generate harmful content.",
+   "latest_name": "Direct",
+   "rows": [
+    {
+     "row_id": "R090",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "inject prompts directly as a user of the LLM",
+     "notes": "DigitalMessage's own definition names conveying 'semantics such as commands, data, or status' from a sender to a recipient -- exactly what a direct prompt is. Countermeasures that inspect, authenticate, or filter inbound message content for a monitored recipient meaningfully apply to catching a dire"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0051.001",
+   "label": "Indirect",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may inject prompts indirectly via separate data channel ingested by the LLM such as include text or multimedia pulled from databases or websites.\nThese malicious prompts may be hidden or obfuscated from the user. This type of injection may be used by the adversary to gain a foothold in the system or to target an unwitting user of the system.",
+   "latest_id": "AML.T0051.001",
+   "definition_latest": "An adversary may inject prompts indirectly via a separate data channel that the LLM or AI agent ingests, such as text or multimedia pulled from documents, emails, databases or websites. These instructions originate from adversary-controlled content rather than the legitimate user, and are frequently hidden or obfuscated (See [LLM Prompt Obfuscation](/techniques/AML.T0068)) from the user, for example as invisible text.\n\nAdversaries may use this to hijack an agent or LLM in order to gain a foothold in the target system or to act against an unwitting user of that system, inheriting whatever privileges the AI system holds. Adversaries may also stage the lure that causes the content to be reached (See [AI Agent Clickbait](/techniques/AML.T0100)), or use the resulting foothold to establish persistence (See [AI Agent Context Poisoning](/techniques/AML.T0080)).\n\nIndirect prompt injections have been observed in the wild, with potential impact ranging from harmless pranks, to search engine optimization manipulation, data exfiltration, and destructive actions.[[google-prompt-injections-web]]",
+   "latest_name": "Indirect",
+   "rows": [
+    {
+     "row_id": "R091",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "inject prompts indirectly via separate data channel ingested by the LLM",
+     "notes": "The technique explicitly separates the carrier (a website/database, already mapped to WebFileResource) from the payload -- content that 'may be hidden or obfuscated from the user.' DigitalMessage is the non-vacuous target for that payload: content-inspection/sanitization defenses applied to inbound "
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0051.002",
+   "label": "Triggered",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may trigger a prompt injection via a user action or event that occurs within the victim's environment. Triggered prompt injections often target AI agents, which can be activated by means the adversary identifies during [Discovery](/tactics/AML.TA0008) (See [Activation Triggers](/techniques/AML.T0084.002)). These malicious prompts may be hidden or obfuscated from the user and may already exist somewhere in the victim's environment from the adversary performing [Prompt Infiltration via Public-Facing Application](/techniques/AML.T0093). This type of injection may be used by the adversary to gain a foothold in the system or to target an unwitting user of the system.",
+   "latest_id": "AML.T0051.002",
+   "definition_latest": "An adversary may trigger a prompt injection via a user action or event that occurs within the victim's environment. Triggered prompt injections often target AI agents, which can be activated by means the adversary identifies during [Discovery](/tactics/AML.TA0008) (See [Activation Triggers](/techniques/AML.T0084.002)). These malicious prompts may be hidden or obfuscated from the user and may already exist somewhere in the victim's environment from the adversary performing [Prompt Infiltration via Public-Facing Application](/techniques/AML.T0093). This type of injection may be used by the adversary to gain a foothold in the system or to target an unwitting user of the system.",
+   "latest_name": "Triggered",
+   "rows": [
+    {
+     "row_id": "R092",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "trigger a prompt injection via a user action or event",
+     "notes": "Whatever the delivery timing, what the LLM ultimately consumes is message content; defenses that inspect message content prior to LLM ingestion (regardless of what triggered the read) still meaningfully intercept it. The mapping earns its keep because it is the artifact a defender would actually ins"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0052",
+   "label": "Phishing",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.\n\nGenerative AI, including LLMs that generate synthetic text, visual deepfakes of faces, and audio deepfakes of speech (See [Generate Deepfakes](/techniques/AML.T0088)), is enabling adversaries to scale targeted phishing campaigns (See [Spearphishing via Social Engineering LLM](/techniques/AML.T0052.000)). LLMs can interact with users via text conversations and can be programmed with a system prompt to phish for sensitive information. Deepfakes can also be used in [Impersonation](/techniques/AML.T0073) as an aid to phishing.",
+   "latest_id": "AML.T0052",
+   "definition_latest": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.\n\nGenerative AI, including LLMs that generate synthetic text, visual deepfakes of faces, and audio deepfakes of speech (See [Generate Deepfakes](/techniques/AML.T0088)), is enabling adversaries to scale targeted phishing campaigns (See [Spearphishing via Social Engineering LLM](/techniques/AML.T0052.000)). LLMs can interact with users via text conversations and can be programmed with a system prompt to phish for sensitive information. Deepfakes can also be used in [Impersonation](/techniques/AML.T0073) as an aid to phishing.",
+   "latest_name": "Phishing",
+   "rows": [
+    {
+     "row_id": "R093",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalAudio",
+     "artifact_label": "Digital Audio",
+     "disposition": "maps-existing",
+     "evidence_quote": "audio deepfakes of speech",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R094",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalImage",
+     "artifact_label": "Digital Image",
+     "disposition": "maps-existing",
+     "evidence_quote": "visual deepfakes of faces",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R095",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalText",
+     "artifact_label": "Digital Text",
+     "disposition": "maps-existing",
+     "evidence_quote": "generate synthetic text",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R096",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Email",
+     "artifact_label": "Email",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R097",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld | narrowed d3f:File -> d3f:EmailAttachment per verifier | narrowed d3f:File -> d3f:EmailAttachment per verifier"
+    },
+    {
+     "row_id": "R098",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:InboundInternetMailTraffic",
+     "artifact_label": "Inbound Internet Mail Traffic",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R099",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:URL",
+     "artifact_label": "URL",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0052.000",
+   "label": "Spearphishing via Social Engineering LLM",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may turn LLMs into targeted social engineers.\nLLMs are capable of interacting with users via text conversations.\nThey can be instructed by an adversary to seek sensitive information from a user and act as effective social engineers.\nThey can be targeted towards particular personas defined by the adversary.\nThis allows adversaries to scale spearphishing efforts and target individuals to reveal private information such as credentials to privileged systems.",
+   "latest_id": "AML.T0052.000",
+   "definition_latest": "Adversaries may use large language models (LLMs) or LLM-based AI agents to conduct targeted social engineering through electronically delivered messages and conversations. The model may generate content for an operator to deliver, or in the case of an AI agent connected to communication tools, it may autonomously select recipients, develop pretexts, send messages, and manage follow-up interactions. Objectives may include inducing a target to disclose sensitive information, execute malicious content, grant access, or approve a software change that enables compromise.\n\nAI agents may select and conduct spearphishing without a human prescribing the social engineering approach or directing each interaction. This behavior may also arise while an agent pursues an initially legitimate objective, if its selected methods cross authorization or trust boundaries. An agent may use information gathered about a target to tailor its language, persona, and requests, then adapt subsequent messages based on replies and other observations.[[aisi]]\n\nCommunications may occur through email, code-hosting or messaging platforms, file-transfer notifications, or other services that reach selected individuals. AI agents may sustain interactions across channels, deliver malicious files or links, and follow up with requests intended to induce execution or approval.[[aisi]]\n\nAn AI agent may coordinate communications across multiple controlled identities, tailoring their content and timing to appear independent. Supporting messages may endorse a malicious contribution, challenge a security warning, or pressure a recipient to approve or execute content. This false corroboration can support a sustained persuasion attempt rather than a single generated message.[[aisi]]",
+   "latest_name": "Spearphishing via Social Engineering LLM",
+   "rows": [
+    {
+     "row_id": "R100",
+     "verb": "d3f:instructed-by",
+     "artifact_iri": "d3f:DigitalMessage",
+     "artifact_label": "Digital Message",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "instructed by an adversary",
+     "notes": "DigitalMessage covers sender-crafted content interpreted by a recipient to convey commands/data/status -- here the recipient is the LLM being steered into a persona. Message-provenance and content-review defenses meaningfully apply to catching adversary-authored persona instructions before they reac"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0053",
+   "label": "AI Agent Tool Invocation",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may use their access to an AI agent to invoke tools the agent has access to. LLMs are often connected to other services or resources via tools to increase their capabilities. Tools may include integrations with other applications, access to public or private data sources, and the ability to execute code.\n\nThis may allow adversaries to execute API calls to integrated applications or services, providing the adversary with increased privileges on the system. Adversaries may take advantage of connected data sources to retrieve sensitive information. They may also use an LLM integrated with a command or script interpreter to execute arbitrary instructions.\n\nAI agents may be configured to have access to tools that are not directly accessible by users. Adversaries may abuse this to gain access to tools they otherwise wouldn't be able to use.",
+   "latest_id": "AML.T0053",
+   "definition_latest": "Adversaries may use their access to an AI agent to invoke tools the agent has access to. LLMs are often connected to other services or resources via tools to increase their capabilities. Tools may include integrations with other applications, access to public or private data sources, and the ability to execute code.\n\nThis may allow adversaries to execute API calls to integrated applications or services, providing the adversary with increased privileges on the system. Adversaries may take advantage of connected data sources to retrieve sensitive information. They may also use an LLM integrated with a command or script interpreter to execute arbitrary instructions.\n\nAI agents may also invoke applications indirectly through operating-system mechanisms such as deep links, app-intent URIs, universal links, or redirect chains. This can cause an installed application to open or perform an application-specific action even when that application was not selected as a direct agent tool, potentially avoiding normal user-confirmation workflows.\n\nAn AI agent may exercise its own permissions or permissions delegated by a user on the adversary's behalf. When the agent treats an unauthorized request as sufficient authority to act, it may function as a privileged proxy, creating a confused-deputy condition. This authority can provide functional access to tools inaccessible to normal users. The adversary does not need to obtain the agent's credentials or impersonate the agent for this behavior to occur.",
+   "latest_name": "AI Agent Tool Invocation",
+   "rows": [
+    {
+     "row_id": "R101",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Application",
+     "artifact_label": "Application",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "use their access to an AI agent",
+     "notes": "verifier more-specific, descendant-checked"
+    }
+   ]
+  }
+ ]
+}

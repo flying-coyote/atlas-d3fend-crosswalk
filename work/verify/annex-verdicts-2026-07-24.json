@@ -1,0 +1,481 @@
+{
+ "upheld": [
+  {
+   "key": "AML.T0002.002|d3f:accesses|d3f:Credential",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0002.002|d3f:accesses|d3f:ApplicationConfigurationFile",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0008.005|d3f:uses|d3f:ProxyServer",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0008.005|d3f:accesses|d3f:CloudUserAccount",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0010.005|d3f:accesses|d3f:SoftwareRepository",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0010.005|d3f:adds|d3f:SoftwarePackage",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0034.000|d3f:produces|d3f:InboundInternetNetworkTraffic",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0052.001|d3f:creates|d3f:DigitalAudio",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0052.001|d3f:creates|d3f:DigitalVideo",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0052.001|d3f:accesses|d3f:Credential",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0052.001|d3f:uses|d3f:Email",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0084.003|d3f:reads|d3f:ApplicationConfigurationFile",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0084.003|d3f:enumerates|d3f:EvalFunction",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0084.003|d3f:enumerates|d3f:UserInputFunction",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0095.000|d3f:accesses|d3f:CodeRepository",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0095.000|d3f:accesses|d3f:Credential",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0096|d3f:uses|d3f:OutboundInternetWebTraffic",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0097|d3f:accesses|d3f:WindowsRegistryKey",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0097|d3f:accesses|d3f:ProcessEnvironmentVariable",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0097|d3f:accesses|d3f:MACAddress",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0098|d3f:accesses|d3f:Credential",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0098|d3f:accesses|d3f:WebFileResource",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0098|d3f:accesses|d3f:CodeRepository",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0098|d3f:accesses|d3f:Email",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0099|d3f:creates|d3f:DocumentFile",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0100|d3f:creates|d3f:WebResource",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0100|d3f:accesses|d3f:URL",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0100|d3f:executes|d3f:ExecutableScript",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0101|d3f:deletes|d3f:File",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0102|d3f:produces|d3f:Command",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0102|d3f:accesses|d3f:WebAPIResource",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0103|d3f:creates|d3f:AccessControlConfiguration",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0104|d3f:adds|d3f:CodeRepository",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0105|d3f:accesses|d3f:Host",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0105|d3f:modifies|d3f:ApplicationConfiguration",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0106|d3f:accesses|d3f:Credential",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0107|d3f:disables|d3f:Software",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0108|d3f:executes|d3f:ShellCommand",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0108|d3f:produces|d3f:OutboundInternetNetworkTraffic",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0109|d3f:modifies|d3f:Software",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0111|d3f:uses|d3f:UserAccount",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0111|d3f:produces|d3f:Software",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0112|d3f:executes|d3f:ExecutableFile",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0112|d3f:accesses|d3f:Credential",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0112.000|d3f:accesses|d3f:Credential",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0112.000|d3f:executes|d3f:ExecutableFile",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0112.001|d3f:executes|d3f:ExecutableScript",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0113|d3f:accesses|d3f:Process",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0114|d3f:uses|d3f:Browser",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0114|d3f:accesses|d3f:URL",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0114|d3f:produces|d3f:OutboundInternetWebTraffic",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0114|d3f:executes|d3f:Command",
+   "verdicts": 2,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  }
+ ],
+ "killed": [
+  {
+   "key": "AML.T0002.002|d3f:accesses|d3f:ProcessEnvironmentVariable",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "ProcessEnvironmentVariable models a dynamic value in a running process's environment, but the technique acquires publicly accessible files ('Environment and deployment configs: Files that control...'), and a value at rest in a deployment file is a definition of a future env var, not the runtime artifact \u2014 the content is already correctly carried by the ApplicationConfigurationFile row."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0008.005|d3f:produces|d3f:OutboundInternetWebTraffic",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "Direction misoriented: no defender-owned host initiates the outbound leg \u2014 the party the definition says struggles to detect the mixed traffic (the AI provider) observes it as inbound internet web traffic, and the outbound vantage exists only at adversary/proxy infrastructure, inconsistent with the crosswalk's own victim-vantage convention used for AML.T0034.000."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0034.002|d3f:creates|d3f:StackFrame",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "d3f:creates is defined for persistent artifacts 'as opposed to production of a consumable or transient object' and stack frames are transient by nature; the mapping is also near-vacuous since all subroutine execution creates stack frames, and ATLAS's 'stack overflows' is loose agent-task-recursion language, not a claim about the ABI call-stack structure the class defines."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0084.003|d3f:enumerates|d3f:OSAPIExec",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "Wrong artifact class: the named sinks (exec, eval, os.popen) are interpreter code-evaluation functions matching d3f:EvalFunction ('takes inputs of strings and evaluations them as expressions'), while OSAPIExec is narrowly defined as an OS API function that replaces the current process image, which none of the three named examples does (Python exec/eval never touch the OS; os.popen forks a shell)."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0096|d3f:invokes|d3f:WebAPIResource",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "Wrong verb: d3f:invokes is defined as invoking a system service via an instruction object that passes control to the operating system, and the ontology's own todo note confirms it is used exclusively in the system-call sense (e.g. OSAPIExec invokes Exec); a WebAPIResource is not an instruction object, and communicating C2 over an AI service's API is d3f:uses or d3f:accesses."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0097|d3f:enumerates|d3f:GetRunningProcesses",
+   "verdicts": 2,
+   "kills": 2,
+   "reasons": [
+    "Verb-object composition is inverted: GetRunningProcesses is the SystemCall that itself 'enumerates :Process' per the ontology's own restriction, so the technique invokes d3f:GetRunningProcesses or enumerates d3f:Process, but 'enumerates GetRunningProcesses' asserts the technique lists instances of the system call, which the definition does not describe.",
+    "Category mismatch the quote cannot carry: 'running processes' evidences enumeration of d3f:Process, while GetRunningProcesses is the SystemCall that performs that enumeration (its own ontology restriction is [:enumerates :Process]), and D3FEND's own mappings (T1007/T1057/T1518.001) pair it only with may-invoke \u2014 so the quote co-occurs with rather than supports enumerates+GetRunningProcesses."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0104|d3f:adds|d3f:SoftwareRepository",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "Verb-object inversion: d3f:adds takes the added artifact as its object (its examples are a record added to a database, an entry added to a DNS server), but publishing to npm adds a SoftwarePackage TO the registry \u2014 the SoftwareRepository is the container (its own restriction is contains->SoftwarePackage), never the thing added."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0105|d3f:invokes|d3f:Process",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "Verb mismatch: d3f:invokes is defined as invoking a system service via an instruction object and every usage in the ontology targets SystemCall subclasses (CreateProcess, WindowsNt*, OpenFile), so a Process \u2014 a runtime information bearer, not an instruction object \u2014 is an illegal object; the described interaction (tools running as host processes) is creates/executes semantics."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0110|d3f:executes|d3f:ShellCommand",
+   "verdicts": 2,
+   "kills": 2,
+   "reasons": [
+    "Definition says only 'execute unauthorized commands' with no shell/CLI tie for MCP/agent tools (which may issue API calls, not shell directives), and ShellCommand is defined as 'a directive to some kind of command-line interface' \u2014 d3f:Command is the exact-generality class (the annotator used it correctly for AML.T0114), and upstream reserves ShellCommand for genuinely shell-bound techniques (T1546.005 Trap, T1218.014 MMC).",
+    "Quote 'execute unauthorized commands' is verbatim but evidences generic d3f:Command (used by this same unit for the equivalent phrase in AML.T0114); nothing in the MCP/agent-tool poisoning text establishes shell specificity, so the ShellCommand narrowing is unevidenced."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0112.000|d3f:modifies|d3f:SystemConfigurationDatabaseRecord",
+   "verdicts": 2,
+   "kills": 2,
+   "reasons": [
+    "'Modifying system configurations' is storage-agnostic (config files are equally likely for local computer-use agents on macOS/Linux) while this class commits to a registry-style database record \u2014 upstream uses it only for genuinely record-bound cases (T1137.002 Office Test registry key, SetSystemConfigValue syscall) \u2014 and the exact-fit class OperatingSystemConfigurationComponent (skos:altLabel 'System Configuration') is a parent, so the row cannot be saved by narrowing.",
+    "Quote 'modifying system configurations' is verbatim but evidences OS-configuration modification generally; the database-record mechanism is unevidenced narrowing when the ontology's broader ConfigurationResource/OperatingSystemConfigurationComponent classes are what the text carries and file-based config edits are equally plausible for a computer-use agent."
+   ],
+   "narrowings": []
+  },
+  {
+   "key": "AML.T0113|d3f:accesses|d3f:Browser",
+   "verdicts": 2,
+   "kills": 1,
+   "reasons": [
+    "Container-for-content lateral: what is read from 'browser storage' is the session cookie, the rationale's premise that no finer class exists is false (d3f:SessionCookie, altLabel 'Web Session Cookie', subClassOf Credential), and upstream maps the identical ATT&CK technique T1539 as accesses-SessionCookie while reserving the Browser artifact for uses-Browser instrument roles (T0817)."
+   ],
+   "narrowings": []
+  }
+ ],
+ "partial": [
+  {
+   "key": "AML.T0113|d3f:injects|d3f:ExecutableScript",
+   "verdicts": 1,
+   "kills": 0,
+   "reasons": [],
+   "narrowings": []
+  }
+ ]
+}

@@ -1,0 +1,893 @@
+{
+ "unit": "ADJ-01",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0000",
+   "label": "Search Open Technical Databases",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search for publicly available research and technical documentation to learn how and where AI is used within a victim organization.\nThe adversary can use this information to identify targets for attack, or to tailor an existing attack to make it more effective.\nOrganizations often use open source model architectures trained on additional proprietary data in production.\nKnowledge of this underlying architecture allows the adversary to craft more realistic proxy models ([Create Proxy AI Model](/techniques/AML.T0005)).\nAn adversary can search these resources for publications for authors employed at the victim organization.\n\nResearch and technical materials may exist as academic papers published in [Journals and Conference Proceedings](/techniques/AML.T0000.000), or stored in [Pre-Print Repositories](/techniques/AML.T0000.001), as well as [Technical Blogs](/techniques/AML.T0000.002).",
+   "latest_id": "AML.T0000",
+   "definition_latest": "Adversaries may search for publicly available research and technical documentation to learn how and where AI is used within a victim organization. The adversary can use this information to identify targets for attack, or to tailor an existing attack to make it more effective. Organizations often use open source model architectures trained on additional proprietary data in production. Knowledge of this underlying architecture allows the adversary to craft more realistic proxy models ([Replicate AI Model Behavior](/techniques/AML.T0005)). An adversary can search these resources for publications for authors employed at the victim organization.\n\nResearch and technical materials may exist as academic papers published in [Journals and Conference Proceedings](/techniques/AML.T0000.000) or stored in [Pre-Print Repositories](/techniques/AML.T0000.001), as well as [Technical Blogs](/techniques/AML.T0000.002). Publicly accessible AI services may be identified via [Scan Databases](/techniques/AML.T0000.003).",
+   "latest_name": "Search Open Technical Databases",
+   "rows": [
+    {
+     "row_id": "R001",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "artifact_label": "Document File",
+     "disposition": "maps-existing",
+     "evidence_quote": "publicly available research and technical documentation",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0000.000",
+   "label": "Journals and Conference Proceedings",
+   "wave": "core",
+   "open_pr": 612,
+   "definition_develop": "Many of the publications accepted at premier artificial intelligence conferences and journals come from commercial labs.\nSome journals and conferences are open access, others may require paying for access or a membership.\nThese publications will often describe in detail all aspects of a particular approach for reproducibility.\nThis information can be used by adversaries to implement the paper.",
+   "latest_id": "AML.T0000.000",
+   "definition_latest": "Many of the publications accepted at premier artificial intelligence conferences and journals come from commercial labs.\nSome journals and conferences are open access, others may require paying for access or a membership.\nThese publications will often describe in detail all aspects of a particular approach for reproducibility.\nThis information can be used by adversaries to implement the paper.",
+   "latest_name": "Journals and Conference Proceedings",
+   "rows": [
+    {
+     "row_id": "R002",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "artifact_label": "Document File",
+     "disposition": "maps-existing",
+     "evidence_quote": "publications accepted at premier artificial intelligence conferences and journals",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0000.001",
+   "label": "Pre-Print Repositories",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Pre-Print repositories, such as arXiv, contain the latest academic research papers that haven't been peer reviewed.\nThey may contain research notes, or technical reports that aren't typically published in journals or conference proceedings.\nPre-print repositories also serve as a central location to share papers that have been accepted to journals.\nSearching pre-print repositories  provide adversaries with a relatively up-to-date view of what researchers in the victim organization are working on.",
+   "latest_id": "AML.T0000.001",
+   "definition_latest": "Pre-Print repositories, such as arXiv, contain the latest academic research papers that haven't been peer reviewed.\nThey may contain research notes, or technical reports that aren't typically published in journals or conference proceedings.\nPre-print repositories also serve as a central location to share papers that have been accepted to journals.\nSearching pre-print repositories  provides adversaries with a relatively up-to-date view of what researchers in the victim organization are working on.",
+   "latest_name": "Pre-Print Repositories",
+   "rows": [
+    {
+     "row_id": "R003",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "artifact_label": "Document File",
+     "disposition": "maps-existing",
+     "evidence_quote": "academic research papers that haven't been peer reviewed",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R004",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Repository",
+     "artifact_label": "Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "Pre-Print repositories, such as arXiv, contain the latest academic research papers",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0000.002",
+   "label": "Technical Blogs",
+   "wave": "core",
+   "open_pr": 613,
+   "definition_develop": "Research labs at academic institutions and company R&D divisions often have blogs that highlight their use of artificial intelligence and its application to the organization's unique problems.\nIndividual researchers also frequently document their work in blogposts.\nAn adversary may search for posts made by the target victim organization or its employees.\nIn comparison to [Journals and Conference Proceedings](/techniques/AML.T0000.000) and [Pre-Print Repositories](/techniques/AML.T0000.001) this material will often contain more practical aspects of the AI system.\nThis could include underlying technologies and frameworks used, and possibly some information about the API access and use case.\nThis will help the adversary better understand how that organization is using AI internally and the details of their approach that could aid in tailoring an attack.",
+   "latest_id": "AML.T0000.002",
+   "definition_latest": "Research labs at academic institutions and company R&D divisions often have blogs that highlight their use of artificial intelligence and its application to the organization's unique problems.\nIndividual researchers also frequently document their work in blog posts.\nAn adversary may search for posts made by the target victim organization or its employees.\nIn comparison to [Journals and Conference Proceedings](/techniques/AML.T0000.000) and [Pre-Print Repositories](/techniques/AML.T0000.001) this material will often contain more practical aspects of the AI system.\nThis could include underlying technologies and frameworks used, and possibly some information about the API access and use case.\nThis will help the adversary better understand how that organization is using AI internally and the details of their approach that could aid in tailoring an attack.",
+   "latest_name": "Technical Blogs",
+   "rows": [
+    {
+     "row_id": "R005",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebResource",
+     "artifact_label": "Web Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "blogs that highlight their use of artificial intelligence",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0001",
+   "label": "Search Open AI Vulnerability Analysis",
+   "wave": "core",
+   "open_pr": 614,
+   "definition_develop": "Much like the [Search Open Technical Databases](/techniques/AML.T0000), there is often ample research available on the vulnerabilities of common AI models. Once a target has been identified, an adversary will likely try to identify any pre-existing work that has been done for this class of models.\nThis will include not only reading academic papers that may identify the particulars of a successful attack, but also identifying pre-existing implementations of those attacks. The adversary may obtain [Adversarial AI Attack Implementations](/techniques/AML.T0016.000) or develop their own [Adversarial AI Attacks](/techniques/AML.T0017.000) if necessary.",
+   "latest_id": "AML.T0001",
+   "definition_latest": "Much like the [Search Open Technical Databases](/techniques/AML.T0000), there is often ample research available on the vulnerabilities of common AI models. Once a target has been identified, an adversary will likely try to identify any pre-existing work that has been done for this class of models.\nThis will include not only reading academic papers that may identify the particulars of a successful attack, but also identifying pre-existing implementations of those attacks. The adversary may obtain [Adversarial AI Attack Implementations](/techniques/AML.T0016.000) or develop their own [Adversarial AI Attacks](/techniques/AML.T0017.000) if necessary.",
+   "latest_name": "Search Open AI Vulnerability Analysis",
+   "rows": [
+    {
+     "row_id": "R006",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "artifact_label": "Document File",
+     "disposition": "maps-existing",
+     "evidence_quote": "reading academic papers that may identify the particulars of a successful attack",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0002",
+   "label": "Acquire Public AI Artifacts",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search public sources, including cloud storage, public-facing services, and software or data repositories, to identify AI artifacts.\nThese AI artifacts may include the software stack used to train and deploy models, training and testing data, model configurations and parameters.\nAn adversary will be particularly interested in artifacts hosted by or associated with the victim organization as they may represent what that organization uses in a production environment.\nAdversaries may identify artifact repositories via other resources associated with the victim organization (e.g. [Search Victim-Owned Websites](/techniques/AML.T0003) or [Search Open Technical Databases](/techniques/AML.T0000)).\nThese AI artifacts often provide adversaries with details of the AI task and approach.\n\nAI artifacts can aid in an adversary's ability to [Create Proxy AI Model](/techniques/AML.T0005).\nIf these artifacts include pieces of the actual model in production, they can be used to directly [Craft Adversarial Data](/techniques/AML.T0043).\nAcquiring some artifacts requires registration (providing user details such email/name), AWS keys, or written requests, and may require the adversary to [Establish Accounts](/techniques/AML.T0021).\n\nArtifacts might be hosted on victim-controlled infrastructure, providing the victim with some information on who has accessed that data.",
+   "latest_id": "AML.T0002",
+   "definition_latest": "Adversaries may search public sources, including cloud storage, public-facing services, and software or data repositories, to identify AI artifacts.\nThese AI artifacts may include the software stack used to train and deploy models, training and testing data, model configurations and parameters.\nAn adversary will be particularly interested in artifacts hosted by or associated with the victim organization as they may represent what that organization uses in a production environment.\nAdversaries may identify artifact repositories via other resources associated with the victim organization (e.g. [Search Victim-Owned Websites](/techniques/AML.T0003) or [Search Open Technical Databases](/techniques/AML.T0000)).\nThese AI artifacts often provide adversaries with details of the AI task and approach.\n\nAI artifacts can aid in an adversary's ability to [Replicate AI Model Behavior](/techniques/AML.T0005).\nIf these artifacts include pieces of the actual model in production, they can be used to directly [Craft Adversarial Data](/techniques/AML.T0043).\nAcquiring some artifacts requires registration (providing user details such as an email address or name), AWS keys, or written requests, and may require the adversary to [Establish Accounts](/techniques/AML.T0021).\n\nArtifacts might be hosted on victim-controlled infrastructure, providing the victim with some information on who has accessed that data.",
+   "latest_name": "Acquire Public AI Artifacts",
+   "rows": [
+    {
+     "row_id": "R007",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CloudStorage",
+     "artifact_label": "Cloud Storage",
+     "disposition": "maps-existing",
+     "evidence_quote": "cloud storage",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R008",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "artifact_label": "Software Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "software or data repositories",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0002.000",
+   "label": "Datasets",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may collect public datasets to use in their operations.\nDatasets used by the victim organization or datasets that are representative of the data used by the victim organization may be valuable to adversaries.\nDatasets can be stored in cloud storage, or on victim-owned websites.\nSome datasets require the adversary to [Establish Accounts](/techniques/AML.T0021) for access.\n\nAcquired datasets help the adversary advance their operations, stage attacks,  and tailor attacks to the victim organization.",
+   "latest_id": "AML.T0002.000",
+   "definition_latest": "Adversaries may collect public datasets to use in their operations.\nDatasets used by the victim organization or datasets that are representative of the data used by the victim organization may be valuable to adversaries.\nDatasets can be stored in cloud storage, or on victim-owned websites.\nSome datasets require the adversary to [Establish Accounts](/techniques/AML.T0021) for access.\n\nAcquired datasets help the adversary advance their operations, stage attacks,  and tailor attacks to the victim organization.",
+   "latest_name": "Datasets",
+   "rows": [
+    {
+     "row_id": "R009",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "collect public datasets",
+     "notes": "A public dataset an adversary collects is, mechanically, a stored file (or file collection); File-scoped countermeasures (access control, DLP, download monitoring) meaningfully restrict unauthorized bulk collection, and this reading is redundant with, not a substitute for, the already-kept CloudStor"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0002.001",
+   "label": "Models",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may acquire public models to use in their operations.\nAdversaries may seek models used by the victim organization or models that are representative of those used by the victim organization.\nRepresentative models may include model architectures, or pre-trained models which define the architecture as well as model parameters from training on a dataset.\nThe adversary may search public sources for common model architecture configuration file formats such as YAML or Python configuration files, and common model storage file formats such as ONNX (.onnx), HDF5 (.h5), Pickle (.pkl), PyTorch (.pth), or TensorFlow (.pb, .tflite).\n\nAcquired models are useful in advancing the adversary's operations and are frequently used to tailor attacks to the victim model.",
+   "latest_id": "AML.T0002.001",
+   "definition_latest": "Adversaries may acquire public models to use in their operations.\nAdversaries may seek models used by the victim organization or models that are representative of those used by the victim organization.\nRepresentative models may include model architectures, or pre-trained models which define the architecture as well as model parameters from training on a dataset.\nThe adversary may search public sources for common model architecture configuration file formats such as YAML or Python configuration files, and common model storage file formats such as ONNX (.onnx), HDF5 (.h5), Pickle (.pkl), PyTorch (.pth), or TensorFlow (.pb, .tflite).\n\nAcquired models are useful in advancing the adversary's operations and are frequently used to tailor attacks to the victim model.",
+   "latest_name": "Models",
+   "rows": [
+    {
+     "row_id": "R010",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "common model storage file formats such as ONNX (.onnx), HDF5 (.h5), Pickle (.pkl), PyTorch (.pth), or TensorFlow (.pb, .tflite)",
+     "notes": "The definition itself enumerates concrete on-disk model storage formats, so file-integrity and access-monitoring controls scoped to File apply directly to the artifact being acquired, not as a generic catch-all."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0003",
+   "label": "Search Victim-Owned Websites",
+   "wave": "core",
+   "open_pr": 615,
+   "definition_develop": "Adversaries may search websites owned by the victim for information that can be used during targeting.\nVictim-owned websites may contain technical details about their AI-enabled products or services.\nVictim-owned websites may contain a variety of details, including names of departments/divisions, physical locations, and data about key employees such as names, roles, and contact info.\nThese sites may also have details highlighting business operations and relationships.\n\nAdversaries may search victim-owned websites to gather actionable information.\nThis information may help adversaries tailor their attacks (e.g. [Adversarial AI Attacks](/techniques/AML.T0017.000) or [Manual Modification](/techniques/AML.T0043.003)).\nInformation from these sources may reveal opportunities for other forms of reconnaissance (e.g. [Search Open Technical Databases](/techniques/AML.T0000) or [Search Open AI Vulnerability Analysis](/techniques/AML.T0001))",
+   "latest_id": "AML.T0003",
+   "definition_latest": "Adversaries may search websites owned by the victim for information that can be used during targeting.\nVictim-owned websites may contain technical details about their AI-enabled products or services.\nVictim-owned websites may contain a variety of details, including names of departments/divisions, physical locations, and data about key employees such as names, roles, and contact info.\nThese sites may also have details highlighting business operations and relationships.\n\nAdversaries may search victim-owned websites to gather actionable information.\nThis information may help adversaries tailor their attacks (e.g. [Adversarial AI Attacks](/techniques/AML.T0017.000) or [Manual Modification](/techniques/AML.T0043.003)).\nInformation from these sources may reveal opportunities for other forms of reconnaissance (e.g. [Search Open Technical Databases](/techniques/AML.T0000) or [Search Open AI Vulnerability Analysis](/techniques/AML.T0001))",
+   "latest_name": "Search Victim-Owned Websites",
+   "rows": [
+    {
+     "row_id": "R011",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebResource",
+     "artifact_label": "Web Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "websites owned by the victim",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0004",
+   "label": "Search Application Repositories",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search open application repositories during targeting.\nExamples of these include Google Play, the iOS App store, the macOS App Store, and the Microsoft Store.\n\nAdversaries may craft search queries seeking applications that contain AI-enabled components.\nFrequently, the next step is to [Acquire Public AI Artifacts](/techniques/AML.T0002).",
+   "latest_id": "AML.T0004",
+   "definition_latest": "Adversaries may search open application repositories during targeting.\nExamples of these include Google Play, the iOS App store, the macOS App Store, and the Microsoft Store.\n\nAdversaries may craft search queries seeking applications that contain AI-enabled components.\nFrequently, the next step is to [Acquire Public AI Artifacts](/techniques/AML.T0002).",
+   "latest_name": "Search Application Repositories",
+   "rows": [
+    {
+     "row_id": "R012",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "artifact_label": "Software Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "search open application repositories during targeting",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R013",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:Application",
+     "artifact_label": "Application",
+     "disposition": "maps-existing",
+     "evidence_quote": "applications that contain AI-enabled components",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0005",
+   "label": "Create Proxy AI Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may obtain models to serve as proxies for the target model in use at the victim organization.\nProxy models are used to simulate complete access to the target model in a fully offline manner.\n\nAdversaries may train models from representative datasets, attempt to replicate models from victim inference APIs, or use available pre-trained models.",
+   "latest_id": "AML.T0005",
+   "definition_latest": "Adversaries may replicate an AI model's behavior or selected capabilities by training or adapting another model to approximate the target's responses, decision regions, or other characteristics. The result may be a surrogate for attack development, a functional replica, or a student model incorporating selected target capabilities.\n\nReplication may cover a whole model or only the behaviors relevant to the adversary's objective. Models may be developed from gathered artifacts, collected model outputs, or adaptation of an existing model. How closely the model must reproduce the target's behavior depends on the adversary's goals. \n\nReplicate AI Model Behavior supports adversaries' ability to achieve [Resource Development](/tactics/AML.TA0003) when producing a reusable model capability and [AI Attack Adaptation](/tactics/AML.TA0001) when tailoring a model for a particular target or operation.",
+   "latest_name": "Replicate AI Model Behavior",
+   "rows": [
+    {
+     "row_id": "R014",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "victim inference APIs",
+     "notes": "The replication sub-path is a real API-access pattern; API-monitoring and rate-limiting defenses scoped to WebAPIResource meaningfully counter repeated-query model extraction, which is the concrete mechanism named."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0005.001",
+   "label": "Train Proxy via Replication",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may replicate a private model.\nBy repeatedly querying the victim's [AI Model Inference API Access](/techniques/AML.T0040), the adversary can collect the target model's inferences into a dataset.\nThe inferences are used as labels for training a separate model offline that will mimic the behavior and performance of the target model.\n\nA replicated model that closely mimic's the target model is a valuable resource in staging the attack.\nThe adversary can use the replicated model to [Craft Adversarial Data](/techniques/AML.T0043) for various purposes (e.g. [Evade AI Model](/techniques/AML.T0015), [Spamming AI System with Chaff Data](/techniques/AML.T0046)).",
+   "latest_id": "AML.T0005.001",
+   "definition_latest": "Adversaries may replicate an AI model's behavior or selected capabilities by training or adapting another model using outputs or other sources of supervision obtained from the target. Supervisory material may include labels, scores, probabilities, generated responses, reasoning explanations, evaluations, reward or preference signals, and tool-use or agent interaction trajectories.\n\nThe adversary may use supervised learning, knowledge distillation, supervised fine-tuning, reinforcement learning, or related methods. Target-generated material may be filtered, combined with other data, or acquired from multiple teacher models. The resulting model may reproduce selected capabilities rather than the target's full behavior, architecture, parameters, or output ontology.",
+   "latest_name": "Replicate Behavior from Model Outputs",
+   "rows": [
+    {
+     "row_id": "R015",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "artifact_label": "Web API Resource",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "repeatedly querying the victim's",
+     "notes": "The repeated-query extraction mechanism is a concrete API-access pattern; rate-limiting, query-pattern detection, and API-monitoring defenses scoped to WebAPIResource are exactly what this sub-technique's mechanism turns on."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0006",
+   "label": "Active Scanning",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may probe or scan the victim system to gather information for targeting. This is distinct from other reconnaissance techniques that do not involve direct interaction with the victim system.\n\nAdversaries may scan for open ports on a potential victim's network, which can indicate specific services or tools the victim is utilizing. This could include a scan for tools related to AI DevOps or AI services themselves such as public AI chat agents (ex: [Copilot Studio Hunter](https://github.com/mbrg/power-pwn/wiki/Modules:-Copilot-Studio-Hunter-%E2%80%90-Enum)). They can also send emails to organization service addresses and inspect the replies for indicators that an AI agent is managing the inbox.\n\nInformation gained from Active Scanning may yield targets that provide opportunities for other forms of reconnaissance such as [Search Open Technical Databases](/techniques/AML.T0000), [Search Open AI Vulnerability Analysis](/techniques/AML.T0001), or [Gather RAG-Indexed Targets](/techniques/AML.T0064).",
+   "latest_id": "AML.T0006",
+   "definition_latest": "Adversaries may actively scan for publicly reachable AI systems and resources for targeting. They may identify resources or systems that are misconfigured or are known vulnerable versions. This is distinct from other reconnaissance techniques that do not involve direct interaction with the victim system.\n\nSince AI systems are often deployed in cloud environments, adversaries can use various enumeration methods to effectively discover AI systems and uncover information about their supporting underlying platforms. For agentic and SaaS-hosted systems, the victim system can include the shared platform and provider control plane on which the victim's agents are deployed.\n\nAdversaries may probe the victim system to gather information and metadata for targeting, or actively scan for specific open ports on a potential victim's network or accessible deployed servers, with the goal of locating different types of deployed AI services. These methods could also include directly scanning a target's assets for publicly available AI agents, or for accessible agentic chat interfaces on SaaS platforms (ex: [Copilot Studio Hunter](https://github.com/mbrg/power-pwn/wiki/Modules:-Copilot-Studio-Hunter-%E2%80%90-Enum)).\n\nInformation gained from Active Scanning may yield targets that provide opportunities for other forms of reconnaissance such as [Search Open Technical Databases](/techniques/AML.T0000), [Search Open Websites/Domains](/techniques/AML.T0095), [Search Open AI Vulnerability Analysis](/techniques/AML.T0001), or [Gather RAG-Indexed Targets](/techniques/AML.T0064).",
+   "latest_name": "Active Scanning",
+   "rows": [
+    {
+     "row_id": "R016",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:NetworkService",
+     "artifact_label": "Network Service",
+     "disposition": "maps-existing",
+     "evidence_quote": "specific services or tools the victim is utilizing",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R017",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Email",
+     "artifact_label": "Email",
+     "disposition": "maps-existing",
+     "evidence_quote": "send emails to organization service addresses",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0007",
+   "label": "Discover AI Artifacts",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search private sources to identify AI learning artifacts that exist on the system and gather information about them.\nThese artifacts can include the software stack used to train and deploy models, training and testing data management systems, container registries, software repositories, and model zoos.\n\nThis information can be used to identify targets for further collection, exfiltration, or disruption, and to tailor and improve attacks.",
+   "latest_id": "AML.T0007",
+   "definition_latest": "Adversaries may search private sources to identify AI learning artifacts that exist on the system and gather information about them.\nThese artifacts can include the software stack used to train and deploy models, training and testing data management systems, container registries, software repositories, and model zoos.\n\nThis information can be used to identify targets for further collection, exfiltration, or disruption, and to tailor and improve attacks.",
+   "latest_name": "Discover AI Artifacts",
+   "rows": [
+    {
+     "row_id": "R018",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:Repository",
+     "artifact_label": "Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "container registries",
+     "notes": "two downgrades -> ships at low confidence | narrowed d3f:Repository -> d3f:SoftwareRepository per verifier | narrowed d3f:Repository -> d3f:SoftwareRepository per verifier"
+    },
+    {
+     "row_id": "R019",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "artifact_label": "Software Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "software repositories",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008",
+   "label": "Acquire Infrastructure",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may buy, lease, or rent infrastructure for use throughout their operation.\nA wide variety of infrastructure exists for hosting and orchestrating adversary operations.\nInfrastructure solutions include physical or cloud servers, domains, mobile devices, and third-party web services.\nFree resources may also be used, but they are typically limited.\nInfrastructure can also include physical components such as countermeasures that degrade or disrupt AI components or sensors, including printed materials, wearables, or disguises.\n\nUse of these infrastructure solutions allows an adversary to stage, launch, and execute an operation.\nSolutions may help adversary operations blend in with traffic that is seen as normal, such as contact to third-party web services.\nDepending on the implementation, adversaries may use infrastructure that makes it difficult to physically tie back to them as well as utilize infrastructure that can be rapidly provisioned, modified, and shut down.",
+   "latest_id": "AML.T0008",
+   "definition_latest": "Adversaries may buy, lease, or rent infrastructure for use throughout their operation.\nA wide variety of infrastructure exists for hosting and orchestrating adversary operations.\nInfrastructure solutions include physical or cloud servers, domains, mobile devices, and third-party web services.\nFree resources may also be used, but they are typically limited.\nInfrastructure can also include physical components such as countermeasures that degrade or disrupt AI components or sensors, including printed materials, wearables, or disguises.\n\nUse of these infrastructure solutions allows an adversary to stage, launch, and execute an operation.\nSolutions may help adversary operations blend in with traffic that is seen as normal, such as contact to third-party web services.\nDepending on the implementation, adversaries may use infrastructure that makes it difficult to physically tie back to them as well as utilize infrastructure that can be rapidly provisioned, modified, and shut down.",
+   "latest_name": "Acquire Infrastructure",
+   "rows": [
+    {
+     "row_id": "R020",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:DomainName",
+     "artifact_label": "Domain Name",
+     "disposition": "maps-existing",
+     "evidence_quote": "Infrastructure solutions include physical or cloud servers, domains, mobile devices, and third-party web services.",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R021",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "artifact_label": "Service Application",
+     "disposition": "maps-existing",
+     "evidence_quote": "Infrastructure solutions include physical or cloud servers, domains, mobile devices, and third-party web services.",
+     "notes": "upheld | narrowed d3f:ServiceApplication -> d3f:WebApplication per verifier | narrowed d3f:ServiceApplication -> d3f:WebApplication per verifier"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.000",
+   "label": "AI Development Workspaces",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Developing and staging AI attacks often requires expensive compute resources.\nAdversaries may need access to one or many GPUs in order to develop an attack.\nThey may try to anonymously use free resources such as Google Colaboratory, or cloud resources such as AWS, Azure, or Google Cloud as an efficient way to stand up temporary resources to conduct operations.\nMultiple workspaces may be used to avoid detection.",
+   "latest_id": "AML.T0008.000",
+   "definition_latest": "Developing and staging AI attacks often requires expensive compute resources.\nAdversaries may need access to one or many GPUs in order to develop an attack.\nThey may try to anonymously use free resources such as Google Colaboratory, or cloud resources such as AWS, Azure, or Google Cloud as an efficient way to stand up temporary resources to conduct operations.\nMultiple workspaces may be used to avoid detection.",
+   "latest_name": "AI Development Workspaces",
+   "rows": [
+    {
+     "row_id": "R022",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ComputingServer",
+     "artifact_label": "Computing Server",
+     "disposition": "maps-existing",
+     "evidence_quote": "cloud resources such as AWS, Azure, or Google Cloud as an efficient way to stand up temporary resources to conduct operations",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R023",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:GraphicsProcessingUnit",
+     "artifact_label": "Graphics Processing Unit",
+     "disposition": "maps-existing",
+     "evidence_quote": "Adversaries may need access to one or many GPUs in order to develop an attack.",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.001",
+   "label": "Consumer Hardware",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may acquire consumer hardware to conduct their attacks.\nOwning the hardware provides the adversary with complete control of the environment. These devices can be hard to trace.",
+   "latest_id": "AML.T0008.001",
+   "definition_latest": "Adversaries may acquire consumer hardware to conduct their attacks.\nOwning the hardware provides the adversary with complete control of the environment. These devices can be hard to trace.",
+   "latest_name": "Consumer Hardware",
+   "rows": [
+    {
+     "row_id": "R024",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:PersonalComputer",
+     "artifact_label": "Personal Computer",
+     "disposition": "maps-existing",
+     "evidence_quote": "Adversaries may acquire consumer hardware to conduct their attacks.",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.002",
+   "label": "Domains",
+   "wave": "core",
+   "open_pr": 616,
+   "definition_develop": "Adversaries may acquire domains that can be used during targeting. Domain names are the human readable names used to represent one or more IP addresses. They can be purchased or, in some cases, acquired for free.\n\nAdversaries may use acquired domains for a variety of purposes (see [ATT&CK](https://attack.mitre.org/techniques/T1583/001/)). Large AI datasets are often distributed as a list of URLs to individual datapoints. Adversaries may acquire expired domains that are included in these datasets and replace individual datapoints with poisoned examples ([Publish Poisoned Datasets](/techniques/AML.T0019)).",
+   "latest_id": "AML.T0008.002",
+   "definition_latest": "Adversaries may acquire domains that can be used during targeting. Domain names are the human readable names used to represent one or more IP addresses. They can be purchased or, in some cases, acquired for free.\n\nAdversaries may use acquired domains for a variety of purposes (see [ATT&CK](https://attack.mitre.org/techniques/T1583/001/)). Large AI datasets are often distributed as a list of URLs to individual datapoints. Adversaries may acquire expired domains that are included in these datasets and replace individual datapoints with poisoned examples ([Publish Poisoned AI Artifacts: Datasets](/techniques/AML.T0115.000)).",
+   "latest_name": "Domains",
+   "rows": [
+    {
+     "row_id": "R025",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DomainRegistration",
+     "artifact_label": "Domain Registration",
+     "disposition": "maps-existing",
+     "evidence_quote": "Adversaries may use acquired domains for a variety of purposes",
+     "notes": "maintainer-revised on #616 2026-10-08 (was uses DomainName)"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.003",
+   "label": "Physical Countermeasures",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may acquire or manufacture physical countermeasures to aid or support their attack.\n\nThese components may be used to disrupt or degrade the model, such as adversarial patterns printed on stickers or T-shirts, disguises, or decoys. They may also be used to disrupt or degrade the sensors used in capturing data, such as laser pointers, light bulbs, or other tools.",
+   "latest_id": "AML.T0008.003",
+   "definition_latest": "Adversaries may acquire or manufacture physical countermeasures to aid or support their attack.\n\nThese components may be used to disrupt or degrade the model, such as adversarial patterns printed on stickers or T-shirts, disguises, or decoys. They may also be used to disrupt or degrade the sensors used in capturing data, such as laser pointers, light bulbs, or other tools.",
+   "latest_name": "Physical Countermeasures",
+   "rows": [
+    {
+     "row_id": "R026",
+     "verb": "d3f:impairs",
+     "artifact_iri": "d3f:TransducerSensor",
+     "artifact_label": "Transducer Sensor",
+     "disposition": "maps-existing",
+     "evidence_quote": "disrupt or degrade the sensors used in capturing data, such as laser pointers, light bulbs, or other tools",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.004",
+   "label": "Serverless",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may purchase and configure serverless cloud infrastructure, such as Cloudflare Workers, AWS Lambda functions, or Google Apps Scripts, that can be used during targeting. By utilizing serverless infrastructure, adversaries can make it more difficult to attribute infrastructure used during operations back to them.\n\nOnce acquired, the serverless runtime environment can be leveraged to either respond directly to infected machines or to Proxy traffic to an adversary-owned command and control server. As traffic generated by these functions will appear to come from subdomains of common cloud providers, it may be difficult to distinguish from ordinary traffic to these providers. This can be used to bypass a Content Security Policy which prevent retrieving content from arbitrary locations.",
+   "latest_id": "AML.T0008.004",
+   "definition_latest": "Adversaries may purchase and configure serverless cloud infrastructure, such as Cloudflare Workers, AWS Lambda functions, or Google Apps Scripts, that can be used during targeting. By utilizing serverless infrastructure, adversaries can make it more difficult to attribute infrastructure used during operations back to them.\n\nOnce acquired, the serverless runtime environment can be leveraged to either respond directly to infected machines or to proxy traffic to an adversary-owned command and control server. As traffic generated by these functions will appear to come from subdomains of common cloud providers, it may be difficult to distinguish from ordinary traffic to these providers. This can be used to bypass a Content Security Policy that prevent retrieving content from arbitrary locations.",
+   "latest_name": "Serverless",
+   "rows": [
+    {
+     "row_id": "R027",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ProxyServer",
+     "artifact_label": "Proxy Server",
+     "disposition": "maps-existing",
+     "evidence_quote": "Proxy traffic to an adversary-owned command and control server",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R028",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "artifact_label": "Service Application",
+     "disposition": "maps-existing",
+     "evidence_quote": "purchase and configure serverless cloud infrastructure, such as Cloudflare Workers, AWS Lambda functions, or Google Apps Scripts",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010",
+   "label": "AI Supply Chain Compromise",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may gain initial access to a system by compromising the unique portions of the AI supply chain.\nThis could include [Hardware](/techniques/AML.T0010.000), [Data](/techniques/AML.T0010.002) and its annotations, parts of the AI [AI Software](/techniques/AML.T0010.001) stack, or the [Model](/techniques/AML.T0010.003) itself.\nIn some instances the attacker will need secondary access to fully carry out an attack using compromised components of the supply chain.",
+   "latest_id": "AML.T0010",
+   "definition_latest": "Adversaries may manipulate products, components, or their development and delivery mechanisms before they reach downstream consumers to compromise data or systems. Manipulation may involve source code, dependencies, development tools, build environments, software updates, distribution channels, or hardware.\n\nIn AI environments, targets may include [Hardware](/techniques/AML.T0010.000), [Software](/techniques/AML.T0010.001), [Data Repositories](/techniques/AML.T0010.002), [Model Repositories](/techniques/AML.T0010.003), [Container Registries](/techniques/AML.T0010.004), and [AI Agent Tools](/techniques/AML.T0010.005). Compromised components may introduce malicious executable behavior, alter model behavior, or provide unauthorized access when incorporated into downstream systems.\n\nAutonomous AI agents may also select and conduct supply-chain attacks against software or services outside the AI supply chain. An agent may develop a malicious contribution, submit it through an established development workflow, and attempt to persuade maintainers to approve and distribute it.[[aisi]]",
+   "latest_name": "Supply Chain Compromise",
+   "rows": [
+    {
+     "row_id": "R029",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "and its annotations",
+     "notes": "File-integrity monitoring and content-tampering detection meaningfully defend against a supply-chain-compromised dataset or its annotations, though the parent technique's own evidence for this vector is thin (a rollup pointer to child technique T0010.002, which carries the fuller evidence)."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.000",
+   "label": "Hardware",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may target AI systems by disrupting or manipulating the hardware supply chain. AI models often run on specialized hardware such as GPUs, TPUs, or embedded devices, but may also be optimized to operate on CPUs.",
+   "latest_id": "AML.T0010.000",
+   "definition_latest": "Adversaries may target AI systems by disrupting or manipulating the hardware supply chain. AI models often run on specialized hardware such as GPUs, TPUs, or embedded devices, but may also be optimized to operate on CPUs.",
+   "latest_name": "Hardware",
+   "rows": [
+    {
+     "row_id": "R030",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:HardwareDevice",
+     "artifact_label": "Hardware Device",
+     "disposition": "maps-existing",
+     "evidence_quote": "specialized hardware such as GPUs, TPUs, or embedded devices",
+     "notes": "upheld | narrowed d3f:HardwareDevice -> d3f:GraphicsProcessingUnit per verifier | narrowed d3f:HardwareDevice -> d3f:GraphicsProcessingUnit per verifier"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.001",
+   "label": "AI Software",
+   "wave": "core",
+   "open_pr": 609,
+   "definition_develop": "Adversaries may target software packages that are commonly used in AI-enabled systems or are part of the AI DevOps lifecycle. This can include deep learning frameworks used to build AI models (e.g. PyTorch, TensorFlow, Jax), generative AI integration frameworks (e.g. LangChain, LangFlow), inference engines, and AI DevOps tools. They may also target the dependency chains of any of these software packages [[pytorch]]. Additionally, adversaries may target specific components used by AI software such as configuration files [[pillar]] or example usage of AI packages, which may be distributed in Jupyter notebooks [[medium]].\n\nAdversaries may compromise legitimate packages [[aws]] or publish malicious software to a namesquatted location [[pytorch]]. They may target package names that are hallucinated by large language models [[trendmicro]] (see: Publish Hallucinated Entities). They may also perform a [AI Supply Chain Rug Pull](/techniques/AML.T0109) in which they first publish a legitimate package and then publish a malicious version once they reach a critical mass of users.",
+   "latest_id": "AML.T0010.001",
+   "definition_latest": "Adversaries may target software packages that are commonly used in AI-enabled systems or are part of the AI DevOps lifecycle. This can include deep learning frameworks used to build AI models (e.g. PyTorch, TensorFlow, Jax), generative AI integration frameworks (e.g. LangChain, LangFlow), inference engines, and AI DevOps tools. They may also target the dependency chains of any of these software packages [[pytorch]]. Additionally, adversaries may target specific components used by AI software such as configuration files [[pillar]] or example usage of AI packages, which may be distributed in Jupyter notebooks [[medium]].\n\nAdversaries may compromise legitimate packages [[aws]] or publish malicious software to a namesquatted location [[pytorch]]. They may target package names that are hallucinated by large language models [[trendmicro]] (see: Publish Hallucinated Entities). They may also perform an [AI Supply Chain Rug Pull](/techniques/AML.T0109) in which they first publish a legitimate package and then publish a malicious version once they reach a critical mass of users.",
+   "latest_name": "Software",
+   "rows": [
+    {
+     "row_id": "R031",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:SoftwareLibrary",
+     "artifact_label": "Software Library",
+     "disposition": "maps-existing",
+     "evidence_quote": "software packages that are commonly used in AI-enabled systems",
+     "notes": "PR #609 head 0cb28db quote"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.002",
+   "label": "Data",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Data is a key vector of supply chain compromise for adversaries.\nEvery AI project will require some form of data.\nMany rely on large open source datasets that are publicly available.\nAn adversary could rely on compromising these sources of data.\nThe malicious data could be a result of [Poison Training Data](/techniques/AML.T0020) or include traditional malware.\n\nAn adversary can also target private datasets in the labeling phase.\nThe creation of private datasets will often require the hiring of outside labeling services.\nAn adversary can poison a dataset by modifying the labels being generated by the labeling service.",
+   "latest_id": "AML.T0010.002",
+   "definition_latest": "Adversaries may abuse data repositories or other dataset distribution services to introduce compromised data into downstream AI workflows. They may replace or modify published datasets, manipulate versions or references that consumers resolve, or publish malicious datasets under identities or locations that consumers trust.\n\nThe repository or distribution service need not itself be compromised. Adversaries may use legitimate publishing functionality or control an upstream account, namespace, or artifact referenced by a downstream workflow. Compromised data may subsequently be downloaded, synchronized, or incorporated into training, fine-tuning, evaluation, or retrieval systems.",
+   "latest_name": "Data Repository",
+   "rows": [
+    {
+     "row_id": "R032",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "artifact_label": "File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "modifying the labels being generated by the labeling service",
+     "notes": "File-integrity monitoring, versioning, and provenance verification directly detect exactly this: an adversary altering the content (labels) of a stored dataset file after it leaves a third-party labeling service."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.003",
+   "label": "Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "AI-enabled systems often rely on open sourced models in various ways.\nMost commonly, the victim organization may be using these models for fine tuning.\nThese models will be downloaded from an external source and then used as the base for the model as it is tuned on a smaller, private dataset.\nLoading models often requires executing some saved code in the form of a saved model file.\nThese can be compromised with traditional malware, or through some adversarial AI techniques.",
+   "latest_id": "AML.T0010.003",
+   "definition_latest": "Adversaries may abuse model repositories or other model distribution services to introduce compromised models into downstream AI systems. They may replace published artifacts, manipulate model versions or references that consumers resolve, or publish malicious models under identities or locations that consumers trust.\n\nThe repository or distribution service need not itself be compromised. Adversaries may use legitimate publishing functionality or control an upstream account, namespace, or artifact referenced by a downstream workflow. Consumers may retrieve the compromised model for inference, fine-tuning, or incorporation into another application.",
+   "latest_name": "Model Repository",
+   "rows": [
+    {
+     "row_id": "R033",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "artifact_label": "Executable File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "executing some saved code",
+     "notes": "Application control, code-signing verification, and sandboxed deserialization are the real countermeasures against a saved model file triggering code execution on load, which is the technique's stated mechanism, not a vacuous generic-file mapping."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.004",
+   "label": "Container Registry",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may compromise a victim's container registry by pushing a manipulated container image and overwriting an existing container name and/or tag. Users of the container registry as well as automated CI/CD pipelines may pull the adversary's container image, compromising their AI Supply Chain. This can affect development and deployment environments.\n\nContainer images may include AI models, so the compromised image could have an AI model which was manipulated by the adversary (See [Manipulate AI Model](/techniques/AML.T0018)).",
+   "latest_id": "AML.T0010.004",
+   "definition_latest": "An adversary may compromise a victim's container registry by pushing a manipulated container image and overwriting an existing container name and/or tag. Users of the container registry as well as automated CI/CD pipelines may pull the adversary's container image, compromising their AI Supply Chain. This can affect development and deployment environments.\n\nContainer images may include AI models, so the compromised image could have an AI model which was manipulated by the adversary (See [Manipulate AI Model](/techniques/AML.T0018)).",
+   "latest_name": "Container Registry",
+   "rows": [
+    {
+     "row_id": "R034",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ContainerImage",
+     "artifact_label": "Container Image",
+     "disposition": "maps-existing",
+     "evidence_quote": "pushing a manipulated container image",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R035",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "artifact_label": "Software Repository",
+     "disposition": "maps-existing",
+     "evidence_quote": "compromise a victim's container registry",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0011",
+   "label": "User Execution",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "An adversary may rely upon specific actions by a user in order to gain execution.\nUsers may inadvertently execute unsafe code introduced via [AI Supply Chain Compromise](/techniques/AML.T0010).\nUsers may be subjected to social engineering to get them to execute malicious code by, for example, opening a malicious document file or link.",
+   "latest_id": "AML.T0011",
+   "definition_latest": "An adversary may rely upon a user to load, execute, interpret, or otherwise use a malicious or unsafe artifact. In AI systems, user execution may include loading a model or causing an inference runtime to process executable or behavior-shaping components bundled with an AI artifact. The resulting effect may include host code execution or malicious AI behavior.\n\nUsers may inadvertently execute unsafe code introduced via [Supply Chain Compromise](/techniques/AML.T0010).\n\nUsers may be subjected to social engineering to get them to execute malicious code by, for example, opening a malicious document file or link.",
+   "latest_name": "User Execution",
+   "rows": [
+    {
+     "row_id": "R036",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:URL",
+     "artifact_label": "URL",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R037",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "artifact_label": "Executable File",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R038",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "artifact_label": "Outbound Internet Web Traffic",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0011.000",
+   "label": "Unsafe AI Artifacts",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may develop unsafe AI artifacts that when executed have a deleterious effect.\nThe adversary can use this technique to establish persistent access to systems.\nThese models may be introduced via a [AI Supply Chain Compromise](/techniques/AML.T0010).\n\nSerialization of models is a popular technique for model storage, transfer, and loading.\nHowever, this format without proper checking presents an opportunity for code execution.",
+   "latest_id": "AML.T0011.000",
+   "definition_latest": "Adversaries may develop new AI artifacts or manipulate existing AI artifacts that have a deleterious effect when loaded, executed, interpreted, or used for inference by a victim. The unsafe artifacts may continue to work as expected from the victim's perspective.\n\nUnsafe AI artifacts may include serialized models, model packages, and bundled components such as prompt or chat templates, tokenizer metadata, configuration, pre-processing logic, post-processing logic, or other executable or behavior-shaping metadata.\n\nAn unsafe artifact may exploit deserialization or another software vulnerability to execute code on the host. However, exploitation of a software vulnerability is not required. An artifact may instead use functionality intentionally supported by an AI runtime to alter model context, model outputs, safety behavior, or agent actions.\n\nAdversaries may introduce unsafe artifacts through a [Supply Chain Compromise](/techniques/AML.T0010). Execution may occur when a user loads the artifact, starts an inference runtime, submits an inference request, or otherwise causes the artifact's bundled logic to be processed.",
+   "latest_name": "Unsafe AI Artifacts",
+   "rows": [
+    {
+     "row_id": "R039",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "artifact_label": "Executable File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "when executed have a deleterious effect",
+     "notes": "Application control, code-signing, and sandboxed/safe deserialization are direct, real countermeasures against an unsafe serialized artifact executing malicious code on load; the mechanism (execution on load) is identical in kind to other ExecutableFile-scoped D3FEND coverage, not a generic catch-al"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0012",
+   "label": "Valid Accounts",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access.\nCredentials may take the form of usernames and passwords of individual user accounts or API keys that provide access to various AI resources and services.\n\nCompromised credentials may provide access to additional AI artifacts and allow the adversary to perform [Discover AI Artifacts](/techniques/AML.T0007).\nCompromised credentials may also grant an adversary increased privileges such as write access to AI artifacts used during development or production.",
+   "latest_id": "AML.T0012",
+   "definition_latest": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access.\nCredentials may take the form of usernames and passwords of individual user accounts or API keys that provide access to various AI resources and services.\n\nCompromised credentials may provide access to additional AI artifacts and allow the adversary to perform [Discover AI Artifacts](/techniques/AML.T0007).\nCompromised credentials may also grant an adversary increased privileges such as write access to AI artifacts used during development or production.",
+   "latest_name": "Valid Accounts",
+   "rows": [
+    {
+     "row_id": "R040",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:AccessToken",
+     "artifact_label": "Access Token",
+     "disposition": "maps-existing",
+     "evidence_quote": "API keys that provide access to various AI resources and services",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R041",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:DefaultUserAccount",
+     "artifact_label": "Default User Account",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "two downgrades -> ships at low confidence"
+    },
+    {
+     "row_id": "R042",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:UserAccount",
+     "artifact_label": "User Account",
+     "disposition": "attack-inherited",
+     "evidence_quote": "",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0013",
+   "label": "Discover AI Model Ontology",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may discover the ontology of an AI model's output space, for example, the types of objects a model can detect.\nThe adversary may discovery the ontology by repeated queries to the model, forcing it to enumerate its output space.\nOr the ontology may be discovered in a configuration file or in documentation about the model.\n\nThe model ontology helps the adversary understand how the model is being used by the victim.\nIt is useful to the adversary in creating targeted attacks.",
+   "latest_id": "AML.T0013",
+   "definition_latest": "Adversaries may discover the ontology of an AI model's output space, for example, the types of objects a model can detect.\nThe adversary may discover the ontology by repeated queries to the model, forcing it to enumerate its output space.\nOr the ontology may be discovered in a configuration file or in documentation about the model.\n\nThe model ontology helps the adversary understand how the model is being used by the victim.\nIt is useful to the adversary in creating targeted attacks.",
+   "latest_name": "Discover AI Model Ontology",
+   "rows": [
+    {
+     "row_id": "R043",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:ConfigurationFile",
+     "artifact_label": "Configuration File",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "configuration file",
+     "notes": "Configuration-file integrity/access-monitoring countermeasures meaningfully apply when the adversary discovers ontology by reading a config file rather than by querying the live model."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0015",
+   "label": "Evade AI Model",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries can [Craft Adversarial Data](/techniques/AML.T0043) that prevents an AI model from correctly identifying the contents of the data or [Generate Deepfakes](/techniques/AML.T0088) that fools an AI model expecting authentic data.\n\nThis technique can be used to evade a downstream task where AI is utilized. The adversary may evade AI-based virus/malware detection or network scanning towards the goal of a traditional cyber attack. AI model evasion through deepfake generation may also provide initial access to systems that use AI-based biometric authentication.",
+   "latest_id": "AML.T0015",
+   "definition_latest": "Adversaries can [Craft Adversarial Data](/techniques/AML.T0043) that prevents an AI model from correctly identifying the contents of the data or [Generate Deepfakes](/techniques/AML.T0088) that fools an AI model expecting authentic data.\n\nThis technique can be used to evade a downstream task where AI is utilized. The adversary may evade AI-based virus/malware detection or network scanning towards the goal of a traditional cyber attack. AI model evasion through deepfake generation may also provide initial access to systems that use AI-based biometric authentication.",
+   "latest_name": "Evade AI Model",
+   "rows": [
+    {
+     "row_id": "R044",
+     "verb": "d3f:abuses",
+     "artifact_iri": "d3f:IntrusionDetectionSystem",
+     "artifact_label": "Intrusion Detection System",
+     "disposition": "maps-existing-phaseR",
+     "evidence_quote": "AI-based virus/malware detection",
+     "notes": "Evasion of an ML-based IDS is a direct abuse of that IDS artifact; IDS-hardening and evasion-detection countermeasures already scoped to IntrusionDetectionSystem apply without alteration."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0016",
+   "label": "Obtain Capabilities",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search for and obtain software capabilities for use in their operations.\nCapabilities may be specific to AI-based attacks [Adversarial AI Attack Implementations](/techniques/AML.T0016.000) or generic software tools repurposed for malicious intent ([Software Tools](/techniques/AML.T0016.001)). In both instances, an adversary may modify or customize the capability to aid in targeting a particular AI-enabled system.",
+   "latest_id": "AML.T0016",
+   "definition_latest": "Adversaries may search for and obtain software capabilities for use in their operations.\nCapabilities may be specific to AI-based attacks [Adversarial AI Attack Implementations](/techniques/AML.T0016.000) or generic software tools repurposed for malicious intent ([Software Tools](/techniques/AML.T0016.001)). In both instances, an adversary may modify or customize the capability to aid in targeting a particular AI-enabled system.",
+   "latest_name": "Obtain Capabilities",
+   "rows": [
+    {
+     "row_id": "R045",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "modify or customize the capability",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R046",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "obtain software capabilities for use in their operations",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0016.000",
+   "label": "Adversarial AI Attack Implementations",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search for existing open source implementations of AI attacks. The research community often publishes their code for reproducibility and to further future research. Libraries intended for research purposes, such as CleverHans, the Adversarial Robustness Toolbox, and FoolBox, can be weaponized by an adversary. Adversaries may also obtain and use tools that were not originally designed for adversarial AI attacks as part of their attack.",
+   "latest_id": "AML.T0016.000",
+   "definition_latest": "Adversaries may search for existing open source implementations of AI attacks. The research community often publishes their code for reproducibility and to further future research. Libraries intended for research purposes, such as CleverHans, the Adversarial Robustness Toolbox, and FoolBox, can be weaponized by an adversary. Adversaries may also obtain and use tools that were not originally designed for adversarial AI attacks as part of their attack.",
+   "latest_name": "Adversarial AI Attack Implementations",
+   "rows": [
+    {
+     "row_id": "R047",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "can be weaponized by an adversary",
+     "notes": "two downgrades -> ships at low confidence | narrowed d3f:Software -> d3f:SoftwareLibrary per verifier"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0016.001",
+   "label": "Software Tools",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may search for and obtain software tools to support their operations.\nSoftware designed for legitimate use may be repurposed by an adversary for malicious intent.\nAn adversary may modify or customize software tools to achieve their purpose.\nSoftware tools used to support attacks on AI systems are not necessarily AI-based themselves.",
+   "latest_id": "AML.T0016.001",
+   "definition_latest": "Adversaries may search for and obtain software tools to support their operations.\nSoftware designed for legitimate use may be repurposed by an adversary for malicious intent.\nAn adversary may modify or customize software tools to achieve their purpose.\nSoftware tools used to support attacks on AI systems are not necessarily AI-based themselves.",
+   "latest_name": "Software Tools",
+   "rows": [
+    {
+     "row_id": "R048",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "modify or customize software tools",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R049",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "obtain software tools to support their operations",
+     "notes": "upheld"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0017",
+   "label": "Develop Capabilities",
+   "wave": "core",
+   "open_pr": null,
+   "definition_develop": "Adversaries may develop their own capabilities to support operations. This process encompasses identifying requirements, building solutions, and deploying capabilities. Capabilities used to support attacks on AI-enabled systems are not necessarily AI-based themselves. Examples include setting up websites with adversarial information or creating Jupyter notebooks with obfuscated exfiltration code.",
+   "latest_id": "AML.T0017",
+   "definition_latest": "Adversaries may develop their own capabilities to support operations. This process encompasses identifying requirements, building or adapting solutions, validating or packaging capabilities, and preparing them for deployment. Capabilities used to support attacks on AI-enabled systems are not necessarily AI-based themselves. Adversaries may also use autonomous AI agents to iteratively develop capabilities, including exploit methods for known or previously unknown software vulnerabilities.\n\nExamples include creating adversarial AI attacks, developing websites containing malicious instructions for AI agents, crafting malicious AI artifacts, building malware, or implementing software exploits.",
+   "latest_name": "Develop Capabilities",
+   "rows": [
+    {
+     "row_id": "R050",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ExecutableScript",
+     "artifact_label": "Executable Script",
+     "disposition": "maps-existing",
+     "evidence_quote": "creating Jupyter notebooks with obfuscated exfiltration code",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R051",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "artifact_label": "Software",
+     "disposition": "maps-existing",
+     "evidence_quote": "develop their own capabilities to support operations",
+     "notes": "upheld"
+    },
+    {
+     "row_id": "R052",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:WebResource",
+     "artifact_label": "Web Resource",
+     "disposition": "maps-existing",
+     "evidence_quote": "setting up websites with adversarial information",
+     "notes": "upheld"
+    }
+   ]
+  }
+ ]
+}

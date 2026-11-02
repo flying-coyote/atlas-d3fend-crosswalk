@@ -1,0 +1,1042 @@
+{
+ "unit": "ADJ-02",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0017.000",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R053",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R054",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic: libraries are SoftwareLibrary",
+     "calibration_hit": "none",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:SoftwareLibrary",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Quote names libraries; SoftwareLibrary is the most specific true class."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018",
+   "latest_drift_note": "Latest broadens to model artifact plus bundled components and prompt-construction logic.",
+   "rows": [
+    {
+     "row_id": "R055",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: model weights are not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "AI model is the model file, not Software (Kirillov, #606)."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018.000",
+   "latest_drift_note": "Latest drops the sentence about changing behavior per category only partially; core weights/poisoning text unchanged.",
+   "rows": [
+    {
+     "row_id": "R056",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: model weights are not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Weights live in the model file; File not Software."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018.001",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R057",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: model architecture is not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Model architecture definition lives in the model file; File not Software."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0018.002",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R058",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0019",
+   "latest_drift_note": "Superseded by AML.T0115.000; text now about publishing poisoned datasets via repositories, develop quote gone.",
+   "rows": [
+    {
+     "row_id": "R059",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0020",
+   "latest_drift_note": "Latest broadens to feedback and data-collection processes and add/remove/alter samples.",
+   "rows": [
+    {
+     "row_id": "R060",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0024",
+   "latest_drift_note": "Latest reframes as exfiltration via inference API responses as transfer channel; develop quote is a link label that may be absent.",
+   "rows": [
+    {
+     "row_id": "R061",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0024.001",
+   "latest_drift_note": "Moved to AML.T0137.002; now inference of aggregate attributes from outputs or exposed representations, not strictly via API confidence scores.",
+   "rows": [
+    {
+     "row_id": "R062",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0024.002",
+   "latest_drift_note": "Moved to AML.T0005.001; now about replicating model behavior via distillation/training on target outputs, not a functional copy via API queries.",
+   "rows": [
+    {
+     "row_id": "R063",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0029",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R064",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0034",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R065",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:InboundInternetWebTraffic",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": "high-volume, low-complexity queries",
+     "quote_survives_latest": true,
+     "reason": "Row sound; original quote is not in develop text, replace with verbatim quote."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0035",
+   "latest_drift_note": "Only tactic link renamed (Staging to Adaptation); substance unchanged.",
+   "rows": [
+    {
+     "row_id": "R066",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0036",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R067",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CollaborativeSoftware",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R068",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Database",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R069",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebFileResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R070",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:CodeRepository",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0040",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R071",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0041",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R072",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:TransducerSensor",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0042",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R073",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: offline model copy is not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Offline copy of a model is a model file."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043",
+   "latest_drift_note": "Latest text largely unchanged in the visible portion; check tail.",
+   "rows": [
+    {
+     "row_id": "R074",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:DigitalMedia",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.000",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R075",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: model is not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Access to model parameters is access to the model file."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.001",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R076",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic: ServiceApplication is the server software; text says API access",
+     "calibration_hit": "other: API access is to an API resource, consistent with R071/R063",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:WebAPIResource",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Black-box access is via the inference API resource, matching sibling rows."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.003",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R077",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:DigitalMedia",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0043.004",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R078",
+     "verb": "d3f:adds",
+     "artifact_iri": "d3f:DigitalMedia",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0044",
+   "latest_drift_note": "Typo fix only (offline environment).",
+   "rows": [
+    {
+     "row_id": "R079",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: model is not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Full white-box access to an AI model means the model file."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0046",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R080",
+     "verb": "d3f:abuses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0047",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R081",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0048.004",
+   "latest_drift_note": "Latest broadens to appropriating IP incl. behavior replication without exfiltration.",
+   "rows": [
+    {
+     "row_id": "R082",
+     "verb": "d3f:copies",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0049",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R083",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DatabaseQuery",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R084",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ProcessSegment",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R085",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:InboundInternetNetworkTraffic",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0050",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R086",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableBinary",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R087",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableScript",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R088",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ShellCommand",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R089",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:RemoteSession",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0051.000",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R090",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0051.001",
+   "latest_drift_note": "Latest adds documents, emails and AI agents as ingested channels.",
+   "rows": [
+    {
+     "row_id": "R091",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0051.002",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R092",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0052",
+   "latest_drift_note": "No change in v2026.10.",
+   "rows": [
+    {
+     "row_id": "R093",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalAudio",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic: acceptable, siblings enumerate DigitalMedia",
+     "calibration_hit": "F608",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:DigitalMedia",
+     "new_evidence_quote": "LLMs that generate synthetic text, visual deepfakes of faces, and audio deepfakes of speech",
+     "quote_survives_latest": true,
+     "reason": "Collapse audio/image/text siblings into one produces DigitalMedia (#608)."
+    },
+    {
+     "row_id": "R094",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalImage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "F608",
+     "verdict": "retire",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Redundant with collapsed R093 produces DigitalMedia."
+    },
+    {
+     "row_id": "R095",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalText",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "F608",
+     "verdict": "retire",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Redundant with collapsed R093 produces DigitalMedia."
+    },
+    {
+     "row_id": "R096",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Email",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R097",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R098",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:InboundInternetMailTraffic",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    },
+    {
+     "row_id": "R099",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:URL",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: URL is an identifier, not the product",
+     "calibration_hit": "F616",
+     "verdict": "retire",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "produces URL conflicts with #616/#619 rulings; observable product already covered by Email and mail traffic."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0052.000",
+   "latest_drift_note": "Latest adds autonomous AI agents sending messages; no longer only LLM-as-social-engineer in conversation.",
+   "rows": [
+    {
+     "row_id": "R100",
+     "verb": "d3f:instructed-by",
+     "artifact_iri": "d3f:DigitalMessage",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok: instructed-by is legal and matches the message instructing the LLM",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes the five checks."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0053",
+   "latest_drift_note": "Latest text tail differs; head unchanged.",
+   "rows": [
+    {
+     "row_id": "R101",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Application",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes the five checks."
+    }
+   ]
+  }
+ ]
+}

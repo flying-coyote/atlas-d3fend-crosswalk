@@ -1,0 +1,13 @@
+{
+ "develop_commit": "a24ebcc",
+ "develop_ttl_sha256": "103b881b01b7298dc084ca503e83d0b21b0b48a0450997095be14eb1c93e49d2",
+ "stix_latest": "stix-2026.10.json",
+ "stix_sha256": "cf6128b93b80f40faf12bc4e95ed2e084059598b2c38f71b66fd9266e927609b",
+ "yaml_latest": "ATLAS-2026.10.yaml",
+ "yaml_sha256": "ac41ee9f99a47084ba5fdfc77ae83a28687e12390240fffeb37df7914ffe142d",
+ "artifact_count": 922,
+ "verb_count": 199,
+ "members_to_map": 56,
+ "seeds": 12,
+ "seeded": 7
+}

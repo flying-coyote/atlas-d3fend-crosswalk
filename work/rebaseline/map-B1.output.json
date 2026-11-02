@@ -1,0 +1,333 @@
+{
+ "batch_id": "batch-B1",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0000.003",
+   "disposition": "no-fit",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Adversary reads third-party scan data; no victim artifact is acted on."
+   },
+   "no_fit_rationale": "The adversary queries a third-party internet-scan service and its stored results; no existing artifact honestly denotes the scan-data service, and the victim system is explicitly not touched."
+  },
+  {
+   "atlas_id": "AML.T0006.000",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:WebAPIResource",
+     "confidence": "medium",
+     "evidence_quote": "discover live AI agents, endpoints, and associated metadata",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Discovered hosted agent endpoints are web API resources."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Enumeration of hosted endpoints; no model, RAG, tool or memory artifact is acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0006.001",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:queries",
+     "artifact_iri": "d3f:WebAPIResource",
+     "confidence": "high",
+     "evidence_quote": "query documented or undocumented APIs",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "The control-plane and identity APIs queried are web API resources."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Platform metadata APIs are queried; no AI-specific artifact is needed."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0006.002",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:ServiceApplication",
+     "confidence": "low",
+     "evidence_quote": "deployed AI backends, model-serving endpoints, and AI agent infrastructure",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Scanning identifies network-facing service applications hosting AI runtimes."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Port and service scan finds hosts; the served model is not itself acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0006.003",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "send crafted inputs",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "The adversary sends crafted messages to triggers such as email, webhooks and chat channels."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Crafted messages to public triggers; no AI-specific artifact is required."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0016.003",
+   "disposition": "needs-new-artifact",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "ExploitCode",
+     "parent_iri": "d3f:Software",
+     "nearest_existing_iri": "d3f:ExecutableScript",
+     "verb": "d3f:uses",
+     "evidence_quote": "search for and obtain exploits",
+     "rationale": "No D3FEND class denotes exploit code; Software entails executable content and is the honest parent."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Exploit code is ordinary attack tooling, not an AI-model artifact."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0016.004",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "confidence": "medium",
+     "evidence_quote": "distributed as Model Context Protocol servers, plugins, skills",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "MCP servers, plugins and connectors are executable software."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:Software",
+     "verb": "d3f:uses",
+     "evidence_quote": "model-visible descriptions and executable interfaces",
+     "rationale": "The model-visible tool description and schema that steers agent tool selection has no D3FEND class."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Obtained tools carry model-visible descriptions that influence agent tool selection."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0017.001",
+   "disposition": "needs-new-artifact",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "ExploitCode",
+     "parent_iri": "d3f:Software",
+     "nearest_existing_iri": "d3f:ExecutableScript",
+     "verb": "d3f:creates",
+     "evidence_quote": "develop or materially adapt an exploit capability",
+     "rationale": "The agent brings an exploit capability into being; no existing class denotes exploit code."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Autonomous exploit development produces exploit code; no model artifact is acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0017.002",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "confidence": "high",
+     "evidence_quote": "creating executable functionality",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Tool servers, plugins and connectors are software with executable content."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:Software",
+     "verb": "d3f:creates",
+     "evidence_quote": "model-visible tool descriptions",
+     "rationale": "Developed model-visible tool descriptions and input schemas have no D3FEND class."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Development produces tool descriptions, schemas and permission handling consumed by the agent."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0017.003",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "confidence": "high",
+     "evidence_quote": "develop malware to support their operations",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Malware is software the adversary brings into being."
+    },
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ExecutableScript",
+     "confidence": "medium",
+     "evidence_quote": "creating or modifying malicious scripts",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Malicious scripts are one named form of the developed malware."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Malware development is conventional; AI models are only a generation aid."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0018.003",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "package this logic alongside model weights in a single distributable artifact",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "The GGUF-style model file bundles the template logic; a model file maps to File, not Software."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIPromptConfiguration",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfigurationFile",
+     "verb": "d3f:modifies",
+     "evidence_quote": "embedded system instructions, tokenizer settings, tool-call formatting",
+     "rationale": "Prompt templates, role delimiters and tokenizer settings form configuration with no D3FEND class."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model"
+    ],
+    "why": "Logic is bundled in a model file alongside weights, though the weights are unchanged."
+   },
+   "no_fit_rationale": null
+  }
+ ]
+}

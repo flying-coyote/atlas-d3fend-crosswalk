@@ -1,0 +1,372 @@
+{
+ "batch_id": "batch-B2",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0085.002",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "user messages, model responses, conversation summaries",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Conversation messages and responses are digital messages the adversary collects."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:Record",
+     "nearest_existing_iri": "d3f:Record",
+     "verb": "d3f:may-access",
+     "evidence_quote": "retained user facts and preferences",
+     "rationale": "Stored cross-session memory records (facts, preferences) have no existing kind."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory"
+    ],
+    "why": "Retained facts and preferences persisted across sessions are agent memory."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0085.003",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "confidence": "medium",
+     "evidence_quote": "non-public instructions used to configure the behavior",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "System instructions configure the AI application; closest existing kind."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIPromptConfiguration",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfiguration",
+     "verb": "d3f:may-access",
+     "evidence_quote": "non-public instructions used to configure the behavior of an AI model or agent",
+     "rationale": "System prompts are a distinct configuration kind."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Tool descriptions are among the collected instructions; prompt configuration is the central object."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0110.000",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "confidence": "low",
+     "evidence_quote": "tool descriptions, docstrings, parameter names",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Model-visible tool definitions act as configuration; generic fit only."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfiguration",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "model-visible definition or operational instructions of an AI agent tool",
+     "rationale": "Model-visible tool descriptions, schemas and manifests are a distinct artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Poisoned object is the model-visible tool definition."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0110.001",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:Software",
+     "confidence": "medium",
+     "evidence_quote": "poison the executable implementation of an AI agent tool",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Tool code is attack-tooling software whose executable logic is altered."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Implementation is code; the tool as a registered object is adjacent but not the poisoned part."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0110.002",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "deliberately returning content intended to influence",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "The compromised tool produces a response message injected into model context."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Response is a message; tool invocation context is agent-side."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "confidence": "low",
+     "evidence_quote": "create or modify AI artifacts and publish them",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Generic AI artifacts (datasets, models, tools) are file-borne; specific children carry the detail."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model",
+     "agent-tool-definition"
+    ],
+    "why": "Parent covers datasets, models and agent tools."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115.000",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "publish poisoned datasets intended for training",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "A dataset is distributed as files; no dedicated dataset kind exists."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:File",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:may-create",
+     "evidence_quote": "publish poisoned datasets intended for training or fine-tuning",
+     "rationale": "Training data collections lack a kind."
+    }
+   ],
+   "event_model": [
+    {
+     "event_class": "MachineLearningTrainingEvent",
+     "relation": "has-input",
+     "participant_iri": "d3f:File",
+     "evidence_quote": "intended for training or fine-tuning AI models"
+    }
+   ],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model"
+    ],
+    "why": "Dataset feeds training; downstream model compromise."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115.001",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "publish poisoned AI models",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Model weights are a File, not Software."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:may-create",
+     "evidence_quote": "publish poisoned AI models",
+     "rationale": "Trained models and weights lack a kind."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model"
+    ],
+    "why": "The published object is the model itself."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0115.002",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:Application",
+     "confidence": "medium",
+     "evidence_quote": "create and publish poisoned AI agent tools",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Agent tools are tooling software."
+    },
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:SoftwarePackage",
+     "confidence": "low",
+     "evidence_quote": "package registries",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Tools are distributed as packages via registries."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Tool definitions are part of published tools; code part maps to Application."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0116",
+   "disposition": "no-fit",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Technique is an agentic planning loop over reconnaissance; no specific artifact object."
+   },
+   "no_fit_rationale": "Technique describes the actor's autonomous decision process (hypothesis, source selection, scope judgment), not an artifact acted on; reconnaissance targets are covered by ATT&CK-derived rows."
+  },
+  {
+   "atlas_id": "AML.T0117",
+   "disposition": "no-fit",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Control-loop behavior of an agent; no single artifact object."
+   },
+   "no_fit_rationale": "Describes adaptive replanning across observation-decision-action cycles; objects (exploits, identities, tools) are too heterogeneous and the central subject is the agent process."
+  }
+ ]
+}

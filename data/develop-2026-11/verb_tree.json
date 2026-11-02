@@ -1,0 +1,806 @@
+{
+ "roots": [
+  "d3f:may-be-associated-with",
+  "d3f:semantic-relation",
+  "d3f:enables"
+ ],
+ "count": 199,
+ "verbs": {
+  "d3f:broader": {
+   "label": "broader",
+   "observed_offensive_count": 0
+  },
+  "d3f:broader-transitive": {
+   "label": "broader-transitive",
+   "observed_offensive_count": 0
+  },
+  "d3f:exactly": {
+   "label": "exactly",
+   "observed_offensive_count": 0
+  },
+  "d3f:narrower": {
+   "label": "narrower",
+   "observed_offensive_count": 0
+  },
+  "d3f:narrower-transitive": {
+   "label": "narrower-transitive",
+   "observed_offensive_count": 0
+  },
+  "d3f:related": {
+   "label": "related",
+   "observed_offensive_count": 0
+  },
+  "d3f:associated-with": {
+   "label": "associated-with",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-access": {
+   "label": "may-access",
+   "observed_offensive_count": 33
+  },
+  "d3f:may-add": {
+   "label": "may-add",
+   "observed_offensive_count": 8
+  },
+  "d3f:may-be-accessed-by": {
+   "label": "may-be-accessed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-contained-by": {
+   "label": "may-be-contained-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-created-by": {
+   "label": "may-be-created-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-invoked-by": {
+   "label": "may-be-invoked-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-modified-by": {
+   "label": "may-be-modified-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-tactically-associated-with": {
+   "label": "may-be-tactically-associated-with",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-weakness-of": {
+   "label": "may-be-weakness-of",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-block": {
+   "label": "may-block",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-contain": {
+   "label": "may-contain",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-corrupt": {
+   "label": "may-corrupt",
+   "observed_offensive_count": 4
+  },
+  "d3f:may-counter": {
+   "label": "may-counter",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-create": {
+   "label": "may-create",
+   "observed_offensive_count": 23
+  },
+  "d3f:may-evaluate": {
+   "label": "may-evaluate",
+   "observed_offensive_count": 1
+  },
+  "d3f:may-execute": {
+   "label": "may-execute",
+   "observed_offensive_count": 4
+  },
+  "d3f:may-have-weakness": {
+   "label": "may-have-weakness",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-interpret": {
+   "label": "may-interpret",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-invoke": {
+   "label": "may-invoke",
+   "observed_offensive_count": 33
+  },
+  "d3f:may-map": {
+   "label": "may-map",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-modify": {
+   "label": "may-modify",
+   "observed_offensive_count": 111
+  },
+  "d3f:may-produce": {
+   "label": "may-produce",
+   "observed_offensive_count": 28
+  },
+  "d3f:may-query": {
+   "label": "may-query",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-run": {
+   "label": "may-run",
+   "observed_offensive_count": 1
+  },
+  "d3f:may-transfer": {
+   "label": "may-transfer",
+   "observed_offensive_count": 5
+  },
+  "d3f:runs": {
+   "label": "runs",
+   "observed_offensive_count": 1
+  },
+  "d3f:executes": {
+   "label": "executes",
+   "observed_offensive_count": 15
+  },
+  "d3f:injects": {
+   "label": "injects",
+   "observed_offensive_count": 2
+  },
+  "d3f:interprets": {
+   "label": "interprets",
+   "observed_offensive_count": 2
+  },
+  "d3f:invokes": {
+   "label": "invokes",
+   "observed_offensive_count": 30
+  },
+  "d3f:queries": {
+   "label": "queries",
+   "observed_offensive_count": 1
+  },
+  "d3f:produces": {
+   "label": "produces",
+   "observed_offensive_count": 118
+  },
+  "d3f:modifies": {
+   "label": "modifies",
+   "observed_offensive_count": 158
+  },
+  "d3f:modifies-part": {
+   "label": "modifies-part",
+   "observed_offensive_count": 0
+  },
+  "d3f:updates": {
+   "label": "updates",
+   "observed_offensive_count": 0
+  },
+  "d3f:deletes": {
+   "label": "deletes",
+   "observed_offensive_count": 3
+  },
+  "d3f:disables": {
+   "label": "disables",
+   "observed_offensive_count": 10
+  },
+  "d3f:obfuscates": {
+   "label": "obfuscates",
+   "observed_offensive_count": 1
+  },
+  "d3f:extends": {
+   "label": "extends",
+   "observed_offensive_count": 0
+  },
+  "d3f:maps": {
+   "label": "maps",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-weakness": {
+   "label": "has-weakness",
+   "observed_offensive_count": 0
+  },
+  "d3f:evaluates": {
+   "label": "evaluates",
+   "observed_offensive_count": 0
+  },
+  "d3f:creates": {
+   "label": "creates",
+   "observed_offensive_count": 46
+  },
+  "d3f:copies": {
+   "label": "copies",
+   "observed_offensive_count": 3
+  },
+  "d3f:forges": {
+   "label": "forges",
+   "observed_offensive_count": 5
+  },
+  "d3f:counters": {
+   "label": "counters",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-evict": {
+   "label": "may-evict",
+   "observed_offensive_count": 0
+  },
+  "d3f:evicts": {
+   "label": "evicts",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-disable": {
+   "label": "may-disable",
+   "observed_offensive_count": 0
+  },
+  "d3f:terminates": {
+   "label": "terminates",
+   "observed_offensive_count": 0
+  },
+  "d3f:suspends": {
+   "label": "suspends",
+   "observed_offensive_count": 0
+  },
+  "d3f:unloads": {
+   "label": "unloads",
+   "observed_offensive_count": 0
+  },
+  "d3f:blocks": {
+   "label": "blocks",
+   "observed_offensive_count": 2
+  },
+  "d3f:deceives": {
+   "label": "deceives",
+   "observed_offensive_count": 0
+  },
+  "d3f:detects": {
+   "label": "detects",
+   "observed_offensive_count": 1
+  },
+  "d3f:hardens": {
+   "label": "hardens",
+   "observed_offensive_count": 0
+  },
+  "d3f:authenticates": {
+   "label": "authenticates",
+   "observed_offensive_count": 0
+  },
+  "d3f:authorizes": {
+   "label": "authorizes",
+   "observed_offensive_count": 0
+  },
+  "d3f:configures": {
+   "label": "configures",
+   "observed_offensive_count": 0
+  },
+  "d3f:encrypts": {
+   "label": "encrypts",
+   "observed_offensive_count": 1
+  },
+  "d3f:neutralizes": {
+   "label": "neutralizes",
+   "observed_offensive_count": 0
+  },
+  "d3f:regenerates": {
+   "label": "regenerates",
+   "observed_offensive_count": 0
+  },
+  "d3f:strengthens": {
+   "label": "strengthens",
+   "observed_offensive_count": 0
+  },
+  "d3f:validated-by": {
+   "label": "validated-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:validates": {
+   "label": "validates",
+   "observed_offensive_count": 0
+  },
+  "d3f:signs": {
+   "label": "signs",
+   "observed_offensive_count": 0
+  },
+  "d3f:signed-by": {
+   "label": "signed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:analyzes": {
+   "label": "analyzes",
+   "observed_offensive_count": 0
+  },
+  "d3f:monitors": {
+   "label": "monitors",
+   "observed_offensive_count": 5
+  },
+  "d3f:verifies": {
+   "label": "verifies",
+   "observed_offensive_count": 0
+  },
+  "d3f:contains": {
+   "label": "contains",
+   "observed_offensive_count": 0
+  },
+  "d3f:weakness-of": {
+   "label": "weakness-of",
+   "observed_offensive_count": 0
+  },
+  "d3f:attack-may-be-countered-by": {
+   "label": "attack-may-be-countered-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-counter-attack": {
+   "label": "may-counter-attack",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-deceive": {
+   "label": "may-deceive",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-detect": {
+   "label": "may-detect",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-harden": {
+   "label": "may-harden",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-isolate": {
+   "label": "may-isolate",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-deceived-by": {
+   "label": "may-be-deceived-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-detected-by": {
+   "label": "may-be-detected-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-evicted-by": {
+   "label": "may-be-evicted-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-hardened-against-by": {
+   "label": "may-be-hardened-against-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-isolated-by": {
+   "label": "may-be-isolated-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:modified-by": {
+   "label": "modified-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:invoked-by": {
+   "label": "invoked-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:created-by": {
+   "label": "created-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:contained-by": {
+   "label": "contained-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:accessed-by": {
+   "label": "accessed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:adds": {
+   "label": "adds",
+   "observed_offensive_count": 11
+  },
+  "d3f:accesses": {
+   "label": "accesses",
+   "observed_offensive_count": 68
+  },
+  "d3f:reads": {
+   "label": "reads",
+   "observed_offensive_count": 9
+  },
+  "d3f:writes": {
+   "label": "writes",
+   "observed_offensive_count": 0
+  },
+  "d3f:enumerates": {
+   "label": "enumerates",
+   "observed_offensive_count": 8
+  },
+  "d3f:access-mediated-by": {
+   "label": "access-mediated-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:addressed-by": {
+   "label": "addressed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:addresses": {
+   "label": "addresses",
+   "observed_offensive_count": 0
+  },
+  "d3f:attached-to": {
+   "label": "attached-to",
+   "observed_offensive_count": 0
+  },
+  "d3f:carried-by": {
+   "label": "carried-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:carries": {
+   "label": "carries",
+   "observed_offensive_count": 0
+  },
+  "d3f:caused-by": {
+   "label": "caused-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:causes": {
+   "label": "causes",
+   "observed_offensive_count": 0
+  },
+  "d3f:communicates-with": {
+   "label": "communicates-with",
+   "observed_offensive_count": 0
+  },
+  "d3f:connected-to": {
+   "label": "connected-to",
+   "observed_offensive_count": 0
+  },
+  "d3f:connects": {
+   "label": "connects",
+   "observed_offensive_count": 1
+  },
+  "d3f:controlled-by": {
+   "label": "controlled-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:controls": {
+   "label": "controls",
+   "observed_offensive_count": 0
+  },
+  "d3f:copy-of": {
+   "label": "copy-of",
+   "observed_offensive_count": 0
+  },
+  "d3f:decodes": {
+   "label": "decodes",
+   "observed_offensive_count": 0
+  },
+  "d3f:dependent": {
+   "label": "dependent",
+   "observed_offensive_count": 0
+  },
+  "d3f:depends-on": {
+   "label": "depends-on",
+   "observed_offensive_count": 0
+  },
+  "d3f:drives": {
+   "label": "drives",
+   "observed_offensive_count": 0
+  },
+  "d3f:employed-by": {
+   "label": "employed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:employs": {
+   "label": "employs",
+   "observed_offensive_count": 0
+  },
+  "d3f:enabled-by": {
+   "label": "enabled-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:enables": {
+   "label": "enables",
+   "observed_offensive_count": 68
+  },
+  "d3f:encodes": {
+   "label": "encodes",
+   "observed_offensive_count": 0
+  },
+  "d3f:enforces": {
+   "label": "enforces",
+   "observed_offensive_count": 0
+  },
+  "d3f:erases": {
+   "label": "erases",
+   "observed_offensive_count": 0
+  },
+  "d3f:evaluated-by": {
+   "label": "evaluated-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:excises": {
+   "label": "excises",
+   "observed_offensive_count": 0
+  },
+  "d3f:executed-by": {
+   "label": "executed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:filters": {
+   "label": "filters",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-dependent": {
+   "label": "has-dependent",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-location": {
+   "label": "has-location",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-operating-mode": {
+   "label": "has-operating-mode",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-participant": {
+   "label": "has-participant",
+   "observed_offensive_count": 1
+  },
+  "d3f:has-recipient": {
+   "label": "has-recipient",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-sender": {
+   "label": "has-sender",
+   "observed_offensive_count": 0
+  },
+  "d3f:hides": {
+   "label": "hides",
+   "observed_offensive_count": 1
+  },
+  "d3f:identified-by": {
+   "label": "identified-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:identifies": {
+   "label": "identifies",
+   "observed_offensive_count": 0
+  },
+  "d3f:impairs": {
+   "label": "impairs",
+   "observed_offensive_count": 5
+  },
+  "d3f:implemented-by": {
+   "label": "implemented-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:implements": {
+   "label": "implements",
+   "observed_offensive_count": 0
+  },
+  "d3f:initiates": {
+   "label": "initiates",
+   "observed_offensive_count": 1
+  },
+  "d3f:installs": {
+   "label": "installs",
+   "observed_offensive_count": 1
+  },
+  "d3f:instructed-by": {
+   "label": "instructed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:instructs": {
+   "label": "instructs",
+   "observed_offensive_count": 0
+  },
+  "d3f:inventoried-by": {
+   "label": "inventoried-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:inventories": {
+   "label": "inventories",
+   "observed_offensive_count": 0
+  },
+  "d3f:isolates": {
+   "label": "isolates",
+   "observed_offensive_count": 0
+  },
+  "d3f:loaded-by": {
+   "label": "loaded-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:loads": {
+   "label": "loads",
+   "observed_offensive_count": 7
+  },
+  "d3f:manages": {
+   "label": "manages",
+   "observed_offensive_count": 0
+  },
+  "d3f:mapped-by": {
+   "label": "mapped-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:mediates-access-to": {
+   "label": "mediates-access-to",
+   "observed_offensive_count": 0
+  },
+  "d3f:operates": {
+   "label": "operates",
+   "observed_offensive_count": 0
+  },
+  "d3f:originates-from": {
+   "label": "originates-from",
+   "observed_offensive_count": 0
+  },
+  "d3f:owns": {
+   "label": "owns",
+   "observed_offensive_count": 0
+  },
+  "d3f:participates-in": {
+   "label": "participates-in",
+   "observed_offensive_count": 0
+  },
+  "d3f:preceded-by": {
+   "label": "preceded-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:precedes": {
+   "label": "precedes",
+   "observed_offensive_count": 0
+  },
+  "d3f:prescribed-by": {
+   "label": "prescribed-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:prescribes": {
+   "label": "prescribes",
+   "observed_offensive_count": 0
+  },
+  "d3f:process-property": {
+   "label": "process-property",
+   "observed_offensive_count": 0
+  },
+  "d3f:produced-by": {
+   "label": "produced-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:provider": {
+   "label": "provider",
+   "observed_offensive_count": 0
+  },
+  "d3f:quarantines": {
+   "label": "quarantines",
+   "observed_offensive_count": 0
+  },
+  "d3f:receives": {
+   "label": "receives",
+   "observed_offensive_count": 0
+  },
+  "d3f:recorded-in": {
+   "label": "recorded-in",
+   "observed_offensive_count": 0
+  },
+  "d3f:records": {
+   "label": "records",
+   "observed_offensive_count": 0
+  },
+  "d3f:restores": {
+   "label": "restores",
+   "observed_offensive_count": 0
+  },
+  "d3f:restricted-by": {
+   "label": "restricted-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:restricts": {
+   "label": "restricts",
+   "observed_offensive_count": 0
+  },
+  "d3f:resumes": {
+   "label": "resumes",
+   "observed_offensive_count": 0
+  },
+  "d3f:semantic-relation": {
+   "label": "semantic-relation",
+   "observed_offensive_count": 0
+  },
+  "d3f:spoofs": {
+   "label": "spoofs",
+   "observed_offensive_count": 3
+  },
+  "d3f:summarizes": {
+   "label": "summarizes",
+   "observed_offensive_count": 0
+  },
+  "d3f:transmits": {
+   "label": "transmits",
+   "observed_offensive_count": 0
+  },
+  "d3f:unmounts": {
+   "label": "unmounts",
+   "observed_offensive_count": 1
+  },
+  "d3f:used-by": {
+   "label": "used-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:uses": {
+   "label": "uses",
+   "observed_offensive_count": 22
+  },
+  "d3f:abuses": {
+   "label": "abuses",
+   "observed_offensive_count": 5
+  },
+  "d3f:limits": {
+   "label": "limits",
+   "observed_offensive_count": 0
+  },
+  "d3f:use-limits": {
+   "label": "use-limits",
+   "observed_offensive_count": 0
+  },
+  "d3f:process-ancestor": {
+   "label": "process-ancestor",
+   "observed_offensive_count": 0
+  },
+  "d3f:process-image-path": {
+   "label": "process-image-path",
+   "observed_offensive_count": 0
+  },
+  "d3f:process-user": {
+   "label": "process-user",
+   "observed_offensive_count": 0
+  },
+  "d3f:process-parent": {
+   "label": "process-parent",
+   "observed_offensive_count": 0
+  },
+  "d3f:input-of": {
+   "label": "input-of",
+   "observed_offensive_count": 0
+  },
+  "d3f:output-of": {
+   "label": "output-of",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-account": {
+   "label": "has-account",
+   "observed_offensive_count": 0
+  },
+  "d3f:corrupts": {
+   "label": "corrupts",
+   "observed_offensive_count": 0
+  },
+  "d3f:jams": {
+   "label": "jams",
+   "observed_offensive_count": 2
+  },
+  "d3f:has-agent": {
+   "label": "has-agent",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-input": {
+   "label": "has-input",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-mediator": {
+   "label": "has-mediator",
+   "observed_offensive_count": 0
+  },
+  "d3f:has-output": {
+   "label": "has-output",
+   "observed_offensive_count": 0
+  },
+  "d3f:powers": {
+   "label": "powers",
+   "observed_offensive_count": 0
+  },
+  "d3f:derived-from": {
+   "label": "derived-from",
+   "observed_offensive_count": 0
+  },
+  "d3f:powered-by": {
+   "label": "powered-by",
+   "observed_offensive_count": 0
+  },
+  "d3f:may-be-associated-with": {
+   "label": "may-be-associated-with",
+   "observed_offensive_count": 2
+  }
+ }
+}

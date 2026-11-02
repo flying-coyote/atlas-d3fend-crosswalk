@@ -1,0 +1,90 @@
+{
+ "generated_at": "2026-07-14T17:48:08+00:00",
+ "totals": {
+  "included_count": 8961,
+  "integrated_count": 974,
+  "relationship_count": 1534
+ },
+ "frameworks": [
+  {
+   "id": "attack-enterprise",
+   "label": "ATT&CK Enterprise",
+   "included_count": 858,
+   "integrated_count": 350,
+   "relationship_count": 537,
+   "coverage_percent": 40.8
+  },
+  {
+   "id": "attack-ics",
+   "label": "ATT&CK ICS",
+   "included_count": 118,
+   "integrated_count": 66,
+   "relationship_count": 144,
+   "coverage_percent": 55.9
+  },
+  {
+   "id": "attack-mobile",
+   "label": "ATT&CK Mobile",
+   "included_count": 166,
+   "integrated_count": 0,
+   "relationship_count": 0,
+   "coverage_percent": 0.0
+  },
+  {
+   "id": "atlas",
+   "label": "ATLAS",
+   "included_count": 140,
+   "integrated_count": 0,
+   "relationship_count": 0,
+   "coverage_percent": 0.0
+  },
+  {
+   "id": "sparta",
+   "label": "SPARTA",
+   "included_count": 216,
+   "integrated_count": 54,
+   "relationship_count": 74,
+   "coverage_percent": 25.0
+  },
+  {
+   "id": "capec",
+   "label": "CAPEC",
+   "included_count": 1,
+   "integrated_count": 0,
+   "relationship_count": 0,
+   "coverage_percent": 0.0
+  },
+  {
+   "id": "cwe",
+   "label": "CWE",
+   "included_count": 943,
+   "integrated_count": 28,
+   "relationship_count": 32,
+   "coverage_percent": 3.0
+  },
+  {
+   "id": "nist-800-53",
+   "label": "NIST SP 800-53",
+   "included_count": 1196,
+   "integrated_count": 111,
+   "relationship_count": 180,
+   "coverage_percent": 9.3
+  },
+  {
+   "id": "cci",
+   "label": "CCI",
+   "included_count": 5046,
+   "integrated_count": 291,
+   "relationship_count": 426,
+   "coverage_percent": 5.8
+  },
+  {
+   "id": "ocsf",
+   "label": "OCSF",
+   "included_count": 277,
+   "integrated_count": 74,
+   "relationship_count": 141,
+   "coverage_percent": 26.7
+  }
+ ]
+}

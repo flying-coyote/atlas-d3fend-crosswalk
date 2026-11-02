@@ -1,0 +1,423 @@
+{
+ "unit": "V1",
+ "rows": [
+  {
+   "row_id": "AML.T0006.000#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Fuzzing a predictable URL namespace to find live agent endpoints enumerates web API resources (the resource, not the URL identifier, consistent with #619)."
+  },
+  {
+   "row_id": "AML.T0006.001#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Control-plane and identity APIs are queried directly; WebAPIResource is the most specific true target."
+  },
+  {
+   "row_id": "AML.T0006.002#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:enumerates",
+   "new_artifact_iri": "d3f:NetworkServiceApplicationProcess",
+   "new_evidence_quote": "scan network ports and services",
+   "checklist_failure": "2",
+   "reason": "ServiceApplication is the software kind (content); a port/service scan touches the running listening service, so the carrier is NetworkServiceApplicationProcess (a long-lived listening service, not a transient artifact; D3FEND routinely targets Process classes)."
+  },
+  {
+   "row_id": "AML.T0006.003#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Crafted inputs to email/webhook/chat triggers are adversary-produced digital messages; mandatory act, so produces is right."
+  },
+  {
+   "row_id": "AML.T0016.004#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "MCP servers, plugins and connectors are Software; uses is the weakest honest verb for an obtain act (no acquisition-record analog to #616 exists for tools). Note remote APIs are not possessed Software, but the restriction is still true."
+  },
+  {
+   "row_id": "AML.T0017.002#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Developing tool servers/plugins creates executable Software; mandatory act."
+  },
+  {
+   "row_id": "AML.T0017.003#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Malware is a role over Software (D3FEND has no Malware class); creates Software is true and mandatory."
+  },
+  {
+   "row_id": "AML.T0017.003#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-create",
+   "new_artifact_iri": "d3f:ExecutableScript",
+   "new_evidence_quote": "creating or modifying malicious scripts",
+   "checklist_failure": "4",
+   "reason": "Scripts are one optional form among scripts, executables, libraries, packages; parent+child is fine (#618) but the child must be may-create."
+  },
+  {
+   "row_id": "AML.T0018.003#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "The construction logic is artifact-bundled and the definition names the model file as its carrier; File is the accepted class for a model file, and modifying bundled logic does modify that file."
+  },
+  {
+   "row_id": "AML.T0085.002#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "User messages and model responses are DigitalMessage (parent of MITRE's AIInteractionMessage); may-access is right because messages vs memory records are alternatives."
+  },
+  {
+   "row_id": "AML.T0085.003#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:accesses",
+   "new_artifact_iri": "d3f:ApplicationConfiguration",
+   "new_evidence_quote": "collect non-public instructions used to configure the behavior",
+   "checklist_failure": "4",
+   "reason": "System prompts and application rules are the configuration bearer of the AI application (unlike T0110.000 tool definitions, which are content about a tool). Collecting them is the technique itself, not optional; only the method (reproduce, summarize, injection) varies, so may-access understates it."
+  },
+  {
+   "row_id": "AML.T0110.000#m0",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "5",
+   "reason": "Tool descriptions, docstrings and schemas are model-visible content that explains a tool, not parameters/initial settings of an application (specific-but-false); they live in source code, skill files or a remote tools/list response. This differs from T0085.003, where the system prompt really is the configuration bearer of the AI application; and poisoning is mandatory, so may-modify is also wrong. Carry this technique on the AIToolDefinition proposal with modifies."
+  },
+  {
+   "row_id": "AML.T0110.001#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:modifies",
+   "new_artifact_iri": "d3f:Software",
+   "new_evidence_quote": "poison the executable implementation of an AI agent tool",
+   "checklist_failure": "4",
+   "reason": "Poisoning the executable implementation is the technique, not optional; Software is the right target."
+  },
+  {
+   "row_id": "AML.T0110.002#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:produces",
+   "new_artifact_iri": "d3f:DigitalMessage",
+   "new_evidence_quote": "deliberately returning content intended to influence",
+   "checklist_failure": "4",
+   "reason": "Returning poisoned content is the defining act, not optional; DigitalMessage is right (parent of AIInteractionMessage)."
+  },
+  {
+   "row_id": "AML.T0115#m0",
+   "verdict": "kill",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "5",
+   "reason": "Too generic: under #608 the honest common parent of dataset, model and tool is DigitalInformation, which says nothing, and File only fits the dataset/model children; the children carry the specific restrictions."
+  },
+  {
+   "row_id": "AML.T0115.000#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "A published dataset is file-borne in the normal case; may-create is right because the dataset may be new or a modified variant."
+  },
+  {
+   "row_id": "AML.T0115.001#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Model file maps to File per calibration (a model is not Software); may-create right given new-or-modified."
+  },
+  {
+   "row_id": "AML.T0115.002#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-create",
+   "new_artifact_iri": "d3f:Software",
+   "new_evidence_quote": "create and publish poisoned AI agent tools",
+   "checklist_failure": "5",
+   "reason": "Application is too narrow and partly false (skills are instruction files, remote services are not installed applications); use Software for consistency with T0016.004/T0017.002/T0110.001."
+  },
+  {
+   "row_id": "AML.T0115.002#m1",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Publishing a tool to npm-style registries literally creates a SoftwarePackage; may-create is right because registries are one channel among several."
+  },
+  {
+   "row_id": "AML.T0118#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-produce",
+   "new_artifact_iri": "d3f:DigitalMessage",
+   "new_evidence_quote": "Communication may occur directly through an agent interface",
+   "checklist_failure": "4",
+   "reason": "Parent covers shared-artifact communication too (files, databases), so produces DigitalMessage is only true of the direct-communication branch; must be may-produce."
+  },
+  {
+   "row_id": "AML.T0118.000#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-create",
+   "new_artifact_iri": "d3f:File",
+   "new_evidence_quote": "creating or modifying artifacts in a shared resource",
+   "checklist_failure": "4",
+   "reason": "Create and modify are alternatives, and File is one shared resource among repository, database, object store and queue, so the restriction must be optional."
+  },
+  {
+   "row_id": "AML.T0118.000#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-modify",
+   "new_artifact_iri": "d3f:File",
+   "new_evidence_quote": "creating or modifying artifacts in a shared resource",
+   "checklist_failure": "4",
+   "reason": "Same as m0: modifying is one alternative and File one of several resource types."
+  },
+  {
+   "row_id": "AML.T0118.000#m2",
+   "verdict": "revise",
+   "new_verb": "d3f:may-modify",
+   "new_artifact_iri": "d3f:DatabaseRecord",
+   "new_evidence_quote": "message board, database, object store",
+   "checklist_failure": "2",
+   "reason": "Container-for-content lateral: agents write records into a database, not the database itself; also optional."
+  },
+  {
+   "row_id": "AML.T0118.001#m0",
+   "verdict": "uphold",
+   "new_verb": null,
+   "new_artifact_iri": null,
+   "new_evidence_quote": null,
+   "checklist_failure": "none",
+   "reason": "Direct agent-to-agent exchange is message production by definition; mandatory, so produces is right."
+  },
+  {
+   "row_id": "AML.T0119#m0",
+   "verdict": "revise",
+   "new_verb": "d3f:may-create",
+   "new_artifact_iri": "d3f:File",
+   "new_evidence_quote": "submit, publish, or modify an artifact",
+   "checklist_failure": "4",
+   "reason": "Submit/publish/modify are alternatives (submitting an existing artifact creates nothing), so creation is optional."
+  },
+  {
+   "row_id": "AML.T0119#m1",
+   "verdict": "revise",
+   "new_verb": "d3f:may-modify",
+   "new_artifact_iri": "d3f:File",
+   "new_evidence_quote": "submit, publish, or modify an artifact",
+   "checklist_failure": "4",
+   "reason": "Modification is one of three alternatives, so may-modify."
+  }
+ ],
+ "techniques": [
+  {
+   "atlas_id": "AML.T0000.003",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "honest",
+   "note": "Victim system explicitly untouched and the ATT&CK seed T1596.005 is itself unmapped; queries Database would be true but empty."
+  },
+  {
+   "atlas_id": "AML.T0006.000",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Single row upheld."
+  },
+  {
+   "atlas_id": "AML.T0006.001",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Single row upheld."
+  },
+  {
+   "atlas_id": "AML.T0006.002",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Retarget from software kind to the running network service."
+  },
+  {
+   "atlas_id": "AML.T0006.003",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Single row upheld."
+  },
+  {
+   "atlas_id": "AML.T0016.003",
+   "proposals_verdict": "existing-class-fits:d3f:Software",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Exploit is a role, not a kind (D3FEND has no Malware class either, and T0017.003 maps malware to Software), so ExploitCode should drop. Caveat: exploits can also be crafted data (malformed file, serialized payload) that is not Software, and there is no may-use verb to hedge with, so a uses d3f:Software row would overclaim. Leave this as an honest no-fit (the ATT&CK seed T1588.005 is unmapped too) rather than force a row."
+  },
+  {
+   "atlas_id": "AML.T0016.004",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIToolDefinition under DigitalInformation (content) is a real gap; this parent should be the one canonical parent, since T0110.000 proposes the same name under ApplicationConfiguration."
+  },
+  {
+   "atlas_id": "AML.T0017.001",
+   "proposals_verdict": "existing-class-fits:d3f:Software",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Same role problem as T0016.003. Replace the proposal with a may-create d3f:Software row (quote: develop or materially adapt an exploit capability); may- because the exploit capability is not always code."
+  },
+  {
+   "atlas_id": "AML.T0017.002",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIToolDefinition under DigitalInformation is consistent with T0016.004."
+  },
+  {
+   "atlas_id": "AML.T0017.003",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Child row must be may-create."
+  },
+  {
+   "atlas_id": "AML.T0018.003",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIPromptConfiguration under ApplicationConfiguration is a reasonable specialization (chat templates and tokenizer settings configure the inference runtime); a may-modify ApplicationConfiguration row would already be true today."
+  },
+  {
+   "atlas_id": "AML.T0085.002",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIAgentMemoryRecord under Record is a real gap (cross-session memory, poisoning-relevant); the DigitalMessage row is the parent of MITRE's AIInteractionMessage."
+  },
+  {
+   "atlas_id": "AML.T0085.003",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Same AIPromptConfiguration parent as T0018.003, consistent; the row verb should be accesses."
+  },
+  {
+   "atlas_id": "AML.T0110.000",
+   "proposals_verdict": "wrong-parent",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIToolDefinition must be under DigitalInformation to match T0016.004/T0017.002, since tool descriptions are model-visible content, not app settings; verb should be modifies, not may-modify."
+  },
+  {
+   "atlas_id": "AML.T0110.001",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Residual flag fine; implementation is Software, definition layer belongs to T0110.000."
+  },
+  {
+   "atlas_id": "AML.T0110.002",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "A future AIInteractionMessage (or tool-result) child of DigitalMessage would be the specific target."
+  },
+  {
+   "atlas_id": "AML.T0115",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Parent row killed; children carry dataset/model/tool restrictions (#608 collapse would only give DigitalInformation)."
+  },
+  {
+   "atlas_id": "AML.T0115.000",
+   "proposals_verdict": "wrong-parent",
+   "event_model_verdict": "not-an-event",
+   "no_fit_verdict": "n/a",
+   "note": "A dataset is content that can span many files or a table, so Dataset belongs under DigitalInformation (parallel to AIModel), not File. Training is a downstream victim event (AML.T0020) the publisher takes no part in, and MachineLearningTrainingEvent does not exist on develop."
+  },
+  {
+   "atlas_id": "AML.T0115.001",
+   "proposals_verdict": "sound",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "AIModel under DigitalInformation matches MITRE's preferred name and parent."
+  },
+  {
+   "atlas_id": "AML.T0115.002",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Residual names agent-tool-definition and the definition says tools contain malicious model-visible definitions, but no AIToolDefinition proposal was filed here; add a may-create AIToolDefinition proposal."
+  },
+  {
+   "atlas_id": "AML.T0116",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "honest",
+   "note": "Agent planning loop, not an artifact act; targets come through the reconnaissance techniques it drives."
+  },
+  {
+   "atlas_id": "AML.T0117",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "honest",
+   "note": "Control-loop behavior over heterogeneous objects; no single true target."
+  },
+  {
+   "atlas_id": "AML.T0118",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Parent must be may-produce because the shared-artifact branch is not a message."
+  },
+  {
+   "atlas_id": "AML.T0118.000",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Agent-memory residual is reasonable but File/DatabaseRecord with may-* verbs is honest today."
+  },
+  {
+   "atlas_id": "AML.T0118.001",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Single row upheld."
+  },
+  {
+   "atlas_id": "AML.T0119",
+   "proposals_verdict": "n/a",
+   "event_model_verdict": "n/a",
+   "no_fit_verdict": "n/a",
+   "note": "Both rows to may-*."
+  }
+ ]
+}

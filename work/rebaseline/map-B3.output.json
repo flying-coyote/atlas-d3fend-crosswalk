@@ -1,0 +1,508 @@
+{
+ "batch_id": "batch-B3",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0118",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "exchange operational information",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Agents emit messages carrying tasking and results"
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Inter-agent messages only; no model or retrieval source needed"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0118.000",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "creating or modifying artifacts in a shared resource",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Agents write files to shared storage"
+    },
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "creating or modifying artifacts in a shared resource",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Agents update shared artifacts"
+    },
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Database",
+     "confidence": "low",
+     "evidence_quote": "message board, database, object store",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Database may be the shared resource"
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory"
+    ],
+    "why": "Shared persisted state resembles agent memory but a generic file/database fits"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0118.001",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "operational context, discoveries, objectives, tasking",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Direct agent-to-agent message"
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Direct messages only"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0119",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:File",
+     "confidence": "low",
+     "evidence_quote": "submit, publish, or modify an artifact",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary submits a crafted artifact to the pipeline"
+    },
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "confidence": "low",
+     "evidence_quote": "submit, publish, or modify an artifact",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary modifies an existing artifact"
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Generic artifact pipeline; no AI-specific object required"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0120",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Repository",
+     "confidence": "medium",
+     "evidence_quote": "repurpose AI artifact repositories",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Repository serves as C2 dead drop"
+    },
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Command",
+     "confidence": "medium",
+     "evidence_quote": "Commands, payloads, or tasking may be placed",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Tasking placed as commands in repository objects"
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Repository is the channel; stored models are incidental"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0121",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "confidence": "medium",
+     "evidence_quote": "recover or recreate tools, dependencies, configuration",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Agent recreates configuration for the lost environment"
+    },
+    {
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "confidence": "low",
+     "evidence_quote": "credentials or access paths",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Agent recovers credentials to resume access"
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory",
+     "agent-tool-definition"
+    ],
+    "why": "Externally stored operational state and recreated tools are agent memory and tool definitions"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0122",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:abuses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "confidence": "medium",
+     "evidence_quote": "exploit a software or design weakness in a service",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary exploits weakness in a remote service"
+    }
+   ],
+   "attack_inherited": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:IntranetNetworkTraffic",
+     "rationale": "Exploitation traverses the network, also true for AI services"
+    },
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:ProcessCodeSegment",
+     "rationale": "Code execution may modify process code"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Services are ordinary software; no model artifact needed"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0123",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:obfuscates",
+     "artifact_iri": "d3f:File",
+     "confidence": "high",
+     "evidence_quote": "encrypting, encoding, or otherwise obfuscating its contents",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Files are obfuscated to evade detection"
+    }
+   ],
+   "attack_inherited": [
+    {
+     "verb": "d3f:obfuscates",
+     "artifact_iri": "d3f:ExecutableFile",
+     "rationale": "Executable obfuscation applies here too"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Obfuscation of generic files and content"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0124",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "to transmit assignments, status, and results",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Orchestrator sends assignments to agents"
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-tool-definition"
+    ],
+    "why": "Orchestration allocates tools but the object acted on is messages"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0125",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:UserAccount",
+     "confidence": "high",
+     "evidence_quote": "Adversaries may create an account",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Account creation"
+    },
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:CloudUserAccount",
+     "confidence": "medium",
+     "evidence_quote": "identity providers, or individual services",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Cloud tenant and platform accounts"
+    }
+   ],
+   "attack_inherited": [
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DomainUserAccount",
+     "rationale": "Enterprise domain accounts covered"
+    },
+    {
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:LocalUserAccount",
+     "rationale": "Local system accounts covered"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Accounts only"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0126",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:copies",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "identify, retrieve, copy, or aggregate data",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Automated copying of files"
+    },
+    {
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Database",
+     "confidence": "low",
+     "evidence_quote": "repositories, databases, object stores",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Data pulled from databases"
+    }
+   ],
+   "attack_inherited": [
+    {
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "rationale": "Automated file access applies"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model",
+     "rag-data-source"
+    ],
+    "why": "Targets include models and retrieval databases, covered only generically as File/Database"
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0127",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ArchiveFile",
+     "confidence": "medium",
+     "evidence_quote": "combined into archives",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Staged data may be archived"
+    },
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "compress, encrypt, encode, split, rename",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Staged files transformed"
+    }
+   ],
+   "attack_inherited": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:File",
+     "rationale": "Staging files may be created"
+    },
+    {
+     "verb": "d3f:may-invoke",
+     "artifact_iri": "d3f:CreateFile",
+     "rationale": "Creating staging files"
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Generic staging"
+   },
+   "no_fit_rationale": null
+  }
+ ]
+}

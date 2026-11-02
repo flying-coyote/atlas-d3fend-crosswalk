@@ -1,0 +1,14 @@
+This repository's code, mappings and documentation are released under the MIT License (see LICENSE).
+
+It contains material from two MITRE projects, reproduced for the purpose of mapping between them:
+
+- MITRE ATLAS (https://github.com/mitre-atlas/atlas-data), Apache License 2.0.
+  Technique names, IDs and definition text appear in the CSV evidence_quote columns and in
+  data/develop-2026-11/atlas_members.json and work/rebaseline/*.input.json. Copyright The MITRE Corporation.
+
+- MITRE D3FEND (https://github.com/d3fend/d3fend-ontology), MIT License.
+  Class IRIs, labels and definitions appear in data/develop-2026-11/ and the snippets/*.ttl files.
+  Copyright The MITRE Corporation.
+
+MITRE ATLAS, ATT&CK and D3FEND are trademarks of The MITRE Corporation. This project is independent
+and is not endorsed by MITRE.

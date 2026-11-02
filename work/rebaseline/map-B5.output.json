@@ -1,0 +1,580 @@
+{
+ "batch_id": "batch-B5",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0137",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:queries",
+     "artifact_iri": "d3f:WebAPIResource",
+     "confidence": "low",
+     "evidence_quote": "analyzing its outputs or behavior",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Model outputs are obtained from the AI service endpoint."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "analyzing its outputs or behavior",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    },
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:accesses",
+     "evidence_quote": "data used to train or fine-tune an AI model",
+     "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Central object is a trained model and its training dataset."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.000",
+   "disposition": "needs-new-artifact",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "particular data sample was included in an AI model's training dataset",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    },
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:accesses",
+     "evidence_quote": "AI model's training dataset",
+     "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Attack queries a model to test dataset membership; no model artifact exists."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.001",
+   "disposition": "needs-new-artifact",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "Adversaries may infer sensitive global properties of the data used to train an AI model",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    },
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:accesses",
+     "evidence_quote": "global properties of the data used to train an AI model",
+     "rationale": "Training dataset whose membership/properties are inferred has no existing artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Infers training-data properties from a model; no model or dataset artifact."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.002",
+   "disposition": "needs-new-artifact",
+   "mappings": [],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "analyzing its behavior, outputs, or exposed representations",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Inversion operates on a model and its exposed outputs/gradients."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0137.003",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "partial passages, contextual cues, or repeated and varied inputs",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary-supplied prompts are digital messages sent to the model."
+    },
+    {
+     "verb": "d3f:queries",
+     "artifact_iri": "d3f:WebAPIResource",
+     "confidence": "medium",
+     "evidence_quote": "language-model queries",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Production LLM services are queried over web APIs."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "memorized by a generative AI model during training or fine-tuning",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Memorized content is recovered from a model; prompts map to DigitalMessage."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0138",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:EventLog",
+     "confidence": "high",
+     "evidence_quote": "logs, command histories, files, metadata, repository history",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Logs are altered to conceal activity."
+    },
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:CommandHistoryLog",
+     "confidence": "high",
+     "evidence_quote": "command histories",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Command histories are named targets."
+    },
+    {
+     "verb": "d3f:deletes",
+     "artifact_iri": "d3f:File",
+     "confidence": "high",
+     "evidence_quote": "delete, alter, or falsify records and artifacts",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Files and records are deleted."
+    }
+   ],
+   "attack_inherited": [
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:EventLog",
+     "rationale": "Log tampering is the technique."
+    },
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:CommandHistoryLog",
+     "rationale": "Command histories listed."
+    },
+    {
+     "verb": "d3f:deletes",
+     "artifact_iri": "d3f:File",
+     "rationale": "Deleting files listed."
+    },
+    {
+     "verb": "d3f:forges",
+     "artifact_iri": "d3f:FileSystemMetadata",
+     "rationale": "Falsifying metadata listed."
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Targets are logs, files and histories; agent transcripts are covered by EventLog/File."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0139",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:UserAccount",
+     "confidence": "medium",
+     "evidence_quote": "compromise existing accounts with services",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary takes over existing accounts."
+    },
+    {
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:AccessToken",
+     "confidence": "medium",
+     "evidence_quote": "theft of access tokens",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Token theft is a stated credential route."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Account takeover; AI service wallets are not a distinct artifact."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0140",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetNetworkTraffic",
+     "confidence": "medium",
+     "evidence_quote": "distribute coordinated AI service requests across multiple pathways",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Distributed requests are outbound traffic."
+    },
+    {
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "confidence": "medium",
+     "evidence_quote": "various service APIs",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "AI service APIs receive routed requests."
+    },
+    {
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ProxyServer",
+     "confidence": "medium",
+     "evidence_quote": "centralized routing infrastructure",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Routers/relays act as proxy infrastructure."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Network routing of requests; no AI-specific artifact needed."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0141",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Metadata",
+     "confidence": "medium",
+     "evidence_quote": "remove or replace identifying information in request metadata",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Request metadata is removed or replaced."
+    },
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "confidence": "low",
+     "evidence_quote": "before submitting requests to an AI service",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Sanitized requests leave as web traffic."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Request metadata and traffic only."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0142",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ConfigurationResource",
+     "confidence": "medium",
+     "evidence_quote": "creating or modifying event handlers, startup hooks, or associated configuration",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Hooks and configuration are modified."
+    },
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ExecutableScript",
+     "confidence": "medium",
+     "evidence_quote": "Python startup hooks may execute adversary-controlled code",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Python startup hooks are script files."
+    },
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "low",
+     "evidence_quote": "emit content that is subsequently consumed by an AI system",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Triggered code emits content for an AI system."
+    }
+   ],
+   "attack_inherited": [
+    {
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ConfigurationResource",
+     "rationale": "Hook configuration modified."
+    },
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:ExecutableScript",
+     "rationale": "Hooks are scripts."
+    },
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:ExecutableScript",
+     "rationale": "Hooks may be edited."
+    },
+    {
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ShellCommand",
+     "rationale": "Triggers run commands."
+    }
+   ],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [],
+    "why": "Persistence hooks are ordinary files and configuration."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0143",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "direct agent-to-agent communication",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Propagated instructions travel as messages."
+    },
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:File",
+     "confidence": "medium",
+     "evidence_quote": "shared documents, source-code repositories",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Instructions are copied into shared files."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "persistent agent memory",
+     "rationale": "Agent memory is a named propagation store with no artifact."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "agent-memory artifact",
+     "RAG/retrieval data source artifact"
+    ],
+    "why": "Propagation targets agent memory and retrieval systems besides messages and files."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0144",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "low",
+     "evidence_quote": "strategically selected queries",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Probe queries are messages sent to the model."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIModel",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:File",
+     "verb": "d3f:queries",
+     "evidence_quote": "analysis of model behavior or exposed information",
+     "rationale": "Trained model is the object inferred from; not Software, and File only carries it."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "machine-learning-model artifact"
+    ],
+    "why": "Recovered object is model architecture and parameters."
+   },
+   "no_fit_rationale": null
+  }
+ ]
+}

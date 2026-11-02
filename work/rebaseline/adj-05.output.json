@@ -1,0 +1,754 @@
+{
+ "unit": "ADJ-05",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0096",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R208",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0097",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R209",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WindowsRegistryKey",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R210",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ProcessEnvironmentVariable",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R211",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:MACAddress",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "other: identifier read as value (checked), not F616",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Technique reads the MAC value to detect VM vendor prefixes; identifier is the object acted on."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0098",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R212",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R213",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebFileResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Document stores are web file resources; acceptable."
+    },
+    {
+     "row_id": "R214",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CodeRepository",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R215",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Email",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0099",
+   "latest_drift_note": "v2026.10 recasts as manipulating any victim data source (databases, indexes, repos); 'placing documents in a location' text gone.",
+   "rows": [
+    {
+     "row_id": "R216",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DocumentFile",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes against develop; quote lost in latest (drift)."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0100",
+   "latest_drift_note": "v2026.10 broadens from web content to any processed artifact (website or document) and adds exfiltration; 'deceptive web content' wording gone.",
+   "rows": [
+    {
+     "row_id": "R217",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:WebResource",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R218",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:URL",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic/false: identifier or wrong class",
+     "calibration_hit": "F616",
+     "verdict": "revise",
+     "new_verb": "d3f:accesses",
+     "new_artifact_iri": "d3f:WebResource",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Agent navigates to the page; the resource is acted on, not the URL identifier"
+    },
+    {
+     "row_id": "R219",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableScript",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0101",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R220",
+     "verb": "d3f:deletes",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0102",
+   "latest_drift_note": "Typo fix only.",
+   "rows": [
+    {
+     "row_id": "R221",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Command",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R222",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0103",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R223",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:AccessControlConfiguration",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0104",
+   "latest_drift_note": "Latest is successor AML.T0115.002; text expands to registries and skill registries, quote about repositories reworded.",
+   "rows": [
+    {
+     "row_id": "R224",
+     "verb": "d3f:adds",
+     "artifact_iri": "d3f:CodeRepository",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0105",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R225",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Host",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R226",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:ApplicationConfiguration",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0106",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R227",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0107",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R228",
+     "verb": "d3f:disables",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0108",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R229",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ShellCommand",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R230",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetNetworkTraffic",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0109",
+   "latest_drift_note": "Now references Publish Poisoned AI Artifacts; core rug-pull meaning unchanged.",
+   "rows": [
+    {
+     "row_id": "R231",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0111",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R232",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:UserAccount",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R233",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: model is not Software",
+     "calibration_hit": "SOFTWARE-MODEL",
+     "verdict": "revise",
+     "new_verb": "d3f:produces",
+     "new_artifact_iri": "d3f:File",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Models/datasets/packages published are files; models are not Software per #606"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0112",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R234",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R235",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0112.000",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R236",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Credential",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R237",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0112.001",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R238",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableScript",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0113",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R239",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Process",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic: Process is the carrier of memory; no memory-content class fits better",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Acceptable; no better digest class for process memory."
+    },
+    {
+     "row_id": "R240",
+     "verb": "d3f:injects",
+     "artifact_iri": "d3f:ExecutableScript",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0114",
+   "latest_drift_note": "No change.",
+   "rows": [
+    {
+     "row_id": "R241",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Browser",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R242",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:URL",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic/false: identifier or wrong class",
+     "calibration_hit": "F616",
+     "verdict": "revise",
+     "new_verb": "d3f:accesses",
+     "new_artifact_iri": "d3f:WebResource",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "AI assistant fetches the resource the URL points at; assert resource, not identifier"
+    },
+    {
+     "row_id": "R243",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    },
+    {
+     "row_id": "R244",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:Command",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "Passes; target and verb fit the definition."
+    }
+   ]
+  }
+ ]
+}

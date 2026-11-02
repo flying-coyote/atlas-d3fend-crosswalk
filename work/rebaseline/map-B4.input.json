@@ -1,0 +1,133 @@
+{
+ "batch_id": "batch-B4",
+ "annex": "v2026.10",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0128",
+   "label": "Compromise Infrastructure",
+   "definition": "Adversaries may compromise third-party infrastructure and repurpose it to support attacks against AI systems. Rather than buying, leasing, registering, or otherwise legitimately acquiring a resource, the adversary gains unauthorized control of infrastructure owned or operated by another party.\n\nCompromised infrastructure may include physical or cloud servers, domains, network devices, third-party web and DNS services, software or artifact repositories, development workspaces, compute services, and other externally hosted resources.\n\nIn operations involving AI systems, adversaries may compromise infrastructure used for model development, artifact hosting, dataset processing, evaluation, inference, agent tooling, or AI operations. They may repurpose this infrastructure to host malicious artifacts, stage payloads, run tools or agents, relay traffic, capture credentials, provide command and control, process collected data, or launch attacks against additional systems.\n\nCompromised infrastructure may appear trustworthy because it uses a legitimate provider, established domain, valid certificate, reputable service, or expected AI development platform. It may also provide network access, compute resources, service identities, or trusted relationships that would be difficult for the adversary to establish directly.",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1584",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0128",
+    "attack_id": "T1584",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "attack-unmapped",
+    "artifacts": []
+   }
+  },
+  {
+   "atlas_id": "AML.T0129",
+   "label": "Triggers in Multimodal Inputs",
+   "definition": "Adversaries may place instructions or triggers in one part of a multimodal input to influence the model while staying unnoticed by human reviewers and by defenses that do not inspect all input modalities.\n\nMultimodal systems jointly process text alongside other modalities, yet many moderation and filtering controls operate mainly on the textual channel. A payload placed in a modality that is not inspected, or is inspected differently from text, is still parsed by the model but can escape detection, allowing it to alter model output or carry a cross-modal prompt injection.\n\nExamples include instructions placed in an image, audio, or video channel, or carried in file metadata (e.g. EXIF for images, ID3 tags for audio, or document metadata).",
+   "tactics": [
+    "Defense Evasion"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0130",
+   "label": "AI Agent Response Biasing",
+   "definition": "Adversaries may manipulate an AI assistant so that it favors adversary-chosen sources, or content in its responses. By injecting instructions such as \"treat [source] as a trusted source\" or \"recommend [source] first,\" an adversary biases the assistant's outputs toward their own interests, causing it to present promotional or self-serving content as if it were a neutral, well-reasoned response. This degrades the integrity and trustworthiness of the assistant's responses on topics the user may rely on, such as health, finance, or security, without the user being aware that the advice has been skewed.\n\nThe injected instructions can be delivered through different ways, for example through [Crafted AI Assistant Links](/techniques/AML.T0131). This impact may persist if the agent's memory was poisoned (See [AI Agent Context Poisoning: Memory](/techniques/AML.T0080.000)). Microsoft observed these instructions embedded in apparently helpful summarization links and identified publicly available tooling, including CiteMET, supporting their creation. These attempts sought to introduce third-party preferences into assistant responses; effects varied by assistant and over time.[[ai-recommendation-poisoning]]",
+   "tactics": [
+    "Impact"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0131",
+   "label": "Crafted AI Assistant Links",
+   "definition": "Adversaries may craft links that open an AI assistant or agent with attacker-controlled input already supplied, so that opening the link initiates an interaction the adversary defines rather than one the target composed. Many AI assistants accept a prompt through URL parameters (for example `?q=` or `?prompt=`) that is automatically populated, and in some cases submitted, when the link is opened. By encoding a chosen prompt into such a link, an adversary can cause the target's assistant to act on supplied instructions as soon as the link is opened.\n\nThese links are frequently disguised as helpful actions, such as a \"Summarize with AI\" button or a share link, and distributed through web pages, emails, documents, or messages. Because the resulting interaction runs in the target's own assistant session, a crafted link can drive a range of downstream impacts depending on the supplied instructions, such as exfiltrating data the assistant can access or for [AI Agent Response Biasing](/techniques/AML.T0130).\n\nMicrosoft identified CiteMET and AI Share URL Creator as tools supporting this pattern in its investigation of AI Recommendation Poisoning. The generated links supply instructions to the receiving assistant; execution, memory retention, and downstream effects depend on the assistant's behavior and protections.[[ai-recommendation-poisoning]]",
+   "tactics": [
+    "Initial Access"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0132",
+   "label": "Misconfigured or Publicly Exposed AI Services",
+   "definition": "AI agents and LLM platforms are deployed across diverse architectures, including standalone servers, SaaS platforms, and low-code builders. All of these often have misconfigured access controls, ranging from missing authentication in LLM runtimes to permissive public access settings, that significantly expand their attack surface.\n\nAI agent's security posture affects how attackers are able to explore which agentic attack surface is available to them and directly either expands or limits an adversary's ability to discover and interact with a target's AI agents. For example, one internet-facing AI service could be more easily discoverable by any unauthenticated user, while another may require compromised credentials to even be discovered.\n\nAdversaries may discover and interact with AI agents and LLM services as unauthenticated users via a combination of various OSINT and active scanning methods. These could include using search engines to discover accessible agentic deployments (See [Search Open Technical Databases](/techniques/AML.T0000)), search backlinks which could indicate existing or open agents which have been embedded to frontends (See [Search Open Websites/Domains](/techniques/AML.T0095)), or directly scanning a target's AI infrastructure (See [Active Scanning](/techniques/AML.T0006)).",
+   "tactics": [
+    "Initial Access"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0133",
+   "label": "Discover AI Agent Runtime Capabilities",
+   "definition": "Adversaries may interact with an AI agent at runtime to reveal the capabilities available to it, without requiring access to its underlying configuration. Direct interaction with the agent can surface its registered tools and their accepted parameters, the actions it can take, the resources it can reach, and the identity and permission scope it acts under. Capabilities can also be inferred indirectly by issuing varied requests and observing which succeeded, failed, or refused.\n\nAI agents are often interconnected with enterprise resources, tools and databases, or embedded within SaaS platforms and have permissions to act on behalf of users in order to facilitate functionality. Once adversaries identify a functional agent that they have access to, they could map the attack surface within that agent, by testing its functionality, enumerating tools, capabilities, knowledge, and embedded credentials and permissions.\n\nThis mapping process often reveals the AI agent's full toolset and configuration details and exposes additional exploitation, as enabled by [AI Agent Tool Invocation](/techniques/AML.T0053). The resulting intelligence facilitates follow-on exploitation, including [Initial Access](/tactics/AML.TA0004), [Persistence](/tactics/AML.TA0006), [Privilege Escalation](/tactics/AML.TA0012), and [Exfiltration](/tactics/AML.TA0010).",
+   "tactics": [
+    "Discovery"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0134",
+   "label": "AI Targeted Cloaking",
+   "definition": "Adversaries may selectively deliver malicious or manipulated content to AI systems, while presenting different benign content to human users, web crawlers, or security detection mechanisms. They may identify AI browsers or agents via user-agent strings and condition the server response so that AI-based clients receive prompt injections or misleading content.\n\nPreventing human visitors, conventional web crawlers, and security tools from observing the same content allows adversaries to make malicious input more difficult to detect. [AI Targeted Cloaking](/techniques/AML.T0134) may be combined with [Drive-by Compromise](/techniques/AML.T0078) to deliver an [LLM Prompt Injection](/techniques/AML.T0051).",
+   "tactics": [
+    "Defense Evasion"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0135",
+   "label": "Outputs from AI Models",
+   "definition": "Adversaries may gather, retain, and organize outputs from an AI model or service as material for subsequent adversarial operations. Systematic selection and aggregation of responses can produce datasets or observations useful for analyzing the target, reproducing its behavior, or developing further attacks.\n\nCollected material may include predictions and scores, embeddings or other exposed feature representations, generated content, reasoning traces, grades or preference judgments, and model-generated plans or tool calls. Outputs may be acquired directly from inference responses or indirectly from product-generated artifacts and records in which they are embedded or retained.\n\n[Discover AI Model Outputs](/techniques/AML.T0063) may help adversaries identify available outputs and useful signals before collection. Adversaries may perform [LLM Prompt Crafting](/techniques/AML.T0065) to elicit the outputs they require for follow-on actions. The resulting material may support collection of [Training Data Information from AI Models](/techniques/AML.T0137), [Recover AI Model Internals](/techniques/AML.T0144), or [Replicate Behavior from Model Outputs](/techniques/AML.T0005.001). Adversaries may also use [Centralized AI Service Request Routing](/techniques/AML.T0140), [Indicator Removal](/techniques/AML.T0138), and [AI Service Request Metadata Sanitization](/techniques/AML.T0141) to obscure coordinated collection activity.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0136",
+   "label": "Exfiltration via AI User Interface",
+   "definition": "Adversaries exfiltrate information through an AI system's user-facing outputs. Information may be disclosed in conversational responses, generated documents, previews, or other content presented through the application. The application may expose information available to a victim-controlled AI service or deliver information gathered from other victim systems.\n\nAdversaries may direct an AI system to present sensitive information in responses or as downloadable artifacts. The application's user interface serves as the transfer channel through which adversaries receive the information.\n\nTransferred information may include [Data from AI Services](/techniques/AML.T0085) or [Outputs from AI Models](/techniques/AML.T0135).",
+   "tactics": [
+    "Exfiltration"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0145",
+   "label": "Poison AI Agent Learning Environment",
+   "definition": "Adversaries may manipulate an environment in which an AI agent interacts so that observations, feedback, rewards, actions, or resulting interactions are incorporated into model training to cause persistent changes to the behavior of an AI system. This allows adversary's influence to persist beyond the original interaction and affect subsequent tasks.\n\nAn adversary may alter webpages, tool or API responses, elements in simulated environments, task descriptions, reward signals, evaluator outputs, or other environmental content used during AI agent learning or adaptation. The manipulated interactions may be incorporated into model fine-tuning, reinforcement learning, synthetic training corpora, agent memories, other  persistent components.\n\n[Poison AI Agent Learning Environment](/techniques/AML.T0145) targets the process that generates or selects learning experience, without requiring direct adversarial access to training datasets, model parameters, or stored agent artifacts. The resulting experience may appear legitimate because it was produced by an authorized agent operating through an expected interface. Once introduced, the adversary's influence may remain effective even after the manipulated environmental content is removed or is no longer encountered.\n\nAn adversary may use this technique to introduce backdoors, increase compliance with malicious instructions, distort policies or preferences, teach unsafe tool use, manipulate reward-seeking behavior. The malicious behavior may be activated later by an environmental trigger or during ordinary agent operation.",
+   "tactics": [
+    "Persistence"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  }
+ ]
+}

@@ -1,0 +1,271 @@
+{
+ "applied": [
+  {
+   "row_id": "AML.T0007|mapping|2",
+   "from": "d3f:Repository",
+   "to": "d3f:SoftwareRepository"
+  },
+  {
+   "row_id": "AML.T0008|mapping|3",
+   "from": "d3f:ServiceApplication",
+   "to": "d3f:WebApplication"
+  },
+  {
+   "row_id": "AML.T0010.000|mapping|0",
+   "from": "d3f:HardwareDevice",
+   "to": "d3f:GraphicsProcessingUnit"
+  },
+  {
+   "row_id": "AML.T0016.000|mapping|0",
+   "from": "d3f:Software",
+   "to": "d3f:SoftwareLibrary"
+  },
+  {
+   "row_id": "AML.T0017.000|mapping|1",
+   "from": "d3f:Software",
+   "to": "d3f:SoftwareLibrary"
+  },
+  {
+   "row_id": "AML.T0051|mapping|0",
+   "from": "d3f:Command",
+   "to": "d3f:ShellCommand"
+  },
+  {
+   "row_id": "AML.T0052|inherited|1",
+   "from": "d3f:File",
+   "to": "d3f:EmailAttachment"
+  },
+  {
+   "row_id": "AML.T0055|inherited|6",
+   "from": "d3f:SystemConfigurationDatabase",
+   "to": "d3f:WindowsRegistry"
+  },
+  {
+   "row_id": "AML.T0069|mapping|0",
+   "from": "d3f:ConfigurationFile",
+   "to": "d3f:ApplicationConfigurationFile"
+  },
+  {
+   "row_id": "AML.T0078|inherited|0",
+   "from": "d3f:OutboundInternetNetworkTraffic",
+   "to": "d3f:OutboundInternetWebTraffic"
+  },
+  {
+   "row_id": "AML.T0091.000|mapping|1",
+   "from": "d3f:UserAccount",
+   "to": "d3f:CloudUserAccount"
+  },
+  {
+   "row_id": "AML.T0091.000|inherited|0",
+   "from": "d3f:AccessToken",
+   "to": "d3f:WebAccessToken"
+  },
+  {
+   "row_id": "AML.T0091.000|inherited|2",
+   "from": "d3f:NetworkTraffic",
+   "to": "d3f:WebNetworkTraffic"
+  },
+  {
+   "row_id": "AML.T0093|mapping|1",
+   "from": "d3f:File",
+   "to": "d3f:DocumentFile"
+  },
+  {
+   "row_id": "AML.T0095|mapping|1",
+   "from": "d3f:Software",
+   "to": "d3f:Application"
+  }
+ ],
+ "rejected": [
+  {
+   "row_id": "AML.T0000.001|mapping|0",
+   "suggestion": "d3f:DocumentFile (already carried by AML.T0000.001|mapping|1)",
+   "reason": "d3f:DocumentFile is not below d3f:Repository in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0002|mapping|2",
+   "suggestion": "d3f:Repository",
+   "reason": "d3f:Repository is not below d3f:SoftwareRepository in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0008|mapping|1",
+   "suggestion": "d3f:DomainRegistration",
+   "reason": "d3f:DomainRegistration is not below d3f:DomainName in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0010.003|mapping|0",
+   "suggestion": "d3f:DeserializationFunction",
+   "reason": "d3f:DeserializationFunction is not below d3f:ExecutableFile in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0012|mapping|0",
+   "suggestion": "d3f:Credential (safer parent if AccessToken's session semantics are enforced)",
+   "reason": "d3f:Credential is not below d3f:AccessToken in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0034|mapping|0",
+   "suggestion": "d3f:InboundNetworkTraffic",
+   "reason": "d3f:InboundNetworkTraffic is not below d3f:InboundInternetWebTraffic in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0035|proposal|0",
+   "suggestion": "d3f:Software (parent used by AML.T0040|proposal|0 \u2014 reconcile to one)",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0035|proposal|1",
+   "suggestion": "d3f:Database",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0036|mapping|1",
+   "suggestion": "d3f:WebApplication",
+   "reason": "d3f:WebApplication is not below d3f:CollaborativeSoftware in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0043|mapping|0",
+   "suggestion": "new class for AI model input/inference data (no existing D3FEND class covers non-media model inputs)",
+   "reason": "no IRI named"
+  },
+  {
+   "row_id": "AML.T0043.001|mapping|0",
+   "suggestion": "d3f:WebAPIResource",
+   "reason": "d3f:WebAPIResource is not below d3f:ServiceApplication in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0043.003|mapping|0",
+   "suggestion": "new class for AI model input/inference data",
+   "reason": "no IRI named"
+  },
+  {
+   "row_id": "AML.T0048.004|proposal|1",
+   "suggestion": "d3f:File (as parent, not d3f:DatabaseFile)",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0060|mapping|0",
+   "suggestion": "d3f:SoftwarePackage",
+   "reason": "d3f:SoftwarePackage is not below d3f:Software in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0062|proposal|0",
+   "suggestion": "proposed MachineLearningModel (as parent, in place of d3f:Software)",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0064|proposal|0",
+   "suggestion": "d3f:Repository subclass RAGDataSource retained, but with an enumerates/identifies verb rather than d3f:accesses",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0068|proposal|0",
+   "suggestion": "single reconciled Prompt class (one parent \u2014 reconcile against the d3f:Command parent proposed at AML.T0065)",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0069.001|proposal|0",
+   "suggestion": "d3f:Identifier (existing) \u2014 or a single merged LLM-control-token class shared with the PromptDelimiter proposal at AML.T0069.000",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0071|mapping|1",
+   "suggestion": "d3f:DigitalText",
+   "reason": "d3f:DigitalText is not below d3f:DigitalDocument in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0072|mapping|1",
+   "suggestion": "d3f:OutboundNetworkTraffic",
+   "reason": "d3f:OutboundNetworkTraffic is not below d3f:OutboundInternetNetworkTraffic in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0073|mapping|0",
+   "suggestion": "d3f:DigitalIdentity",
+   "reason": "d3f:DigitalIdentity is not below d3f:Email in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0079|mapping|0",
+   "suggestion": "d3f:Repository",
+   "reason": "d3f:Repository is not below d3f:CodeRepository in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0079|proposal|1",
+   "suggestion": "d3f:SoftwarePackage (existing) carries the staging relation today",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0080.001|proposal|0",
+   "suggestion": "d3f:Session (unevaluated by the mapper; the correct nearest-existing to argue against)",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0090|inherited|5",
+   "suggestion": "d3f:SystemPasswordDatabase",
+   "reason": "d3f:SystemPasswordDatabase is not below d3f:OperatingSystemFile in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0090|inherited|7",
+   "suggestion": "d3f:In-memoryPasswordStore",
+   "reason": "d3f:In-memoryPasswordStore is not below d3f:Process in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0011.002|proposal|0",
+   "suggestion": "d3f:WebAPIResource (remote MCP) / d3f:Subroutine (local tool) \u2014 neither was considered",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0084.003|mapping|0",
+   "suggestion": "d3f:ApplicationConfiguration",
+   "reason": "d3f:ApplicationConfiguration is not below d3f:ApplicationConfigurationFile in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0084.003|mapping|3",
+   "suggestion": "d3f:ProcessStartFunction",
+   "reason": "d3f:ProcessStartFunction is not below d3f:OSAPIExec in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0096|mapping|1",
+   "suggestion": "d3f:WebNetworkTraffic",
+   "reason": "d3f:WebNetworkTraffic is not below d3f:OutboundInternetWebTraffic in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0097|mapping|3",
+   "suggestion": "d3f:GetRunningProcesses with d3f:may-invoke, or d3f:Process with d3f:enumerates",
+   "reason": "same as current target"
+  },
+  {
+   "row_id": "AML.T0098|mapping|1",
+   "suggestion": "d3f:WebAPIResource or d3f:DocumentFile",
+   "reason": "d3f:WebAPIResource is not below d3f:WebFileResource in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0100|mapping|1",
+   "suggestion": "d3f:WebResource (already asserted in mapping|0)",
+   "reason": "d3f:WebResource is not below d3f:URL in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0100|mapping|2",
+   "suggestion": "d3f:ShellCommand",
+   "reason": "d3f:ShellCommand is not below d3f:ExecutableScript in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0104|mapping|1",
+   "suggestion": "d3f:SoftwarePackage",
+   "reason": "d3f:SoftwarePackage is not below d3f:SoftwareRepository in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0104|proposal|0",
+   "suggestion": "d3f:SoftwarePackage",
+   "reason": "row is a new-artifact proposal"
+  },
+  {
+   "row_id": "AML.T0109|mapping|0",
+   "suggestion": "d3f:SoftwarePackage",
+   "reason": "d3f:SoftwarePackage is not below d3f:Software in the taxonomy"
+  },
+  {
+   "row_id": "AML.T0112.000|mapping|2",
+   "suggestion": "d3f:Command",
+   "reason": "d3f:Command is not below d3f:ExecutableFile in the taxonomy"
+  }
+ ]
+}

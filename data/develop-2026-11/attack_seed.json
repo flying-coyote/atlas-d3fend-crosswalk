@@ -1,0 +1,357 @@
+{
+ "count": 12,
+ "seeded": 7,
+ "seeds": [
+  {
+   "atlas_id": "AML.T0000.003",
+   "attack_id": "T1596.005",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0016.003",
+   "attack_id": "T1588.005",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0017.003",
+   "attack_id": "T1587.001",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0122",
+   "attack_id": "T1210",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:IntranetNetworkTraffic",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:ProcessCodeSegment",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:ProcessSegment",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:StackFrame",
+     "verbs": [
+      "d3f:may-modify"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0123",
+   "attack_id": "T1027",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:DigitalArtifact",
+     "verbs": [
+      "d3f:hides"
+     ]
+    },
+    {
+     "iri": "d3f:ExecutableBinary",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:ExecutableFile",
+     "verbs": [
+      "d3f:creates",
+      "d3f:obfuscates"
+     ]
+    },
+    {
+     "iri": "d3f:JavaScriptBlob",
+     "verbs": [
+      "d3f:creates"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0125",
+   "attack_id": "T1136",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CloudUserAccount",
+     "verbs": [
+      "d3f:creates"
+     ]
+    },
+    {
+     "iri": "d3f:DomainUserAccount",
+     "verbs": [
+      "d3f:creates"
+     ]
+    },
+    {
+     "iri": "d3f:LocalUserAccount",
+     "verbs": [
+      "d3f:creates"
+     ]
+    },
+    {
+     "iri": "d3f:UserAccount",
+     "verbs": [
+      "d3f:creates"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0126",
+   "attack_id": "T1119",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:File",
+     "verbs": [
+      "d3f:accesses"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0127",
+   "attack_id": "T1074",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CreateFile",
+     "verbs": [
+      "d3f:may-invoke"
+     ]
+    },
+    {
+     "iri": "d3f:File",
+     "verbs": [
+      "d3f:may-create"
+     ]
+    },
+    {
+     "iri": "d3f:NetworkResource",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:Resource",
+     "verbs": [
+      "d3f:reads"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0128",
+   "attack_id": "T1584",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0138",
+   "attack_id": "T1070",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:CommandHistoryLog",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:EventLog",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:File",
+     "verbs": [
+      "d3f:deletes",
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:FileSystemMetadata",
+     "verbs": [
+      "d3f:forges"
+     ]
+    },
+    {
+     "iri": "d3f:NetworkFileShareResource",
+     "verbs": [
+      "d3f:unmounts"
+     ]
+    },
+    {
+     "iri": "d3f:OperatingSystemLogFile",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0139",
+   "attack_id": "T1586",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "attack-unmapped",
+   "artifacts": []
+  },
+  {
+   "atlas_id": "AML.T0142",
+   "attack_id": "T1546",
+   "attack_class_on_develop": true,
+   "attack_deprecated": false,
+   "seed_status": "seeded",
+   "artifacts": [
+    {
+     "iri": "d3f:ConfigurationResource",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:CreateProcess",
+     "verbs": [
+      "d3f:invokes"
+     ]
+    },
+    {
+     "iri": "d3f:EventLog",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:ExecutableBinary",
+     "verbs": [
+      "d3f:loads",
+      "d3f:may-modify",
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:ExecutableFile",
+     "verbs": [
+      "d3f:creates"
+     ]
+    },
+    {
+     "iri": "d3f:ExecutableScript",
+     "verbs": [
+      "d3f:may-create",
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:IntranetAdministrativeNetworkTraffic",
+     "verbs": [
+      "d3f:may-create",
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:PowerShellProfileScript",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:Process",
+     "verbs": [
+      "d3f:produces"
+     ]
+    },
+    {
+     "iri": "d3f:PropertyListFile",
+     "verbs": [
+      "d3f:may-create",
+      "d3f:may-modify"
+     ]
+    },
+    {
+     "iri": "d3f:SharedLibraryFile",
+     "verbs": [
+      "d3f:loads"
+     ]
+    },
+    {
+     "iri": "d3f:ShellCommand",
+     "verbs": [
+      "d3f:executes"
+     ]
+    },
+    {
+     "iri": "d3f:Shim",
+     "verbs": [
+      "d3f:creates"
+     ]
+    },
+    {
+     "iri": "d3f:ShimDatabase",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:SystemConfigurationDatabase",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:SystemConfigurationDatabaseRecord",
+     "verbs": [
+      "d3f:may-modify",
+      "d3f:modifies"
+     ]
+    },
+    {
+     "iri": "d3f:UserInitConfigurationFile",
+     "verbs": [
+      "d3f:modifies"
+     ]
+    }
+   ]
+  }
+ ]
+}

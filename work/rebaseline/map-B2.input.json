@@ -1,0 +1,138 @@
+{
+ "batch_id": "batch-B2",
+ "annex": "v2026.10",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0085.002",
+   "label": "Conversation Context and Memory",
+   "definition": "Adversaries may collect sensitive information from an AI service's current or stored interactions and memory. This may include user messages, model responses, conversation summaries, and retained user facts and preferences.\n\nAdversaries may induce the service to reveal information available in its current context or retrieve information retained across sessions. Collection may also occur through interfaces that expose conversation histories or memory records. The information may reveal private user activity, organizational information, or details useful for subsequent adversarial operations.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": "AML.T0085",
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0085.003",
+   "label": "System Instructions",
+   "definition": "Adversaries may collect non-public instructions used to configure the behavior of an AI model or agent. These may include system prompts or application-specific rules governing tasks, tool use, response formatting, and handling of sensitive information.\n\nAdversaries may request that the service reproduce, summarize, or transform its instructions, or use [LLM Prompt Injection](/techniques/AML.T0051) or [LLM Jailbreak](/techniques/AML.T0054) to induce disclosure. Collection may reveal complete instructions or selected portions across multiple responses.\n\nCollected instructions may expose proprietary application logic, internal workflows, tool descriptions, or sensitive information embedded in the instructions. This information may support replication of application behavior or help adversaries tailor subsequent attacks.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": "AML.T0085",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0110.000",
+   "label": "Definition and Instructions",
+   "definition": "Adversaries may poison the model-visible definition or operational instructions of an AI agent tool to manipulate how an agent interprets, selects, or invokes the tool. The poisoned content may be contained in tool descriptions, docstrings, parameter names, help text, input or output schemas, annotations, examples, manifests, skill instruction files, or other static content used to explain a tool's capabilities to the model.\n\nMalicious instructions in this layer may direct the agent to collect additional data, populate hidden or unnecessary parameters, conceal actions from the user, or invoke other tools. Because an agent may receive a more complete representation of a tool than is shown in the user interface, the model may process malicious instructions that are invisible or only partially visible to a human reviewer[[invariant-tool-poisoning]].\n\nDefinition poisoning may also be used for tool shadowing, in which the definition of one malicious tool contains instructions that alter how the agent selects or invokes another trusted tool. The poisoned tool may not need to be invoked for its definition to influence the agent if definitions from multiple connected tools are included in the same model context[[invariant-tool-poisoning]].",
+   "tactics": [
+    "Persistence"
+   ],
+   "parent_technique": "AML.T0110",
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0110.001",
+   "label": "Implementation",
+   "definition": "Adversaries may poison the executable implementation of an AI agent tool so that normal tool invocation produces unauthorized behavior or hidden side effects. The tool may continue to provide its represented functionality while also accessing additional data, modifying requests, changing recipients or destinations, executing unauthorized commands, weakening security controls, or performing covert data exfiltration.\n\nImplementation poisoning does not require the model to interpret or follow malicious instructions. The adversarial effect is produced by executable logic when the agent or user invokes the tool. For example, a poisoned email tool may send the requested message while silently adding an adversary-controlled blind-copy recipient. A file-processing tool may return the requested result while also transmitting the source file to an external service.\n\nImplementation poisoning may be introduced before publication, through compromise of a tool's source repository or build process, or through a malicious update after users have adopted a benign version. Installed copies may continue to exhibit the poisoned behavior even after the malicious package or remote listing is removed[[koi-postmark]].",
+   "tactics": [
+    "Persistence"
+   ],
+   "parent_technique": "AML.T0110",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0110.002",
+   "label": "Runtime Response",
+   "definition": "Adversaries may poison the runtime response channel of a malicious or compromised AI agent tool by deliberately returning content intended to influence the model's subsequent reasoning, decisions, or actions. Poisoned responses may contain malicious instructions, deceptive data, fabricated errors, embedded resources, or other content designed to be treated as trusted context after an approved tool invocation.\n\nBecause tool responses are commonly incorporated into the model's context, an adversary may use them to direct the agent to invoke additional tools, access sensitive information, alter an ongoing workflow, or transmit data to an adversary-controlled destination. Poisoned instructions may be mixed with legitimate results so that the tool appears to operate normally. Responses may use structured or unstructured content, including text, images, resource links, embedded resources, or schema-conforming fields [[mcp-tools]][[owasp-tool-poisoning]].",
+   "tactics": [
+    "Persistence"
+   ],
+   "parent_technique": "AML.T0110",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0115",
+   "label": "Publish Poisoned AI Artifacts",
+   "definition": "Adversaries may create or modify AI artifacts and publish them through public or shared distribution channels to facilitate compromise of downstream AI systems. Poisoned AI artifacts may include datasets, models, and AI agent tools containing malicious content, behaviors, code, or configurations.\n\nAdversaries may publish novel artifacts or malicious variants of legitimate artifacts through dataset or model repositories, package registries, source code repositories, tool hubs, or remotely hosted services. Victims may subsequently acquire and integrate these artifacts through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0115.000",
+   "label": "Datasets",
+   "definition": "Adversaries may publish poisoned datasets intended for training or fine-tuning AI models. The dataset may be newly created or a modified variant of a legitimate dataset and may contain manipulated samples, labels, annotations, or metadata.\n\nAdversaries may distribute poisoned datasets through dataset repositories, code repositories, file-sharing services, or compromised data sources. A victim that incorporates the dataset into a training pipeline may be affected by [Training Data Poisoning](/techniques/AML.T0020), potentially through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0115",
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0115.001",
+   "label": "Models",
+   "definition": "Adversaries may publish poisoned AI models through model registries, code repositories, or other model distribution channels. The model may be newly created or a modified variant of a legitimate model and may contain manipulated weights, configurations, architecture, serialized code, or other components that produce malicious behavior or execute malicious code.\n\nVictims may subsequently download and integrate the model through [Supply Chain Compromise](/techniques/AML.T0010).",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0115",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0115.002",
+   "label": "AI Agent Tools",
+   "definition": "Adversaries may create and publish poisoned AI agent tools. Poisoned tools may contain malicious model-visible definitions or instructions, hidden executable behavior, or runtime responses designed to manipulate an AI agent. Tools may be published through source code repositories, package registries, agent tool or skill registries, or adversary-controlled remote services. The tool may be newly created or a modified variant of a legitimate tool and may produce malicious behavior when selected, installed, or invoked by a victim's AI agent.\n\nAdversaries may distribute poisoned tools through open-source version control repositories (e.g. GitHub, GitLab), package registries (e.g. npm), or to repositories specifically designed for sharing tools (e.g. OpenClaw Hub). These registries may be largely unregulated and may contain many poisoned tools [[opensourcemalware]]. Tools may also be published as remotely hosted servers [[mcpservers]].",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0115",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0116",
+   "label": "Autonomous Reconnaissance",
+   "definition": "Adversaries may use autonomous AI agents to conduct [Reconnaissance](/tactics/AML.TA0002) activities. Given an objective, target, or partial lead, an agent may autonomously determine what information to obtain and how to investigate it. It may interpret observations, identify gaps in its understanding of the externally observable attack surface, and select subsequent reconnaissance actions without a human specifying each investigative step.\n\nThe agent may formulate investigative questions or hypotheses, select sources and approaches for addressing them, and update its understanding as new information is obtained. Findings may generate additional reconnaissance objectives or change the scope, depth, or direction of the investigation. This creates a recursive action-observation process in which reconnaissance results influence what the agent investigates next rather than merely supplying output from a predefined procedure.\n\nThe agent may correlate information across public sources and externally accessible services, prioritize promising systems, investigate suspected vulnerabilities, abandon unsuccessful approaches, or select alternative methods. It may also expand or substitute targets based on discovered names, infrastructure, or contextual relationships and independently reassess whether a system remains relevant or in scope. Incorrect assumptions may cause unrelated or unauthorized systems to be pursued, while successful scope recognition may cause the agent to stop or redirect its activity.\n\nAutonomous AI agents can sustain reconnaissance across long-running operations, reason over multiple information sources, and test many alternative paths at a speed and volume difficult for human operators to maintain.",
+   "tactics": [
+    "Reconnaissance"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0117",
+   "label": "Autonomous Attack-Path Adaptation",
+   "definition": "Adversaries may use an AI agent to autonomously construct and repeatedly revise an attack path toward an adversary-defined objective. Given a high-level objective, the system may derive intermediate objectives, identify prerequisites, and compare candidate paths, and incorporate observations from previous actions to adaptively sequence techniques without a human directing each step.\n\nAutonomous AI agents may also exhibit this behavior while pursuing an objective provided for a legitimate, benign, or authorized purpose when the intermediate objectives or methods selected by the system cross an authorization, trust, control, or safety boundary and result in attempted or realized harmful cyber activity.\n\nThrough repeated observation-decision-action cycles, the system may interpret command output, errors, defensive responses, changes in access, and newly discovered information. It may use those observations to reprioritize actions, replace an intermediate objective, abandon an unproductive branch, discard findings invalidated by additional evidence, or pursue an alternative path.\n\nAn autonomous AI system may generate enabling objectives whose primary purpose is to increase its future operational capability rather than directly accomplishing the assigned objective. These objectives may include acquiring new exploits (See [Autonomous Exploit Development](/techniques/AML.T0017.001)), additional authorities, identities, execution environments, communication paths, tools, or trust relationships that expand the set of actions available to subsequent planning cycles. Newly acquired capabilities may themselves become prerequisites for additional enabling objectives, resulting in progressive expansion of the agent's operational reach over the course of an operation.\n\nAttack-path replanning may occur within one agent run or emerge across multiple independent agents. Agents may communicate persistent, shared artifacts (See [Autonomous AI Agent Communication: Communication via Shared Artifacts](/techniques/AML.T0118.000)), allowing discoveries, requests, capabilities, constraints, task state, and results produced by one agent to affect the subsequent path selected by another. Participating agents may adopt peer requests, divide work voluntarily, reuse successful methods, continue incomplete activity, or redirect their local paths without a centralized planner, shared context window, or complete view of the broader operation.\n\nHuman involvement does not preclude autonomous attack-path replanning. A human operator, user, evaluator, or workflow may select the target, define the objective, establish constraints, provide capabilities, or approve consequential transitions.\n\n[Autonomous Attack-Path Adaptation](/techniques/AML.T0117) and [Autonomous Attack Orchestration](/techniques/AML.T0124) may occur together but describe different control functions. Attack-path adaptation captures how evidence changes the selected path. Attack orchestration captures how work is allocated, coordinated, validated, and redirected across agents.",
+   "tactics": [
+    "AI Attack Adaptation"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  }
+ ]
+}

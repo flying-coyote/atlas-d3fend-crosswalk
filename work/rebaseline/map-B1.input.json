@@ -1,0 +1,160 @@
+{
+ "batch_id": "batch-B1",
+ "annex": "v2026.10",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0000.003",
+   "label": "Scan Databases",
+   "definition": "Adversaries may search public internet-scan services to identify a victim's exposed AI infrastructure. These services, such as Shodan and Censys, continuously scan the internet and publish the active IP addresses, hostnames, open ports, and service banners, which adversaries can query without interacting with the target directly. \n\nInformation gathered this way may also reveal candidates for follow-on [Active Scanning](/techniques/AML.T0006) to confirm that services remain reachable, to probe for misconfigurations or unauthorized endpoints. It may also inform later initial access attempts such as [Exploit Public-Facing Application](/techniques/AML.T0049). Unlike [Active Scanning](/techniques/AML.T0006), this technique relies on third-party scan data and involves no direct interaction with the victim system.",
+   "tactics": [
+    "Reconnaissance"
+   ],
+   "parent_technique": "AML.T0000",
+   "attack_reference": "T1596.005",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0000.003",
+    "attack_id": "T1596.005",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "attack-unmapped",
+    "artifacts": []
+   }
+  },
+  {
+   "atlas_id": "AML.T0006.000",
+   "label": "Enumerate Hosted AI Resources",
+   "definition": "Adversaries may directly probe an agentic or SaaS platform to enumerate the resources a specific victim has deployed on it. Platforms frequently host AI agents behind predictable URL structures derived from identifiers such as environment, tenant, resource-group, or agent names, and default out-of-the-box deployment configurations keep these conventions consistent across victims. Adversaries can learn these conventions from public sources such as vendor documentation, code repositories and actual hosted resources, then fuzz or brute-force the derived namespace to discover live AI agents, endpoints, and associated metadata. Discovered resources can be used to identify targets for further access, collection, or attack adaptation.",
+   "tactics": [
+    "Reconnaissance"
+   ],
+   "parent_technique": "AML.T0006",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0006.001",
+   "label": "Query Platform Metadata APIs",
+   "definition": "Adversaries may query documented or undocumented APIs in agentic SaaS hosting platforms to uncover agentic targets. SaaS and agentic platforms can expose provider control-plane or identity APIs that return tenant, environment, or deployment information IDs, including for resources that are misconfigured or unintentionally accessible by unauthenticated users. \n\nAttackers have been seen abusing this type of functionality to perform information gathering on SaaS platforms, for example via AADInternals' OSINT page, an OSINT online tool showcasing an undocumented API reconnaissance method for Entra ID. This undocumented Power Platform API could be used to uncover environment IDs, which may subsequently be used to scan for public agents. Following the identified abuse, required authentication was added to the tool.",
+   "tactics": [
+    "Reconnaissance"
+   ],
+   "parent_technique": "AML.T0006",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0006.002",
+   "label": "Scan for Exposed AI Infrastructure",
+   "definition": "Adversaries may scan network ports and services to identify deployed AI backends, model-serving endpoints, and AI agent infrastructure reachable over the internet. Self-hosted AI runtimes typically listen on predictable, well-known ports and expose standard API paths, allowing adversaries to efficiently locate candidate hosts and infer the platform running on them. \n\nAfter identifying candidate hosts, adversaries can interact with them directly to confirm live AI services, fingerprint the software stack, and determine version and configuration details. This information can be used to select exploitable targets and tailor subsequent access attempts.",
+   "tactics": [
+    "Reconnaissance"
+   ],
+   "parent_technique": "AML.T0006",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0006.003",
+   "label": "Probe AI Agent Trigger Channels",
+   "definition": "Adversaries may send crafted inputs to potential public triggers, such as email addresses, webhooks, or messaging channels, to elicit a response that indicates an invocation of agentic activity. The nature of the response and its content can often reveal agent-managed accounts and expose the additional agentic attack surface. Identified triggers can be used to directly attack the agent.",
+   "tactics": [
+    "Reconnaissance"
+   ],
+   "parent_technique": "AML.T0006",
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0016.003",
+   "label": "Exploits",
+   "definition": "Adversaries may search for and obtain exploits to support their operations. An exploit takes advantage of a bug or vulnerability in order to cause unintended or unanticipated behavior to occur on computer hardware or software. Exploits may be downloaded from public repositories, acquired from private sources, purchased, stolen, or obtained from vulnerability research and exploit-sharing communities. An obtained exploit may be used without modification or serve as input to later adaptation or development.",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0016",
+   "attack_reference": "T1588.005",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0016.003",
+    "attack_id": "T1588.005",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "attack-unmapped",
+    "artifacts": []
+   }
+  },
+  {
+   "atlas_id": "AML.T0016.004",
+   "label": "AI Agent Tools",
+   "definition": "Adversaries may search for and obtain tools that extend the capabilities of an AI agent. These capabilities may allow an agent to interact with operating systems, browsers, networks, cloud services, data stores, software repositories, identity systems, or other external resources.\n\nAI agent tools may be distributed as Model Context Protocol servers, plugins, skills, connectors, function libraries, computer-use adapters, execution brokers, remote APIs, or similar integrations. Adversaries may obtain legitimate tools and configure them for malicious use, acquire modified or purpose-built tools, or combine multiple integrations into an operational toolset.\n\nAgent tools may expose model-visible descriptions and executable interfaces that influence which capabilities an agent selects and how it invokes them. Obtaining these tools may give an agent access to resources, credentials, or actions that are unavailable through model inference alone.",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0016",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0017.001",
+   "label": "Autonomous Exploit Development",
+   "definition": "An autonomous AI agent may identify a software vulnerability and develop or materially adapt an exploit capability with limited human direction. The agent may analyze source code, documentation, service behavior, and error responses to infer a vulnerability and the conditions required to exploit it.\n\nThe agent may formulate and test vulnerability hypotheses, generate probes or payloads, interpret the results, and revise its approach through repeated action-observation cycles. It may combine multiple weaknesses into an exploit chain or package the resulting capability for later use. Validation may establish that the exploit produces the intended access, code execution, or other technical effect. The vulnerability may be publicly known or previously unknown.",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0017",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0017.002",
+   "label": "AI Agent Tools",
+   "definition": "Adversaries may develop or materially adapt tools, integrations, or tool servers designed to extend the capabilities of an AI agent. These capabilities may allow an agent to interact with operating systems, browsers, networks, cloud services, data stores, software repositories, identity systems, or other external resources.\n\nAI agent tools may be implemented as Model Context Protocol servers, plugins, skills, connectors, function libraries, computer-use adapters, execution brokers, remote APIs, or similar model-callable interfaces. Development may include creating executable functionality, model-visible tool descriptions, procedural instructions, input schemas, authentication methods, permission handling, or packaging needed to make a capability available to an agent.",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0017",
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0017.003",
+   "label": "Malware",
+   "definition": "Adversaries may develop malware to support their operations. This may include creating or modifying malicious scripts, executables, libraries, or software packages to enable unauthorized access, execution, credential theft, collection, exfiltration, or disruption. Malware may be developed as a standalone capability or embedded within otherwise legitimate-looking software, such as a package that performs malicious actions when installed or imported.\n\nAdversaries may use AI models or autonomous AI agents to generate malicious code, adapt existing implementations, and iteratively test and refine functionality. AI agents may translate high-level operational objectives into malware requirements. Development may include preparing the malicious code as an installable package for subsequent staging and delivery.",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": "AML.T0017",
+   "attack_reference": "T1587.001",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0017.003",
+    "attack_id": "T1587.001",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "attack-unmapped",
+    "artifacts": []
+   }
+  },
+  {
+   "atlas_id": "AML.T0018.003",
+   "label": "Modify Prompt Construction Logic",
+   "definition": "Adversaries may modify templates, role delimiters, embedded system instructions, tokenizer settings, tool-call formatting, or other artifact-bundled logic that constructs the context sent to an AI model. Model file formats such as GGUF can package this logic alongside model weights in a single distributable artifact. A compatible inference runtime may interpret the modified logic during future inference requests, enabling persistent covert instruction injection, altered instruction precedence, redirected tool use, or manipulated model output without changing model weights.",
+   "tactics": [
+    "AI Attack Adaptation",
+    "Persistence"
+   ],
+   "parent_technique": "AML.T0018",
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  }
+ ]
+}

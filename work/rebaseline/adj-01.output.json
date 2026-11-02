@@ -1,0 +1,1099 @@
+{
+ "unit": "ADJ-01",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0000",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R001",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0000.000",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R002",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0000.001",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R003",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R004",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:Repository",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0000.002",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R005",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0001",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R006",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:DocumentFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0002",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R007",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:CloudStorage",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R008",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0002.000",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R009",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0002.001",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R010",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0003",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R011",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0004",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R012",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R013",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:Application",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0005",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R014",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0005.001",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R015",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:WebAPIResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0006",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R016",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:NetworkService",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R017",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:Email",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0007",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R018",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:Repository",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "retire",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "container registries are a SoftwareRepository; redundant with R019 under the same verb"
+    },
+    {
+     "row_id": "R019",
+     "verb": "d3f:enumerates",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R020",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:DomainName",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "false: identifier used for a record",
+     "calibration_hit": "F616",
+     "verdict": "revise",
+     "new_verb": "d3f:creates",
+     "new_artifact_iri": "d3f:DomainRegistration",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "acquiring domains is a registration act; assert the record, not the identifier"
+    },
+    {
+     "row_id": "R021",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.000",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R022",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:ComputingServer",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R023",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:GraphicsProcessingUnit",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.001",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R024",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:PersonalComputer",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic: see revision",
+     "calibration_hit": "other: specific-but-false",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:HardwareDevice",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "consumer hardware spans phones/devices, not only PersonalComputer; HardwareDevice is true common parent"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.002",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R025",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:DomainRegistration",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.003",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R026",
+     "verb": "d3f:impairs",
+     "artifact_iri": "d3f:TransducerSensor",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0008.004",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R027",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ProxyServer",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R028",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:ServiceApplication",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R029",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "retire",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "thin rollup pointer; File/modifies on dataset is carried by child T0010.002 R032"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.000",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R030",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:HardwareDevice",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.001",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R031",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:SoftwareLibrary",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.002",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R032",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:File",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.003",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R033",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0010.004",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R034",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ContainerImage",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R035",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:SoftwareRepository",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0011",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R036",
+     "verb": "d3f:accesses",
+     "artifact_iri": "d3f:URL",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "F619",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "attack-inherited; accesses (not produces) URL, keep per precedent"
+    },
+    {
+     "row_id": "R037",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R038",
+     "verb": "d3f:produces",
+     "artifact_iri": "d3f:OutboundInternetWebTraffic",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0011.000",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R039",
+     "verb": "d3f:executes",
+     "artifact_iri": "d3f:ExecutableFile",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0012",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R040",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:AccessToken",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R041",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:DefaultUserAccount",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R042",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:UserAccount",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0013",
+   "latest_drift_note": "latest text differs; technique scope unchanged",
+   "rows": [
+    {
+     "row_id": "R043",
+     "verb": "d3f:reads",
+     "artifact_iri": "d3f:ConfigurationFile",
+     "a": "continuant",
+     "b": "content",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0015",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R044",
+     "verb": "d3f:abuses",
+     "artifact_iri": "d3f:IntrusionDetectionSystem",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "passes review"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0016",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R045",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ordinary tooling/capability, not an AI model"
+    },
+    {
+     "row_id": "R046",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ordinary tooling/capability, not an AI model"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0016.000",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R047",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "too-generic: see revision",
+     "calibration_hit": "none",
+     "verdict": "revise",
+     "new_verb": null,
+     "new_artifact_iri": "d3f:SoftwareLibrary",
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "definition names libraries (CleverHans, ART, FoolBox); SoftwareLibrary is true and more specific"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0016.001",
+   "latest_drift_note": "latest text identical to develop",
+   "rows": [
+    {
+     "row_id": "R048",
+     "verb": "d3f:modifies",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ordinary tooling/capability, not an AI model"
+    },
+    {
+     "row_id": "R049",
+     "verb": "d3f:uses",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ordinary tooling/capability, not an AI model"
+    }
+   ]
+  },
+  {
+   "atlas_id": "AML.T0017",
+   "latest_drift_note": "latest text differs; technique scope unchanged; some quotes no longer verbatim in latest",
+   "rows": [
+    {
+     "row_id": "R050",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:ExecutableScript",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    },
+    {
+     "row_id": "R051",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:Software",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": true,
+     "reason": "ordinary tooling/capability, not an AI model"
+    },
+    {
+     "row_id": "R052",
+     "verb": "d3f:creates",
+     "artifact_iri": "d3f:WebResource",
+     "a": "continuant",
+     "b": "carrier",
+     "c": "kind",
+     "d": "ok",
+     "e": "ok",
+     "calibration_hit": "none",
+     "verdict": "keep",
+     "new_verb": null,
+     "new_artifact_iri": null,
+     "new_evidence_quote": null,
+     "quote_survives_latest": false,
+     "reason": "passes review"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,452 @@
+{
+ "batch_id": "batch-B4",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0128",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:Server",
+     "confidence": "medium",
+     "evidence_quote": "physical or cloud servers",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary gains unauthorized control of third-party servers."
+    },
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:SoftwareArtifactServer",
+     "confidence": "medium",
+     "evidence_quote": "software or artifact repositories",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Compromised artifact repositories are a listed infrastructure type."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Generic infrastructure compromise; AI hosting is incidental."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0129",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:DigitalMedia",
+     "confidence": "medium",
+     "evidence_quote": "instructions placed in an image, audio, or video channel",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Payload is embedded in image/audio/video content."
+    },
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:FileMetadata",
+     "confidence": "medium",
+     "evidence_quote": "carried in file metadata",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "EXIF/ID3/document metadata carries the trigger."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIInteractionMessage",
+     "parent_iri": "d3f:DigitalMessage",
+     "nearest_existing_iri": "d3f:DigitalMessage",
+     "verb": "d3f:may-create",
+     "evidence_quote": "place instructions or triggers in one part of a multimodal input",
+     "rationale": "The multimodal model input is the central object; no AI-specific message class exists."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Media and metadata carriers suffice; model input message is a proposal."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0130",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "low",
+     "evidence_quote": "injecting instructions such as",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Injected instructions are prompt messages to the assistant."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:DatabaseRecord",
+     "nearest_existing_iri": "d3f:DatabaseRecord",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "if the agent's memory was poisoned",
+     "rationale": "Persistence of bias depends on poisoned agent memory."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "an agent-memory artifact"
+    ],
+    "why": "Bias persists through poisoned agent memory."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0131",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-create",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "low",
+     "evidence_quote": "attacker-controlled input already supplied",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "The crafted link carries a prompt; the observable product is the prompt message, not the URL."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIInteractionMessage",
+     "parent_iri": "d3f:DigitalMessage",
+     "nearest_existing_iri": "d3f:DigitalMessage",
+     "verb": "d3f:may-create",
+     "evidence_quote": "attacker-controlled input already supplied",
+     "rationale": "Prompt supplied to an AI assistant is an AI interaction message."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Prompt message to an assistant; no model artifact needed."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0132",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:WebAPIResource",
+     "confidence": "medium",
+     "evidence_quote": "discover and interact with AI agents and LLM services",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Exposed LLM/agent endpoint is a web API resource."
+    },
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:ServiceApplication",
+     "confidence": "low",
+     "evidence_quote": "discover and interact with AI agents and LLM services",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Hosted agent runtime is a service application."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Exposed service endpoints; no model artifact is acted on."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0133",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:ServiceApplication",
+     "confidence": "low",
+     "evidence_quote": "interact with an AI agent at runtime",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary queries the running agent."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIToolDefinition",
+     "parent_iri": "d3f:ApplicationConfiguration",
+     "nearest_existing_iri": "d3f:ApplicationConfiguration",
+     "verb": "d3f:enumerates",
+     "evidence_quote": "registered tools and their accepted parameters",
+     "rationale": "Registered tools and parameters are the enumerated object."
+    }
+   ],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "an agent-tool-definition artifact"
+    ],
+    "why": "Central object is the agent's tool registry."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0134",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:InboundInternetWebTraffic",
+     "confidence": "medium",
+     "evidence_quote": "selectively deliver malicious or manipulated content",
+     "checklist": {
+      "a": "continuant",
+      "b": "carrier",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "The adversary server's conditional response is observed as web traffic."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Server-side conditional response."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0135",
+   "disposition": "needs-new-artifact",
+   "mappings": [
+    {
+     "verb": "d3f:may-access",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "low",
+     "evidence_quote": "outputs from an AI model or service",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Model responses are messages collected by the adversary."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "Dataset",
+     "parent_iri": "d3f:DigitalInformation",
+     "nearest_existing_iri": "d3f:DatabaseFile",
+     "verb": "d3f:may-create",
+     "evidence_quote": "can produce datasets or observations",
+     "rationale": "Aggregated outputs form a dataset."
+    },
+    {
+     "proposed_name": "AIInteractionMessage",
+     "parent_iri": "d3f:DigitalMessage",
+     "nearest_existing_iri": "d3f:DigitalMessage",
+     "verb": "d3f:may-access",
+     "evidence_quote": "predictions and scores, embeddings",
+     "rationale": "Model outputs are AI interaction messages."
+    }
+   ],
+   "event_model": [
+    {
+     "event_class": "MachineLearningInferenceEvent",
+     "relation": "has-output",
+     "participant_iri": "d3f:DigitalMessage",
+     "evidence_quote": "directly from inference responses"
+    }
+   ],
+   "residual_test": {
+    "needs": [
+     "a machine-learning-model artifact"
+    ],
+    "why": "Outputs of a model inference; dataset assembled."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0136",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "medium",
+     "evidence_quote": "conversational responses",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Sensitive data is placed in the assistant response."
+    },
+    {
+     "verb": "d3f:may-produce",
+     "artifact_iri": "d3f:DocumentFile",
+     "confidence": "medium",
+     "evidence_quote": "generated documents",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Generated documents carry exfiltrated data."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [],
+   "event_model": [],
+   "residual_test": {
+    "needs": [
+     "none"
+    ],
+    "why": "Response and document products of the UI."
+   },
+   "no_fit_rationale": null
+  },
+  {
+   "atlas_id": "AML.T0145",
+   "disposition": "maps-existing",
+   "mappings": [
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:WebResource",
+     "confidence": "medium",
+     "evidence_quote": "alter webpages",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Adversary alters web content the agent learns from."
+    },
+    {
+     "verb": "d3f:may-modify",
+     "artifact_iri": "d3f:DigitalMessage",
+     "confidence": "low",
+     "evidence_quote": "tool or API responses",
+     "checklist": {
+      "a": "continuant",
+      "b": "content",
+      "c": "kind",
+      "d": "ok",
+      "e": "ok"
+     },
+     "rationale": "Manipulated tool/API responses feed learning."
+    }
+   ],
+   "attack_inherited": [],
+   "new_artifact_proposals": [
+    {
+     "proposed_name": "AIAgentMemoryRecord",
+     "parent_iri": "d3f:DatabaseRecord",
+     "nearest_existing_iri": "d3f:DatabaseRecord",
+     "verb": "d3f:may-modify",
+     "evidence_quote": "agent memories",
+     "rationale": "Influence persists in agent memories."
+    }
+   ],
+   "event_model": [
+    {
+     "event_class": "MachineLearningFineTuningEvent",
+     "relation": "has-input",
+     "participant_iri": "d3f:WebResource",
+     "evidence_quote": "incorporated into model fine-tuning"
+    }
+   ],
+   "residual_test": {
+    "needs": [
+     "a machine-learning-model artifact",
+     "an agent-memory artifact"
+    ],
+    "why": "Poisoned experience enters fine-tuning/RL and memories."
+   },
+   "no_fit_rationale": null
+  }
+ ]
+}

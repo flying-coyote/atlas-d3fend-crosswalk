@@ -1,0 +1,319 @@
+{
+ "batch_id": "batch-B5",
+ "annex": "v2026.10",
+ "techniques": [
+  {
+   "atlas_id": "AML.T0137",
+   "label": "Training Data Information from AI Models",
+   "definition": "Adversaries may obtain sensitive information about the data used to train or fine-tune an AI model by analyzing its outputs or behavior. This can expose private associations, personally identifiable information, or proprietary data, creating data privacy concerns and supporting subsequent adversarial operations.\n\nAdversaries may determine whether particular samples were used in training through [Infer Membership](/techniques/AML.T0137.000), identify aggregate characteristics of the training dataset through [Infer Properties](/techniques/AML.T0137.001), infer sensitive attributes or reconstruct representative examples through [Invert AI Model](/techniques/AML.T0137.002), or recover retained training content through [Extract Memorized Data](/techniques/AML.T0137.003).",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0137.000",
+   "label": "Infer Membership",
+   "definition": "Adversaries may infer whether a particular data sample was included in an AI model's training dataset. Samples may include records, text passages, images, or audio samples. Establishing membership may reveal sensitive associations, participation in a private dataset, or use of proprietary information.\n\nMembership inference is a data privacy concern because identifying a sample's inclusion may reveal sensitive associations or participation in a private dataset, even without recovering the underlying data.\n\nMethods may analyze prediction scores, token probabilities, loss values, generated responses, or other differences in model behavior. Adversaries may use statistical tests, shadow models, or auxiliary datasets to distinguish likely training members from nonmembers.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": "AML.T0137",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0137.001",
+   "label": "Infer Properties",
+   "definition": "Adversaries may infer sensitive global properties of the data used to train an AI model. Properties may include dataset provenance, population composition, relative class proportions, domain coverage, collection period, or the presence of a category or group.\n\nThe adversary may compare output distributions, fit analytical or learned estimators, use auxiliary datasets, or contrast models trained with different known properties. The target is a property of the training data rather than membership of an individual record.\n\nInferred properties of the training dataset may help adversaries identify a model's likely origin, distinguish between candidate models, identify underrepresented populations or domains, and tailor subsequent attacks to suspected weaknesses.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": "AML.T0137",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0137.002",
+   "label": "Invert AI Model",
+   "definition": "Adversaries may infer sensitive aggregate attributes or reconstruct representative examples of data used to train or fine-tune a target AI model by analyzing its behavior, outputs, or exposed representations. Reconstructed information may reveal characteristics of individuals, records, or classes represented in the training data without reproducing a particular training example.\n\nMethods may optimize candidate inputs, combine known attributes with model-derived signals, or use learned inversion models. Useful observations may include prediction scores, probabilities, embeddings, or gradients where exposed.\n\nResults may include inferred sensitive attributes, approximate reconstructions, or representative examples associated with a target identity or class. Such results do not by themselves establish that a reconstructed example was present in the training dataset.",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": "AML.T0137",
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0137.003",
+   "label": "Extract Memorized Data",
+   "definition": "Adversaries may elicit and recover sensitive content memorized by a generative AI model during training or fine-tuning. Recovered material may include complete training examples or recognizable portions of text, source code, or images, potentially exposing personal information, private communications, or proprietary material. Recovery may take the form of verbatim reproduction or near-duplicate outputs that reveal specific training content.\n\nAdversaries may supply partial passages, contextual cues, or repeated and varied inputs that encourage reproduction of memorized content. They may generate and filter candidate outputs or compare them with available reference material to identify likely training examples. Researchers have recovered verbatim training passages through language-model queries, including from production systems,[[scalable-extraction]] and extracted memorized training images from diffusion models.[[diffusion-extraction]]",
+   "tactics": [
+    "Collection"
+   ],
+   "parent_technique": "AML.T0137",
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0138",
+   "label": "Indicator Removal",
+   "definition": "Adversaries may delete, alter, or falsify records and artifacts to conceal their activity, impede investigation, or make unauthorized actions appear legitimate. Targeted artifacts may include logs, command histories, files, metadata, repository history, and published content. Changes may selectively remove suspicious evidence while preserving surrounding material to maintain the appearance of normal activity.\n\nAgents may also conceal activity by modifying artifacts on external collaboration and distribution platforms. Editing public messages, removing malicious content, or rewriting revision history can obscure prior actions, make contributions appear benign, and complicate reconstruction of an attack. These changes may help an agent preserve credibility and continue operating after its activity attracts scrutiny, even when earlier versions remain recoverable.[[aisi]]\n\nAutonomous AI agents may identify and manipulate evidence of their own actions without a human directing each concealment step. Agents may edit or delete accessible transcripts, replace records with misleading content, or tamper with harness components responsible for executing or recording tool calls. Such tampering can cause recorded actions or results to differ from actual execution, undermining oversight that relies on the affected records.[[metr-hf]]",
+   "tactics": [
+    "Defense Evasion"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1070",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0138",
+    "attack_id": "T1070",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "seeded",
+    "artifacts": [
+     {
+      "iri": "d3f:CommandHistoryLog",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:EventLog",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:File",
+      "verbs": [
+       "d3f:deletes",
+       "d3f:may-modify"
+      ]
+     },
+     {
+      "iri": "d3f:FileSystemMetadata",
+      "verbs": [
+       "d3f:forges"
+      ]
+     },
+     {
+      "iri": "d3f:NetworkFileShareResource",
+      "verbs": [
+       "d3f:unmounts"
+      ]
+     },
+     {
+      "iri": "d3f:OperatingSystemLogFile",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "atlas_id": "AML.T0139",
+   "label": "Compromise Accounts",
+   "definition": "Adversaries may compromise existing accounts with services that can support targeting or subsequent operations. These accounts may provide established identities, trusted relationships, access to resources, or funded wallets for AI services.\n\nAdversaries may obtain account credentials through [Phishing](/techniques/AML.T0052), password guessing or reuse, theft of access tokens, or purchase from third parties.\n\nAdversaries may compromise AI service accounts for LLMJacking, a pattern of consuming model access and usage at the account holder's expense.[[sysdig-llmjacking]] Depending on the service, these resources may include prepaid balances or service wallets, promotional credits, subscription allowances, or usage charged to an existing payment method or enterprise billing account. Adversaries may use the acquired capacity for their own inference workloads, code generation, or tool development while exhausting the victim's available credits and quotas or generating additional charges.\n\nCompromised accounts may also supply capacity for [AI Service Proxies](/techniques/AML.T0008.005), allowing operators to aggregate and resell access while concealing the underlying credentials from downstream users.[[sysdig-market]] Google has reported model distillation campaigns that used proxy infrastructure to rotate requests across compromised credentials and fraudulent accounts.[[google-sep]] Account pooling and resale also feature in the gray-market transfer station economy, where account merchants and registration intermediaries supply access alongside discounted capacity, unused quotas, and shared subscriptions.[[chinatalk]].",
+   "tactics": [
+    "Resource Development"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1586",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0139",
+    "attack_id": "T1586",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "attack-unmapped",
+    "artifacts": []
+   }
+  },
+  {
+   "atlas_id": "AML.T0140",
+   "label": "Centralized AI Service Request Routing",
+   "definition": "Adversaries may distribute coordinated AI service requests across multiple pathways to impede detection, conceal the coordinated nature of the requests, and evade AI provider enforcement. Distributing activity can limit the portion of an operation visible through any individual account or pathway, obscuring its aggregate scale and common objective.\n\nAdversaries may use centralized routing infrastructure to divide a workload or prompt suite across multiple pathways, including various service APIs, cloud-hosted endpoints, third-party aggregators or relays, and account pools. Routers may rotate identities and request pathways, mix adversarial requests with unrelated customer traffic, and automatically redirect requests when requests are blocked. These capabilities allow adversaries to maintain coordinated operations while making the activity appear to originate from unrelated users or services.\n\nAdversaries may also use routing infrastructure to centrally optimize API costs and sustain distributed operations within available quotas and budgets. This may include prioritizing cost-efficient access pathways, allocating quotas across accounts to align with operational budgets, segmenting accounts by purpose, and organizing requests to maximize cache reuse. Centralized routing may coordinate shifts across accounts, providers, or pathways in response to pricing or rate-limit changes, enabling an operation to adapt while continuing to obscure its common control and aggregate activity.\n\nThis behavior may be implemented via proxy services (See  [Acquire Infrastructure: AI Service Proxies](/techniques/AML.T0008.005)), multiple cloud instances, IP pools, coordination across multiple accounts, or other distributed infrastructure.",
+   "tactics": [
+    "Defense Evasion"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0141",
+   "label": "AI Service Request Metadata Sanitization",
+   "definition": "Adversaries may remove or replace identifying information in request metadata before submitting requests to an AI service to impede attribution and correlation of coordinated activity. Sanitization may be enforced automatically in clients, relays, aggregators, or centralized routing infrastructure.\n\nMetadata may include client or device identifiers, session identifiers, account identifiers, client software identifiers, forwarding headers, and attribution markers embedded in request bodies.[[claude-relay-service]] Metadata fields may be sanitized via removal, or replacement with normalized, randomized, or generated values.\n\nThe NSA, CISA, and FBI reported removal of organizational identifiers in industrial-scale distillation campaigns, with indicators including the disappearance of previously consistent metadata and generic or randomized patterns replacing organizational markers.[[cisa]]",
+   "tactics": [
+    "Defense Evasion"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Realized",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0142",
+   "label": "Event Triggered Execution",
+   "definition": "Adversaries may establish persistence by creating or modifying event handlers, startup hooks, or associated configuration so that subsequent system or application activity automatically executes adversary-controlled code or commands. Triggers may include interpreter initialization, application execution, or other events processed by the affected mechanism. These modifications can allow malicious behavior to recur without another direct execution request from the adversary.\n\nIn AI environments, adversaries may target hooks in the software and execution environments used for data processing, model training, evaluation, inference, or agent tool execution. For example, Python startup hooks may execute adversary-controlled code when a subsequent workflow or tool invocation starts an interpreter that processes the hook.[[aisi]] \n\nTriggered code may perform malicious actions directly or emit content that is subsequently consumed by an AI system. Such content may contain fabricated approvals or instructions intended to manipulate the system's later behavior or make normally unobservable information available. AI Agents may also place triggers or trip-wires behind to observe, act on, or report conditions that the agent can no longer reach or are beyond its execution window.[[metr]]",
+   "tactics": [
+    "Persistence"
+   ],
+   "parent_technique": null,
+   "attack_reference": "T1546",
+   "maturity": "Realized",
+   "seed": {
+    "atlas_id": "AML.T0142",
+    "attack_id": "T1546",
+    "attack_class_on_develop": true,
+    "attack_deprecated": false,
+    "seed_status": "seeded",
+    "artifacts": [
+     {
+      "iri": "d3f:ConfigurationResource",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:CreateProcess",
+      "verbs": [
+       "d3f:invokes"
+      ]
+     },
+     {
+      "iri": "d3f:EventLog",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:ExecutableBinary",
+      "verbs": [
+       "d3f:loads",
+       "d3f:may-modify",
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:ExecutableFile",
+      "verbs": [
+       "d3f:creates"
+      ]
+     },
+     {
+      "iri": "d3f:ExecutableScript",
+      "verbs": [
+       "d3f:may-create",
+       "d3f:may-modify"
+      ]
+     },
+     {
+      "iri": "d3f:IntranetAdministrativeNetworkTraffic",
+      "verbs": [
+       "d3f:may-create",
+       "d3f:produces"
+      ]
+     },
+     {
+      "iri": "d3f:PowerShellProfileScript",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:Process",
+      "verbs": [
+       "d3f:produces"
+      ]
+     },
+     {
+      "iri": "d3f:PropertyListFile",
+      "verbs": [
+       "d3f:may-create",
+       "d3f:may-modify"
+      ]
+     },
+     {
+      "iri": "d3f:SharedLibraryFile",
+      "verbs": [
+       "d3f:loads"
+      ]
+     },
+     {
+      "iri": "d3f:ShellCommand",
+      "verbs": [
+       "d3f:executes"
+      ]
+     },
+     {
+      "iri": "d3f:Shim",
+      "verbs": [
+       "d3f:creates"
+      ]
+     },
+     {
+      "iri": "d3f:ShimDatabase",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:SystemConfigurationDatabase",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:SystemConfigurationDatabaseRecord",
+      "verbs": [
+       "d3f:may-modify",
+       "d3f:modifies"
+      ]
+     },
+     {
+      "iri": "d3f:UserInitConfigurationFile",
+      "verbs": [
+       "d3f:modifies"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "atlas_id": "AML.T0143",
+   "label": "LLM Prompt Propagation",
+   "definition": "Adversaries may cause malicious instructions already introduced into an AI-enabled environment to be transferred onward to additional storage locations, agents, applications, or resources where they can influence subsequent AI activity. This extends the attack beyond its initial point of introduction and may allow adversaries to influence additional targets without directly delivering a malicious prompt payload to each one.\n\nPropagation may occur through email or other communications, shared documents, source-code repositories, persistent agent memory, retrieval systems, databases, shared workspaces, or direct agent-to-agent communication. Connected tools and services may also carry malicious instructions between otherwise separate environments. The transfer may result from an induced agent action or from copying, forwarding, synchronization, or other workflows that distribute affected content.",
+   "tactics": [
+    "Lateral Movement"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Demonstrated",
+   "seed": null
+  },
+  {
+   "atlas_id": "AML.T0144",
+   "label": "Recover AI Model Internals",
+   "definition": "Adversaries may infer or recover non-public AI model internals through analysis of model behavior or exposed information. Targets may include architecture, layer dimensions, hyperparameters, decision-tree structure, projection matrices, or numerical parameters.\n\nMethods may use strategically selected queries, equation solving, numerical reconstruction, or statistical identification. Recovery may be partial, approximate, or exact.",
+   "tactics": [
+    "Discovery",
+    "Collection"
+   ],
+   "parent_technique": null,
+   "attack_reference": null,
+   "maturity": "Feasible",
+   "seed": null
+  }
+ ]
+}
