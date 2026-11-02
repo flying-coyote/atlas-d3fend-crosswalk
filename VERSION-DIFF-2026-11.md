@@ -77,12 +77,12 @@ Impact on the crosswalk queue (from `03_rebaseline_check.py`): 55 queued techniq
 
 ### ATLAS → ATT&CK references [ATLAS-YAML × ATTACK-STIX]
 
-v2026.06 carries 37 `attack-reference`s. One of them is stale against ATT&CK v20: AML.T0073 → T1656, which v20 revokes in favor of T1684.001. v2026.10 carries 48 references, and **none of them is stale** (ATLAS already repointed T0073 to T1684.001). So there is no ATT&CK- or ATLAS-side reference defect to contribute.
+v2026.06 carries 37 `attack-reference`s. One of them is stale: AML.T0073 → T1656, which ATT&CK revoked in favor of T1684.001 on 2026-04-14 (v19, so before v20; v20 revoked no Enterprise technique). v2026.10 carries 48 references, and **none of them is stale** (ATLAS already repointed T0073 to T1684.001). So there is no ATT&CK- or ATLAS-side reference defect to contribute.
 
 ## 2. ATT&CK v20 (as ingested on D3FEND develop, #708, 2026-10-15) [D3F-DEV + ATTACK-STIX]
 
 - `ATTACK_VERSION ?= 20.0` on develop. Bundle: 867 Enterprise attack-patterns, 149 revoked and 12 deprecated.
-- Baseline 12e2762 → develop: **18 ATT&CK classes added** (`T0869.001/.002`, `T1608.007`, `T1685.007`, `T1696`, `.001/.002`, `T1697`–`T1700`, `T1701`, `.001`–`.006`) and **0 removed**. Newly deprecated: `T0807`, `T0853` (ICS), and `T1656` (revoked by `T1684.001`).
+- Baseline 12e2762 → develop: **18 ATT&CK classes added** (`T0869.001/.002`, `T1608.007`, `T1685.007`, `T1696`, `.001/.002`, `T1697`–`T1700`, `T1701`, `.001`–`.006`) and **0 removed**. Newly deprecated on develop relative to the July baseline: `T0807`, `T0853` (ICS), and `T1656` (revoked by `T1684.001` in ATT&CK v19 on 2026-04-14, not in v20).
 - **19 ATT&CK techniques gained restrictions**, all in the d3fend-wall cache, and none lost any. These are the maintainers' Sept mapping PRs #667–#681: T1046, T1069, T1129, T1135, T1495, T1547.012/.013/.014, T1553.005/.006, T1564.010/.011/.012/.014, T1612, T1647, T1652, T1654, T1667. Any cache of D3FEND's ATT&CK→artifact mappings built before mid-September predates them.
 - **Crosswalk impact.** The ATT&CK-inheritance seeds were re-checked with the same subtree+ancestor method that built them (`scripts/02_attack_seed_drift.py <baseline.ttl> <develop.ttl> data/attack_seed-2026-07.json`). Only T1656 moved, and its ATLAS row (T0073) was `attack-unmapped`, so **no inherited crosswalk row changes**. One seed pair predates develop: AML.T0078 ← T1189 `produces OutboundInternetNetworkTraffic`, which develop asserts as `produces InternetNetworkTraffic` (#631). No queued row uses it.
 - Calibration signal from the maintainers' own v20 work: `T1046 Network Service Discovery` was mapped `enumerates ServiceApplicationProcess` + `produces NetworkTraffic`.
